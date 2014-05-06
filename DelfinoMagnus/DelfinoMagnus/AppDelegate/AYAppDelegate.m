@@ -7,16 +7,34 @@
 //
 
 #import "AYAppDelegate.h"
+#import "AYHomeViewController.h"
+#import "AYLoginViewController.h"
 
 @implementation AYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    [self loadLoginViewController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)loadHomeViewController
+{
+    AYHomeViewController *homeVC = [[AYHomeViewController alloc] initWithNibName:@"AYHomeViewController" bundle:nil];
+    [self.window setRootViewController:homeVC];
+}
+
+- (void)loadLoginViewController
+{
+    AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:@"AYLoginViewController" bundle:nil];
+    
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+
+    [self.window setRootViewController:navVC];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

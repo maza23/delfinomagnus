@@ -9,14 +9,16 @@
 #import "AYAppDelegate.h"
 #import "AYHomeViewController.h"
 #import "AYLoginViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    [self loadLoginViewController];
+    [GMSServices provideAPIKey:kGoogleMapAPIKey];
+    
+    [self loadHomeViewController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -31,10 +33,7 @@
 - (void)loadLoginViewController
 {
     AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:@"AYLoginViewController" bundle:nil];
-    
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
-
-    [self.window setRootViewController:navVC];
+    [self.window setRootViewController:loginVC];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

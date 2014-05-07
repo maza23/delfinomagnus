@@ -18,7 +18,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [GMSServices provideAPIKey:kGoogleMapAPIKey];
     
-    [self loadHomeViewController];
+    [self loadLoginViewController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

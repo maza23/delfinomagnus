@@ -55,9 +55,26 @@
     [self.txtFieldUserName resignFirstResponder];
 }
 
+- (void)startLoginToServer
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [[AYNetworkManager sharedInstance]  loginWithUsername:self.txtFieldUserName.text password:self.txtFieldPassword.text withCompletionHandler:^(id result) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (result) {
+                
+            }
+            
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        });
+    }];
+}
+
 #pragma mark - IBAction Methods
 
 - (IBAction)actionLoginButtonPressed:(id)sender {
+    [self startLoginToServer];
 }
 
 - (IBAction)actionForgotPasswordButtonPressed:(id)sender {

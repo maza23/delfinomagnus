@@ -51,7 +51,7 @@
     GMSMapView *googleMapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     [googleMapView setDelegate:self];
     googleMapView.myLocationEnabled = YES;
-    [self.view addSubview:googleMapView];
+    [self.view insertSubview:googleMapView atIndex:0];
     
     googleMapView.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -90,6 +90,18 @@
         marker.snippet = [store objectForKey:@"address"];
         marker.map = self.mapView;
     }
+}
+
+
+#pragma mark - IBAction Methods
+- (IBAction)actionMenuButtonPressed:(id)sender {
+}
+
+- (IBAction)actionSearchButtonPressed:(id)sender {
+}
+
+- (IBAction)actionToDoButtonPressed:(UIButton *)sender {
+    [sender setSelected:![sender isSelected]];
 }
 
 #pragma mark - GoogleMapView Delegate Methods

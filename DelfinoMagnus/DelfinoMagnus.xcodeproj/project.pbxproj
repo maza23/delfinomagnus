@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CB0C6CD7191A95B600E02D9A /* AYNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CD6191A95B600E02D9A /* AYNetworkManager.m */; };
 		CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CDB191A9BD000E02D9A /* MBProgressHUD.m */; };
+		CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CDF191AB07C00E02D9A /* Delfino.xcdatamodeld */; };
+		CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CB0C6CE9191AB3FF00E02D9A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE8191AB3FF00E02D9A /* User.m */; };
+		CB0C6CEC191AB3FF00E02D9A /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CEB191AB3FF00E02D9A /* Device.m */; };
 		CB1248961918879D009DA54C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484C1918879D009DA54C /* back.png */; };
 		CB1248971918879D009DA54C /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484D1918879D009DA54C /* back2.png */; };
 		CB1248981918879D009DA54C /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484E1918879D009DA54C /* back3.png */; };
@@ -133,6 +137,13 @@
 		CB0C6CDA191A9BD000E02D9A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CB0C6CDB191A9BD000E02D9A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CB0C6CDD191A9D0500E02D9A /* BZLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZLogger.h; sourceTree = "<group>"; };
+		CB0C6CE0191AB07C00E02D9A /* Delfino.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Delfino.xcdatamodel; sourceTree = "<group>"; };
+		CB0C6CE3191AB0D800E02D9A /* LTCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCoreDataManager.h; sourceTree = "<group>"; };
+		CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCoreDataManager.m; sourceTree = "<group>"; };
+		CB0C6CE7191AB3FF00E02D9A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CB0C6CE8191AB3FF00E02D9A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CB0C6CEA191AB3FF00E02D9A /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		CB0C6CEB191AB3FF00E02D9A /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		CB12484C1918879D009DA54C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		CB12484D1918879D009DA54C /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		CB12484E1918879D009DA54C /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
@@ -303,6 +314,36 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		CB0C6CDE191AB06500E02D9A /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				CB0C6CE2191AB0D800E02D9A /* CoreDataHandler */,
+				CB0C6CE5191AB0D800E02D9A /* ModelFiles */,
+				CB0C6CDF191AB07C00E02D9A /* Delfino.xcdatamodeld */,
+			);
+			path = DataBaseManager;
+			sourceTree = "<group>";
+		};
+		CB0C6CE2191AB0D800E02D9A /* CoreDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				CB0C6CE3191AB0D800E02D9A /* LTCoreDataManager.h */,
+				CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */,
+			);
+			path = CoreDataHandler;
+			sourceTree = "<group>";
+		};
+		CB0C6CE5191AB0D800E02D9A /* ModelFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CB0C6CEA191AB3FF00E02D9A /* Device.h */,
+				CB0C6CEB191AB3FF00E02D9A /* Device.m */,
+				CB0C6CE7191AB3FF00E02D9A /* User.h */,
+				CB0C6CE8191AB3FF00E02D9A /* User.m */,
+			);
+			path = ModelFiles;
+			sourceTree = "<group>";
+		};
 		CB13F08E19193DF70054E950 /* ForgotPasswordView */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				CB0C6CD8191A9BAF00E02D9A /* ThirdPartyClasses */,
+				CB0C6CDE191AB06500E02D9A /* DataBaseManager */,
 				CBCD6195191808B700846E8C /* NetworkManager */,
 				CBCD618A1918085E00846E8C /* AppDelegate */,
 				CBCD618D1918085E00846E8C /* Constants */,
@@ -745,11 +787,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0C6CE9191AB3FF00E02D9A /* User.m in Sources */,
 				CBCD619F1918090900846E8C /* AYLoginViewController.m in Sources */,
+				CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */,
 				CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */,
 				CBCD61681918044900846E8C /* main.m in Sources */,
 				CBCD61921918085E00846E8C /* AYAppDelegate.m in Sources */,
 				CB0C6CD7191A95B600E02D9A /* AYNetworkManager.m in Sources */,
+				CB0C6CEC191AB3FF00E02D9A /* Device.m in Sources */,
+				CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */,
 				CBCD61A51918092F00846E8C /* AYHomeViewController.m in Sources */,
 				CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */,
 			);
@@ -974,6 +1020,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB0C6CDF191AB07C00E02D9A /* Delfino.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB0C6CE0191AB07C00E02D9A /* Delfino.xcdatamodel */,
+			);
+			currentVersion = CB0C6CE0191AB07C00E02D9A /* Delfino.xcdatamodel */;
+			path = Delfino.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CBCD61501918044900846E8C /* Project object */;
 }

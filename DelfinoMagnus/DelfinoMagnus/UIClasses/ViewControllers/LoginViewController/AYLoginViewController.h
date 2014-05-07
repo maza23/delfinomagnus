@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AYLoginViewController : UIViewController
+@protocol AYLoginViewControllerDelegate;
 
+@interface AYLoginViewController : UIViewController
+@property (weak, nonatomic) id <AYLoginViewControllerDelegate> delegate;
+@end
+
+
+@protocol AYLoginViewControllerDelegate <NSObject>
+- (void)didUserLoggedInSuccessfully;
 @end

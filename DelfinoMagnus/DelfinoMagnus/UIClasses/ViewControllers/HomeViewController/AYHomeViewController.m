@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
     [self doInitialConfigurations];
+    [self getAndLoadDevicesFromServer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +38,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
     NSString *latidudeString = nil;
@@ -92,6 +94,20 @@
     }
 }
 
+- (void)getAndLoadDevicesFromServer
+{
+    [[AYNetworkManager sharedInstance] getDevicesListWithFilter:@"fechamodif" andDateString:@"2013-03-02" withCompletionHandler:^(id result) {
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (result) {
+                
+            }
+            
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        });
+
+    }];
+}
 
 #pragma mark - IBAction Methods
 - (IBAction)actionMenuButtonPressed:(id)sender {

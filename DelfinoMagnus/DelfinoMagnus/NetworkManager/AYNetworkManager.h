@@ -15,4 +15,6 @@ typedef void (^IDCompletionBlock) (id result);
 
 + (AYNetworkManager *)sharedInstance;
 - (void)loginWithUsername:(NSString *)usernName password:(NSString *)password withCompletionHandler:(IDCompletionBlock)completionBlock;
+
+- (void)getDevicesListWithFilter:(NSString *)filter andDateString:(NSString *)dateString withCompletionHandler:(IDCompletionBlock)completionBlock;
 @end

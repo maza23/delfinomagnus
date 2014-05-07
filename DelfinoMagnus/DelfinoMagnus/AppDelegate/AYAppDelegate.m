@@ -11,6 +11,10 @@
 #import "AYLoginViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
+@interface AYAppDelegate () <AYLoginViewControllerDelegate>
+
+@end
+
 @implementation AYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -26,6 +30,10 @@
 
 - (void)loadHomeViewController
 {
+    [[NSUserDefaults standardUserDefaults]  setObject:@"pablom" forKey:@"userName"];
+    [[NSUserDefaults standardUserDefaults]  setObject:@"pablom" forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
     AYHomeViewController *homeVC = [[AYHomeViewController alloc] initWithNibName:@"AYHomeViewController" bundle:nil];
     [self.window setRootViewController:homeVC];
 }
@@ -33,7 +41,14 @@
 - (void)loadLoginViewController
 {
     AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:@"AYLoginViewController" bundle:nil];
+    [loginVC setDelegate:self];
     [self.window setRootViewController:loginVC];
+}
+
+#pragma mark - AYLoginViewController Delegate Methods
+- (void)didUserLoggedInSuccessfully
+{
+    [self loadHomeViewController];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

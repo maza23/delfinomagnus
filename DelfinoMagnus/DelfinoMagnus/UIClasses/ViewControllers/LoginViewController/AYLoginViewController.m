@@ -44,6 +44,10 @@
 {
     [self.navigationController setNavigationBarHidden:YES];
     
+    [self.txtFieldUserName setText:@"pablom"];
+    [self.txtFieldPassword setText:@"pablom"];
+
+    
     UITapGestureRecognizer *singleTapOnBGView = [[UITapGestureRecognizer alloc] init];
     [singleTapOnBGView addTarget:self action:@selector(singleTappedOnBGView:)];
     [self.view addGestureRecognizer:singleTapOnBGView];
@@ -62,8 +66,15 @@
     [[AYNetworkManager sharedInstance]  loginWithUsername:self.txtFieldUserName.text password:self.txtFieldPassword.text withCompletionHandler:^(id result) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (result) {
+            if (result && [result isKindOfClass:[NSDictionary class]]) {
                 
+                if (![[result objectForKey:@"msgerr"] isEqualToString:@"success"]) {
+                    
+                    if ([self.delegate respondsToSelector:@selector(didUserLoggedInSuccessfully)]) {
+                        [self.delegate didUserLoggedInSuccessfully];
+                    }
+                    
+                } ;
             }
             
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

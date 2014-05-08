@@ -105,6 +105,9 @@
 		CB6340B2191947E900CA2915 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6340B1191947E900CA2915 /* SystemConfiguration.framework */; };
 		CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F58191BE3E800E36537 /* AYMapInfoView.m */; };
 		CB773F5B191BE3FB00E36537 /* AYMapInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB773F5A191BE3FB00E36537 /* AYMapInfoView.xib */; };
+		CB773F5F191BFF6100E36537 /* AYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F5E191BFF6100E36537 /* AYMenuView.m */; };
+		CB773F61191BFF7D00E36537 /* AYMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB773F60191BFF7D00E36537 /* AYMenuView.xib */; };
+		CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */; };
 		CBCD615C1918044900846E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615B1918044900846E8C /* Foundation.framework */; };
 		CBCD615E1918044900846E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615D1918044900846E8C /* CoreGraphics.framework */; };
 		CBCD61601918044900846E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615F1918044900846E8C /* UIKit.framework */; };
@@ -241,6 +244,11 @@
 		CB773F57191BE3E800E36537 /* AYMapInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMapInfoView.h; sourceTree = "<group>"; };
 		CB773F58191BE3E800E36537 /* AYMapInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMapInfoView.m; sourceTree = "<group>"; };
 		CB773F5A191BE3FB00E36537 /* AYMapInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYMapInfoView.xib; sourceTree = "<group>"; };
+		CB773F5D191BFF6100E36537 /* AYMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMenuView.h; sourceTree = "<group>"; };
+		CB773F5E191BFF6100E36537 /* AYMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMenuView.m; sourceTree = "<group>"; };
+		CB773F60191BFF7D00E36537 /* AYMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYMenuView.xib; sourceTree = "<group>"; };
+		CB773F64191C076B00E36537 /* UIImage+ISOverlayColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ISOverlayColor.h"; sourceTree = "<group>"; };
+		CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ISOverlayColor.m"; sourceTree = "<group>"; };
 		CBCD61581918044900846E8C /* DelfinoMagnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelfinoMagnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCD615B1918044900846E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CBCD615D1918044900846E8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -369,6 +377,25 @@
 			path = MapInfoView;
 			sourceTree = "<group>";
 		};
+		CB773F5C191BFF5000E36537 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				CB773F5D191BFF6100E36537 /* AYMenuView.h */,
+				CB773F5E191BFF6100E36537 /* AYMenuView.m */,
+				CB773F60191BFF7D00E36537 /* AYMenuView.xib */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		CB773F63191C075200E36537 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CB773F64191C076B00E36537 /* UIImage+ISOverlayColor.h */,
+				CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		CBCD614F1918044900846E8C = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +443,7 @@
 		CBCD61611918044900846E8C /* DelfinoMagnus */ = {
 			isa = PBXGroup;
 			children = (
+				CB773F63191C075200E36537 /* Categories */,
 				CB0C6CD8191A9BAF00E02D9A /* ThirdPartyClasses */,
 				CB0C6CDE191AB06500E02D9A /* DataBaseManager */,
 				CBCD6195191808B700846E8C /* NetworkManager */,
@@ -497,6 +525,7 @@
 		CBCD61901918085E00846E8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB773F5C191BFF5000E36537 /* MenuView */,
 				CB773F56191BE3D000E36537 /* MapInfoView */,
 				CB13F08E19193DF70054E950 /* ForgotPasswordView */,
 			);
@@ -762,6 +791,7 @@
 				CB1248D11918879D009DA54C /* monocolumna.png in Resources */,
 				CB1248B31918879D009DA54C /* cerrar.png in Resources */,
 				CB1248D41918879D009DA54C /* perfil.png in Resources */,
+				CB773F61191BFF7D00E36537 /* AYMenuView.xib in Resources */,
 				CB1248C21918879D009DA54C /* help_3.png in Resources */,
 				CB1248BC1918879D009DA54C /* favoritos.png in Resources */,
 				CB1248CA1918879D009DA54C /* marker.png in Resources */,
@@ -812,9 +842,11 @@
 				CBCD61681918044900846E8C /* main.m in Sources */,
 				CBCD61921918085E00846E8C /* AYAppDelegate.m in Sources */,
 				CB0C6CD7191A95B600E02D9A /* AYNetworkManager.m in Sources */,
+				CB773F5F191BFF6100E36537 /* AYMenuView.m in Sources */,
 				CB275B6C191B37C100EC9964 /* Device.m in Sources */,
 				CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */,
 				CBCD61A51918092F00846E8C /* AYHomeViewController.m in Sources */,
+				CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */,
 				CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

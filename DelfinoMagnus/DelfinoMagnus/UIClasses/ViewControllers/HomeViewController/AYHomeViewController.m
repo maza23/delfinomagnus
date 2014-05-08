@@ -10,9 +10,11 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "Device.h"
 #import "AYMapInfoView.h"
+#import "AYMenuView.h"
 
 @interface AYHomeViewController () <GMSMapViewDelegate>
 @property (strong, nonatomic) GMSMapView *mapView;
+@property (strong, nonatomic) AYMenuView *menuView;
 @property (strong, nonatomic) NSArray *devices;
 @end
 
@@ -125,8 +127,16 @@
     }
 }
 
+- (void)loadMenuView
+{
+    self.menuView = [[[NSBundle mainBundle] loadNibNamed:@"AYMenuView" owner:self options:nil] lastObject];
+    [self.menuView setFrame:CGRectMake(10, 10, 300, self.view.bounds.size.height - 20)];
+    [self.view addSubview:self.menuView];
+}
+
 #pragma mark - IBAction Methods
 - (IBAction)actionMenuButtonPressed:(id)sender {
+    [self loadMenuView];
 }
 
 - (IBAction)actionSearchButtonPressed:(id)sender {

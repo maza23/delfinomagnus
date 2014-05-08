@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Delfino. All rights reserved.
 //
 
+#define kDevicesEntityName  @"Device"
+#define kUserEntityName     @"User"
+
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
@@ -29,4 +32,7 @@
 
 - (BOOL)updateEntity:(NSString *)entityName setDetails:(NSDictionary *)details whereAttribute:(NSString *)attributeName isEqualToValue:(id)key;
 
+
+//Methods to call
+- (void)insertDevicesResultIntoDBFromRawResponse:(NSDictionary *)rawResponse;
 @end

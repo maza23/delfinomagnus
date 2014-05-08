@@ -12,7 +12,6 @@
 		CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CDF191AB07C00E02D9A /* Delfino.xcdatamodeld */; };
 		CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CB0C6CE9191AB3FF00E02D9A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE8191AB3FF00E02D9A /* User.m */; };
-		CB0C6CEC191AB3FF00E02D9A /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CEB191AB3FF00E02D9A /* Device.m */; };
 		CB1248961918879D009DA54C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484C1918879D009DA54C /* back.png */; };
 		CB1248971918879D009DA54C /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484D1918879D009DA54C /* back2.png */; };
 		CB1248981918879D009DA54C /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484E1918879D009DA54C /* back3.png */; };
@@ -89,6 +88,7 @@
 		CB1248DF1918879D009DA54C /* web_hi_res_512.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248951918879D009DA54C /* web_hi_res_512.png */; };
 		CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13F09019193E120054E950 /* AYForgotPasswordView.m */; };
 		CB13F09319193E250054E950 /* AYForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB13F09219193E250054E950 /* AYForgotPasswordView.xib */; };
+		CB275B6C191B37C100EC9964 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB275B6B191B37C100EC9964 /* Device.m */; };
 		CB634098191946CC00CA2915 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB634097191946CC00CA2915 /* GoogleMaps.framework */; };
 		CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6340991919470500CA2915 /* GoogleMaps.bundle */; };
 		CB63409C1919476B00CA2915 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63409B1919476B00CA2915 /* AVFoundation.framework */; };
@@ -103,6 +103,8 @@
 		CB6340AE191947D400CA2915 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6340AD191947D400CA2915 /* OpenGLES.framework */; };
 		CB6340B0191947DC00CA2915 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6340AF191947DC00CA2915 /* QuartzCore.framework */; };
 		CB6340B2191947E900CA2915 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6340B1191947E900CA2915 /* SystemConfiguration.framework */; };
+		CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F58191BE3E800E36537 /* AYMapInfoView.m */; };
+		CB773F5B191BE3FB00E36537 /* AYMapInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB773F5A191BE3FB00E36537 /* AYMapInfoView.xib */; };
 		CBCD615C1918044900846E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615B1918044900846E8C /* Foundation.framework */; };
 		CBCD615E1918044900846E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615D1918044900846E8C /* CoreGraphics.framework */; };
 		CBCD61601918044900846E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615F1918044900846E8C /* UIKit.framework */; };
@@ -142,8 +144,6 @@
 		CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCoreDataManager.m; sourceTree = "<group>"; };
 		CB0C6CE7191AB3FF00E02D9A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CB0C6CE8191AB3FF00E02D9A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		CB0C6CEA191AB3FF00E02D9A /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		CB0C6CEB191AB3FF00E02D9A /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		CB12484C1918879D009DA54C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		CB12484D1918879D009DA54C /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		CB12484E1918879D009DA54C /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
@@ -221,6 +221,8 @@
 		CB13F08F19193E120054E950 /* AYForgotPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYForgotPasswordView.h; sourceTree = "<group>"; };
 		CB13F09019193E120054E950 /* AYForgotPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYForgotPasswordView.m; sourceTree = "<group>"; };
 		CB13F09219193E250054E950 /* AYForgotPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYForgotPasswordView.xib; sourceTree = "<group>"; };
+		CB275B6A191B37C100EC9964 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		CB275B6B191B37C100EC9964 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		CB634097191946CC00CA2915 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		CB6340991919470500CA2915 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		CB63409B1919476B00CA2915 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -236,6 +238,9 @@
 		CB6340AF191947DC00CA2915 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB6340B1191947E900CA2915 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CB6340B3191949A400CA2915 /* AYConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYConstants.h; sourceTree = "<group>"; };
+		CB773F57191BE3E800E36537 /* AYMapInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMapInfoView.h; sourceTree = "<group>"; };
+		CB773F58191BE3E800E36537 /* AYMapInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMapInfoView.m; sourceTree = "<group>"; };
+		CB773F5A191BE3FB00E36537 /* AYMapInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYMapInfoView.xib; sourceTree = "<group>"; };
 		CBCD61581918044900846E8C /* DelfinoMagnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelfinoMagnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCD615B1918044900846E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CBCD615D1918044900846E8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -336,10 +341,10 @@
 		CB0C6CE5191AB0D800E02D9A /* ModelFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CB0C6CEA191AB3FF00E02D9A /* Device.h */,
-				CB0C6CEB191AB3FF00E02D9A /* Device.m */,
 				CB0C6CE7191AB3FF00E02D9A /* User.h */,
 				CB0C6CE8191AB3FF00E02D9A /* User.m */,
+				CB275B6A191B37C100EC9964 /* Device.h */,
+				CB275B6B191B37C100EC9964 /* Device.m */,
 			);
 			path = ModelFiles;
 			sourceTree = "<group>";
@@ -352,6 +357,16 @@
 				CB13F09219193E250054E950 /* AYForgotPasswordView.xib */,
 			);
 			path = ForgotPasswordView;
+			sourceTree = "<group>";
+		};
+		CB773F56191BE3D000E36537 /* MapInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				CB773F57191BE3E800E36537 /* AYMapInfoView.h */,
+				CB773F58191BE3E800E36537 /* AYMapInfoView.m */,
+				CB773F5A191BE3FB00E36537 /* AYMapInfoView.xib */,
+			);
+			path = MapInfoView;
 			sourceTree = "<group>";
 		};
 		CBCD614F1918044900846E8C = {
@@ -482,6 +497,7 @@
 		CBCD61901918085E00846E8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB773F56191BE3D000E36537 /* MapInfoView */,
 				CB13F08E19193DF70054E950 /* ForgotPasswordView */,
 			);
 			path = Views;
@@ -764,6 +780,7 @@
 				CB1248A91918879D009DA54C /* burbuja_land.png in Resources */,
 				CB1248CE1918879D009DA54C /* menu_vacio.png in Resources */,
 				CB1248A31918879D009DA54C /* btn_disponible.png in Resources */,
+				CB773F5B191BE3FB00E36537 /* AYMapInfoView.xib in Resources */,
 				CB1248A01918879D009DA54C /* blank_pressed.png in Resources */,
 				CB1248D61918879D009DA54C /* reservar_off.png in Resources */,
 				CB1248BE1918879D009DA54C /* foto_pressed.png in Resources */,
@@ -788,13 +805,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0C6CE9191AB3FF00E02D9A /* User.m in Sources */,
+				CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */,
 				CBCD619F1918090900846E8C /* AYLoginViewController.m in Sources */,
 				CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */,
 				CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */,
 				CBCD61681918044900846E8C /* main.m in Sources */,
 				CBCD61921918085E00846E8C /* AYAppDelegate.m in Sources */,
 				CB0C6CD7191A95B600E02D9A /* AYNetworkManager.m in Sources */,
-				CB0C6CEC191AB3FF00E02D9A /* Device.m in Sources */,
+				CB275B6C191B37C100EC9964 /* Device.m in Sources */,
 				CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */,
 				CBCD61A51918092F00846E8C /* AYHomeViewController.m in Sources */,
 				CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */,

@@ -6,7 +6,10 @@
 //  Copyright (c) 2014 Delfino. All rights reserved.
 //
 
+
 #import "LTCoreDataManager.h"
+#import "Device.h"
+#import "User.h"
 
 @interface LTCoreDataManager () {
 }
@@ -49,6 +52,106 @@ static LTCoreDataManager *sharedSingletonObject = nil;
 - (void)awakeFromInsert
 {
     [super awakeFromInsert];
+}
+
+#pragma mark - Public Methods to call
+- (void)insertDevicesResultIntoDBFromRawResponse:(NSDictionary *)rawResponse
+{
+    NSArray *rawDevices = [rawResponse objectForKey:@"devices"];
+    
+    if (rawDevices) {
+        [self insertDevicesIntoDBFromRawArray:rawDevices];
+    }
+}
+
+#pragma mark - Private Methods
+/*
+ * deviceId;
+ @property (nonatomic, retain) NSString * titulo;
+ @property (nonatomic, retain) NSString * zona;
+ @property (nonatomic, retain) NSString * tipo;
+ @property (nonatomic, retain) NSString * disponible;
+ @property (nonatomic, retain) NSString * fechaalta;
+ @property (nonatomic, retain) NSString * fechamodif;
+ @property (nonatomic, retain) NSString * orden;
+ @property (nonatomic, retain) NSString * latitude;
+ @property (nonatomic, retain) NSString * longitude;
+ @property (nonatomic, retain) NSString * htmldescripcion;
+ */
+- (void)insertDevicesIntoDBFromRawArray:(NSArray *)rawDevices
+{
+    for (NSDictionary *deviceDetails in rawDevices) {
+        
+        NSString *deviceId = [deviceDetails objectForKey:@"id"];
+        if (!deviceId) {
+            continue;
+        }
+        
+      Device *device = [[self getRecordsFromEntity:kDevicesEntityName forAttribute:@"deviceId" withKey:deviceId] lastObject];
+        
+        if (!device) {
+            device = [NSEntityDescription insertNewObjectForEntityForName:kDevicesEntityName
+                                                   inManagedObjectContext:self.managedObjectContext];
+
+        }
+        
+        NSString * titulo = [deviceDetails objectForKey:@"titulo"];
+        NSString * zona = [deviceDetails objectForKey:@"zona"];
+
+        NSString * tipo = [deviceDetails objectForKey:@"tipo"];
+        NSString * disponible = [deviceDetails objectForKey:@"disponible"];
+        NSString * fechaalta = [deviceDetails objectForKey:@"fechaalta"];
+        NSString * fechamodif = [deviceDetails objectForKey:@"fechamodif"];
+        NSString * orden = [deviceDetails objectForKey:@"orden"];
+        NSString * latitude = nil;
+        NSString * longitude = nil;
+        NSString * htmldescripcion = nil;
+        NSString * deviceDescription = nil;
+        
+        NSDictionary *data = [deviceDetails valueForKeyPath:@"data"];
+        
+        if (data) {
+            latitude = [data valueForKeyPath:@"geopos.lat"];
+            longitude = [data valueForKeyPath:@"geopos.long"];
+            htmldescripcion = [data objectForKey:@"htmldescripcion"];
+            deviceDescription = [data objectForKey:@"descripcion"];
+        }
+        
+        if (titulo)
+            [device setTitulo:titulo];
+     
+        if (zona)
+            [device setZona:zona];
+        
+        if (tipo)
+            [device setTipo:tipo];
+        
+        if (disponible)
+            [device setDisponible:disponible];
+        
+        if (fechaalta)
+            [device setFechaalta:fechaalta];
+        
+        if (fechamodif)
+            [device setFechamodif:fechamodif];
+        
+        if (orden)
+            [device setOrden:orden];
+        
+        if (latitude)
+            [device setLatitude:latitude];
+        
+        if (longitude)
+            [device setLongitude:longitude];
+        
+        if (htmldescripcion)
+            [device setHtmldescripcion:htmldescripcion];
+        
+        if (deviceDescription)
+            [device setDevicedescription:deviceDescription];
+    }
+    
+    [self saveContext];
 }
 
 #pragma mark -coreData Operational Methods

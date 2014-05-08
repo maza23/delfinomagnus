@@ -87,15 +87,16 @@ static AYNetworkManager *sharedManager = nil;
 
 - (NSURLRequest *)getURLRequestToGetDevicesWithFilter:(NSString *)filter andDateString:(NSString *)dateString
 {//action=listdevices&filter=fechamodif&data=2013-03-02&username=pablom&password=pablom
-    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
-    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
-
-    NSString *postString = [NSString stringWithFormat:@"action=listdevices&filter=%@&data=%@&username=%@&password=%@", filter, dateString, userName, password];
-    
+//    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+//    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+//    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+//
+//    NSString *postString = [NSString stringWithFormat:@"action=listdevices&filter=%@&data=%@&username=%@&password=%@", filter, dateString, userName, password];
+//
+    NSString *urlString = @"http://localhost/deviceListJSON.json";
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
     [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField: @"Content-Type"];
-    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    //[request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     return request;
 }
 

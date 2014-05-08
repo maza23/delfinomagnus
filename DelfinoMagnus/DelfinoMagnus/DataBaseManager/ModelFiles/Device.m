@@ -12,15 +12,16 @@
 @implementation Device
 
 @dynamic deviceId;
-@dynamic titulo;
-@dynamic zona;
-@dynamic tipo;
 @dynamic disponible;
 @dynamic fechaalta;
 @dynamic fechamodif;
-@dynamic orden;
+@dynamic htmldescripcion;
 @dynamic latitude;
 @dynamic longitude;
-@dynamic htmldescripcion;
+@dynamic orden;
+@dynamic tipo;
+@dynamic titulo;
+@dynamic zona;
+@dynamic devicedescription;
 
 @end

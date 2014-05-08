@@ -8,10 +8,12 @@
 
 #import "AYHomeViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "Device.h"
+#import "AYMapInfoView.h"
 
 @interface AYHomeViewController () <GMSMapViewDelegate>
 @property (strong, nonatomic) GMSMapView *mapView;
-
+@property (strong, nonatomic) NSArray *devices;
 @end
 
 @implementation AYHomeViewController
@@ -47,8 +49,8 @@
     latidudeString = [[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"];
     longitudeString = [[NSUserDefaults standardUserDefaults] objectForKey:@"longitude"];
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[latidudeString floatValue]
-                                                            longitude:[longitudeString floatValue]
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-34.62445030861076//[latidudeString floatValue]
+                                                            longitude:-58.43372583389282//[longitudeString floatValue]
                                                                  zoom:15.0];
     GMSMapView *googleMapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     [googleMapView setDelegate:self];
@@ -72,14 +74,18 @@
     self.mapView = googleMapView;
 }
 
-- (void)showMapWithLocations:(NSArray *)storeDetails
+- (void)showMapWithMarkerDevices:(NSArray *)devicesList withToDo:(BOOL)showToDo
 {
+    [self.mapView clear];
     
-    for (NSDictionary *store in storeDetails) {
-        // Creates a marker in the center of the map.
+    for (Device *device in devicesList) {
         
-        float latitude = [[store objectForKey:@"latitude"] floatValue];
-        float longitude = [[store objectForKey:@"logitude"] floatValue];
+        if ((![device.disponible isEqualToString:@"SI"]) && !showToDo) {
+            continue;
+        }
+        
+        float latitude = [device.latitude floatValue];
+        float longitude = [device.longitude floatValue];
         
         if (latitude == 0 || longitude == 0) {
             continue;
@@ -87,9 +93,8 @@
         
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake(latitude, longitude);
-        marker.icon = [UIImage imageNamed:@"marker_icon.png"];
-        marker.title = [store objectForKey:@"name"];
-        marker.snippet = [store objectForKey:@"address"];
+        marker.icon = [UIImage imageNamed:@"mediawall_icon.png"];
+        marker.title = [NSString stringWithFormat:@"%d", [devicesList indexOfObject:device]];
         marker.map = self.mapView;
     }
 }
@@ -99,14 +104,25 @@
     [[AYNetworkManager sharedInstance] getDevicesListWithFilter:@"fechamodif" andDateString:@"2013-03-02" withCompletionHandler:^(id result) {
        
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (result) {
-                
+          
+            if (result && [result isKindOfClass:[NSDictionary class]]) {
+                [[LTCoreDataManager sharedInstance] insertDevicesResultIntoDBFromRawResponse:result];
+                [self fetchAndLoadMarkersFromDataBase];
             }
             
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         });
 
     }];
+}
+
+- (void)fetchAndLoadMarkersFromDataBase
+{
+    self.devices = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kDevicesEntityName];
+    
+    if ([self.devices count]) {
+        [self showMapWithMarkerDevices:self.devices withToDo:NO];
+    }
 }
 
 #pragma mark - IBAction Methods
@@ -118,27 +134,21 @@
 
 - (IBAction)actionToDoButtonPressed:(UIButton *)sender {
     [sender setSelected:![sender isSelected]];
+    
+    [self showMapWithMarkerDevices:self.devices withToDo:[sender isSelected]];
+
 }
 
 #pragma mark - GoogleMapView Delegate Methods
-//- (UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker {
-//    LTMapInfoView *view =  [[[NSBundle mainBundle] loadNibNamed:@"LTMapInfoView" owner:self options:nil] objectAtIndex:0];
-//    
-//    self.currentActiveStorePhoneNumbers = [view showStoreInfoAndReturnPhoneNumberFromObject:[self.storesArray objectAtIndex:[marker.snippet integerValue]]];
-//    
-//    return view;
-//}
-//
-//- (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
-//    
-//    self.popUpView = [LTPopUpView getPopViewWithType:LTPopUpViewTypeMoreInfo andOwner:self];
-//    [self.popUpView setDelegate:self];
-//    //[self.popUpView showDetailsFromUserInfo:@{@"HeaderTitle" : @"Llamar al establecimiento", @"Message": self.currentActiveStorePhoneNumber}];
-//    
-//    UIViewController *rootVC = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-//    [self.popUpView setFrame:rootVC.view.bounds];
-//    [rootVC.view addSubview:self.popUpView];
-//    
-//}
+- (UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker {
+    AYMapInfoView *view =  [[[NSBundle mainBundle] loadNibNamed:@"AYMapInfoView" owner:self options:nil] objectAtIndex:0];
+    [view configureViewWithDeviceObject:self.devices[[marker.title integerValue]]];
+    
+    return view;
+}
+
+- (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
+    
+}
 
 @end

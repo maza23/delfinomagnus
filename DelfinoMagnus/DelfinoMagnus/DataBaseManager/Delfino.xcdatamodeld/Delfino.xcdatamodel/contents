@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Device" representedClassName="Device" syncable="YES">
+        <attribute name="devicedescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="disponible" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fechaalta" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,7 +31,7 @@
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Device" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

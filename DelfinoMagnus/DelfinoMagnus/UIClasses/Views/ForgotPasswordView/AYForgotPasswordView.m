@@ -10,6 +10,7 @@
 
 @interface AYForgotPasswordView ()
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldEmailId;
+@property (weak, nonatomic) IBOutlet UIButton *btnClose;
 
 @end
 
@@ -23,6 +24,13 @@
         // Initialization code
     }
     return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor yellowColor]] forState:UIControlStateNormal];
+
 }
 
 

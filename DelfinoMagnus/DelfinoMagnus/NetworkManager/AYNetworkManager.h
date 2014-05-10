@@ -17,4 +17,6 @@ typedef void (^IDCompletionBlock) (id result);
 - (void)loginWithUsername:(NSString *)usernName password:(NSString *)password withCompletionHandler:(IDCompletionBlock)completionBlock;
 
 - (void)getDevicesListWithFilter:(NSString *)filter andDateString:(NSString *)dateString withCompletionHandler:(IDCompletionBlock)completionBlock;
+
+- (void)getFavoritesListWithCompletionBlock:(IDCompletionBlock)completionBlock;
 @end

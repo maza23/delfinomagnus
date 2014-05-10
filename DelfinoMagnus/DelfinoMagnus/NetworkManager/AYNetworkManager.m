@@ -67,38 +67,61 @@ static AYNetworkManager *sharedManager = nil;
         NSURLRequest *request = [self getURLRequestToGetDevicesWithFilter:filter andDateString:dateString];
         [self getDataForURLRequest:request withCompletionBlock:completionBlock];
     }];
-
 }
 
+- (void)getFavoritesListWithCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestToGetFavoritesList];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
 
 #pragma mark - Private Methods
 - (NSURLRequest *)getURLRequestUserLoginWithUserName:(NSString *)userName andPassword:(NSString *)password
 {
-//    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
-//
-//    NSString *postString = [NSString stringWithFormat:@"action=userlogin&username=%@&password=%@&id=%@", userName, password, kGoogleId];
+    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+
+    NSString *postString = [NSString stringWithFormat:@"action=userlogin&username=%@&password=%@&regid=%@", userName, password, kGoogleId];
     
-    NSString *urlString = @"http://localhost/userDetails.json";
+  //  NSString *urlString = @"http://localhost/userDetails.json";
 
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
     
-   // [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     return request;
 }
 
 
 - (NSURLRequest *)getURLRequestToGetDevicesWithFilter:(NSString *)filter andDateString:(NSString *)dateString
 {//action=listdevices&filter=fechamodif&data=2013-03-02&username=pablom&password=pablom
-//    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
-//    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-//    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
-//
-//    NSString *postString = [NSString stringWithFormat:@"action=listdevices&filter=%@&data=%@&username=%@&password=%@", filter, dateString, userName, password];
-//
-    NSString *urlString = @"http://localhost/deviceListJSON.json";
+    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+
+    NSString *postString = [NSString stringWithFormat:@"action=listdevices&filter=%@&data=%@&username=%@&password=%@", filter, dateString, userName, password];
+
+   // NSString *urlString = @"http://localhost/deviceListJSON.json";
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
-    [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField: @"Content-Type"];
-    //[request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    return request;
+}
+
+- (NSURLRequest *)getURLRequestToGetFavoritesList
+{//action=listfav&username=pablom&password=pablom
+    
+        NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+        NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+        NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    
+        NSString *postString = [NSString stringWithFormat:@"action=listfav&username=%@&password=%@", userName, password];
+    
+    
+   // NSString *urlString = @"http://localhost/deviceListJSON.json";
+    NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+   
     return request;
 }
 
@@ -106,7 +129,8 @@ static AYNetworkManager *sharedManager = nil;
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
     //  [request addValue: @"text/html; charset=utf-8" forHTTPHeaderField: @"Content-Type"];
-    [request addValue: @"application/json" forHTTPHeaderField: @"Content-Type"];
+    //[request addValue: @"application/json" forHTTPHeaderField: @"Content-Type"];
+    [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField: @"Content-Type"];
     [request setTimeoutInterval:kMaxRequestTimeOutinterval];
     [request setHTTPMethod:httpMethod];
     return request;

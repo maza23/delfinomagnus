@@ -9,6 +9,7 @@
 
 #import "LTCoreDataManager.h"
 #import "Device.h"
+#import "FavoriteDevice.h"
 #import "User.h"
 
 @interface LTCoreDataManager () {
@@ -169,6 +170,36 @@ static LTCoreDataManager *sharedSingletonObject = nil;
     [self saveContext];
 }
 
+- (void)insertFavoritesListIntoDBFromRawResponse:(NSArray *)devicesList
+{
+    for (NSDictionary *rawDevice in devicesList) {
+        
+        NSString *deviceId = [rawDevice objectForKey:@"id"];
+        
+        if (!deviceId) {
+            continue;
+        }
+        
+        FavoriteDevice *device = [[self getRecordsFromEntity:kFavortiesEntityName forAttribute:@"deviceId" withKey:deviceId] lastObject];
+        
+        if (!device) {
+            device = [NSEntityDescription insertNewObjectForEntityForName:kFavortiesEntityName
+                                                   inManagedObjectContext:self.managedObjectContext];
+            
+            device.deviceId = deviceId;
+            
+        }
+        
+        NSString *fechaalta = [rawDevice objectForKey:@"fechaalta"];
+        
+        if (fechaalta) {
+            device.fechaalta = fechaalta;
+        }
+    }
+    
+    [self saveContext];
+}
+
 
 #pragma mark - Private Methods
 /*
@@ -198,6 +229,7 @@ static LTCoreDataManager *sharedSingletonObject = nil;
         if (!device) {
             device = [NSEntityDescription insertNewObjectForEntityForName:kDevicesEntityName
                                                    inManagedObjectContext:self.managedObjectContext];
+            [device setDeviceId:deviceId];
 
         }
         

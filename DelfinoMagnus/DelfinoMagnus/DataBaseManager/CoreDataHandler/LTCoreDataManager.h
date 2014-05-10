@@ -8,6 +8,7 @@
 
 #define kDevicesEntityName  @"Device"
 #define kUserEntityName     @"User"
+#define kFavortiesEntityName @"FavoriteDevice"
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
@@ -22,7 +23,7 @@
 //Methods to call
 - (void)insertDevicesResultIntoDBFromRawResponse:(NSDictionary *)rawResponse;
 - (void)insertUserDetailsIntoDBFromRawResponse:(NSDictionary *)rawResponse;
-
+- (void)insertFavoritesListIntoDBFromRawResponse:(NSArray *)devicesList;
 
 //Data base INternal Methods
 - (BOOL)saveContext;

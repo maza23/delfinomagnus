@@ -8,6 +8,7 @@
 
 #import "AYMenuView.h"
 #import "AYUserProfileView.h"
+#import "AYFavoritesView.h"
 
 @interface AYMenuView ()
 @property (weak, nonatomic) IBOutlet UIButton *btnClose;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewLogOutContainerView;
 
 @property (strong, nonatomic) AYUserProfileView *profileView;
+@property (strong, nonatomic) AYFavoritesView *favoritesView;
 
 @end
 
@@ -66,7 +68,9 @@
         case 1:
             [self loadUserProfileView];
             break;
-            
+        case 2:
+            [self loadUserFavoritesView];
+            break;
         default:
             break;
     }
@@ -77,6 +81,13 @@
     self.profileView = [[[NSBundle mainBundle] loadNibNamed:@"AYUserProfileView" owner:self options:nil] lastObject];
     [self.profileView setFrame:self.bounds];
     [self addSubview:_profileView];
+}
+
+- (void)loadUserFavoritesView
+{
+    self.favoritesView = [[[NSBundle mainBundle] loadNibNamed:@"AYFavoritesView" owner:self options:nil] lastObject];
+    [self.favoritesView setFrame:self.bounds];
+    [self addSubview:_favoritesView];
 }
 
 #pragma mark - IBAction Methods

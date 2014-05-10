@@ -124,6 +124,9 @@
 		CBCD61A01918090900846E8C /* AYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBCD619E1918090900846E8C /* AYLoginViewController.xib */; };
 		CBCD61A51918092F00846E8C /* AYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCD61A31918092F00846E8C /* AYHomeViewController.m */; };
 		CBCD61A61918092F00846E8C /* AYHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBCD61A41918092F00846E8C /* AYHomeViewController.xib */; };
+		CBF9B5D4191E0E6D005DC1A0 /* AYSearchSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */; };
+		CBFE3AF9191D4AEF00A74C2D /* AYSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */; };
+		CBFE3AFB191D4AFF00A74C2D /* AYSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +274,11 @@
 		CBCD61A21918092F00846E8C /* AYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYHomeViewController.h; sourceTree = "<group>"; };
 		CBCD61A31918092F00846E8C /* AYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYHomeViewController.m; sourceTree = "<group>"; };
 		CBCD61A41918092F00846E8C /* AYHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYHomeViewController.xib; sourceTree = "<group>"; };
+		CBF9B5D2191E0E6D005DC1A0 /* AYSearchSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchSettings.h; sourceTree = "<group>"; };
+		CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchSettings.m; sourceTree = "<group>"; };
+		CBFE3AF7191D4AEF00A74C2D /* AYSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchView.h; sourceTree = "<group>"; };
+		CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchView.m; sourceTree = "<group>"; };
+		CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYSearchView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +533,7 @@
 		CBCD61901918085E00846E8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CBFE3AF6191D4ADE00A74C2D /* SearchView */,
 				CB773F5C191BFF5000E36537 /* MenuView */,
 				CB773F56191BE3D000E36537 /* MapInfoView */,
 				CB13F08E19193DF70054E950 /* ForgotPasswordView */,
@@ -658,6 +667,18 @@
 			path = HomeViewController;
 			sourceTree = "<group>";
 		};
+		CBFE3AF6191D4ADE00A74C2D /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				CBFE3AF7191D4AEF00A74C2D /* AYSearchView.h */,
+				CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */,
+				CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */,
+				CBF9B5D2191E0E6D005DC1A0 /* AYSearchSettings.h */,
+				CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -782,6 +803,7 @@
 				CBCD616E1918044900846E8C /* Images.xcassets in Resources */,
 				CB1248C41918879D009DA54C /* ic_launcher.png in Resources */,
 				CB1248BD1918879D009DA54C /* foto_normal.png in Resources */,
+				CBFE3AFB191D4AFF00A74C2D /* AYSearchView.xib in Resources */,
 				CB1248B51918879D009DA54C /* disponible.png in Resources */,
 				CB1248A21918879D009DA54C /* btn_busqueda.png in Resources */,
 				CB13F09319193E250054E950 /* AYForgotPasswordView.xib in Resources */,
@@ -835,6 +857,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0C6CE9191AB3FF00E02D9A /* User.m in Sources */,
+				CBFE3AF9191D4AEF00A74C2D /* AYSearchView.m in Sources */,
 				CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */,
 				CBCD619F1918090900846E8C /* AYLoginViewController.m in Sources */,
 				CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */,
@@ -847,6 +870,7 @@
 				CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */,
 				CBCD61A51918092F00846E8C /* AYHomeViewController.m in Sources */,
 				CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */,
+				CBF9B5D4191E0E6D005DC1A0 /* AYSearchSettings.m in Sources */,
 				CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

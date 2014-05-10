@@ -61,25 +61,25 @@
 
 - (void)startLoginToServer
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    [[AYNetworkManager sharedInstance]  loginWithUsername:self.txtFieldUserName.text password:self.txtFieldPassword.text withCompletionHandler:^(id result) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (result && [result isKindOfClass:[NSDictionary class]]) {
-                
-                if (![[result objectForKey:@"msgerr"] isEqualToString:@"success"]) {
-                    
+//    [[AYNetworkManager sharedInstance]  loginWithUsername:self.txtFieldUserName.text password:self.txtFieldPassword.text withCompletionHandler:^(id result) {
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            if (result && [result isKindOfClass:[NSDictionary class]]) {
+//                
+//                if (![[result objectForKey:@"msgerr"] isEqualToString:@"success"]) {
+    
                     if ([self.delegate respondsToSelector:@selector(didUserLoggedInSuccessfully)]) {
                         [self.delegate didUserLoggedInSuccessfully];
                     }
-                    
-                } ;
-            }
-            
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        });
-    }];
+//                    
+//                } ;
+//            }
+//            
+//            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//        });
+//    }];
 }
 
 #pragma mark - IBAction Methods

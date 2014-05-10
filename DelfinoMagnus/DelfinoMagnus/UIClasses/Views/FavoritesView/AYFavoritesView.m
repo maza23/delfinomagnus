@@ -167,7 +167,7 @@
             [self.expandedTipoArray removeObject:title];
             
             NSMutableArray *indexPathsToRemove = [[NSMutableArray alloc] initWithCapacity:0];
-            for (int index = [indexPath row] + 1; index < ([indexPath row] + [devices count]); index ++) {
+            for (int index = [indexPath row] + 1; index <= ([indexPath row] + [devices count]); index ++) {
                 [indexPathsToRemove addObject:[NSIndexPath indexPathForRow:index inSection:0]];
             }
 
@@ -182,7 +182,7 @@
             [self.favoriteDevices insertObjects:devices atIndexes:indexSet];
             
             NSMutableArray *indexPathsToRemove = [[NSMutableArray alloc] initWithCapacity:0];
-            for (int index = [indexPath row] + 1; index < ([indexPath row] + [devices count]); index ++) {
+            for (int index = [indexPath row] + 1; index <= ([indexPath row] + [devices count]); index ++) {
                 [indexPathsToRemove addObject:[NSIndexPath indexPathForRow:index inSection:0]];
             }
             

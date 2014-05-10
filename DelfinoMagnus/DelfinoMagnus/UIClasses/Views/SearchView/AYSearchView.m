@@ -53,6 +53,20 @@ typedef enum
     [self doInitialConfigurations];
 }
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    CGRect scrollViewFrame = frame;
+    scrollViewFrame.origin.y = 40;
+    scrollViewFrame.size.height -= 40;
+    [self.scrollViewMainContainer setFrame:scrollViewFrame];
+    [self.scrollViewMainContainer setContentSize:CGSizeMake(frame.size.width, 1024)];
+    NSLog(@"ScrollView Frame is:%@ andContentSize is:%@", NSStringFromCGRect(self.scrollViewMainContainer.frame), NSStringFromCGSize(self.scrollViewMainContainer.contentSize));
+   // [self layoutIfNeeded];
+    NSLog(@"ScrollView Frame is:%@ andContentSize is:%@", NSStringFromCGRect(self.scrollViewMainContainer.frame), NSStringFromCGSize(self.scrollViewMainContainer.contentSize));
+
+}
+
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {

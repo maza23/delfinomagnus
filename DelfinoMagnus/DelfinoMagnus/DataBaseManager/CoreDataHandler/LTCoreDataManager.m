@@ -64,6 +64,112 @@ static LTCoreDataManager *sharedSingletonObject = nil;
     }
 }
 
+/*
+ @property (nonatomic, retain) NSString * userId;
+ @property (nonatomic, retain) NSString * regId;
+ @property (nonatomic, retain) NSString * nombre;
+ @property (nonatomic, retain) NSString * apellido;
+ @property (nonatomic, retain) NSString * email;
+ @property (nonatomic, retain) NSString * actividad;
+ @property (nonatomic, retain) NSString * empresa;
+ @property (nonatomic, retain) NSString * direccion;
+ @property (nonatomic, retain) NSString * tel;
+ @property (nonatomic, retain) NSString * image_file;
+ @property (nonatomic, retain) NSString * image_width;
+ @property (nonatomic, retain) NSString * image_height;
+ @property (nonatomic, retain) NSString * fechamodif;
+ @property (nonatomic, retain) NSString * urlimgs;
+
+ {
+ actividad = Programmer;
+ apellido = Mazaeda;
+ data =         {
+ imagen =             {
+ file = "img139769409466420140416212153.jpg";
+ height = 1600;
+ width = 1200;
+ };
+ };
+ direccion = "No s\U00e9 por ah\U00ed.";
+ email = "nose@gmail.com";
+ empresa = Insotec;
+ fechamodif = "2014-05-09 09:48:48";
+ id = 3;
+ nombre = Pablo;
+ regid = "APA91bFahcYOiFBCN1dgJipHWGDdMd_Y-wyJR-IuR_9HPuDCrRoYZS0klTvWEwASYHzITzLhhlqIkDG2f69-CnEmVzlEYIIbHlKneVsxBAKUkq2kLT3Zzc9MLmn0ANPPJlFRFzFM60ogZHO1nGSkERn4Cw1_kp3f3Q";
+ tel = "<null>";
+ urlimgs = "http://delfinomagnus.com/frontend/imgs/appusers";
+ }
+ */
+- (void)insertUserDetailsIntoDBFromRawResponse:(NSDictionary *)rawResponse
+{
+    NSString *userId = [rawResponse objectForKey:@"id"];
+    User *user = [[self getRecordsFromEntity:kUserEntityName forAttribute:@"userId" withKey:userId] lastObject];
+    
+    if (!user) {
+        user = [NSEntityDescription insertNewObjectForEntityForName:kUserEntityName
+                                               inManagedObjectContext:self.managedObjectContext];
+        
+    }
+    
+    NSString *regId = [rawResponse objectForKey:@"regid"];
+    NSString *nombre = [rawResponse objectForKey:@"nombre"];
+    NSString *apellido = [rawResponse objectForKey:@"apellido"];
+    NSString *email = [rawResponse objectForKey:@"email"];
+    NSString *actividad = [rawResponse objectForKey:@"actividad"];
+    NSString *empresa = [rawResponse objectForKey:@"empresa"];
+    NSString *direccion = [rawResponse objectForKey:@"direccion"];
+    NSString *tel = [rawResponse objectForKey:@"tel"];
+    NSString *image_file = [rawResponse valueForKeyPath:@"data.imagen.file"];
+    NSString *image_width = [rawResponse valueForKeyPath:@"data.imagen.height"];
+    NSString *image_height = [rawResponse valueForKeyPath:@"data.imagen.width"];
+    NSString *fechamodif = [rawResponse objectForKey:@"fechamodif"];
+    NSString *urlimgs = [rawResponse objectForKey:@"urlimgs"];
+    
+    if (regId && ![regId isKindOfClass:[NSNull class]])
+        user.regId = regId;
+
+    if (nombre && ![nombre isKindOfClass:[NSNull class]])
+        user.nombre = nombre;
+
+    if (apellido && ![apellido isKindOfClass:[NSNull class]])
+        user.apellido = apellido;
+
+    if (email && ![email isKindOfClass:[NSNull class]])
+        user.email = email;
+
+    if (actividad && ![actividad isKindOfClass:[NSNull class]])
+        user.actividad = actividad;
+
+    if (empresa && ![empresa isKindOfClass:[NSNull class]])
+        user.empresa = empresa;
+
+    if (direccion && ![direccion isKindOfClass:[NSNull class]])
+        user.direccion = direccion;
+
+    if (tel && ![tel isKindOfClass:[NSNull class]])
+        user.tel = tel;
+
+    if (image_file && ![image_file isKindOfClass:[NSNull class]])
+        user.image_file = image_file;
+
+    if (image_width && ![image_width isKindOfClass:[NSNull class]])
+        user.image_width = [NSString stringWithFormat:@"%@", image_width];
+
+    if (image_height && ![image_height isKindOfClass:[NSNull class]])
+        user.image_height = [NSString stringWithFormat:@"%@", image_height];
+
+    if (fechamodif && ![fechamodif isKindOfClass:[NSNull class]])
+        user.fechamodif = fechamodif;
+    
+    if (urlimgs && ![urlimgs isKindOfClass:[NSNull class]])
+        user.urlimgs = urlimgs;
+    
+    
+    [self saveContext];
+}
+
+
 #pragma mark - Private Methods
 /*
  * deviceId;

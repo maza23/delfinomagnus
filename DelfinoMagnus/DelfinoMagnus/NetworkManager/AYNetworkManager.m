@@ -74,13 +74,15 @@ static AYNetworkManager *sharedManager = nil;
 #pragma mark - Private Methods
 - (NSURLRequest *)getURLRequestUserLoginWithUserName:(NSString *)userName andPassword:(NSString *)password
 {
-    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
-
-    NSString *postString = [NSString stringWithFormat:@"action=userlogin&username=%@&password=%@&id=%@", userName, password, kGoogleId];
+//    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+//
+//    NSString *postString = [NSString stringWithFormat:@"action=userlogin&username=%@&password=%@&id=%@", userName, password, kGoogleId];
     
+    NSString *urlString = @"http://localhost/userDetails.json";
+
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
     
-    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+   // [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
     return request;
 }
 

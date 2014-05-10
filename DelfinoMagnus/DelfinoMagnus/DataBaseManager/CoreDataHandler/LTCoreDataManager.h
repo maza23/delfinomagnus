@@ -19,6 +19,12 @@
 
 + (LTCoreDataManager *)sharedInstance;
 
+//Methods to call
+- (void)insertDevicesResultIntoDBFromRawResponse:(NSDictionary *)rawResponse;
+- (void)insertUserDetailsIntoDBFromRawResponse:(NSDictionary *)rawResponse;
+
+
+//Data base INternal Methods
 - (BOOL)saveContext;
 - (BOOL)insertToEntity:(NSString*)entityName withDetails:(NSDictionary *)details;
 
@@ -33,6 +39,4 @@
 - (BOOL)updateEntity:(NSString *)entityName setDetails:(NSDictionary *)details whereAttribute:(NSString *)attributeName isEqualToValue:(id)key;
 
 
-//Methods to call
-- (void)insertDevicesResultIntoDBFromRawResponse:(NSDictionary *)rawResponse;
 @end

@@ -24,7 +24,7 @@
                         <action selector="actionCloseButtonPressed:" destination="1" eventType="touchUpInside" id="s06-Mp-mNd"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpV-Ez-5wg">
+                <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpV-Ez-5wg">
                     <rect key="frame" x="10" y="44" width="280" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -47,7 +47,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ku-5Q-fjL">
+                <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ku-5Q-fjL">
                     <rect key="frame" x="10" y="154" width="280" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -70,7 +70,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0m-MD-DxV">
+                <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0m-MD-DxV">
                     <rect key="frame" x="10" y="259" width="280" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -93,7 +93,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPK-ym-Deu">
+                <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPK-ym-Deu">
                     <rect key="frame" x="10" y="372" width="280" height="110"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -126,6 +126,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btnClose" destination="97Q-mP-w7r" id="FLs-FJ-PPK"/>
+                <outlet property="viewBuscarContainerView" destination="r0m-MD-DxV" id="feA-e8-vZ0"/>
+                <outlet property="viewFavoritesContainerView" destination="0ku-5Q-fjL" id="E4w-o8-CqB"/>
+                <outlet property="viewLogOutContainerView" destination="uPK-ym-Deu" id="qBx-5f-eed"/>
+                <outlet property="viewProfileContainer" destination="gpV-Ez-5wg" id="kNv-Xk-4JW"/>
             </connections>
         </view>
     </objects>

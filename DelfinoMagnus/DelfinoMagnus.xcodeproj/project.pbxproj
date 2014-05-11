@@ -18,6 +18,7 @@
 		CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CDF191AB07C00E02D9A /* Delfino.xcdatamodeld */; };
 		CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CB0C6CE9191AB3FF00E02D9A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE8191AB3FF00E02D9A /* User.m */; };
+		CB10D499191FE4A900F987E6 /* ReservedDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CB10D498191FE4A900F987E6 /* ReservedDevice.m */; };
 		CB1248961918879D009DA54C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484C1918879D009DA54C /* back.png */; };
 		CB1248971918879D009DA54C /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484D1918879D009DA54C /* back2.png */; };
 		CB1248981918879D009DA54C /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484E1918879D009DA54C /* back3.png */; };
@@ -196,6 +197,8 @@
 		CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCoreDataManager.m; sourceTree = "<group>"; };
 		CB0C6CE7191AB3FF00E02D9A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CB0C6CE8191AB3FF00E02D9A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CB10D497191FE4A900F987E6 /* ReservedDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservedDevice.h; sourceTree = "<group>"; };
+		CB10D498191FE4A900F987E6 /* ReservedDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservedDevice.m; sourceTree = "<group>"; };
 		CB12484C1918879D009DA54C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		CB12484D1918879D009DA54C /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		CB12484E1918879D009DA54C /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
@@ -483,6 +486,8 @@
 				CB03F8C1191FB57E00B1DD9C /* Tipo.m */,
 				CB03F8BD191FB57D00B1DD9C /* Zona.h */,
 				CB03F8BE191FB57D00B1DD9C /* Zona.m */,
+				CB10D497191FE4A900F987E6 /* ReservedDevice.h */,
+				CB10D498191FE4A900F987E6 /* ReservedDevice.m */,
 			);
 			path = ModelFiles;
 			sourceTree = "<group>";
@@ -1117,6 +1122,7 @@
 				CBF9B60F191E9E27005DC1A0 /* AFURLResponseSerialization.m in Sources */,
 				CBF9B619191E9E27005DC1A0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				CB275B6C191B37C100EC9964 /* Device.m in Sources */,
+				CB10D499191FE4A900F987E6 /* ReservedDevice.m in Sources */,
 				CBF9B614191E9E27005DC1A0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */,
 				CBF9B615191E9E27005DC1A0 /* UIAlertView+AFNetworking.m in Sources */,

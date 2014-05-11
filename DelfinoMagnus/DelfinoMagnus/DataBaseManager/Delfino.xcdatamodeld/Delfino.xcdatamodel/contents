@@ -55,6 +55,10 @@
         <attribute name="width" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceDetails" inverseName="images" inverseEntity="DeviceDetails" syncable="YES"/>
     </entity>
+    <entity name="ReservedDevice" representedClassName="ReservedDevice" syncable="YES">
+        <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaalta" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Tipo" representedClassName="Tipo" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoId" optional="YES" attributeType="String" syncable="YES"/>
@@ -84,8 +88,9 @@
         <element name="DeviceDetails" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FavoriteDevice" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Images" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Tipo" positionX="0" positionY="0" width="0" height="0"/>
         <element name="User" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Zona" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Tipo" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ReservedDevice" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

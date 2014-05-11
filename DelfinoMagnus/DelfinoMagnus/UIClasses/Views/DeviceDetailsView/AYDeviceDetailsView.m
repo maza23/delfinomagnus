@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "Images.h"
 #import "Tipo.h"
+#import "ReservedDevice.h"
 
 @interface AYDeviceDetailsView ()
 @property (strong, nonatomic) Device *device;
@@ -64,11 +65,39 @@
     
     Tipo *tipos = [[[LTCoreDataManager sharedInstance] getRecordsFromEntity:kTipoEntityName forAttribute:@"tipoId" withKey:self.deviceDetails.tipo] lastObject];
     
+    
     [self.lblTitle setText:self.deviceDetails.titulo];
     [self.lblSubTitle setText:tipos.name];
+    [self.btnReservation setSelected:[self isCurrentDeviceAlreadyReserved]];
+    [self.btnFavorites setSelected:[self isCurrentDeviceAlreadyFavorite]];
     
     [self loadScrollViewWithImages];
-    NSLog(@"Got device with ID:%@ and title:%@", self.deviceDetails.deviceId, self.deviceDetails.titulo);
+}
+
+- (BOOL)isCurrentDeviceAlreadyReserved
+{
+    BOOL isRegitered = NO;
+    
+    NSArray *devices = [[LTCoreDataManager sharedInstance] getRecordsFromEntity:kReservedEntityName forAttribute:@"deviceId" withKey:self.deviceDetails.deviceId];
+    
+    if ([devices count]) {
+        isRegitered = YES;
+    }
+    
+    return isRegitered;
+}
+
+- (BOOL)isCurrentDeviceAlreadyFavorite
+{
+    BOOL isRegitered = NO;
+    
+    NSArray *devices = [[LTCoreDataManager sharedInstance] getRecordsFromEntity:kFavortiesEntityName forAttribute:@"deviceId" withKey:self.deviceDetails.deviceId];
+    
+    if ([devices count]) {
+        isRegitered = YES;
+    }
+    
+    return isRegitered;
 }
 
 - (void)getDeviceDetailsFromServer
@@ -168,6 +197,17 @@
     
 }
 
+- (void)showAlertWithMessage:(NSString *)message andTitle:(NSString *)title
+{
+    return;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+       
+        UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [alertView show];
+    });
+}
+
 #pragma mark - Public Methods
 - (void)loadDeviceDetailsWithDeviceObject:(Device *)deviceObject
 {
@@ -181,4 +221,94 @@
     [self removeFromSuperview];
 }
 
+- (IBAction)actionReservationButtonPressed:(UIButton *)sender {
+    
+    if (!self.deviceDetails.deviceId)
+        return;
+    
+    __weak __typeof(self)weakSelf = self;
+    
+    [sender setSelected:![sender isSelected]];
+    
+    if ([sender isSelected])  {
+        
+        [[AYNetworkManager sharedInstance] addResDeviceWithId:self.deviceDetails.deviceId andCompletionBlock:^(id result) {
+            
+            if (result && [result isKindOfClass:[NSDictionary class]]) {
+                
+                if ([[[result objectForKey:@"msgerr"] uppercaseString] isEqualToString:@"SUCCESS"]) {
+                    [[LTCoreDataManager sharedInstance] insertReservedListIntoDBFromRawArray:[result objectForKey:@"devices"]];
+                }
+            }
+            [weakSelf showAlertWithMessage:@"" andTitle:@""];
+        }];
+    }
+    else {
+        [[AYNetworkManager sharedInstance] removeResDeviceWithId:self.deviceDetails.deviceId andCompletionBlock:^(id result) {
+            
+            if (result && [result isKindOfClass:[NSDictionary class]]) {
+                
+                if ([[[result objectForKey:@"msgerr"] uppercaseString] isEqualToString:@"SUCCESS"]) {
+                    [[LTCoreDataManager sharedInstance] insertReservedListIntoDBFromRawArray:[result objectForKey:@"devices"]];
+                    [weakSelf showAlertWithMessage:@"" andTitle:@""];
+
+                }
+                else {
+                    [weakSelf showAlertWithMessage:@"" andTitle:@""];
+
+                }
+            }
+            else {
+                [weakSelf showAlertWithMessage:@"" andTitle:@""];
+
+            }
+        }];
+    }
+}
+
+- (IBAction)actionFavoriteButtonPressed:(UIButton *)sender {
+    if (!self.deviceDetails.deviceId)
+        return;
+    
+    __weak __typeof(self)weakSelf = self;
+    
+    [sender setSelected:![sender isSelected]];
+    
+    if ([sender isSelected])  {
+        
+        [[AYNetworkManager sharedInstance] addFavoritesDeviceWithId:self.deviceDetails.deviceId andCompletionBlock:^(id result) {
+           
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (result && [result isKindOfClass:[NSDictionary class]]) {
+                    
+                    if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"])
+                        [[LTCoreDataManager sharedInstance] insertFavoritesListIntoDBFromRawResponse:[result objectForKey:@"devices"]];
+                }
+            });
+            
+            [weakSelf showAlertWithMessage:@"" andTitle:@""];
+        }];
+    }
+    else {
+        [[AYNetworkManager sharedInstance] removeFavoritesDeviceWithId:self.deviceDetails.deviceId andCompletionBlock:^(id result) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                if (result && [result isKindOfClass:[NSDictionary class]]) {
+                    
+                    if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"])
+                        [[LTCoreDataManager sharedInstance] insertFavoritesListIntoDBFromRawResponse:[result objectForKey:@"devices"]];
+                }
+            });
+
+        }];
+    }
+}
+
+- (IBAction)actionPhotoButtonPressed:(id)sender {
+}
+
+- (IBAction)actionCalendarButtonPressed:(id)sender {
+}
 @end

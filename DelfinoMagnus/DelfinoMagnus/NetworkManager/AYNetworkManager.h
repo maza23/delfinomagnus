@@ -17,8 +17,16 @@ typedef void (^IDCompletionBlock) (id result);
 - (void)loginWithUsername:(NSString *)usernName password:(NSString *)password withCompletionHandler:(IDCompletionBlock)completionBlock;
 
 - (void)getDevicesListWithFilter:(NSString *)filter andDateString:(NSString *)dateString withCompletionHandler:(IDCompletionBlock)completionBlock;
+- (void)getDeviceDetailsWithDeviceId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
 
 - (void)getFavoritesListWithCompletionBlock:(IDCompletionBlock)completionBlock;
+- (void)getReservationListWithCompletionBlock:(IDCompletionBlock)completionBlock;
 
-- (void)getDeviceDetailsWithDeviceId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
+
+- (void)addFavoritesDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
+- (void)removeFavoritesDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
+
+- (void)addResDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
+- (void)removeResDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
+
 @end

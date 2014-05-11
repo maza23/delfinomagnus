@@ -73,7 +73,16 @@ static AYNetworkManager *sharedManager = nil;
 {
     [self.networkQueue addOperationWithBlock:^{
         
-        NSURLRequest *request = [self getURLRequestToGetFavoritesList];
+        NSURLRequest *request = [self getURLRequestToGetFavoritesAndReservationListWithAction:@"listfav"];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
+
+- (void)getReservationListWithCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestToGetFavoritesAndReservationListWithAction:@"listres"];
         [self getDataForURLRequest:request withCompletionBlock:completionBlock];
     }];
 }
@@ -83,6 +92,42 @@ static AYNetworkManager *sharedManager = nil;
     [self.networkQueue addOperationWithBlock:^{
         
         NSURLRequest *request = [self getURLRequestToGetDeviceDetailsWithDeviceId:deviceId];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
+
+- (void)addFavoritesDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestWithAction:@"addfav" andDeviceId:deviceId];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
+
+- (void)removeFavoritesDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestWithAction:@"delfav" andDeviceId:deviceId];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
+
+- (void)addResDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestWithAction:@"addres" andDeviceId:deviceId];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
+
+- (void)removeResDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestWithAction:@"delres" andDeviceId:deviceId];
         [self getDataForURLRequest:request withCompletionBlock:completionBlock];
     }];
 }
@@ -117,20 +162,19 @@ static AYNetworkManager *sharedManager = nil;
     return request;
 }
 
-- (NSURLRequest *)getURLRequestToGetFavoritesList
-{//action=listfav&username=pablom&password=pablom
+- (NSURLRequest *)getURLRequestToGetFavoritesAndReservationListWithAction:(NSString *)action
+{   //action=listfav&username=pablom&password=pablom
+    //action=listres&username=pablom&password=pablom
     
-        NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
-        NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-        NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     
-        NSString *postString = [NSString stringWithFormat:@"action=listfav&username=%@&password=%@", userName, password];
+    NSString *postString = [NSString stringWithFormat:@"action=%@&username=%@&password=%@", action, userName, password];
     
-    
-   // NSString *urlString = @"http://localhost/deviceListJSON.json";
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
-   
+    
     return request;
 }
 
@@ -142,6 +186,25 @@ static AYNetworkManager *sharedManager = nil;
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     
     NSString *postString = [NSString stringWithFormat:@"action=getdevice&data=%@&username=%@&password=%@", deviceId, userName, password];
+    
+    NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return request;
+}
+
+- (NSURLRequest *)getURLRequestWithAction:(NSString *)action andDeviceId:(NSString *)deviceId
+{
+    //action=addfav&data=1&username=pablom&password=pablom
+    //action=delfav&data=1&username=pablom&password=pablom
+    //action=addres&data=1&username=pablom&password=pablom
+    // action=delres&data=1&username=pablom&password=pablom
+    
+    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    
+    NSString *postString = [NSString stringWithFormat:@"action=%@&data=%@&username=%@&password=%@", action ,deviceId, userName, password];
     
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];

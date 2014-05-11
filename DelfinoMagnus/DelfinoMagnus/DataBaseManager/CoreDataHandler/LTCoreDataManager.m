@@ -15,6 +15,7 @@
 #import "Images.h"
 #import "Zona.h"
 #import "Tipo.h"
+#import "ReservedDevice.h"
 
 @interface LTCoreDataManager () {
 }
@@ -274,6 +275,10 @@ static LTCoreDataManager *sharedSingletonObject = nil;
 
 - (void)insertFavoritesListIntoDBFromRawResponse:(NSArray *)devicesList
 {
+    if ([devicesList count]) {
+        [self removeAllRowsFromEntity:kFavortiesEntityName];
+    }
+    
     for (NSDictionary *rawDevice in devicesList) {
         
         NSString *deviceId = [rawDevice objectForKey:@"id"];
@@ -517,6 +522,33 @@ static LTCoreDataManager *sharedSingletonObject = nil;
         
         if (name) {
             tipo.name = name;
+        }
+    }
+    
+    [self saveContext];
+}
+
+- (void)insertReservedListIntoDBFromRawArray:(NSArray *)reservedDevices
+{
+    if ([reservedDevices count]) {
+        [self removeAllRowsFromEntity:kReservedEntityName];
+    }
+    
+    for (NSDictionary *deviceDetails in reservedDevices) {
+        
+        NSString *deviceId = [deviceDetails objectForKey:@"id"];
+        ReservedDevice *device = [[self getRecordsFromEntity:kReservedEntityName forAttribute:@"deviceId" withKey:deviceId] lastObject];
+        
+        if (!device) {
+            device = [NSEntityDescription insertNewObjectForEntityForName:kReservedEntityName
+                                                 inManagedObjectContext:self.managedObjectContext];
+            [device setDeviceId:deviceId];
+        }
+        
+        NSString *fechaalta = [deviceDetails objectForKey:@"fechaalta"];
+        
+        if (fechaalta) {
+            device.fechaalta = fechaalta;
         }
     }
     

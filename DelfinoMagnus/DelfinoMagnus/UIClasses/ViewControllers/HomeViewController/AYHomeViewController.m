@@ -39,6 +39,12 @@
     [super viewDidLoad];
     [self doInitialConfigurations];
     [self getAndLoadDevicesFromServer];
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self startSyncingData];
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -182,6 +188,21 @@
     [self loadDeviceDetailsViewWithDeviceObject:self.devices[[marker.title integerValue]]];
 }
 
-
+#pragma mark - Data Syncing Methods
+- (void)startSyncingData
+{
+    [[AYNetworkManager sharedInstance] getReservationListWithCompletionBlock:^(id result) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (result && [result isKindOfClass:[NSDictionary class]]) {
+              
+                if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"]) {
+                    
+                    [[LTCoreDataManager sharedInstance]  insertReservedListIntoDBFromRawArray:[result objectForKey:@"devices"]];
+                }
+            }
+        });
+    }];
+}
 
 @end

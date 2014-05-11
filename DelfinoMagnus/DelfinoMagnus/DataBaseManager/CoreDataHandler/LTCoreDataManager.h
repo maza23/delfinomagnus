@@ -13,6 +13,7 @@
 #define kImagesEnityName            @"Images"
 #define kZonaEntityName             @"Zona"
 #define kTipoEntityName             @"Tipo"
+#define kReservedEntityName         @"ReservedDevice"
 
 
 #import <Foundation/Foundation.h>
@@ -30,6 +31,7 @@
 - (void)insertDeviceDetalisIntoDBFromRawResponse:(NSDictionary *)rawResponse;
 - (void)insertUserDetailsIntoDBFromRawResponse:(NSDictionary *)rawResponse;
 - (void)insertFavoritesListIntoDBFromRawResponse:(NSArray *)devicesList;
+- (void)insertReservedListIntoDBFromRawArray:(NSArray *)reservedDevices;
 
 //Data base INternal Methods
 - (BOOL)saveContext;

@@ -10,6 +10,7 @@
 #import "AYUserProfileView.h"
 #import "AYFavoritesView.h"
 #import "AYLoginViewController.h"
+#import "AYSearchView.h"
 
 @interface AYMenuView ()
 @property (weak, nonatomic) IBOutlet UIButton *btnClose;
@@ -20,6 +21,7 @@
 
 @property (strong, nonatomic) AYUserProfileView *profileView;
 @property (strong, nonatomic) AYFavoritesView *favoritesView;
+@property (strong, nonatomic) AYSearchView *searchView;
 
 @end
 
@@ -99,7 +101,12 @@
 
 - (void)loadSearchView
 {
+    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYSearchView" owner:self options:nil] lastObject];
     
+   UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    [keyWindow addSubview:self.searchView];
+    [self.searchView setFrame:CGRectMake(10, 10, 300, keyWindow.bounds.size.height - 20)];
+    [self.searchView layoutIfNeeded];
 }
 
 - (void)logOutAndRedirectToLoginView

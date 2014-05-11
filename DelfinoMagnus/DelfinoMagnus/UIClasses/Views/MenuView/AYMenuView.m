@@ -9,6 +9,7 @@
 #import "AYMenuView.h"
 #import "AYUserProfileView.h"
 #import "AYFavoritesView.h"
+#import "AYLoginViewController.h"
 
 @interface AYMenuView ()
 @property (weak, nonatomic) IBOutlet UIButton *btnClose;
@@ -71,6 +72,12 @@
         case 2:
             [self loadUserFavoritesView];
             break;
+        case 3:
+            [self loadSearchView];
+            break;
+        case 4:
+            [self logOutAndRedirectToLoginView];
+            break;
         default:
             break;
     }
@@ -88,6 +95,18 @@
     self.favoritesView = [[[NSBundle mainBundle] loadNibNamed:@"AYFavoritesView" owner:self options:nil] lastObject];
     [self.favoritesView setFrame:self.bounds];
     [self addSubview:_favoritesView];
+}
+
+- (void)loadSearchView
+{
+    
+}
+
+- (void)logOutAndRedirectToLoginView
+{
+    AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:@"AYLoginViewController" bundle:nil];
+    [loginVC setDelegate:[[UIApplication sharedApplication] delegate]];
+    [self.window setRootViewController:loginVC];
 }
 
 #pragma mark - IBAction Methods

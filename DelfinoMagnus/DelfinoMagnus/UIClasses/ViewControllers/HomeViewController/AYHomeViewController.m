@@ -12,11 +12,13 @@
 #import "AYMapInfoView.h"
 #import "AYMenuView.h"
 #import "AYSearchView.h"
+#import "AYDeviceDetailsView.h"
 
 @interface AYHomeViewController () <GMSMapViewDelegate>
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) AYMenuView *menuView;
 @property (strong, nonatomic) AYSearchView *searchView;
+@property (strong, nonatomic) AYDeviceDetailsView *deviceDetailsView;
 
 @property (strong, nonatomic) NSArray *devices;
 @end
@@ -43,6 +45,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 #pragma mark - Private Methods
@@ -137,6 +143,14 @@
     [self.view addSubview:self.menuView];
 }
 
+- (void)loadDeviceDetailsViewWithDeviceObject:(id)deviceObject
+{
+    self.deviceDetailsView = [[[NSBundle mainBundle] loadNibNamed:@"AYDeviceDetailsView" owner:self options:nil] lastObject];
+    [self.deviceDetailsView setFrame:self.view.bounds];
+    [self.view addSubview:self.deviceDetailsView];
+    [self.deviceDetailsView loadDeviceDetailsWithDeviceObject:deviceObject];
+}
+
 #pragma mark - IBAction Methods
 - (IBAction)actionMenuButtonPressed:(id)sender {
     [self loadMenuView];
@@ -165,7 +179,9 @@
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
-    
+    [self loadDeviceDetailsViewWithDeviceObject:self.devices[[marker.title integerValue]]];
 }
+
+
 
 @end

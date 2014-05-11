@@ -14,6 +14,22 @@
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zona" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="DeviceDetails" representedClassName="DeviceDetails" syncable="YES">
+        <attribute name="deviceDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disponible" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechaalta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechamodif" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="htmlDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orden" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlimgs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zona" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Images" inverseName="device" inverseEntity="Images" syncable="YES"/>
+    </entity>
     <entity name="FavoriteDevice" representedClassName="FavoriteDevice" syncable="YES">
         <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fechaalta" optional="YES" attributeType="String" syncable="YES"/>
@@ -26,6 +42,22 @@
         <fetchedProperty name="fetchedProperty2" optional="YES" syncable="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="FavoriteDevice"/>
         </fetchedProperty>
+    </entity>
+    <entity name="Images" representedClassName="Images" syncable="YES">
+        <attribute name="archivo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fechahora" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minHeight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minWidth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orden" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceDetails" inverseName="images" inverseEntity="DeviceDetails" syncable="YES"/>
+    </entity>
+    <entity name="Tipo" representedClassName="Tipo" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipoId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="actividad" optional="YES" attributeType="String" syncable="YES"/>
@@ -43,9 +75,17 @@
         <attribute name="urlimgs" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Zona" representedClassName="Zona" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zonaId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Device" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="DeviceDetails" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FavoriteDevice" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Images" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Zona" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Tipo" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

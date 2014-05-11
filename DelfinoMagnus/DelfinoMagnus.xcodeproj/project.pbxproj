@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB03F8BF191FB57D00B1DD9C /* Zona.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03F8BE191FB57D00B1DD9C /* Zona.m */; };
+		CB03F8C2191FB57E00B1DD9C /* Tipo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03F8C1191FB57E00B1DD9C /* Tipo.m */; };
+		CB07C05F191F418100A43BF5 /* AYDeviceDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C05E191F418100A43BF5 /* AYDeviceDetailsView.m */; };
+		CB07C061191F419200A43BF5 /* AYDeviceDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB07C060191F419200A43BF5 /* AYDeviceDetailsView.xib */; };
+		CB07C067191F47FC00A43BF5 /* DeviceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C066191F47FC00A43BF5 /* DeviceDetails.m */; };
+		CB07C06A191F5D9F00A43BF5 /* Images.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C069191F5D9F00A43BF5 /* Images.m */; };
 		CB0C6CD7191A95B600E02D9A /* AYNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CD6191A95B600E02D9A /* AYNetworkManager.m */; };
 		CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CDB191A9BD000E02D9A /* MBProgressHUD.m */; };
 		CB0C6CE1191AB07C00E02D9A /* Delfino.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CDF191AB07C00E02D9A /* Delfino.xcdatamodeld */; };
@@ -169,6 +175,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB03F8BD191FB57D00B1DD9C /* Zona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zona.h; sourceTree = "<group>"; };
+		CB03F8BE191FB57D00B1DD9C /* Zona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zona.m; sourceTree = "<group>"; };
+		CB03F8C0191FB57E00B1DD9C /* Tipo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tipo.h; sourceTree = "<group>"; };
+		CB03F8C1191FB57E00B1DD9C /* Tipo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tipo.m; sourceTree = "<group>"; };
+		CB07C05D191F418100A43BF5 /* AYDeviceDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYDeviceDetailsView.h; sourceTree = "<group>"; };
+		CB07C05E191F418100A43BF5 /* AYDeviceDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYDeviceDetailsView.m; sourceTree = "<group>"; };
+		CB07C060191F419200A43BF5 /* AYDeviceDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYDeviceDetailsView.xib; sourceTree = "<group>"; };
+		CB07C065191F47FC00A43BF5 /* DeviceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetails.h; sourceTree = "<group>"; };
+		CB07C066191F47FC00A43BF5 /* DeviceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetails.m; sourceTree = "<group>"; };
+		CB07C068191F5D9F00A43BF5 /* Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Images.h; sourceTree = "<group>"; };
+		CB07C069191F5D9F00A43BF5 /* Images.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Images.m; sourceTree = "<group>"; };
 		CB0C6CD5191A95B600E02D9A /* AYNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYNetworkManager.h; sourceTree = "<group>"; };
 		CB0C6CD6191A95B600E02D9A /* AYNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYNetworkManager.m; sourceTree = "<group>"; };
 		CB0C6CDA191A9BD000E02D9A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -401,6 +418,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB07C05C191F416500A43BF5 /* DeviceDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				CB07C05D191F418100A43BF5 /* AYDeviceDetailsView.h */,
+				CB07C05E191F418100A43BF5 /* AYDeviceDetailsView.m */,
+				CB07C060191F419200A43BF5 /* AYDeviceDetailsView.xib */,
+			);
+			path = DeviceDetailsView;
+			sourceTree = "<group>";
+		};
 		CB0C6CD8191A9BAF00E02D9A /* ThirdPartyClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +475,14 @@
 				CB275B6B191B37C100EC9964 /* Device.m */,
 				CBF9B62B191ECB0E005DC1A0 /* FavoriteDevice.h */,
 				CBF9B62C191ECB0E005DC1A0 /* FavoriteDevice.m */,
+				CB07C065191F47FC00A43BF5 /* DeviceDetails.h */,
+				CB07C066191F47FC00A43BF5 /* DeviceDetails.m */,
+				CB07C068191F5D9F00A43BF5 /* Images.h */,
+				CB07C069191F5D9F00A43BF5 /* Images.m */,
+				CB03F8C0191FB57E00B1DD9C /* Tipo.h */,
+				CB03F8C1191FB57E00B1DD9C /* Tipo.m */,
+				CB03F8BD191FB57D00B1DD9C /* Zona.h */,
+				CB03F8BE191FB57D00B1DD9C /* Zona.m */,
 			);
 			path = ModelFiles;
 			sourceTree = "<group>";
@@ -620,6 +655,7 @@
 		CBCD61901918085E00846E8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB07C05C191F416500A43BF5 /* DeviceDetailsView */,
 				CBF9B61B191EAD48005DC1A0 /* FavoritesView */,
 				CBF9B5D5191E728E005DC1A0 /* UserProfileVIew */,
 				CBFE3AF6191D4ADE00A74C2D /* SearchView */,
@@ -979,6 +1015,7 @@
 				CB1248D21918879D009DA54C /* monocolumnas_icon.png in Resources */,
 				CB1248971918879D009DA54C /* back2.png in Resources */,
 				CB1248D01918879D009DA54C /* monocolumna_black.png in Resources */,
+				CB07C061191F419200A43BF5 /* AYDeviceDetailsView.xib in Resources */,
 				CB1248AD1918879D009DA54C /* calendario_normal.png in Resources */,
 				CB1248C61918879D009DA54C /* info_normal.png in Resources */,
 				CB1248DE1918879D009DA54C /* telones_icon.png in Resources */,
@@ -1059,6 +1096,8 @@
 				CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */,
 				CBF9B616191E9E27005DC1A0 /* UIButton+AFNetworking.m in Sources */,
 				CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */,
+				CB03F8BF191FB57D00B1DD9C /* Zona.m in Sources */,
+				CB07C067191F47FC00A43BF5 /* DeviceDetails.m in Sources */,
 				CBF9B617191E9E27005DC1A0 /* UIImageView+AFNetworking.m in Sources */,
 				CBF9B61E191EAD5F005DC1A0 /* AYFavoritesView.m in Sources */,
 				CBCD61681918044900846E8C /* main.m in Sources */,
@@ -1074,6 +1113,7 @@
 				CBF9B60E191E9E27005DC1A0 /* AFURLRequestSerialization.m in Sources */,
 				CBF9B610191E9E27005DC1A0 /* AFURLSessionManager.m in Sources */,
 				CBF9B628191EBC54005DC1A0 /* AYDevicesListCell.m in Sources */,
+				CB07C05F191F418100A43BF5 /* AYDeviceDetailsView.m in Sources */,
 				CBF9B60F191E9E27005DC1A0 /* AFURLResponseSerialization.m in Sources */,
 				CBF9B619191E9E27005DC1A0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				CB275B6C191B37C100EC9964 /* Device.m in Sources */,
@@ -1084,6 +1124,8 @@
 				CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */,
 				CBF9B5D4191E0E6D005DC1A0 /* AYSearchSettings.m in Sources */,
 				CBF9B60B191E9E27005DC1A0 /* AFNetworkReachabilityManager.m in Sources */,
+				CB07C06A191F5D9F00A43BF5 /* Images.m in Sources */,
+				CB03F8C2191FB57E00B1DD9C /* Tipo.m in Sources */,
 				CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */,
 				CBF9B623191EB96E005DC1A0 /* AYFavoritesTipoCell.m in Sources */,
 			);

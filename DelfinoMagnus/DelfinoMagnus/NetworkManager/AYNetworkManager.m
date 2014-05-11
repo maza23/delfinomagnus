@@ -78,6 +78,15 @@ static AYNetworkManager *sharedManager = nil;
     }];
 }
 
+- (void)getDeviceDetailsWithDeviceId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestToGetDeviceDetailsWithDeviceId:deviceId];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
+
 #pragma mark - Private Methods
 - (NSURLRequest *)getURLRequestUserLoginWithUserName:(NSString *)userName andPassword:(NSString *)password
 {
@@ -122,6 +131,21 @@ static AYNetworkManager *sharedManager = nil;
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
    
+    return request;
+}
+
+- (NSURLRequest *)getURLRequestToGetDeviceDetailsWithDeviceId:(NSString *)deviceId
+{//action=getdevice&data=15&username=pablom&password=pablom
+    
+    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    
+    NSString *postString = [NSString stringWithFormat:@"action=getdevice&data=%@&username=%@&password=%@", deviceId, userName, password];
+    
+    NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
     return request;
 }
 

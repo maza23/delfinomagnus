@@ -19,4 +19,6 @@ typedef void (^IDCompletionBlock) (id result);
 - (void)getDevicesListWithFilter:(NSString *)filter andDateString:(NSString *)dateString withCompletionHandler:(IDCompletionBlock)completionBlock;
 
 - (void)getFavoritesListWithCompletionBlock:(IDCompletionBlock)completionBlock;
+
+- (void)getDeviceDetailsWithDeviceId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
 @end

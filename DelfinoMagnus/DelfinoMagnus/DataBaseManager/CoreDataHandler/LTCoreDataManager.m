@@ -11,6 +11,10 @@
 #import "Device.h"
 #import "FavoriteDevice.h"
 #import "User.h"
+#import "DeviceDetails.h"
+#import "Images.h"
+#import "Zona.h"
+#import "Tipo.h"
 
 @interface LTCoreDataManager () {
 }
@@ -63,6 +67,104 @@ static LTCoreDataManager *sharedSingletonObject = nil;
     if (rawDevices) {
         [self insertDevicesIntoDBFromRawArray:rawDevices];
     }
+    
+    NSArray *rawZonas = [rawResponse objectForKey:@"zonas"];
+    
+    if (rawZonas) {
+        [self insertZonasListIntoDBFromRawArray:rawZonas];
+    }
+    
+    NSArray *rawTipos = [rawResponse objectForKey:@"tipos"];
+    
+    if (rawTipos) {
+        [self insertTiposListIntoDBFromRawArray:rawTipos];
+    }
+}
+
+- (void)insertDeviceDetalisIntoDBFromRawResponse:(NSDictionary *)rawResponse
+{
+ 
+    NSDictionary *deviceDetails = [rawResponse objectForKey:@"device"];
+    
+    NSString *deviceId = [deviceDetails objectForKey:@"id"];
+    
+    if (!deviceId) {
+        return;
+    }
+    
+    DeviceDetails *device = [[self getRecordsFromEntity:kDeviceDetailsEntityName forAttribute:@"deviceId" withKey:deviceId] lastObject];
+    
+    if (!device) {
+        device = [NSEntityDescription insertNewObjectForEntityForName:kDeviceDetailsEntityName
+                                               inManagedObjectContext:self.managedObjectContext];
+        [device setDeviceId:deviceId];
+        
+    }
+    
+    NSString * titulo = [deviceDetails objectForKey:@"titulo"];
+    NSString * zona = [deviceDetails objectForKey:@"zona"];
+    
+    NSString * tipo = [deviceDetails objectForKey:@"tipo"];
+    NSString * disponible = [deviceDetails objectForKey:@"disponible"];
+    NSString * fechaalta = [deviceDetails objectForKey:@"fechaalta"];
+    NSString * fechamodif = [deviceDetails objectForKey:@"fechamodif"];
+    NSString * orden = [deviceDetails objectForKey:@"orden"];
+    NSString *urlimgs = [rawResponse objectForKey:@"urlimgs"];
+    NSString * latitude = nil;
+    NSString * longitude = nil;
+    NSString * htmldescripcion = nil;
+    NSString * deviceDescription = nil;
+    
+    NSDictionary *data = [deviceDetails valueForKeyPath:@"data"];
+    
+    if (data) {
+        latitude = [data valueForKeyPath:@"geopos.lat"];
+        longitude = [data valueForKeyPath:@"geopos.long"];
+        htmldescripcion = [data objectForKey:@"htmldescripcion"];
+        deviceDescription = [data objectForKey:@"descripcion"];
+    }
+    
+    if (titulo)
+        [device setTitulo:titulo];
+    
+    if (zona)
+        [device setZona:zona];
+    
+    if (tipo)
+        [device setTipo:tipo];
+    
+    if (disponible)
+        [device setDisponible:disponible];
+    
+    if (fechaalta)
+        [device setFechaalta:fechaalta];
+    
+    if (fechamodif)
+        [device setFechamodif:fechamodif];
+    
+    if (orden)
+        [device setOrden:orden];
+    
+    if (latitude)
+        [device setLatitude:latitude];
+    
+    if (longitude)
+        [device setLongitude:longitude];
+    
+    if (htmldescripcion)
+        [device setHtmlDescription:htmldescripcion];
+    
+    if (deviceDescription)
+        [device setDeviceDescription:deviceDescription];
+    
+    if ([rawResponse objectForKey:@"images"]) {
+        [device setImages:[self insertImagesIntoDataBaseFromImagesArray:[rawResponse objectForKey:@"images"] withDevice:device]];
+    }
+    
+    if (urlimgs)
+        [device setUrlimgs:urlimgs];
+    
+    [self saveContext];
 }
 
 /*
@@ -287,6 +389,135 @@ static LTCoreDataManager *sharedSingletonObject = nil;
         
         if (deviceDescription)
             [device setDevicedescription:deviceDescription];
+    }
+    
+    [self saveContext];
+}
+
+/*
+ archivo;
+ @property (nonatomic, retain) NSString * height;
+ @property (nonatomic, retain) NSString * width;
+ @property (nonatomic, retain) NSString * minHeight;
+ @property (nonatomic, retain) NSString * minWidth;
+ @property (nonatomic, retain) NSString * fechahora;
+ @property (nonatomic, retain) NSString * imageId;
+ @property (nonatomic, retain) NSString * orden;
+ images =     (
+ {
+ archivo = "au-25-de-mayo-zuviria-729.jpg";
+ data =             {
+ height = 488;
+ minheight = 150;
+ minwidth = 200;
+ width = 650;
+ };
+ fechahora = "2014-04-23 16:10:20";
+ id = 1;
+ orden = 1;
+ }
+ );*/
+- (NSSet *)insertImagesIntoDataBaseFromImagesArray:(NSArray *)rawImages withDevice:(DeviceDetails *)device
+{
+    NSMutableSet *imagesToReturn = [[NSMutableSet alloc]  initWithCapacity:0];
+    
+    for (NSDictionary *rawImage in rawImages) {
+        
+        NSString *imageId = [rawImage objectForKey:@"id"];
+        if (!imageId) {
+            continue;
+        }
+        
+        Images *image = [[self getRecordsFromEntity:kImagesEnityName forColumn1:@"imageId" withValue1:imageId andColumn2:@"deviceId" withValue2:device.deviceId] lastObject];
+                
+        if (!image) {
+            image = [NSEntityDescription insertNewObjectForEntityForName:kImagesEnityName
+                                                   inManagedObjectContext:self.managedObjectContext];
+            [image setImageId:imageId];
+            [image setDeviceId:device.deviceId];
+        }
+        
+        NSString *archivo = [rawImage objectForKey:@"archivo"];
+        NSString *height = [rawImage valueForKeyPath:@"data.height"];
+        NSString *width = [rawImage valueForKeyPath:@"data.width"];
+        NSString *minHeight = [rawImage valueForKeyPath:@"data.minheight"];
+        NSString *minWidth = [rawImage valueForKeyPath:@"data.minwidth"];
+        NSString *fechahora = [rawImage objectForKey:@"fechahora"];
+        NSString *orden = [rawImage objectForKey:@"orden"];
+        
+        if (archivo)
+            image.archivo = archivo;
+        
+        if (height)
+            image.height = [NSString stringWithFormat:@"%@", height];
+        
+        if (width)
+            image.width = [NSString stringWithFormat:@"%@", width];
+        
+        if (minHeight)
+            image.minHeight = [NSString stringWithFormat:@"%@", minHeight];
+        
+        if (minWidth)
+            image.minWidth = [NSString stringWithFormat:@"%@", minWidth];
+        
+        if (fechahora)
+            image.fechahora = fechahora;
+        
+        if (orden)
+            image.orden = orden;
+        
+        if (device)
+            image.device = device;
+        
+        
+        
+        [imagesToReturn addObject:image];
+    }
+    
+    return imagesToReturn;
+}
+
+- (void)insertZonasListIntoDBFromRawArray:(NSArray *)zonas
+{
+    for (NSDictionary *zonaDetails in zonas) {
+        
+        NSString *zonaId = [zonaDetails objectForKey:@"id"];
+        Zona *zona = [[self getRecordsFromEntity:kZonaEntityName forAttribute:@"zonaId" withKey:zonaId] lastObject];
+        
+        if (!zona) {
+            zona = [NSEntityDescription insertNewObjectForEntityForName:kZonaEntityName
+                                                  inManagedObjectContext:self.managedObjectContext];
+            [zona setZonaId:zonaId];
+        }
+
+        NSString *name = [zonaDetails objectForKey:@"nombre"];
+        
+        if (name) {
+            zona.name = name;
+        }
+    }
+    
+    [self saveContext];
+}
+
+- (void)insertTiposListIntoDBFromRawArray:(NSArray *)tipos
+{
+    for (NSDictionary *tipoDetails in tipos) {
+        
+        NSString *tipoId = [tipoDetails objectForKey:@"id"];
+        Tipo *tipo = [[self getRecordsFromEntity:kTipoEntityName forAttribute:@"tipoId" withKey:tipoId] lastObject];
+        
+        if (!tipo) {
+            tipo = [NSEntityDescription insertNewObjectForEntityForName:kTipoEntityName
+                                                 inManagedObjectContext:self.managedObjectContext];
+            [tipo setTipoId:tipoId];
+        }
+        
+        NSString *name = [tipoDetails objectForKey:@"nombre"];
+        
+        if (name) {
+            tipo.name = name;
+        }
     }
     
     [self saveContext];

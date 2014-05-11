@@ -11,6 +11,7 @@
 #import "FavoriteDevice.h"
 #import "AYDevicesListCell.h"
 #import "AYFavoritesTipoCell.h"
+#import "AYDeviceDetailsView.h"
 
 
 @interface AYFavoritesView () <UITableViewDataSource, UITableViewDelegate>
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *viewNumberOfFav;
 @property (weak, nonatomic) IBOutlet UILabel *lblNumberOfFavorites;
 @property (weak, nonatomic) IBOutlet UITableView *tbleViewFavoritesList;
+@property (strong, nonatomic) AYDeviceDetailsView *deviceDetailsView;
 
 @property (strong, nonatomic) NSMutableArray *favoriteDevices;
 @property (strong, nonatomic) NSMutableArray *expandedTipoArray;
@@ -110,6 +112,18 @@
                              ]];
     
     [self.lblNumberOfFavorites setText:[NSString stringWithFormat:@"%d", [devices count]]];
+    [self.expandedTipoArray removeAllObjects];
+    [self.tbleViewFavoritesList reloadData];
+}
+
+- (void)loadDeviceDetailsViewWithDeviceObject:(id)deviceObject
+{
+    self.deviceDetailsView = [[[NSBundle mainBundle] loadNibNamed:@"AYDeviceDetailsView" owner:self options:nil] lastObject];
+    
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    [self.deviceDetailsView setFrame:keyWindow.bounds];
+    [keyWindow addSubview:self.deviceDetailsView];
+    [self.deviceDetailsView loadDeviceDetailsWithDeviceObject:deviceObject];
 }
 
 #pragma mark - IBAction Methods
@@ -192,7 +206,7 @@
         //[tableView reloadData];
     }
     else {
-        
+        [self loadDeviceDetailsViewWithDeviceObject:self.favoriteDevices[[indexPath row]]];
     }
 }
 

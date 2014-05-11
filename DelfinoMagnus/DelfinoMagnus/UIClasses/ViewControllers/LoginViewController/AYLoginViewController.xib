@@ -146,7 +146,6 @@
                 <constraint firstAttribute="trailing" secondItem="GCu-1X-4IQ" secondAttribute="trailing" constant="35" id="mXL-fv-k5N"/>
                 <constraint firstAttribute="trailing" secondItem="0SD-JZ-XRf" secondAttribute="trailing" constant="2" id="t9m-Wq-34m"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

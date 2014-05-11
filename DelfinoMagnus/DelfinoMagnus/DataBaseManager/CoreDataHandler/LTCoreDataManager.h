@@ -6,9 +6,14 @@
 //  Copyright (c) 2014 Delfino. All rights reserved.
 //
 
-#define kDevicesEntityName  @"Device"
-#define kUserEntityName     @"User"
-#define kFavortiesEntityName @"FavoriteDevice"
+#define kDevicesEntityName          @"Device"
+#define kUserEntityName             @"User"
+#define kFavortiesEntityName        @"FavoriteDevice"
+#define kDeviceDetailsEntityName    @"DeviceDetails"
+#define kImagesEnityName            @"Images"
+#define kZonaEntityName             @"Zona"
+#define kTipoEntityName             @"Tipo"
+
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
@@ -22,6 +27,7 @@
 
 //Methods to call
 - (void)insertDevicesResultIntoDBFromRawResponse:(NSDictionary *)rawResponse;
+- (void)insertDeviceDetalisIntoDBFromRawResponse:(NSDictionary *)rawResponse;
 - (void)insertUserDetailsIntoDBFromRawResponse:(NSDictionary *)rawResponse;
 - (void)insertFavoritesListIntoDBFromRawResponse:(NSArray *)devicesList;
 

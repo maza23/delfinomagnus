@@ -21,16 +21,6 @@
                     <color key="textColor" red="0.047484385740000003" green="0.41138463679999998" blue="0.59642059950000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-CJ-3Jh">
-                    <rect key="frame" x="259" y="14" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="close">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="actionCloseButtonPressed:" destination="1" eventType="touchUpInside" id="dei-dS-0ZD"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0TV-20-cQb">
                     <rect key="frame" x="5" y="5" width="310" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,7 +93,7 @@
                         <action selector="actionReservationButtonPressed:" destination="1" eventType="touchUpInside" id="VYy-HY-wck"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpv-6U-MN0">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpv-6U-MN0">
                     <rect key="frame" x="27" y="525" width="87" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="foto.png">
@@ -113,7 +103,7 @@
                         <action selector="actionPhotoButtonPressed:" destination="1" eventType="touchUpInside" id="lWn-ha-z8s"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9z-b7-hYT">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9z-b7-hYT">
                     <rect key="frame" x="197" y="521" width="103" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="calendario.png">
@@ -123,6 +113,22 @@
                         <action selector="actionCalendarButtonPressed:" destination="1" eventType="touchUpInside" id="NEE-GZ-Xxj"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-CJ-3Jh">
+                    <rect key="frame" x="273" y="1" width="48" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="cerrar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionCloseButtonPressed:" destination="1" eventType="touchUpInside" id="dei-dS-0ZD"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-E0-ZdH">
+                    <rect key="frame" x="5" y="158" width="310" height="261"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -136,12 +142,15 @@
                 <outlet property="lblTopHeaderTitle" destination="wGX-Tc-fSk" id="3on-Ax-zwL"/>
                 <outlet property="pageControl" destination="AgW-YU-pvb" id="own-ZM-wZq"/>
                 <outlet property="scrlViewImageContainer" destination="Inu-KU-ILQ" id="aCv-bM-TAc"/>
+                <outlet property="viewCalendarContainer" destination="oaK-E0-ZdH" id="rwe-MF-4av"/>
+                <outlet property="viewFotoContainer" destination="M9t-wC-y3h" id="Br6-1P-ke2"/>
             </connections>
         </view>
     </objects>
     <resources>
         <image name="back3.png" width="320" height="568"/>
         <image name="calendario.png" width="29" height="26"/>
+        <image name="cerrar.png" width="24" height="24"/>
         <image name="favorito_icon_off.png" width="25" height="24"/>
         <image name="favorito_on.png" width="48" height="37"/>
         <image name="foto.png" width="32" height="26"/>

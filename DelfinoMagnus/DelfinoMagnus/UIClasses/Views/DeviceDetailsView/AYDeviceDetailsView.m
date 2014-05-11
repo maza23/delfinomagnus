@@ -13,6 +13,7 @@
 #import "Images.h"
 #import "Tipo.h"
 #import "ReservedDevice.h"
+#import "CalenderViewController.h"
 
 @interface AYDeviceDetailsView ()
 @property (strong, nonatomic) Device *device;
@@ -26,7 +27,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnCalendar;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrlViewImageContainer;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIView *viewFotoContainer;
+@property (weak, nonatomic) IBOutlet UIView *viewCalendarContainer;
 
+@property (strong, nonatomic) CalenderViewController *calendarVC;
 @property (strong, nonatomic) NSMutableDictionary *activitiesDict;
 
 @end
@@ -53,7 +57,14 @@
 {
     self.activitiesDict = [[NSMutableDictionary alloc] init];
 
-    [self.lblTopHeaderTitle setText:@"FOTO"];
+    [self handleSwitchCalendarFotoButtonWithSender:self.btnPhoto];
+    [self addCalendarView];
+}
+
+- (void)addCalendarView
+{
+    self.calendarVC = [[CalenderViewController alloc]  initWithNibName:@"CalenderViewController" bundle:nil];
+    [self.viewCalendarContainer addSubview:self.calendarVC.view];
 }
 
 - (void)fetchAndLoadDeviceDetailsFromDataBase
@@ -306,9 +317,32 @@
     }
 }
 
-- (IBAction)actionPhotoButtonPressed:(id)sender {
+- (IBAction)actionPhotoButtonPressed:(UIButton *)sender {
+    
+    [self handleSwitchCalendarFotoButtonWithSender:sender];
 }
 
-- (IBAction)actionCalendarButtonPressed:(id)sender {
+- (IBAction)actionCalendarButtonPressed:(UIButton *)sender {
+    
+    [self handleSwitchCalendarFotoButtonWithSender:sender];
 }
+
+- (void)handleSwitchCalendarFotoButtonWithSender:(UIButton *)sender
+{
+    if (sender.tag == 1 && ![sender isSelected]) {
+        [sender setSelected:YES];
+        [self.btnCalendar setSelected:NO];
+        [self.viewCalendarContainer setHidden:YES];
+        [self.viewFotoContainer setHidden:NO];
+        [self.lblTopHeaderTitle setText:@"FOTOS"];
+    }
+    else if (sender.tag == 2 && ![sender isSelected]){
+        [sender setSelected:YES];
+        [self.btnPhoto setSelected:NO];
+        [self.viewCalendarContainer setHidden:NO];
+        [self.viewFotoContainer setHidden:YES];
+        [self.lblTopHeaderTitle setText:@"CALENDARIO"];
+    }
+}
+
 @end

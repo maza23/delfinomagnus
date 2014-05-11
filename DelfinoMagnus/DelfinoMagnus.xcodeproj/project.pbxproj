@@ -19,6 +19,12 @@
 		CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE4191AB0D800E02D9A /* LTCoreDataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CB0C6CE9191AB3FF00E02D9A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CE8191AB3FF00E02D9A /* User.m */; };
 		CB10D499191FE4A900F987E6 /* ReservedDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CB10D498191FE4A900F987E6 /* ReservedDevice.m */; };
+		CB10D49E191FF20B00F987E6 /* CalenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB10D49C191FF20B00F987E6 /* CalenderViewController.m */; };
+		CB10D49F191FF20B00F987E6 /* CalenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB10D49D191FF20B00F987E6 /* CalenderViewController.xib */; };
+		CB10D4A4191FFBD700F987E6 /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB10D4A0191FFBD700F987E6 /* leftArrow@2x.png */; };
+		CB10D4A5191FFBD700F987E6 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB10D4A1191FFBD700F987E6 /* leftArrow.png */; };
+		CB10D4A6191FFBD700F987E6 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB10D4A2191FFBD700F987E6 /* rightArrow.png */; };
+		CB10D4A7191FFBD700F987E6 /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB10D4A3191FFBD700F987E6 /* rightArrow@2x.png */; };
 		CB1248961918879D009DA54C /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484C1918879D009DA54C /* back.png */; };
 		CB1248971918879D009DA54C /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484D1918879D009DA54C /* back2.png */; };
 		CB1248981918879D009DA54C /* back3.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12484E1918879D009DA54C /* back3.png */; };
@@ -199,6 +205,13 @@
 		CB0C6CE8191AB3FF00E02D9A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		CB10D497191FE4A900F987E6 /* ReservedDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservedDevice.h; sourceTree = "<group>"; };
 		CB10D498191FE4A900F987E6 /* ReservedDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservedDevice.m; sourceTree = "<group>"; };
+		CB10D49B191FF20B00F987E6 /* CalenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalenderViewController.h; sourceTree = "<group>"; };
+		CB10D49C191FF20B00F987E6 /* CalenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalenderViewController.m; sourceTree = "<group>"; };
+		CB10D49D191FF20B00F987E6 /* CalenderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalenderViewController.xib; sourceTree = "<group>"; };
+		CB10D4A0191FFBD700F987E6 /* leftArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftArrow@2x.png"; sourceTree = "<group>"; };
+		CB10D4A1191FFBD700F987E6 /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		CB10D4A2191FFBD700F987E6 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		CB10D4A3191FFBD700F987E6 /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
 		CB12484C1918879D009DA54C /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		CB12484D1918879D009DA54C /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		CB12484E1918879D009DA54C /* back3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back3.png; sourceTree = "<group>"; };
@@ -434,6 +447,7 @@
 		CB0C6CD8191A9BAF00E02D9A /* ThirdPartyClasses */ = {
 			isa = PBXGroup;
 			children = (
+				CB10D49A191FF20B00F987E6 /* CalendarView */,
 				CBF9B5DF191E9E27005DC1A0 /* AFNetworking */,
 				CBF9B5DB191E748D005DC1A0 /* CircularImageView */,
 				CB0C6CD9191A9BC300E02D9A /* MBProgressHUD */,
@@ -490,6 +504,16 @@
 				CB10D498191FE4A900F987E6 /* ReservedDevice.m */,
 			);
 			path = ModelFiles;
+			sourceTree = "<group>";
+		};
+		CB10D49A191FF20B00F987E6 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				CB10D49B191FF20B00F987E6 /* CalenderViewController.h */,
+				CB10D49C191FF20B00F987E6 /* CalenderViewController.m */,
+				CB10D49D191FF20B00F987E6 /* CalenderViewController.xib */,
+			);
+			path = CalendarView;
 			sourceTree = "<group>";
 		};
 		CB13F08E19193DF70054E950 /* ForgotPasswordView */ = {
@@ -690,6 +714,10 @@
 		CBCD61941918089400846E8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CB10D4A0191FFBD700F987E6 /* leftArrow@2x.png */,
+				CB10D4A1191FFBD700F987E6 /* leftArrow.png */,
+				CB10D4A2191FFBD700F987E6 /* rightArrow.png */,
+				CB10D4A3191FFBD700F987E6 /* rightArrow@2x.png */,
 				CB12484C1918879D009DA54C /* back.png */,
 				CB12484D1918879D009DA54C /* back2.png */,
 				CB12484E1918879D009DA54C /* back3.png */,
@@ -1020,6 +1048,7 @@
 				CB1248D21918879D009DA54C /* monocolumnas_icon.png in Resources */,
 				CB1248971918879D009DA54C /* back2.png in Resources */,
 				CB1248D01918879D009DA54C /* monocolumna_black.png in Resources */,
+				CB10D49F191FF20B00F987E6 /* CalenderViewController.xib in Resources */,
 				CB07C061191F419200A43BF5 /* AYDeviceDetailsView.xib in Resources */,
 				CB1248AD1918879D009DA54C /* calendario_normal.png in Resources */,
 				CB1248C61918879D009DA54C /* info_normal.png in Resources */,
@@ -1047,7 +1076,10 @@
 				CBF9B611191E9E27005DC1A0 /* LICENSE in Resources */,
 				CBF9B5DA191E72F9005DC1A0 /* AYUserProfileView.xib in Resources */,
 				CB1248C21918879D009DA54C /* help_3.png in Resources */,
+				CB10D4A4191FFBD700F987E6 /* leftArrow@2x.png in Resources */,
+				CB10D4A5191FFBD700F987E6 /* leftArrow.png in Resources */,
 				CB1248BC1918879D009DA54C /* favoritos.png in Resources */,
+				CB10D4A6191FFBD700F987E6 /* rightArrow.png in Resources */,
 				CB1248CA1918879D009DA54C /* marker.png in Resources */,
 				CB1248A81918879D009DA54C /* burbuja_bottom.png in Resources */,
 				CB1248B11918879D009DA54C /* cartel.png in Resources */,
@@ -1064,6 +1096,7 @@
 				CB1248BF1918879D009DA54C /* foto.png in Resources */,
 				CB1248A91918879D009DA54C /* burbuja_land.png in Resources */,
 				CB1248CE1918879D009DA54C /* menu_vacio.png in Resources */,
+				CB10D4A7191FFBD700F987E6 /* rightArrow@2x.png in Resources */,
 				CB1248A31918879D009DA54C /* btn_disponible.png in Resources */,
 				CB773F5B191BE3FB00E36537 /* AYMapInfoView.xib in Resources */,
 				CB1248A01918879D009DA54C /* blank_pressed.png in Resources */,
@@ -1131,6 +1164,7 @@
 				CBF9B5D4191E0E6D005DC1A0 /* AYSearchSettings.m in Sources */,
 				CBF9B60B191E9E27005DC1A0 /* AFNetworkReachabilityManager.m in Sources */,
 				CB07C06A191F5D9F00A43BF5 /* Images.m in Sources */,
+				CB10D49E191FF20B00F987E6 /* CalenderViewController.m in Sources */,
 				CB03F8C2191FB57E00B1DD9C /* Tipo.m in Sources */,
 				CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */,
 				CBF9B623191EB96E005DC1A0 /* AYFavoritesTipoCell.m in Sources */,

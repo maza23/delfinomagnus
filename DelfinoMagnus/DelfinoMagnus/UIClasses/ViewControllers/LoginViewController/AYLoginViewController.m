@@ -77,13 +77,25 @@
                     if ([self.delegate respondsToSelector:@selector(didUserLoggedInSuccessfully)]) {
                         [self.delegate didUserLoggedInSuccessfully];
                     }
-                    
-                } ;
+                }
+                else {
+                    [self showErrorMessage];
+                }
+            }
+            else {
+                [self showErrorMessage];
             }
             
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         });
     }];
+}
+
+- (void)showErrorMessage
+{
+    UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:@"Atención" message:@"las credenciales no son válidas" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [alertView show];
 }
 
 #pragma mark - IBAction Methods

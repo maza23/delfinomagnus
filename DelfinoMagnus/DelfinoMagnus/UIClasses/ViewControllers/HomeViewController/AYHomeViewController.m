@@ -13,6 +13,7 @@
 #import "AYMenuView.h"
 #import "AYSearchView.h"
 #import "AYDeviceDetailsView.h"
+#import "Tipo.h"
 
 @interface AYHomeViewController () <GMSMapViewDelegate>
 @property (strong, nonatomic) GMSMapView *mapView;
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) AYDeviceDetailsView *deviceDetailsView;
 
 @property (strong, nonatomic) NSArray *devices;
+@property (strong, nonatomic) NSDictionary *tipos;
 @end
 
 @implementation AYHomeViewController
@@ -110,8 +112,9 @@
         
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = CLLocationCoordinate2DMake(latitude, longitude);
-        marker.icon = [UIImage imageNamed:@"mediawall_icon.png"];
         marker.title = [NSString stringWithFormat:@"%d", [devicesList indexOfObject:device]];
+        marker.icon = [UIImage imageNamed:[self.tipos objectForKey:device.tipo]];
+
         marker.map = self.mapView;
     }
 }
@@ -136,6 +139,31 @@
 - (void)fetchAndLoadMarkersFromDataBase
 {
     self.devices = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kDevicesEntityName];
+    
+    NSArray *tipoArray = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kTipoEntityName];
+    NSMutableDictionary *tiposDict = [[NSMutableDictionary alloc]  initWithCapacity:0];
+    
+    for (Tipo *tipo in tipoArray) {
+       
+        NSString *imageName = @"telones_icon.png";
+        
+        if ([tipo.name isEqualToString:@"Cartel"]) {
+            imageName = @"carteles_icon.png";
+        }
+        else if ([tipo.name isEqualToString:@"Mediawall"]) {
+            imageName = @"mediawall_icon.png";
+        }
+        else if ([tipo.name isEqualToString:@"Monocolumna"]) {
+            imageName = @"monocolumnas_icon.png";
+        }
+        else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
+            imageName = @"telones_icon.png";
+        }
+        
+        [tiposDict setObject:imageName forKey:tipo.tipoId];
+    }
+    
+    self.tipos = tiposDict;
     
     if ([self.devices count]) {
         [self showMapWithMarkerDevices:self.devices withToDo:NO];

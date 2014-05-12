@@ -324,6 +324,10 @@ static LTCoreDataManager *sharedSingletonObject = nil;
  */
 - (void)insertDevicesIntoDBFromRawArray:(NSArray *)rawDevices
 {
+    if ([rawDevices count]) {
+        [self removeAllRowsFromEntity:kDevicesEntityName];
+    }
+    
     for (NSDictionary *deviceDetails in rawDevices) {
         
         NSString *deviceId = [deviceDetails objectForKey:@"id"];

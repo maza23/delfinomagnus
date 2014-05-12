@@ -139,31 +139,7 @@
 - (void)fetchAndLoadMarkersFromDataBase
 {
     self.devices = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kDevicesEntityName];
-    
-    NSArray *tipoArray = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kTipoEntityName];
-    NSMutableDictionary *tiposDict = [[NSMutableDictionary alloc]  initWithCapacity:0];
-    
-    for (Tipo *tipo in tipoArray) {
-       
-        NSString *imageName = @"telones_icon.png";
-        
-        if ([tipo.name isEqualToString:@"Cartel"]) {
-            imageName = @"carteles_icon.png";
-        }
-        else if ([tipo.name isEqualToString:@"Mediawall"]) {
-            imageName = @"mediawall_icon.png";
-        }
-        else if ([tipo.name isEqualToString:@"Monocolumna"]) {
-            imageName = @"monocolumnas_icon.png";
-        }
-        else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
-            imageName = @"telones_icon.png";
-        }
-        
-        [tiposDict setObject:imageName forKey:tipo.tipoId];
-    }
-    
-    self.tipos = tiposDict;
+    self.tipos = [AYUtilites getTiposMarkerImageNames];
     
     if ([self.devices count]) {
         [self showMapWithMarkerDevices:self.devices withToDo:NO];

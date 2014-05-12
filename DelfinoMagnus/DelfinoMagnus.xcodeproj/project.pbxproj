@@ -101,6 +101,7 @@
 		CB1248DF1918879D009DA54C /* web_hi_res_512.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248951918879D009DA54C /* web_hi_res_512.png */; };
 		CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13F09019193E120054E950 /* AYForgotPasswordView.m */; };
 		CB13F09319193E250054E950 /* AYForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB13F09219193E250054E950 /* AYForgotPasswordView.xib */; };
+		CB198FD31921420C00F7EC46 /* AYUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = CB198FD21921420C00F7EC46 /* AYUtilites.m */; };
 		CB275B6C191B37C100EC9964 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB275B6B191B37C100EC9964 /* Device.m */; };
 		CB634098191946CC00CA2915 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB634097191946CC00CA2915 /* GoogleMaps.framework */; };
 		CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6340991919470500CA2915 /* GoogleMaps.bundle */; };
@@ -289,6 +290,8 @@
 		CB13F08F19193E120054E950 /* AYForgotPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYForgotPasswordView.h; sourceTree = "<group>"; };
 		CB13F09019193E120054E950 /* AYForgotPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYForgotPasswordView.m; sourceTree = "<group>"; };
 		CB13F09219193E250054E950 /* AYForgotPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYForgotPasswordView.xib; sourceTree = "<group>"; };
+		CB198FD11921420C00F7EC46 /* AYUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUtilites.h; sourceTree = "<group>"; };
+		CB198FD21921420C00F7EC46 /* AYUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYUtilites.m; sourceTree = "<group>"; };
 		CB275B6A191B37C100EC9964 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		CB275B6B191B37C100EC9964 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		CB634097191946CC00CA2915 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
@@ -699,6 +702,8 @@
 			isa = PBXGroup;
 			children = (
 				CB0C6CDD191A9D0500E02D9A /* BZLogger.h */,
+				CB198FD11921420C00F7EC46 /* AYUtilites.h */,
+				CB198FD21921420C00F7EC46 /* AYUtilites.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1154,6 +1159,7 @@
 				CB07C05F191F418100A43BF5 /* AYDeviceDetailsView.m in Sources */,
 				CBF9B60F191E9E27005DC1A0 /* AFURLResponseSerialization.m in Sources */,
 				CBF9B619191E9E27005DC1A0 /* UIRefreshControl+AFNetworking.m in Sources */,
+				CB198FD31921420C00F7EC46 /* AYUtilites.m in Sources */,
 				CB275B6C191B37C100EC9964 /* Device.m in Sources */,
 				CB10D499191FE4A900F987E6 /* ReservedDevice.m in Sources */,
 				CBF9B614191E9E27005DC1A0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,

@@ -42,14 +42,6 @@
                             </subviews>
                             <color key="backgroundColor" red="0.98039221759999995" green="0.89019614459999996" blue="0.02745098248" alpha="1" colorSpace="deviceRGB"/>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cv6-8C-xQP">
-                            <rect key="frame" x="0.0" y="72" width="280" height="255"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Disponible" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN0-89-An2">
                             <rect key="frame" x="149" y="330" width="99" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,6 +53,11 @@
                             <rect key="frame" x="256" y="335" width="12" height="12"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppD-mF-ZVf">
+                            <rect key="frame" x="0.0" y="72" width="280" height="255"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </webView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
@@ -76,8 +73,10 @@
                 <outlet property="lblDisponibleStatus" destination="eN0-89-An2" id="t2R-HC-gGF"/>
                 <outlet property="lblSubtitle" destination="Hnm-yI-W6Y" id="70w-uS-7uU"/>
                 <outlet property="lblTitle" destination="VqW-NX-6bC" id="jrF-pK-PLv"/>
-                <outlet property="txtViewDescription" destination="cv6-8C-xQP" id="bEg-pp-Yyh"/>
                 <outlet property="viewInfoContainer" destination="hDK-eN-wEP" id="JsH-NK-7st"/>
+                <outlet property="viewTipotpyeContainer" destination="Uoq-SL-UB5" id="EuU-Lm-EV5"/>
+                <outlet property="viewTitleContainer" destination="w6L-lk-vMd" id="A6K-BV-GXh"/>
+                <outlet property="webVIewDescription" destination="ppD-mF-ZVf" id="FZr-y2-HBt"/>
             </connections>
         </view>
     </objects>

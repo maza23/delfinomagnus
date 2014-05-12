@@ -132,6 +132,15 @@ static AYNetworkManager *sharedManager = nil;
     }];
 }
 
+- (void)generateasswordForMailId:(NSString *)mailId andCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    [self.networkQueue addOperationWithBlock:^{
+        
+        NSURLRequest *request = [self getURLRequestForGeneratePasswordWithMailId:mailId];
+        [self getDataForURLRequest:request withCompletionBlock:completionBlock];
+    }];
+}
+
 #pragma mark - Private Methods
 - (NSURLRequest *)getURLRequestUserLoginWithUserName:(NSString *)userName andPassword:(NSString *)password
 {
@@ -205,6 +214,19 @@ static AYNetworkManager *sharedManager = nil;
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     
     NSString *postString = [NSString stringWithFormat:@"action=%@&data=%@&username=%@&password=%@", action ,deviceId, userName, password];
+    
+    NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return request;
+}
+
+- (NSURLRequest *)getURLRequestForGeneratePasswordWithMailId:(NSString *)mailId
+{
+   // action=genpass&user=usuario@example.com
+    
+    NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+    NSString *postString = [NSString stringWithFormat:@"action=genpass&user=%@", mailId];
     
     NSMutableURLRequest *request = (NSMutableURLRequest *)[self getBaseURLRequestForURLString:urlString withMethod:@"POST"];
     [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];

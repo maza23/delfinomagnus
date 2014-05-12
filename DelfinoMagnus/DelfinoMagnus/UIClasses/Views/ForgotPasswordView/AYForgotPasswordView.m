@@ -30,9 +30,20 @@
 {
     [super awakeFromNib];
     [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor yellowColor]] forState:UIControlStateNormal];
-
 }
 
+- (BOOL) validateEmail: (NSString *) candidate {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:candidate];
+}
+
+- (void)showAlertWithMessage:(NSString *)message andTitle:(NSString *)title
+{
+    UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Bueno" otherButtonTitles:nil];
+    [alertView show];
+}
 
 #pragma mark - IBAction Methods
 - (IBAction)actionCloseButtonPressed:(id)sender {
@@ -41,6 +52,24 @@
 
 - (IBAction)actionSendMailButtonPressed:(id)sender {
     
+    if ([self validateEmail:self.txtFieldEmailId.text]) {
+       
+        [[AYNetworkManager sharedInstance] generateasswordForMailId:self.txtFieldEmailId.text andCompletionBlock:^(id result) {
+            
+            if (result && [result isKindOfClass:[NSDictionary class]] && [[result objectForKey:@"msgerr"] isEqualToString:@"Success"]) {
+#warning Avadesh what should be success message to display
+            }
+            else {
+                [self showAlertWithMessage:@"Por favor, introduzca email válida Id." andTitle:@"Atención"];
+            }
+        
+            //
+        }];
+    }//usuario@example.com
+    else {
+        [self showAlertWithMessage:@"Por favor, introduzca email válida Id." andTitle:@"Atención"];
+    }
+   
 }
 
 @end

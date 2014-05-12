@@ -93,7 +93,7 @@
 
 - (void)showErrorMessage
 {
-    UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:@"Atención" message:@"las credenciales no son válidas" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:@"Atención" message:@"las credenciales no son válidas" delegate:nil cancelButtonTitle:@"Bueno" otherButtonTitles: nil];
     
     [alertView show];
 }

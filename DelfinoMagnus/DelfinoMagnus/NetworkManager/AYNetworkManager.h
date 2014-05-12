@@ -29,4 +29,5 @@ typedef void (^IDCompletionBlock) (id result);
 - (void)addResDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
 - (void)removeResDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
 
+- (void)generateasswordForMailId:(NSString *)mailId andCompletionBlock:(IDCompletionBlock)completionBlock;
 @end

@@ -74,11 +74,8 @@
     if (!self.deviceDetails)
         return;
     
-    Tipo *tipos = [[[LTCoreDataManager sharedInstance] getRecordsFromEntity:kTipoEntityName forAttribute:@"tipoId" withKey:self.deviceDetails.tipo] lastObject];
-    
-    
     [self.lblTitle setText:self.deviceDetails.titulo];
-    [self.lblSubTitle setText:tipos.name];
+    [self.lblSubTitle setText:[[AYUtilites getTiposNameDictionary] objectForKey:self.deviceDetails.tipo]];
     [self.btnReservation setSelected:[self isCurrentDeviceAlreadyReserved]];
     [self.btnFavorites setSelected:[self isCurrentDeviceAlreadyFavorite]];
     

@@ -10,6 +10,9 @@
 
 @interface AYUtilites : NSObject
 + (NSDictionary *)getTiposMarkerImageNames;
++ (NSDictionary *)getTiposIconImageNames;
 + (NSDictionary *)getTiposBackgroundColors;
 + (NSDictionary *)getTiposNameDictionary;
++ (NSDictionary *)getTiposIdAsObjectAndNameAsDictKeys;
++ (NSDictionary *)getZonaIdAsObjectAndNameAsDictKeys;
 @end

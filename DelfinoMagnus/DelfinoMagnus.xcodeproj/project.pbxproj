@@ -138,6 +138,12 @@
 		CBCD61A01918090900846E8C /* AYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBCD619E1918090900846E8C /* AYLoginViewController.xib */; };
 		CBCD61A51918092F00846E8C /* AYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCD61A31918092F00846E8C /* AYHomeViewController.m */; };
 		CBCD61A61918092F00846E8C /* AYHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBCD61A41918092F00846E8C /* AYHomeViewController.xib */; };
+		CBF13F8A19226B3000E1C418 /* AYDeviceSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF13F8919226B3000E1C418 /* AYDeviceSearchView.m */; };
+		CBF13F8C19226B4300E1C418 /* AYDeviceSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF13F8B19226B4300E1C418 /* AYDeviceSearchView.xib */; };
+		CBF13F9E19227FA500E1C418 /* AYDevicesListView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF13F9919227FA500E1C418 /* AYDevicesListView.m */; };
+		CBF13F9F19227FA500E1C418 /* AYDevicesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF13F9A19227FA500E1C418 /* AYDevicesListView.xib */; };
+		CBF13FA019227FA500E1C418 /* AYSearchedDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF13F9C19227FA500E1C418 /* AYSearchedDeviceCell.m */; };
+		CBF13FA119227FA500E1C418 /* AYSearchedDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */; };
 		CBF9B5D4191E0E6D005DC1A0 /* AYSearchSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */; };
 		CBF9B5D8191E72E7005DC1A0 /* AYUserProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5D7191E72E7005DC1A0 /* AYUserProfileView.m */; };
 		CBF9B5DA191E72F9005DC1A0 /* AYUserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF9B5D9191E72F9005DC1A0 /* AYUserProfileView.xib */; };
@@ -339,6 +345,15 @@
 		CBCD61A21918092F00846E8C /* AYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYHomeViewController.h; sourceTree = "<group>"; };
 		CBCD61A31918092F00846E8C /* AYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYHomeViewController.m; sourceTree = "<group>"; };
 		CBCD61A41918092F00846E8C /* AYHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYHomeViewController.xib; sourceTree = "<group>"; };
+		CBF13F8819226B3000E1C418 /* AYDeviceSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYDeviceSearchView.h; sourceTree = "<group>"; };
+		CBF13F8919226B3000E1C418 /* AYDeviceSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYDeviceSearchView.m; sourceTree = "<group>"; };
+		CBF13F8B19226B4300E1C418 /* AYDeviceSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYDeviceSearchView.xib; sourceTree = "<group>"; };
+		CBF13F9819227FA500E1C418 /* AYDevicesListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYDevicesListView.h; sourceTree = "<group>"; };
+		CBF13F9919227FA500E1C418 /* AYDevicesListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYDevicesListView.m; sourceTree = "<group>"; };
+		CBF13F9A19227FA500E1C418 /* AYDevicesListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYDevicesListView.xib; sourceTree = "<group>"; };
+		CBF13F9B19227FA500E1C418 /* AYSearchedDeviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchedDeviceCell.h; sourceTree = "<group>"; };
+		CBF13F9C19227FA500E1C418 /* AYSearchedDeviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchedDeviceCell.m; sourceTree = "<group>"; };
+		CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYSearchedDeviceCell.xib; sourceTree = "<group>"; };
 		CBF9B5D2191E0E6D005DC1A0 /* AYSearchSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchSettings.h; sourceTree = "<group>"; };
 		CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchSettings.m; sourceTree = "<group>"; };
 		CBF9B5D6191E72E7005DC1A0 /* AYUserProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUserProfileView.h; sourceTree = "<group>"; };
@@ -690,6 +705,7 @@
 				CB07C05C191F416500A43BF5 /* DeviceDetailsView */,
 				CBF9B61B191EAD48005DC1A0 /* FavoritesView */,
 				CBF9B5D5191E728E005DC1A0 /* UserProfileVIew */,
+				CBF13F9719227FA500E1C418 /* DeviceListView */,
 				CBFE3AF6191D4ADE00A74C2D /* SearchView */,
 				CB773F5C191BFF5000E36537 /* MenuView */,
 				CB773F56191BE3D000E36537 /* MapInfoView */,
@@ -830,6 +846,19 @@
 			path = HomeViewController;
 			sourceTree = "<group>";
 		};
+		CBF13F9719227FA500E1C418 /* DeviceListView */ = {
+			isa = PBXGroup;
+			children = (
+				CBF13F9819227FA500E1C418 /* AYDevicesListView.h */,
+				CBF13F9919227FA500E1C418 /* AYDevicesListView.m */,
+				CBF13F9A19227FA500E1C418 /* AYDevicesListView.xib */,
+				CBF13F9B19227FA500E1C418 /* AYSearchedDeviceCell.h */,
+				CBF13F9C19227FA500E1C418 /* AYSearchedDeviceCell.m */,
+				CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */,
+			);
+			path = DeviceListView;
+			sourceTree = "<group>";
+		};
 		CBF9B5D5191E728E005DC1A0 /* UserProfileVIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -934,6 +963,9 @@
 				CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */,
 				CBF9B5D2191E0E6D005DC1A0 /* AYSearchSettings.h */,
 				CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */,
+				CBF13F8819226B3000E1C418 /* AYDeviceSearchView.h */,
+				CBF13F8919226B3000E1C418 /* AYDeviceSearchView.m */,
+				CBF13F8B19226B4300E1C418 /* AYDeviceSearchView.xib */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -1023,6 +1055,7 @@
 				CB1248A51918879D009DA54C /* btn_mapa.png in Resources */,
 				CB12489F1918879D009DA54C /* blank_normal.png in Resources */,
 				CB1248961918879D009DA54C /* back.png in Resources */,
+				CBF13FA119227FA500E1C418 /* AYSearchedDeviceCell.xib in Resources */,
 				CB1248C71918879D009DA54C /* info_pressed.png in Resources */,
 				CB1248B61918879D009DA54C /* ejemplo.jpg in Resources */,
 				CB1248991918879D009DA54C /* bg_btn_cartel.png in Resources */,
@@ -1048,9 +1081,11 @@
 				CB1248AE1918879D009DA54C /* calendario_pressed.png in Resources */,
 				CB1248CF1918879D009DA54C /* menu.png in Resources */,
 				CB1248D91918879D009DA54C /* splash_2.png in Resources */,
+				CBF13F8C19226B4300E1C418 /* AYDeviceSearchView.xib in Resources */,
 				CB12489C1918879D009DA54C /* bg_btn_telon.png in Resources */,
 				CB12489B1918879D009DA54C /* bg_btn_monocolumna.png in Resources */,
 				CB1248D21918879D009DA54C /* monocolumnas_icon.png in Resources */,
+				CBF13F9F19227FA500E1C418 /* AYDevicesListView.xib in Resources */,
 				CB1248971918879D009DA54C /* back2.png in Resources */,
 				CB1248D01918879D009DA54C /* monocolumna_black.png in Resources */,
 				CB10D49F191FF20B00F987E6 /* CalenderViewController.xib in Resources */,
@@ -1132,6 +1167,8 @@
 				CBF9B60C191E9E27005DC1A0 /* AFSecurityPolicy.m in Sources */,
 				CBF9B62D191ECB0E005DC1A0 /* FavoriteDevice.m in Sources */,
 				CBF9B609191E9E27005DC1A0 /* AFHTTPRequestOperationManager.m in Sources */,
+				CBF13F9E19227FA500E1C418 /* AYDevicesListView.m in Sources */,
+				CBF13FA019227FA500E1C418 /* AYSearchedDeviceCell.m in Sources */,
 				CBF9B608191E9E27005DC1A0 /* AFHTTPRequestOperation.m in Sources */,
 				CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */,
 				CBF9B5DE191E748D005DC1A0 /* NZCircularImageView.m in Sources */,
@@ -1153,6 +1190,7 @@
 				CB0C6CD7191A95B600E02D9A /* AYNetworkManager.m in Sources */,
 				CB773F5F191BFF6100E36537 /* AYMenuView.m in Sources */,
 				CBF9B60D191E9E27005DC1A0 /* AFURLConnectionOperation.m in Sources */,
+				CBF13F8A19226B3000E1C418 /* AYDeviceSearchView.m in Sources */,
 				CBF9B60E191E9E27005DC1A0 /* AFURLRequestSerialization.m in Sources */,
 				CBF9B610191E9E27005DC1A0 /* AFURLSessionManager.m in Sources */,
 				CBF9B628191EBC54005DC1A0 /* AYDevicesListCell.m in Sources */,

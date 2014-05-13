@@ -24,11 +24,15 @@ typedef enum
 
 #import "AYSearchView.h"
 #import "AYSearchSettings.h"
+#import "Device.h"
+#import "AYDevicesListView.h"
 
 @interface AYSearchView ()
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldSearch;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewMainContainer;
 @property (strong, nonatomic) AYSearchSettings *searchSettings;
+@property (strong, nonatomic) AYDevicesListView *devicesListView;
+@property (weak, nonatomic) IBOutlet UIButton *btnDisponibleSwitch;
 
 - (IBAction)actionTipoButtonPressed:(id)sender;
 - (IBAction)actionZonaButtonPressed:(id)sender;
@@ -56,14 +60,10 @@ typedef enum
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
-    CGRect scrollViewFrame = frame;
-    scrollViewFrame.origin.y = 40;
-    scrollViewFrame.size.height -= 40;
-    [self.scrollViewMainContainer setFrame:scrollViewFrame];
-    [self.scrollViewMainContainer setContentSize:CGSizeMake(frame.size.width, 1024)];
-    NSLog(@"ScrollView Frame is:%@ andContentSize is:%@", NSStringFromCGRect(self.scrollViewMainContainer.frame), NSStringFromCGSize(self.scrollViewMainContainer.contentSize));
-   // [self layoutIfNeeded];
-    NSLog(@"ScrollView Frame is:%@ andContentSize is:%@", NSStringFromCGRect(self.scrollViewMainContainer.frame), NSStringFromCGSize(self.scrollViewMainContainer.contentSize));
+//    CGRect scrollViewFrame = frame;
+//    scrollViewFrame.origin.y = 40;
+//    scrollViewFrame.size.height -= 40;
+//    [self.scrollViewMainContainer setFrame:scrollViewFrame];
 
 }
 
@@ -73,22 +73,101 @@ typedef enum
     self.searchSettings = [[AYSearchSettings alloc] init];
 }
 
-#pragma mark - IBAction Methods
-- (IBAction)actionMenuButtonPressed:(UIButton *)sender {
-    [self removeFromSuperview];
+- (void)searchDeviceIntoDataBaseWithTitleText:(NSString *)text
+{
+    NSArray *searchedDevices = [[LTCoreDataManager sharedInstance] getMatchedRecordFromEntity:kDevicesEntityName forColumnName:@"titulo" withValueToMatch:text];
+    NSArray *filteredDevices = [self getFilteredSearchDevicesFromArray:searchedDevices];
+    
+    if (![filteredDevices count]) {
+        return;
+    }
+    
+    self.devicesListView = [[[NSBundle mainBundle] loadNibNamed:@"AYDevicesListView" owner:self options:nil] lastObject];
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    [self.devicesListView setFrame:keyWindow.bounds];
+    [keyWindow addSubview:self.devicesListView];
+    
+    [self.devicesListView loadDevicesListFromDevices:filteredDevices];
 }
 
+- (NSArray *)getFilteredSearchDevicesFromArray:(NSArray *)searchedDevices
+{
+    NSMutableArray *finalDevices = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *filteredDevices = [[NSMutableArray alloc]  initWithCapacity:0];
+    NSDictionary *tipoNames = [AYUtilites getTiposIdAsObjectAndNameAsDictKeys];
+    NSDictionary *zonaNames = [AYUtilites getZonaIdAsObjectAndNameAsDictKeys];
+    
+    for (Device *device in searchedDevices) {
+
+        if (_searchSettings.tipoCartel && [device.tipo isEqualToString:[tipoNames objectForKey:@"Cartel"]]) {
+            [filteredDevices addObject:device];
+        }
+        else if (_searchSettings.tipoMediawall && [device.tipo isEqualToString:[tipoNames objectForKey:@"Mediawall"]]) {
+            [filteredDevices addObject:device];
+        }
+        else if (_searchSettings.tipoMonocolumna && [device.tipo isEqualToString:[tipoNames objectForKey:@"Monocolumna"]]) {
+            [filteredDevices addObject:device];
+        }
+        else if (_searchSettings.tipoTelon && [device.tipo isEqualToString:[tipoNames objectForKey:@"Telanas"]]) {
+            [filteredDevices addObject:device];
+        }
+    }
+    
+    
+    for (Device *device in searchedDevices) {
+        
+        if (_searchSettings.zonaCapitalFederal && [device.zona isEqualToString:[zonaNames objectForKey:@"CapitalFederal"]]) {
+            if (![filteredDevices containsObject:device]) {
+                [filteredDevices addObject:device];
+            }
+        }
+        else if (_searchSettings.zonaNorte && [device.zona isEqualToString:[zonaNames objectForKey:@"Norte"]]) {
+            if (![filteredDevices containsObject:device]) {
+                [filteredDevices addObject:device];
+            }        }
+        else if (_searchSettings.zonaOeste && [device.zona isEqualToString:[zonaNames objectForKey:@"Oeste"]]) {
+            if (![filteredDevices containsObject:device]) {
+                [filteredDevices addObject:device];
+            }        }
+        else if (_searchSettings.zonaSur && [device.zona isEqualToString:[zonaNames objectForKey:@"Sur"]]) {
+            if (![filteredDevices containsObject:device]) {
+                [filteredDevices addObject:device];
+            }
+        }
+    }
+    
+    for (Device *device in filteredDevices) {
+        if (_searchSettings.disponible && [[device.disponible uppercaseString] isEqualToString:@"SI"]) {
+            [finalDevices addObject:device];
+        }
+        else if ((!_searchSettings.disponible) && (![[device.disponible uppercaseString] isEqualToString:@"SI"])) {
+            [finalDevices addObject:device];
+        }
+    }
+    
+    return finalDevices;
+}
+
+
+#pragma mark - IBAction Methods
 - (IBAction)actionSearchButtonpressed:(UIButton *)sender {
+   
+    [self.txtFieldSearch resignFirstResponder];
+    [self searchDeviceIntoDataBaseWithTitleText:self.txtFieldSearch.text];
 }
 
 - (IBAction)actionDisponibleButtonPressed:(UIButton *)sender {
     if (sender.tag == 1) {
+        [self.btnDisponibleSwitch setSelected:YES];
         self.searchSettings.disponible = YES;
     }
     else if (sender.tag == 2) {
+        [self.btnDisponibleSwitch setSelected:NO];
         self.searchSettings.disponible = YES;
     }
     else {
+        [self.btnDisponibleSwitch setSelected:![sender isSelected]];
         self.searchSettings.disponible = !self.searchSettings.disponible;
     }
 }

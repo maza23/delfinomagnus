@@ -10,7 +10,8 @@
 #import "AYUserProfileView.h"
 #import "AYFavoritesView.h"
 #import "AYLoginViewController.h"
-#import "AYSearchView.h"
+#import "AYDeviceSearchView.h"
+#import "AYDeviceSearchView.h"
 
 @interface AYMenuView ()
 @property (weak, nonatomic) IBOutlet UIButton *btnClose;
@@ -21,7 +22,7 @@
 
 @property (strong, nonatomic) AYUserProfileView *profileView;
 @property (strong, nonatomic) AYFavoritesView *favoritesView;
-@property (strong, nonatomic) AYSearchView *searchView;
+@property (strong, nonatomic) AYDeviceSearchView *searchView;
 
 @end
 
@@ -101,7 +102,7 @@
 
 - (void)loadSearchView
 {
-    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYSearchView" owner:self options:nil] lastObject];
+    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYDeviceSearchView" owner:self options:nil] lastObject];
     
    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     [keyWindow addSubview:self.searchView];

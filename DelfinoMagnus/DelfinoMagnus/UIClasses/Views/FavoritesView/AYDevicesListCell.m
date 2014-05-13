@@ -35,10 +35,11 @@
 }
 
 #pragma mark - Public Methods
-- (void)configureCellWithObject:(Device *)object
+- (void)configureCellWithObject:(Device *)object  isDeviceReserved:(BOOL)isReserved
 {
+    NSString *imageName = isReserved ? @"marker.png" : @"marker_un.png";
     [self.lblDeviceName setText:object.titulo];
-    [self.imgViewDeviceType setImage:[UIImage imageNamed:@"marker_un.png"]];
+    [self.imgViewDeviceType setImage:[UIImage imageNamed:imageName]];
     [self layoutIfNeeded];
 }
 

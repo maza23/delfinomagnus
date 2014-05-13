@@ -8,6 +8,7 @@
 
 #import "AYUtilites.h"
 #import "Tipo.h"
+#import "Zona.h"
 
 @implementation AYUtilites
 
@@ -35,6 +36,40 @@
             }
             else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
                 imageName = @"telones_icon.png";
+            }
+            
+            [tipoDetails setObject:imageName forKey:tipo.tipoId];
+        }
+        
+    }
+    
+    return tipoDetails;
+}
+
++ (NSDictionary *)getTiposIconImageNames
+{
+    static NSMutableDictionary *tipoDetails = nil;
+    
+    if (!tipoDetails) {
+        
+        NSArray *tipoArray = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kTipoEntityName];
+        tipoDetails = [[NSMutableDictionary alloc]  initWithCapacity:0];
+        
+        for (Tipo *tipo in tipoArray) {
+            
+            NSString *imageName = @"telones.png";
+            
+            if ([tipo.name isEqualToString:@"Cartel"]) {
+                imageName = @"cartel.png";
+            }
+            else if ([tipo.name isEqualToString:@"Mediawall"]) {
+                imageName = @"mediawall.png";
+            }
+            else if ([tipo.name isEqualToString:@"Monocolumna"]) {
+                imageName = @"monocolumna.png";
+            }
+            else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
+                imageName = @"telon.png";
             }
             
             [tipoDetails setObject:imageName forKey:tipo.tipoId];
@@ -77,6 +112,102 @@
             
             [tipoDetails setObject:@{@"titleBGColor" : titleBGColor, @"tipoBGColor": tipoBGColor} forKey:tipo.tipoId];
         }
+    }
+    
+    return tipoDetails;
+}
+
++ (NSDictionary *)getTiposIdAsObjectAndNameAsDictKeys
+{
+    static NSMutableDictionary *tipoDetails = nil;
+    
+    if (!tipoDetails) {
+        
+        NSArray *tipoArray = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kTipoEntityName];
+        tipoDetails = [[NSMutableDictionary alloc]  initWithCapacity:0];
+        
+        for (Tipo *tipo in tipoArray) {
+            
+            NSString *tipoName = @"Cartel";
+            
+            if ([tipo.name isEqualToString:@"Cartel"]) {
+                tipoName = @"Cartel";
+            }
+            else if ([tipo.name isEqualToString:@"Mediawall"]) {
+                tipoName = @"Mediawall";
+            }
+            else if ([tipo.name isEqualToString:@"Monocolumna"]) {
+                tipoName = @"Monocolumna";
+            }
+            else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
+                tipoName = @"Telanas";
+            }
+            
+            [tipoDetails setObject:tipo.tipoId forKey:tipoName];
+        }
+        
+    }
+    
+    return tipoDetails;
+}
+
+/*
+ "zonas": [
+ {
+ "id": "1",
+ "nombre": "Ciudad Aut\u00f3noma de Buenos Aires"
+ },
+ {
+ "id": "2",
+ "nombre": "Zona Norte"
+ },
+ {
+ "id": "3",
+ "nombre": "Zona Oeste"
+ },
+ {
+ "id": "4",
+ "nombre": "Zona Sur"
+ },
+ {
+ "id": "5",
+ "nombre": "Rosario"
+ },
+ {
+ "id": "6",
+ "nombre": "San Miguel de Tucum\u00e1n"
+ }
+ ],
+ */
++ (NSDictionary *)getZonaIdAsObjectAndNameAsDictKeys
+{
+    static NSMutableDictionary *tipoDetails = nil;
+    
+    if (!tipoDetails) {
+        
+        NSArray *zonaArray = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kZonaEntityName];
+        tipoDetails = [[NSMutableDictionary alloc]  initWithCapacity:0];
+        
+        for (Zona *zona in zonaArray) {
+            
+            NSString *zonaName = @"CapitalFederal";
+            
+            if ([zona.name isEqualToString:@"Ciudad Aut\u00f3noma de Buenos Aires"]) {
+                zonaName = @"CapitalFederal";
+            }
+            else if ([zona.name isEqualToString:@"Zona Norte"]) {
+                zonaName = @"Norte";
+            }
+            else if ([zona.name isEqualToString:@"Zona Sur"]) {
+                zonaName = @"Sur";
+            }
+            else if ([zona.name isEqualToString:@"Zona Oeste"]) {
+                zonaName = @"Oeste";
+            }
+            
+            [tipoDetails setObject:zona.zonaId forKey:zonaName];
+        }
+        
     }
     
     return tipoDetails;

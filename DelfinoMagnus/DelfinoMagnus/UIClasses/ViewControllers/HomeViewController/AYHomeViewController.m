@@ -11,14 +11,14 @@
 #import "Device.h"
 #import "AYMapInfoView.h"
 #import "AYMenuView.h"
-#import "AYSearchView.h"
+#import "AYDeviceSearchView.h"
 #import "AYDeviceDetailsView.h"
 #import "Tipo.h"
 
 @interface AYHomeViewController () <GMSMapViewDelegate>
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) AYMenuView *menuView;
-@property (strong, nonatomic) AYSearchView *searchView;
+@property (strong, nonatomic) AYDeviceSearchView *searchView;
 @property (strong, nonatomic) AYDeviceDetailsView *deviceDetailsView;
 
 @property (strong, nonatomic) NSArray *devices;
@@ -167,7 +167,7 @@
 }
 
 - (IBAction)actionSearchButtonPressed:(id)sender {
-    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYSearchView" owner:self options:nil] lastObject];
+    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYDeviceSearchView" owner:self options:nil] lastObject];
     [self.view addSubview:self.searchView];
     [self.searchView setFrame:CGRectMake(10, 10, 300, self.view.bounds.size.height - 20)];
     [self.searchView layoutIfNeeded];

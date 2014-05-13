@@ -32,7 +32,7 @@
     self.zonaNorte = NO;
     self.zonaOeste = NO;
     self.zonaSur = NO;
-    self.disponible = NO;
+    self.disponible = YES;
 }
 
 @end

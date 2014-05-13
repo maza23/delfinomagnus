@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AYDevicesListCell : UITableViewCell
-- (void)configureCellWithObject:(id)object;
+- (void)configureCellWithObject:(id)object isDeviceReserved:(BOOL)isReserved;
 @end

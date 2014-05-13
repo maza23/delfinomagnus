@@ -9,6 +9,7 @@
 #import "AYFavoritesView.h"
 #import "Device.h"
 #import "FavoriteDevice.h"
+#import "ReservedDevice.h"
 #import "AYDevicesListCell.h"
 #import "AYFavoritesTipoCell.h"
 #import "AYDeviceDetailsView.h"
@@ -23,6 +24,7 @@
 
 @property (strong, nonatomic) NSMutableArray *favoriteDevices;
 @property (strong, nonatomic) NSMutableArray *expandedTipoArray;
+@property (strong, nonatomic) NSArray *reservedDeviceIds;
 @end
 
 @implementation AYFavoritesView
@@ -75,9 +77,23 @@
     }];
 }
 
+- (void)loadReservedIds
+{
+    NSArray *reservedDevices = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kReservedEntityName];
+    
+    NSMutableArray *deviceIds = [[NSMutableArray alloc]  initWithCapacity:0];
+    
+    for (ReservedDevice *device in reservedDevices) {
+        [deviceIds addObject:device.deviceId];
+    }
+
+    self.reservedDeviceIds = deviceIds;
+}
+
 - (void)fetchAndLoadFavoriteDevicesFromDB
 {
     NSArray *devices = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kFavortiesEntityName];
+    [self loadReservedIds];
     
     NSMutableArray *cartelDevices = [[NSMutableArray alloc]  initWithCapacity:0];
     NSMutableArray *monocolumnaDevices = [[NSMutableArray alloc]  initWithCapacity:0];
@@ -126,6 +142,16 @@
     [self.deviceDetailsView loadDeviceDetailsWithDeviceObject:deviceObject];
 }
 
+- (BOOL)isDeviceReserved:(Device *)device
+{
+    if ([self.reservedDeviceIds containsObject:device.deviceId]) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
 #pragma mark - IBAction Methods
 - (IBAction)actionTopMenuButtonPressed:(id)sender {
     [self removeFromSuperview];
@@ -148,7 +174,8 @@
     }
     else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"AYDevicesListCell"];
-        [(AYDevicesListCell *)cell configureCellWithObject:object];
+        
+        [(AYDevicesListCell *)cell configureCellWithObject:object isDeviceReserved:[self isDeviceReserved:object]];
     }
     
     return cell;

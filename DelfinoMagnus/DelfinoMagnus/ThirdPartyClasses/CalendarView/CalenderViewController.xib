@@ -140,10 +140,6 @@
 								</object>
 								<reference key="IBUIHighlightedTitleColor" ref="994426039"/>
 								<reference key="IBUINormalTitleShadowColor" ref="585255715"/>
-								<object class="NSCustomResource" key="IBUINormalImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">right_month_arrow.png</string>
-								</object>
 								<reference key="IBUIFontDescription" ref="236357531"/>
 								<reference key="IBUIFont" ref="753794837"/>
 							</object>
@@ -188,10 +184,6 @@
 								</object>
 								<reference key="IBUIHighlightedTitleColor" ref="994426039"/>
 								<reference key="IBUINormalTitleShadowColor" ref="585255715"/>
-								<object class="NSCustomResource" key="IBUINormalImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">left_month_arrow.png</string>
-								</object>
 								<reference key="IBUIFontDescription" ref="236357531"/>
 								<reference key="IBUIFont" ref="753794837"/>
 							</object>
@@ -751,9 +743,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="leftArrow.png">{13, 21}</string>
-			<string key="left_month_arrow.png">{48, 35}</string>
 			<string key="rightArrow.png">{13, 21}</string>
-			<string key="right_month_arrow.png">{48, 35}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">3742</string>
 	</data>

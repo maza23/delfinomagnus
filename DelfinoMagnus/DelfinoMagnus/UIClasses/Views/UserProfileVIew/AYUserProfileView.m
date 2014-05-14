@@ -10,6 +10,7 @@
 #import "NZCircularImageView.h"
 #import "User.h"
 #import "UIImageView+AFNetworking.h"
+#import "AYFavoritesView.h"
 
 @interface AYUserProfileView ()
 
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblAddress;
 @property (weak, nonatomic) IBOutlet UILabel *lblImpressea;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) AYFavoritesView *favoritesView;
 
 @property (strong, nonatomic) User *userDetails;
 @end
@@ -79,6 +81,12 @@
     }];
 }
 
+- (void)loadUserFavoritesView
+{
+    self.favoritesView = [[[NSBundle mainBundle] loadNibNamed:@"AYFavoritesView" owner:self options:nil] lastObject];
+    [self.favoritesView setFrame:self.bounds];
+    [self addSubview:_favoritesView];
+}
 
 #pragma mark - IBAction Methods
 - (IBAction)actionTopMenuButtonPressed:(id)sender {
@@ -86,5 +94,7 @@
 }
 
 - (IBAction)actionFavoritesButtonPressed:(id)sender {
+    [self loadUserFavoritesView];
 }
+
 @end

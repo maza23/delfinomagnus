@@ -177,7 +177,6 @@
     [sender setSelected:![sender isSelected]];
     
     [self showMapWithMarkerDevices:self.devices withToDo:[sender isSelected]];
-
 }
 
 #pragma mark - GoogleMapView Delegate Methods
@@ -190,6 +189,17 @@
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     [self loadDeviceDetailsViewWithDeviceObject:self.devices[[marker.title integerValue]]];
+}
+
+- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
+{
+	CGPoint point = [mapView.projection pointForCoordinate:marker.position];
+	point.y = 200;
+	GMSCameraUpdate *camera = [GMSCameraUpdate setTarget:[mapView.projection coordinateForPoint:point]];
+	[mapView animateWithCameraUpdate:camera];
+	
+	mapView.selectedMarker = marker;
+	return YES;
 }
 
 #pragma mark - Data Syncing Methods

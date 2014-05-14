@@ -53,7 +53,10 @@
                                     <rect key="frame" x="10" y="8" width="196" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="OrZ-0y-qsh"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" red="0.74901962280273438" green="0.70980393886566162" blue="0.46274513006210327" alpha="1" colorSpace="deviceRGB"/>
@@ -66,7 +69,10 @@
                                     <rect key="frame" x="11" y="8" width="195" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="dXF-O7-rFZ"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" red="0.65490198135375977" green="0.48235297203063965" blue="0.39607846736907959" alpha="1" colorSpace="deviceRGB"/>

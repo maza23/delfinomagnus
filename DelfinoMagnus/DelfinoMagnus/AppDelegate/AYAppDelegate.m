@@ -21,7 +21,16 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [GMSServices provideAPIKey:kGoogleMapAPIKey];
-    [self loadLoginViewController];
+    
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    if (userName && password) {
+        [self loadHomeViewController];
+    }
+    else {
+        [self loadLoginViewController];
+    }
+    
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -30,10 +39,6 @@
 
 - (void)loadHomeViewController
 {
-    [[NSUserDefaults standardUserDefaults]  setObject:@"pablom" forKey:@"userName"];
-    [[NSUserDefaults standardUserDefaults]  setObject:@"pablom" forKey:@"password"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-
     AYHomeViewController *homeVC = [[AYHomeViewController alloc] initWithNibName:@"AYHomeViewController" bundle:nil];
     [self.window setRootViewController:homeVC];
 }

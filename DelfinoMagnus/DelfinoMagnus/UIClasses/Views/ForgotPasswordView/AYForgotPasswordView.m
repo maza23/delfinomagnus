@@ -30,6 +30,15 @@
 {
     [super awakeFromNib];
     [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor yellowColor]] forState:UIControlStateNormal];
+    
+    UITapGestureRecognizer *singleTapOnBGView = [[UITapGestureRecognizer alloc] init];
+    [singleTapOnBGView addTarget:self action:@selector(singleTappedOnBGView:)];
+    [self addGestureRecognizer:singleTapOnBGView];
+}
+
+- (void)singleTappedOnBGView:(UIGestureRecognizer *)recognizer
+{
+    [self.txtFieldEmailId resignFirstResponder];
 }
 
 - (BOOL) validateEmail: (NSString *) candidate {

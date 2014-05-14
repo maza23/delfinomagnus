@@ -112,6 +112,10 @@
 
 - (void)logOutAndRedirectToLoginView
 {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userName"];
+    [[NSUserDefaults standardUserDefaults]  removeObjectForKey:@"password"];
+    [[NSUserDefaults standardUserDefaults]  synchronize];
+    
     AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:@"AYLoginViewController" bundle:nil];
     [loginVC setDelegate:[[UIApplication sharedApplication] delegate]];
     [self.window setRootViewController:loginVC];

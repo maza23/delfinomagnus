@@ -9,7 +9,7 @@
 #import "AYLoginViewController.h"
 #import "AYForgotPasswordView.h"
 
-@interface AYLoginViewController ()
+@interface AYLoginViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldUserName;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldPassword;
@@ -44,9 +44,9 @@
 {
     [self.navigationController setNavigationBarHidden:YES];
     
-    [self.txtFieldUserName setText:@"pablom"];
-    [self.txtFieldPassword setText:@"pablom"];
-
+//    [self.txtFieldUserName setText:@"pablom"];
+//    [self.txtFieldPassword setText:@"pablom"];
+//
     
     UITapGestureRecognizer *singleTapOnBGView = [[UITapGestureRecognizer alloc] init];
     [singleTapOnBGView addTarget:self action:@selector(singleTappedOnBGView:)];
@@ -61,15 +61,25 @@
 
 - (void)startLoginToServer
 {
+    NSString *userName = self.txtFieldUserName.text;
+    NSString *password = self.txtFieldPassword.text;
+    
+    if ((![userName length]) && (![password length])) {
+        [self showErrorAlertWithMessage:@"Por favor introduzca credentails válidos"];
+        return;
+    }
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    [[AYNetworkManager sharedInstance]  loginWithUsername:self.txtFieldUserName.text password:self.txtFieldPassword.text withCompletionHandler:^(id result) {
+    [[AYNetworkManager sharedInstance]  loginWithUsername:userName password:password withCompletionHandler:^(id result) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (result && [result isKindOfClass:[NSDictionary class]]) {
                 
                 if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"]) {
-    
+
+                    [[NSUserDefaults standardUserDefaults]  setObject:self.txtFieldUserName.text forKey:@"userName"];
+                    [[NSUserDefaults standardUserDefaults]  setObject:self.txtFieldPassword.text forKey:@"password"];
+                    
                     if ([result objectForKey:@"profile"]) {
                          [[LTCoreDataManager sharedInstance] insertUserDetailsIntoDBFromRawResponse:[result objectForKey:@"profile"]];
                     }
@@ -79,11 +89,11 @@
                     }
                 }
                 else {
-                    [self showErrorMessage];
+                    [self showErrorAlertWithMessage:@"las credenciales no son válidas"];
                 }
             }
             else {
-                [self showErrorMessage];
+                [self showErrorAlertWithMessage:@"las credenciales no son válidas"];
             }
             
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -91,9 +101,9 @@
     }];
 }
 
-- (void)showErrorMessage
+- (void)showErrorAlertWithMessage:(NSString *)message
 {
-    UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:@"Atención" message:@"las credenciales no son válidas" delegate:nil cancelButtonTitle:@"Bueno" otherButtonTitles: nil];
+    UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:@"Atención" message:message delegate:nil cancelButtonTitle:@"Bueno" otherButtonTitles: nil];
     
     [alertView show];
 }
@@ -109,6 +119,20 @@
     self.forgotPasswordView = [[[NSBundle mainBundle] loadNibNamed:@"AYForgotPasswordView" owner:self options:nil] lastObject];
     
     [self.view addSubview:self.forgotPasswordView];
+}
+
+#pragma mark - UITxtField Delegate methods
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([textField isEqual:self.txtFieldUserName]) {
+        [self.txtFieldPassword becomeFirstResponder];
+    }
+    else {
+        [self.txtFieldPassword resignFirstResponder];
+        [self startLoginToServer];
+    }
+    
+    return YES;
 }
 
 @end

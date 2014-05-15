@@ -31,8 +31,11 @@ NSDate *todayDate;
 
 #import "CalenderViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Calendar.h"
 
-
+@interface CalenderViewController ()
+@property (strong, nonatomic) NSArray *eventsDates;
+@end
 @implementation CalenderViewController
 @synthesize strCalDate;
 @synthesize strShoeInfoDate;
@@ -69,8 +72,9 @@ NSDate *todayDate;
     //	[compA retain];
     
     
-	
-	
+    [btnNext setImage:[[UIImage imageNamed:@"rightArrow.png"] imageWithOverlayColor:[UIColor colorWithRed:227.0/255.0 green:207.0/255.0 blue:13.0/255.0 alpha:1.0]] forState:UIControlStateNormal];
+    [btnPrevious setImage:[[UIImage imageNamed:@"leftArrow.png"] imageWithOverlayColor:[UIColor colorWithRed:227.0/255.0 green:207.0/255.0 blue:13.0/255.0 alpha:1.0]] forState:UIControlStateNormal];
+
 }
 
 - (void)viewDidLoad {
@@ -81,7 +85,7 @@ NSDate *todayDate;
     
     
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];//2014-05-21
     
     todayDate = [NSDate date];
     
@@ -270,9 +274,9 @@ NSDate *todayDate;
         NSString *dateString = [dateFormatter stringFromDate:calCurDate];
         
         BOOL isRepeatedDate = NO;
-//        if ([eventDates containsObject:dateString]) {
-//            isRepeatedDate = YES;
-//        }
+        if ([self.eventsDates containsObject:dateString]) {
+            isRepeatedDate = YES;
+        }
         
         if (flag && (currentDay == i) && (currentMonth == month)&& (currentYear == year)) {
             
@@ -298,6 +302,7 @@ NSDate *todayDate;
             [btnDay setBackgroundImage:[UIImage imageNamed:@"blue.png"] forState:UIControlStateHighlighted];
 			[btnDay setTitle:[NSString stringWithFormat:@"%d",i] forState:UIControlStateNormal];
             [btnDay setTitleColor:[UIColor colorWithRed:227.0/255.0 green:207.0/255.0 blue:13.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+          
 			[MainView addSubview:btnDay];
             if(i != day)
                 [self setPosition];
@@ -321,7 +326,6 @@ NSDate *todayDate;
             }
             
             
-            
 			[btnDay setTitle:[NSString stringWithFormat:@"%d",i] forState:UIControlStateNormal];
 			[btnDay setTitleColor:[UIColor colorWithRed:227.0/255.0 green:207.0/255.0 blue:13.0/255.0 alpha:1.0] forState:UIControlStateNormal];
 			[MainView addSubview:btnDay];
@@ -332,21 +336,26 @@ NSDate *todayDate;
         //if([self.selectedDate compare:calCurDate] == NSOrderedAscending || [self.selectedDate compare:calCurDate] ==NSOrderedSame){
         
         if(isRepeatedDate == YES){
-            CGRect r = btnDay.bounds;
-            r.origin.y += 32;
-            r.size.height -= 31;
-            UILabel *_dot = [[UILabel alloc] initWithFrame:r];
-            _dot.text = @"•";
-            _dot.backgroundColor = [UIColor clearColor];
-            _dot.font = [UIFont boldSystemFontOfSize:30];
-            r.origin.x=28;
-            _dot.textColor = [UIColor orangeColor];
-            [_dot setFrame:r];
-            [btnDay addSubview:_dot];
+//            CGRect r = btnDay.bounds;
+//            r.origin.y += 32;
+//            r.size.height -= 31;
+//            UILabel *_dot = [[UILabel alloc] initWithFrame:r];
+//            _dot.text = @"•";
+//            _dot.backgroundColor = [UIColor clearColor];
+//            _dot.font = [UIFont boldSystemFontOfSize:30];
+//            r.origin.x=28;
+//            _dot.textColor = [UIColor orangeColor];
+//            [_dot setFrame:r];
+//            [btnDay addSubview:_dot];
+            
+            [btnDay setBackgroundColor:[UIColor lightGrayColor]];
         }
         // }
         
         i++;
+        
+        [btnDay.layer setBorderWidth:1.0f];
+        [btnDay.layer setBorderColor:[[UIColor colorWithRed:227.0/255.0 green:207.0/255.0 blue:230.0/255.0 alpha:1.0] CGColor]];
     }
     
     if(y == 235){
@@ -485,26 +494,22 @@ NSDate *todayDate;
     // For example: self.myOutlet = nil;
 }
 
-//- (void)dealloc {
-////    [delegate release];
-////    [dbEvents release];
-////    [headerView release];
-////    [backView release];
-//    [super dealloc];
-//}
 
-#pragma mark dot method
-- (BOOL )eventsForDate:(NSDate *)startDate {
+- (void)reloadCalendarWithCalendarObjects:(NSArray *)objects
+{
+    NSMutableArray *calendars  = [[NSMutableArray alloc]  initWithCapacity:0];
     
-    BOOL isEventExistOnDate = NO;
+    for (Calendar *calendar in objects) {
+        if ([[calendar.disponible uppercaseString] isEqualToString:@"NO"]) {
+            [calendars addObject:calendar.fecha];
+        }
+    }
     
-//    NSString *dateString = [dateFormatter stringFromDate:startDate];
-//    NSArray *allEventDatesArray = [dbcomm getDateStringsForAllEventsForDateString:dateString withCategory:kEventsCategoryNameBulletinBoard];
-//    
-//    if ([allEventDatesArray count]) {
-//        isEventExistOnDate = YES;
-//    }
-    return isEventExistOnDate;
+    self.eventsDates = calendars;
+    
+    if ([self.eventsDates count]) {
+        [self DrawMonthInPortraitView];
+    }
 }
 
 @end

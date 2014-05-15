@@ -81,4 +81,6 @@
 - (IBAction)perYear:(id)sender;
 - (IBAction)nextYear:(id)sender;
 
+- (void)reloadCalendarWithCalendarObjects:(NSArray *)objects;
+
 @end

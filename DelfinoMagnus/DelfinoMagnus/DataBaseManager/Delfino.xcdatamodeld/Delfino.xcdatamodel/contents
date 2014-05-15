@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Calendar" representedClassName="Calendar" syncable="YES">
+        <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disponible" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fecha" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviceDetails" syncable="YES"/>
+    </entity>
     <entity name="Device" representedClassName="Device" syncable="YES">
         <attribute name="devicedescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,7 +34,8 @@
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="urlimgs" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zona" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Images" inverseName="device" inverseEntity="Images" syncable="YES"/>
+        <relationship name="calendars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Calendar" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Images" syncable="YES"/>
     </entity>
     <entity name="FavoriteDevice" representedClassName="FavoriteDevice" syncable="YES">
         <attribute name="deviceId" optional="YES" attributeType="String" syncable="YES"/>
@@ -88,9 +95,10 @@
         <element name="DeviceDetails" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FavoriteDevice" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Images" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ReservedDevice" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Tipo" positionX="0" positionY="0" width="0" height="0"/>
         <element name="User" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Zona" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="ReservedDevice" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Calendar" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

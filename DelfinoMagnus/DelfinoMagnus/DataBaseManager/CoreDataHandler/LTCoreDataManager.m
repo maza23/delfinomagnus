@@ -16,6 +16,7 @@
 #import "Zona.h"
 #import "Tipo.h"
 #import "ReservedDevice.h"
+#import "Calendar.h"
 
 @interface LTCoreDataManager () {
 }
@@ -80,7 +81,9 @@ static LTCoreDataManager *sharedSingletonObject = nil;
     if (rawTipos) {
         [self insertTiposListIntoDBFromRawArray:rawTipos];
     }
+    
 }
+
 
 - (void)insertDeviceDetalisIntoDBFromRawResponse:(NSDictionary *)rawResponse
 {
@@ -158,8 +161,12 @@ static LTCoreDataManager *sharedSingletonObject = nil;
     if (deviceDescription)
         [device setDeviceDescription:deviceDescription];
     
-    if ([rawResponse objectForKey:@"images"]) {
+    if ([[rawResponse objectForKey:@"images"] count]) {
         [device setImages:[self insertImagesIntoDataBaseFromImagesArray:[rawResponse objectForKey:@"images"] withDevice:device]];
+    }
+    
+    if ([[rawResponse objectForKey:@"calendar"] count]) {
+        [device setCalendars:[self insertCalendarsIntoDataBaseFromCalendarsArray:[rawResponse objectForKey:@"calendar"] withDevice:device]];
     }
     
     if (urlimgs)
@@ -484,6 +491,39 @@ static LTCoreDataManager *sharedSingletonObject = nil;
     }
     
     return imagesToReturn;
+}
+
+//"calendar":[{"fecha":"2014-05-21","disponible":"NO"},{"fecha":"2014-06-07","disponible":"SI"},{"fecha":"2014-07-18","disponible":"NO"},{"fecha":"2014-12-31","disponible":"SI"}]
+- (NSSet *)insertCalendarsIntoDataBaseFromCalendarsArray:(NSArray *)rawCalendars withDevice:(DeviceDetails *)device
+{
+    
+    [self removeFromEntity:kCalendarEntityName forAttribute:@"deviceId" recordWithKey:device.deviceId];
+    
+    NSMutableSet *calendarsToReturn = [[NSMutableSet alloc]  initWithCapacity:0];
+    
+    for (NSDictionary *calendarDetails in rawCalendars) {
+        
+        Calendar *calendar = [NSEntityDescription insertNewObjectForEntityForName:kCalendarEntityName
+                                                           inManagedObjectContext:self.managedObjectContext];
+        
+        NSString *fecha = [calendarDetails objectForKey:@"fecha"];
+        NSString *disponible = [calendarDetails valueForKeyPath:@"disponible"];
+        
+        if (fecha)
+            calendar.fecha = fecha;
+        
+        if (disponible)
+            calendar.disponible = disponible;
+        
+        calendar.deviceId = device.deviceId;
+        
+        if (device)
+            calendar.device = device;
+        
+        [calendarsToReturn addObject:calendar];
+    }
+    
+    return calendarsToReturn;
 }
 
 - (void)insertZonasListIntoDBFromRawArray:(NSArray *)zonas

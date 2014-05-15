@@ -14,7 +14,7 @@
 #define kZonaEntityName             @"Zona"
 #define kTipoEntityName             @"Tipo"
 #define kReservedEntityName         @"ReservedDevice"
-
+#define kCalendarEntityName         @"Calendar"
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>

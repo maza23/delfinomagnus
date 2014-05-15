@@ -78,7 +78,7 @@
     [self.lblSubTitle setText:[[AYUtilites getTiposNameDictionary] objectForKey:self.deviceDetails.tipo]];
     [self.btnReservation setSelected:[self isCurrentDeviceAlreadyReserved]];
     [self.btnFavorites setSelected:[self isCurrentDeviceAlreadyFavorite]];
-    
+    [self.calendarVC reloadCalendarWithCalendarObjects:[self.deviceDetails.calendars allObjects]];
     [self loadScrollViewWithImages];
 }
 

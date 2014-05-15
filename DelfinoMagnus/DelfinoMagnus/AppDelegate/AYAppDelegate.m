@@ -22,6 +22,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [GMSServices provideAPIKey:kGoogleMapAPIKey];
     
+    [[NSUserDefaults standardUserDefaults] setObject:@"pablom" forKey:@"userName"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"pablom" forKey:@"password"];
+
     NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     if (userName && password) {

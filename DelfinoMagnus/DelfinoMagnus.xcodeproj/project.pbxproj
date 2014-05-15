@@ -11,7 +11,6 @@
 		CB03F8C2191FB57E00B1DD9C /* Tipo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03F8C1191FB57E00B1DD9C /* Tipo.m */; };
 		CB07C05F191F418100A43BF5 /* AYDeviceDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C05E191F418100A43BF5 /* AYDeviceDetailsView.m */; };
 		CB07C061191F419200A43BF5 /* AYDeviceDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB07C060191F419200A43BF5 /* AYDeviceDetailsView.xib */; };
-		CB07C067191F47FC00A43BF5 /* DeviceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C066191F47FC00A43BF5 /* DeviceDetails.m */; };
 		CB07C06A191F5D9F00A43BF5 /* Images.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C069191F5D9F00A43BF5 /* Images.m */; };
 		CB0C6CD7191A95B600E02D9A /* AYNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CD6191A95B600E02D9A /* AYNetworkManager.m */; };
 		CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0C6CDB191A9BD000E02D9A /* MBProgressHUD.m */; };
@@ -103,6 +102,8 @@
 		CB13F09319193E250054E950 /* AYForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB13F09219193E250054E950 /* AYForgotPasswordView.xib */; };
 		CB198FD31921420C00F7EC46 /* AYUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = CB198FD21921420C00F7EC46 /* AYUtilites.m */; };
 		CB275B6C191B37C100EC9964 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB275B6B191B37C100EC9964 /* Device.m */; };
+		CB38F2F5192526CE00163094 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F4192526CE00163094 /* Calendar.m */; };
+		CB38F2F8192526EE00163094 /* DeviceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F7192526EE00163094 /* DeviceDetails.m */; };
 		CB634098191946CC00CA2915 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB634097191946CC00CA2915 /* GoogleMaps.framework */; };
 		CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6340991919470500CA2915 /* GoogleMaps.bundle */; };
 		CB63409C1919476B00CA2915 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63409B1919476B00CA2915 /* AVFoundation.framework */; };
@@ -196,8 +197,6 @@
 		CB07C05D191F418100A43BF5 /* AYDeviceDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYDeviceDetailsView.h; sourceTree = "<group>"; };
 		CB07C05E191F418100A43BF5 /* AYDeviceDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYDeviceDetailsView.m; sourceTree = "<group>"; };
 		CB07C060191F419200A43BF5 /* AYDeviceDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYDeviceDetailsView.xib; sourceTree = "<group>"; };
-		CB07C065191F47FC00A43BF5 /* DeviceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetails.h; sourceTree = "<group>"; };
-		CB07C066191F47FC00A43BF5 /* DeviceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetails.m; sourceTree = "<group>"; };
 		CB07C068191F5D9F00A43BF5 /* Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Images.h; sourceTree = "<group>"; };
 		CB07C069191F5D9F00A43BF5 /* Images.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Images.m; sourceTree = "<group>"; };
 		CB0C6CD5191A95B600E02D9A /* AYNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYNetworkManager.h; sourceTree = "<group>"; };
@@ -300,6 +299,10 @@
 		CB198FD21921420C00F7EC46 /* AYUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYUtilites.m; sourceTree = "<group>"; };
 		CB275B6A191B37C100EC9964 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		CB275B6B191B37C100EC9964 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		CB38F2F3192526CE00163094 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
+		CB38F2F4192526CE00163094 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
+		CB38F2F6192526EE00163094 /* DeviceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetails.h; sourceTree = "<group>"; };
+		CB38F2F7192526EE00163094 /* DeviceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetails.m; sourceTree = "<group>"; };
 		CB634097191946CC00CA2915 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		CB6340991919470500CA2915 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		CB63409B1919476B00CA2915 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -510,8 +513,6 @@
 				CB275B6B191B37C100EC9964 /* Device.m */,
 				CBF9B62B191ECB0E005DC1A0 /* FavoriteDevice.h */,
 				CBF9B62C191ECB0E005DC1A0 /* FavoriteDevice.m */,
-				CB07C065191F47FC00A43BF5 /* DeviceDetails.h */,
-				CB07C066191F47FC00A43BF5 /* DeviceDetails.m */,
 				CB07C068191F5D9F00A43BF5 /* Images.h */,
 				CB07C069191F5D9F00A43BF5 /* Images.m */,
 				CB03F8C0191FB57E00B1DD9C /* Tipo.h */,
@@ -520,6 +521,10 @@
 				CB03F8BE191FB57D00B1DD9C /* Zona.m */,
 				CB10D497191FE4A900F987E6 /* ReservedDevice.h */,
 				CB10D498191FE4A900F987E6 /* ReservedDevice.m */,
+				CB38F2F3192526CE00163094 /* Calendar.h */,
+				CB38F2F4192526CE00163094 /* Calendar.m */,
+				CB38F2F6192526EE00163094 /* DeviceDetails.h */,
+				CB38F2F7192526EE00163094 /* DeviceDetails.m */,
 			);
 			path = ModelFiles;
 			sourceTree = "<group>";
@@ -1171,13 +1176,13 @@
 				CBF13FA019227FA500E1C418 /* AYSearchedDeviceCell.m in Sources */,
 				CBF9B608191E9E27005DC1A0 /* AFHTTPRequestOperation.m in Sources */,
 				CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */,
+				CB38F2F8192526EE00163094 /* DeviceDetails.m in Sources */,
 				CBF9B5DE191E748D005DC1A0 /* NZCircularImageView.m in Sources */,
 				CBCD619F1918090900846E8C /* AYLoginViewController.m in Sources */,
 				CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */,
 				CBF9B616191E9E27005DC1A0 /* UIButton+AFNetworking.m in Sources */,
 				CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */,
 				CB03F8BF191FB57D00B1DD9C /* Zona.m in Sources */,
-				CB07C067191F47FC00A43BF5 /* DeviceDetails.m in Sources */,
 				CBF9B617191E9E27005DC1A0 /* UIImageView+AFNetworking.m in Sources */,
 				CBF9B61E191EAD5F005DC1A0 /* AYFavoritesView.m in Sources */,
 				CBCD61681918044900846E8C /* main.m in Sources */,
@@ -1210,6 +1215,7 @@
 				CB07C06A191F5D9F00A43BF5 /* Images.m in Sources */,
 				CB10D49E191FF20B00F987E6 /* CalenderViewController.m in Sources */,
 				CB03F8C2191FB57E00B1DD9C /* Tipo.m in Sources */,
+				CB38F2F5192526CE00163094 /* Calendar.m in Sources */,
 				CB0C6CDC191A9BD000E02D9A /* MBProgressHUD.m in Sources */,
 				CBF9B623191EB96E005DC1A0 /* AYFavoritesTipoCell.m in Sources */,
 			);

@@ -20,6 +20,7 @@
 @property (strong, nonatomic) AYMenuView *menuView;
 @property (strong, nonatomic) AYDeviceSearchView *searchView;
 @property (strong, nonatomic) AYDeviceDetailsView *deviceDetailsView;
+@property (strong, nonatomic) UIView *infoWindow;
 
 @property (strong, nonatomic) NSArray *devices;
 @property (strong, nonatomic) NSDictionary *tipos;
@@ -70,7 +71,7 @@
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-34.62445030861076//[latidudeString floatValue]
                                                             longitude:-58.43372583389282//[longitudeString floatValue]
-                                                                 zoom:15.0];
+                                                                 zoom:12.0];
     GMSMapView *googleMapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     [googleMapView setDelegate:self];
     googleMapView.myLocationEnabled = YES;
@@ -184,6 +185,7 @@
     AYMapInfoView *view =  [[[NSBundle mainBundle] loadNibNamed:@"AYMapInfoView" owner:self options:nil] objectAtIndex:0];
     [view configureViewWithDeviceObject:self.devices[[marker.title integerValue]]];
     
+    self.infoWindow = view;
     return view;
 }
 

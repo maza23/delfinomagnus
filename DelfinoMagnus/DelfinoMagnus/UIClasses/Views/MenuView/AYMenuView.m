@@ -47,7 +47,7 @@
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
-    [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+    [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor colorWithRed:225.0/255.0 green:164.0/255.0 blue:74.0/255.0 alpha:1.0]] forState:UIControlStateNormal];
     
     UITapGestureRecognizer *singleTapProfile = [[UITapGestureRecognizer alloc] init];
     [singleTapProfile addTarget:self action:@selector(didTappedOnMenu:)];

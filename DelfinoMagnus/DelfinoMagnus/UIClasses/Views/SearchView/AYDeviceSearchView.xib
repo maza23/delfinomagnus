@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-JU-HYx">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-JU-HYx">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -25,12 +25,22 @@
                         <action selector="actionMenuButtonPressed:" destination="1" eventType="touchUpInside" id="ruG-rD-DVG"/>
                     </connections>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVB-Yz-0S7">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVB-Yz-0S7">
                     <rect key="frame" x="0.0" y="40" width="300" height="528"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RVB-Yz-0S7" secondAttribute="trailing" id="3Bb-L4-JcO"/>
+                <constraint firstAttribute="bottom" secondItem="RVB-Yz-0S7" secondAttribute="bottom" id="5xc-tA-6a6"/>
+                <constraint firstItem="Xl5-JU-HYx" firstAttribute="top" secondItem="1" secondAttribute="top" id="8fS-NF-dr6"/>
+                <constraint firstItem="RVB-Yz-0S7" firstAttribute="top" secondItem="1" secondAttribute="top" constant="40" id="B6l-hm-2JB"/>
+                <constraint firstItem="Xl5-JU-HYx" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="HuI-YZ-o7O"/>
+                <constraint firstAttribute="bottom" secondItem="Xl5-JU-HYx" secondAttribute="bottom" id="Qck-KG-JP3"/>
+                <constraint firstAttribute="trailing" secondItem="Xl5-JU-HYx" secondAttribute="trailing" constant="-20" id="lTw-9L-B3j"/>
+                <constraint firstItem="RVB-Yz-0S7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="wLb-1K-M0y"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="scrollViewContainer" destination="RVB-Yz-0S7" id="ZtT-cQ-YJD"/>

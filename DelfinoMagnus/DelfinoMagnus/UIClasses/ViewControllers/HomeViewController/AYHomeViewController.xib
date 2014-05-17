@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6J-6b-whn">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6J-6b-whn">
                     <rect key="frame" x="255" y="10" width="48" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="menu.png">
@@ -24,7 +24,7 @@
                         <action selector="actionMenuButtonPressed:" destination="-1" eventType="touchUpInside" id="37R-P7-djn"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaS-Ww-N28">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaS-Ww-N28">
                     <rect key="frame" x="9" y="512" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="btn_mapa_inactivo.png">
@@ -35,7 +35,7 @@
                         <action selector="actionToDoButtonPressed:" destination="-1" eventType="touchUpInside" id="CEs-4B-4pY"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozz-AQ-xDp">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozz-AQ-xDp">
                     <rect key="frame" x="10" y="264" width="48" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="buscar.png">
@@ -47,6 +47,14 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="EaS-Ww-N28" secondAttribute="bottom" constant="8" id="5ic-hf-u6F"/>
+                <constraint firstItem="Y6J-6b-whn" firstAttribute="top" secondItem="1" secondAttribute="top" constant="10" id="CgH-EF-bl5"/>
+                <constraint firstAttribute="trailing" secondItem="Y6J-6b-whn" secondAttribute="trailing" constant="17" id="KLS-Ge-WdW"/>
+                <constraint firstItem="EaS-Ww-N28" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="9" id="hC7-CG-EaX"/>
+                <constraint firstAttribute="centerY" secondItem="ozz-AQ-xDp" secondAttribute="centerY" constant="-4.5" id="sjG-vh-7GL"/>
+                <constraint firstItem="ozz-AQ-xDp" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="vSX-6H-KAx"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

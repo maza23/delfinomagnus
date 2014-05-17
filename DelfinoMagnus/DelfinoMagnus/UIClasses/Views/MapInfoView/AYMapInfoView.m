@@ -9,7 +9,8 @@
 #import "AYMapInfoView.h"
 #import "Device.h"
 
-@interface AYMapInfoView ()
+@interface AYMapInfoView () <UIWebViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *viewInfoContainer;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblSubtitle;
@@ -50,15 +51,23 @@
     if (!description) {
         return;
     }
+    NSLog(@"Description is:%@", description);
     
-    NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title></title></head><body>"];
+    NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title>AVAdesh</title></head><body>"];
     
     NSCharacterSet *charecterSetToTrim = [NSCharacterSet characterSetWithCharactersInString:@"/"];
-    
+   // [html appendString:@"Hello World How are you"];
     [html appendString:[description stringByTrimmingCharactersInSet:charecterSetToTrim]];
     [html appendString:@"</body></html>"];
     
-    [self.webVIewDescription loadHTMLString:[html description] baseURL:nil];
+   // [self.webVIewDescription loadHTMLString:html  baseURL:nil];
+    
+//    
+//    UIWebView *webView = [[UIWebView alloc]  initWithFrame:CGRectMake(0, 0, 300, 300)];
+//    [webView loadHTMLString: html baseURL: nil];
+
+   // [[[UIApplication sharedApplication] keyWindow] addSubview:webView];
+    [self.webVIewDescription loadHTMLString: html baseURL: nil];
 }
 
 #pragma mark - Public Methods
@@ -81,6 +90,27 @@
         [self.imgViewDisponible setImage:[UIImage imageNamed:@"no_disponible.png"]];
         [self.lblDisponibleStatus setText:@"No Disponible"];
     }
+}
+
+#pragma mark - WebView delegate Methods
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    
 }
 
 @end

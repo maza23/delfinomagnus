@@ -48,7 +48,7 @@
 - (void)doInitialConfigurations
 {
     [self.viewNumberOfFav.layer setCornerRadius:self.viewNumberOfFav.frame.size.width/2];
-    [self.viewNumberOfFav.layer setBorderColor:[[UIColor yellowColor] CGColor]];
+    [self.viewNumberOfFav.layer setBorderColor:[[UIColor colorWithRed:222.0/255.0 green:188.0/255.0 blue:86.0/255.0 alpha:1.0] CGColor]];
     [self.viewNumberOfFav.layer setBorderWidth:2.0f];
     
     [self.tbleViewFavoritesList registerNib:[UINib nibWithNibName:@"AYDevicesListCell" bundle:nil] forCellReuseIdentifier:@"AYDevicesListCell"];

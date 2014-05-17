@@ -14,6 +14,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="300" height="548"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-j0-IA0">
+                    <rect key="frame" x="20" y="39" width="260" height="2"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGU-Oq-NB9">
                     <rect key="frame" x="249" y="3" width="40" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -34,7 +39,7 @@
                             <rect key="frame" x="10" y="10" width="80" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                            <color key="textColor" red="0.98039221759999995" green="0.89019614459999996" blue="0.02745098248" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="textColor" red="0.86910076530612246" green="0.73641447156788209" blue="0.33835559035316021" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -46,7 +51,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b0C-RS-8WB">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="b0C-RS-8WB">
                     <rect key="frame" x="0.0" y="164" width="300" height="384"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -59,7 +64,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="WF4-ae-DDF" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="5wJ-tN-I8h"/>
+                <constraint firstAttribute="trailing" secondItem="b0C-RS-8WB" secondAttribute="trailing" id="MXt-64-YUr"/>
+                <constraint firstItem="b0C-RS-8WB" firstAttribute="top" secondItem="1" secondAttribute="top" constant="164" id="Qh5-71-ONR"/>
+                <constraint firstAttribute="bottom" secondItem="b0C-RS-8WB" secondAttribute="bottom" id="UFb-1X-xdI"/>
                 <constraint firstAttribute="trailing" secondItem="WF4-ae-DDF" secondAttribute="trailing" id="iWB-mI-3Zt"/>
+                <constraint firstItem="b0C-RS-8WB" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="rgJ-jI-swM"/>
                 <constraint firstAttribute="bottom" secondItem="WF4-ae-DDF" secondAttribute="bottom" id="sGk-4j-ZVF"/>
                 <constraint firstItem="WF4-ae-DDF" firstAttribute="top" secondItem="1" secondAttribute="top" id="vL3-ml-GjX"/>
             </constraints>

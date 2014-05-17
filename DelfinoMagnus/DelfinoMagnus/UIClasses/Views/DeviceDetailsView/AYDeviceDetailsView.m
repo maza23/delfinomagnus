@@ -64,9 +64,10 @@
 - (void)addCalendarView
 {
     self.calendarVC = [[CalenderViewController alloc]  initWithNibName:@"CalenderViewController" bundle:nil];
+    NSLog(@"Calendar View Frame:%@ and ContainerView frame:%@", NSStringFromCGRect(self.calendarVC.view.frame), NSStringFromCGRect(self.viewCalendarContainer.frame));
     [self.viewCalendarContainer addSubview:self.calendarVC.view];
 }
-
+///2014-05-17 14:43:53.060 DelfinoMagnus[1760:70b] Calendar View Frame:{{0, 0}, {310, 260}} and ContainerView frame:{{5, 158}, {310, 302}}
 - (void)fetchAndLoadDeviceDetailsFromDataBase
 {
     self.deviceDetails = [[[LTCoreDataManager sharedInstance] getRecordsFromEntity:kDeviceDetailsEntityName forAttribute:@"deviceId" withKey:self.device.deviceId] lastObject];
@@ -144,6 +145,7 @@
         UIImageView *imageView = [[UIImageView alloc]  initWithFrame:frame];
         
         [self downloadImageFromURLString:[NSString stringWithFormat:@"%@/%@", self.deviceDetails.urlimgs, image.archivo] andSetToImageView:imageView];
+        [imageView setContentMode:UIViewContentModeScaleAspectFit];
         [self.scrlViewImageContainer addSubview:imageView];
     }
     
@@ -172,16 +174,12 @@
     [localImageView setImageWithURLRequest:request
                           placeholderImage:nil
                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
-                                       dispatch_async(dispatch_get_main_queue(), ^{
                                            [localImageView setImage:image];
                                            [self stopActivityFromActivitiesDictWithKey:keyForActivity withResult:YES];
-                                       });
                                    }
                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
-                                        dispatch_async(dispatch_get_main_queue(), ^{
                                        
                                        [self stopActivityFromActivitiesDictWithKey:[[request URL] absoluteString] withResult:NO];
-                                        });
                                    }];
 }
 

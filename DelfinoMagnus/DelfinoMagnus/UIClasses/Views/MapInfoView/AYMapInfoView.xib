@@ -53,10 +53,13 @@
                             <rect key="frame" x="256" y="335" width="12" height="12"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppD-mF-ZVf">
-                            <rect key="frame" x="0.0" y="72" width="280" height="255"/>
+                        <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1i5-0y-rE2">
+                            <rect key="frame" x="0.0" y="72" width="286" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <outlet property="delegate" destination="1" id="Dnb-az-yWW"/>
+                            </connections>
                         </webView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -76,7 +79,7 @@
                 <outlet property="viewInfoContainer" destination="hDK-eN-wEP" id="JsH-NK-7st"/>
                 <outlet property="viewTipotpyeContainer" destination="Uoq-SL-UB5" id="EuU-Lm-EV5"/>
                 <outlet property="viewTitleContainer" destination="w6L-lk-vMd" id="A6K-BV-GXh"/>
-                <outlet property="webVIewDescription" destination="ppD-mF-ZVf" id="FZr-y2-HBt"/>
+                <outlet property="webVIewDescription" destination="1i5-0y-rE2" id="MnU-6O-DKf"/>
             </connections>
         </view>
     </objects>

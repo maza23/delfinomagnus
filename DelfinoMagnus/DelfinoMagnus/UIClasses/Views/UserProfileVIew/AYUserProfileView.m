@@ -14,7 +14,7 @@
 
 @interface AYUserProfileView ()
 
-@property (weak, nonatomic) IBOutlet NZCircularImageView *imgViewProfilePic;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewProfilePic;
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
 @property (weak, nonatomic) IBOutlet UILabel *lblDesignation;
 @property (weak, nonatomic) IBOutlet UILabel *lblEmailId;
@@ -62,6 +62,10 @@
     [self.lblEmailId setText:self.userDetails.email];
     [self.lblImpressea setText:self.userDetails.empresa];
     [self.lblAddress setText:self.userDetails.direccion];
+    
+    [self.imgViewProfilePic.layer setBorderColor:[[UIColor redColor] CGColor]];
+    [self.imgViewProfilePic.layer setBorderWidth:2.0f];
+    [self.imgViewProfilePic.layer setCornerRadius:self.imgViewProfilePic.frame.size.width/2];
 }
 
 - (void)startDownloadingImage
@@ -69,15 +73,11 @@
     NSString *urlString  = [NSString stringWithFormat:@"%@/%@", self.userDetails.urlimgs, self.userDetails.image_file];
     
     [self.imgViewProfilePic setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        dispatch_async(dispatch_get_main_queue(), ^{
             [self.imgViewProfilePic setImage:image];
             [self.activityIndicator stopAnimating];
-        });
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
             [self.activityIndicator stopAnimating];
-        });
     }];
 }
 

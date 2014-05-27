@@ -348,7 +348,7 @@ NSDate *todayDate;
 //            [_dot setFrame:r];
 //            [btnDay addSubview:_dot];
             
-            [btnDay setBackgroundColor:[UIColor lightGrayColor]];
+            [btnDay setBackgroundColor:[UIColor redColor]];
         }
         // }
         
@@ -494,15 +494,33 @@ NSDate *todayDate;
     // For example: self.myOutlet = nil;
 }
 
-
+//"calendar":[{"fecha":"2014-05-21","disponible":"NO"},{"fecha":"2014-06-07","disponible":"SI"},{"fecha":"2014-07-18","disponible":"NO"},{"fecha":"2014-12-31","disponible":"SI"}]
 - (void)reloadCalendarWithCalendarObjects:(NSArray *)objects
 {
-    NSMutableArray *calendars  = [[NSMutableArray alloc]  initWithCapacity:0];
+  //  NSArray *objects = @[@{@"fecha":@"2014-05-21",@"disponible":@"NO"},@{@"fecha":@"2014-06-07",@"disponible":@"SI"},@{@"fecha":@"2014-07-18",@"disponible":@"NO"},@{@"fecha":@"2014-12-30",@"disponible":@"SI"}];
     
-    for (Calendar *calendar in objects) {
-        if ([[calendar.disponible uppercaseString] isEqualToString:@"NO"]) {
-            [calendars addObject:calendar.fecha];
+    NSMutableArray *calendars  = [[NSMutableArray alloc]  initWithCapacity:0];
+
+    @try {
+        for (int index = 0; index < [objects count]; index++) {
+            
+            if ([[objects[index] disponible] isEqualToString:@"NO"]) {
+                NSDate *startDate = [dateFormatter dateFromString:[objects[index] fecha]];
+                NSDate *endDate = [dateFormatter dateFromString:[objects[++index] fecha]];
+                
+                while ([startDate compare:endDate] != NSOrderedDescending) {
+                    
+                    [calendars addObject:[dateFormatter stringFromDate:startDate]];
+                    
+                    startDate = [startDate dateByAddingTimeInterval:86400];
+                }
+                
+            }
         }
+
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception occured while getting dates");
     }
     
     self.eventsDates = calendars;

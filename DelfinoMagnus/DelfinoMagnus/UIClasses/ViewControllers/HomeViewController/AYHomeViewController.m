@@ -128,9 +128,9 @@
           
             if (result && [result isKindOfClass:[NSDictionary class]]) {
                 [[LTCoreDataManager sharedInstance] insertDevicesResultIntoDBFromRawResponse:result];
-                [self fetchAndLoadMarkersFromDataBase];
             }
             
+            [self fetchAndLoadMarkersFromDataBase];
             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         });
 

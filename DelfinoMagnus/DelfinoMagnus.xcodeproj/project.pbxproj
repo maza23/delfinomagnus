@@ -101,6 +101,7 @@
 		CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13F09019193E120054E950 /* AYForgotPasswordView.m */; };
 		CB13F09319193E250054E950 /* AYForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB13F09219193E250054E950 /* AYForgotPasswordView.xib */; };
 		CB198FD31921420C00F7EC46 /* AYUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = CB198FD21921420C00F7EC46 /* AYUtilites.m */; };
+		CB2318CB1937AFAB00816DC7 /* AYLoginViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2318CA1937AFAB00816DC7 /* AYLoginViewController~iPad.xib */; };
 		CB275B6C191B37C100EC9964 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB275B6B191B37C100EC9964 /* Device.m */; };
 		CB38F2F5192526CE00163094 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F4192526CE00163094 /* Calendar.m */; };
 		CB38F2F8192526EE00163094 /* DeviceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F7192526EE00163094 /* DeviceDetails.m */; };
@@ -297,6 +298,7 @@
 		CB13F09219193E250054E950 /* AYForgotPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYForgotPasswordView.xib; sourceTree = "<group>"; };
 		CB198FD11921420C00F7EC46 /* AYUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUtilites.h; sourceTree = "<group>"; };
 		CB198FD21921420C00F7EC46 /* AYUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYUtilites.m; sourceTree = "<group>"; };
+		CB2318CA1937AFAB00816DC7 /* AYLoginViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYLoginViewController~iPad.xib"; sourceTree = "<group>"; };
 		CB275B6A191B37C100EC9964 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		CB275B6B191B37C100EC9964 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		CB38F2F3192526CE00163094 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
@@ -837,6 +839,7 @@
 				CBCD619C1918090900846E8C /* AYLoginViewController.h */,
 				CBCD619D1918090900846E8C /* AYLoginViewController.m */,
 				CBCD619E1918090900846E8C /* AYLoginViewController.xib */,
+				CB2318CA1937AFAB00816DC7 /* AYLoginViewController~iPad.xib */,
 			);
 			path = LoginViewController;
 			sourceTree = "<group>";
@@ -1101,6 +1104,7 @@
 				CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */,
 				CB1248BA1918879D009DA54C /* favorito_off.png in Resources */,
 				CB1248C51918879D009DA54C /* icon_help.png in Resources */,
+				CB2318CB1937AFAB00816DC7 /* AYLoginViewController~iPad.xib in Resources */,
 				CB12489D1918879D009DA54C /* bg_input.png in Resources */,
 				CB1248B21918879D009DA54C /* carteles_icon.png in Resources */,
 				CB1248DF1918879D009DA54C /* web_hi_res_512.png in Resources */,
@@ -1342,8 +1346,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DelfinoMagnus/DelfinoMagnus-Prefix.pch";
 				INFOPLIST_FILE = "DelfinoMagnus/DelfinoMagnus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1359,8 +1365,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DelfinoMagnus/DelfinoMagnus-Prefix.pch";
 				INFOPLIST_FILE = "DelfinoMagnus/DelfinoMagnus-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

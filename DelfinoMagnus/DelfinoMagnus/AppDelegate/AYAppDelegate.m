@@ -27,12 +27,12 @@
 
     NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
-    if (userName && password) {
-        [self loadHomeViewController];
-    }
-    else {
+//    if (userName && password) {
+//        [self loadHomeViewController];
+//    }
+//    else {
         [self loadLoginViewController];
-    }
+   // }
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -48,7 +48,8 @@
 
 - (void)loadLoginViewController
 {
-    AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:@"AYLoginViewController" bundle:nil];
+    NSString *nibName = kIsDeviceiPad ? @"AYLoginViewController~iPad" : @"AYLoginViewController";
+    AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:nibName bundle:nil];
     [loginVC setDelegate:self];
     [self.window setRootViewController:loginVC];
 }

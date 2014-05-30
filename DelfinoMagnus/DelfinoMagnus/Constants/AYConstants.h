@@ -22,3 +22,7 @@
 
 //URL constants
 #define kBaseServerURL          @"http://delfinomagnus.com/api/"
+
+
+#define kIsDeviceiPad   UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM()
+#define kIsOrientationLandscape UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)

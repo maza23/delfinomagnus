@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldUserName;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldPassword;
 @property (strong, nonatomic) AYForgotPasswordView *forgotPasswordView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintInputContainerTop;
 @end
 
 @implementation AYLoginViewController
@@ -39,6 +40,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self removeObservers];
+}
+
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
@@ -47,7 +53,7 @@
 //    [self.txtFieldUserName setText:@"pablom"];
 //    [self.txtFieldPassword setText:@"pablom"];
 //
-    
+    [self addKeyBoardObservers];
     UITapGestureRecognizer *singleTapOnBGView = [[UITapGestureRecognizer alloc] init];
     [singleTapOnBGView addTarget:self action:@selector(singleTappedOnBGView:)];
     [self.view addGestureRecognizer:singleTapOnBGView];
@@ -57,6 +63,32 @@
 {
     [self.txtFieldPassword resignFirstResponder];
     [self.txtFieldUserName resignFirstResponder];
+}
+
+- (void)addKeyBoardObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)removeObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)keyBoardWillShow:(NSNotification *)notificationObject
+{
+    if (kIsOrientationLandscape) {
+        self.constraintInputContainerTop.constant = kIsDeviceiPad ? 270 : 65;
+        [self.view layoutIfNeeded];
+    }
+}
+
+- (void)keyBoardWillHide:(NSNotification *)notificationObject
+{
+    self.constraintInputContainerTop.constant = kIsDeviceiPad ? 300: 150;
+    [self.view layoutIfNeeded];
 }
 
 - (void)startLoginToServer

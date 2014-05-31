@@ -64,10 +64,10 @@
 - (void)addCalendarView
 {
     self.calendarVC = [[CalenderViewController alloc]  initWithNibName:@"CalenderViewController" bundle:nil];
-    NSLog(@"Calendar View Frame:%@ and ContainerView frame:%@", NSStringFromCGRect(self.calendarVC.view.frame), NSStringFromCGRect(self.viewCalendarContainer.frame));
+    
     [self.viewCalendarContainer addSubview:self.calendarVC.view];
 }
-///2014-05-17 14:43:53.060 DelfinoMagnus[1760:70b] Calendar View Frame:{{0, 0}, {310, 260}} and ContainerView frame:{{5, 158}, {310, 302}}
+
 - (void)fetchAndLoadDeviceDetailsFromDataBase
 {
     self.deviceDetails = [[[LTCoreDataManager sharedInstance] getRecordsFromEntity:kDeviceDetailsEntityName forAttribute:@"deviceId" withKey:self.device.deviceId] lastObject];

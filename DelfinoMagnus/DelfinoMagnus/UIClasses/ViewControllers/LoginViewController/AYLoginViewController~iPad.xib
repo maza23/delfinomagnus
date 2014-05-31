@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-b1-Cqi">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-b1-Cqi">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -161,16 +161,20 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="BZk-cU-OxE" secondAttribute="trailing" id="7LF-w2-UbE"/>
+                <constraint firstAttribute="trailing" secondItem="aKV-b1-Cqi" secondAttribute="trailing" id="7qO-KS-pph"/>
                 <constraint firstAttribute="bottom" secondItem="BZk-cU-OxE" secondAttribute="bottom" id="9yQ-mN-908"/>
+                <constraint firstItem="aKV-b1-Cqi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Afl-je-lZ6"/>
                 <constraint firstItem="BZk-cU-OxE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D7u-kv-QB5"/>
                 <constraint firstItem="f1K-j4-OBM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="FmK-7q-jNo"/>
+                <constraint firstAttribute="bottom" secondItem="aKV-b1-Cqi" secondAttribute="bottom" id="JyW-JX-884"/>
                 <constraint firstItem="bGO-yo-cpz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N1g-uH-7Qj"/>
                 <constraint firstAttribute="trailing" secondItem="f1K-j4-OBM" secondAttribute="trailing" constant="231" id="TGG-g3-t8g"/>
+                <constraint firstItem="sBO-p1-ufa" firstAttribute="top" secondItem="bGO-yo-cpz" secondAttribute="bottom" constant="27" id="cO8-4z-N7x"/>
+                <constraint firstItem="aKV-b1-Cqi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hmJ-Yt-9V4"/>
                 <constraint firstAttribute="trailing" secondItem="bGO-yo-cpz" secondAttribute="trailing" id="ijz-ho-3CY"/>
                 <constraint firstAttribute="trailing" secondItem="sBO-p1-ufa" secondAttribute="trailing" constant="20" symbolic="YES" id="mxT-In-ffR"/>
                 <constraint firstItem="bGO-yo-cpz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="300" id="s2A-3F-KT3"/>
                 <constraint firstItem="f1K-j4-OBM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="232" id="sdX-Rh-3Eh"/>
-                <constraint firstAttribute="bottom" secondItem="sBO-p1-ufa" secondAttribute="bottom" constant="278" id="u7q-Bf-nj0"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

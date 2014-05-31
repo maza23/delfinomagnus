@@ -124,6 +124,7 @@
 		CB773F5F191BFF6100E36537 /* AYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F5E191BFF6100E36537 /* AYMenuView.m */; };
 		CB773F61191BFF7D00E36537 /* AYMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB773F60191BFF7D00E36537 /* AYMenuView.xib */; };
 		CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */; };
+		CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */; };
 		CBCD615C1918044900846E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615B1918044900846E8C /* Foundation.framework */; };
 		CBCD615E1918044900846E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615D1918044900846E8C /* CoreGraphics.framework */; };
 		CBCD61601918044900846E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615F1918044900846E8C /* UIKit.framework */; };
@@ -328,6 +329,7 @@
 		CB773F60191BFF7D00E36537 /* AYMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYMenuView.xib; sourceTree = "<group>"; };
 		CB773F64191C076B00E36537 /* UIImage+ISOverlayColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ISOverlayColor.h"; sourceTree = "<group>"; };
 		CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ISOverlayColor.m"; sourceTree = "<group>"; };
+		CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYForgotPasswordView~iPad.xib"; sourceTree = "<group>"; };
 		CBCD61581918044900846E8C /* DelfinoMagnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelfinoMagnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCD615B1918044900846E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CBCD615D1918044900846E8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -547,6 +549,7 @@
 				CB13F08F19193E120054E950 /* AYForgotPasswordView.h */,
 				CB13F09019193E120054E950 /* AYForgotPasswordView.m */,
 				CB13F09219193E250054E950 /* AYForgotPasswordView.xib */,
+				CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */,
 			);
 			path = ForgotPasswordView;
 			sourceTree = "<group>";
@@ -1089,6 +1092,7 @@
 				CB1248AE1918879D009DA54C /* calendario_pressed.png in Resources */,
 				CB1248CF1918879D009DA54C /* menu.png in Resources */,
 				CB1248D91918879D009DA54C /* splash_2.png in Resources */,
+				CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */,
 				CBF13F8C19226B4300E1C418 /* AYDeviceSearchView.xib in Resources */,
 				CB12489C1918879D009DA54C /* bg_btn_telon.png in Resources */,
 				CB12489B1918879D009DA54C /* bg_btn_monocolumna.png in Resources */,

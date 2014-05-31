@@ -148,7 +148,12 @@
 
 - (IBAction)actionForgotPasswordButtonPressed:(id)sender {
     
-    self.forgotPasswordView = [[[NSBundle mainBundle] loadNibNamed:@"AYForgotPasswordView" owner:self options:nil] lastObject];
+    [self.txtFieldPassword resignFirstResponder];
+    [self.txtFieldUserName resignFirstResponder];
+
+    NSString *nibName = kIsDeviceiPad ? @"AYForgotPasswordView~iPad" : @"AYForgotPasswordView";
+    self.forgotPasswordView = [[[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil] lastObject];
+    [self.forgotPasswordView setFrame:self.view.bounds];
     
     [self.view addSubview:self.forgotPasswordView];
 }

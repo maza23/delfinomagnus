@@ -151,8 +151,10 @@
 
 - (void)loadMenuView
 {
+    [self setActionButtonsHidden:YES];
     self.menuView = [[[NSBundle mainBundle] loadNibNamed:@"AYMenuView" owner:self options:nil] lastObject];
-    [self.menuView setFrame:CGRectMake(10, 10, 300, self.view.bounds.size.height - 20)];
+    [self.menuView setFrame:CGRectMake(10, 10, self.view.bounds.size.width-20, self.view.bounds.size.height - 20)];
+    [self.menuView setDelegate:self];
     [self.view addSubview:self.menuView];
 }
 

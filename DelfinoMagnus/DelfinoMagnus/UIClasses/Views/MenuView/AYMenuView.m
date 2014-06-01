@@ -123,6 +123,11 @@
 
 #pragma mark - IBAction Methods
 - (IBAction)actionCloseButtonPressed:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(didPressedCloseButtonOnView:)]) {
+        [self.delegate didPressedCloseButtonOnView:self];
+    }
+    
     [self removeFromSuperview];
 }
 

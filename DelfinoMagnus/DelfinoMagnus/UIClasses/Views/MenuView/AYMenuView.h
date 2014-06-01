@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AYBaseCloseDelegate.h"
 
 @interface AYMenuView : UIView
-
+@property (weak, nonatomic) id <AYBaseCloseDelegate> delegate;
 @end
+

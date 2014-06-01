@@ -125,6 +125,8 @@
 		CB773F61191BFF7D00E36537 /* AYMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB773F60191BFF7D00E36537 /* AYMenuView.xib */; };
 		CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */; };
 		CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */; };
+		CB7928421939CD35004B19DA /* AYSearchView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB7928411939CD35004B19DA /* AYSearchView~iPad.xib */; };
+		CB7928441939D0C2004B19DA /* AYDeviceSearchView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB7928431939D0C2004B19DA /* AYDeviceSearchView~iPad.xib */; };
 		CBCD615C1918044900846E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615B1918044900846E8C /* Foundation.framework */; };
 		CBCD615E1918044900846E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615D1918044900846E8C /* CoreGraphics.framework */; };
 		CBCD61601918044900846E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615F1918044900846E8C /* UIKit.framework */; };
@@ -330,6 +332,9 @@
 		CB773F64191C076B00E36537 /* UIImage+ISOverlayColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ISOverlayColor.h"; sourceTree = "<group>"; };
 		CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ISOverlayColor.m"; sourceTree = "<group>"; };
 		CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYForgotPasswordView~iPad.xib"; sourceTree = "<group>"; };
+		CB7928411939CD35004B19DA /* AYSearchView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYSearchView~iPad.xib"; sourceTree = "<group>"; };
+		CB7928431939D0C2004B19DA /* AYDeviceSearchView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYDeviceSearchView~iPad.xib"; sourceTree = "<group>"; };
+		CB7928451939D8EC004B19DA /* AYBaseCloseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AYBaseCloseDelegate.h; sourceTree = "<group>"; };
 		CBCD61581918044900846E8C /* DelfinoMagnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelfinoMagnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCD615B1918044900846E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CBCD615D1918044900846E8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -720,6 +725,7 @@
 				CB773F5C191BFF5000E36537 /* MenuView */,
 				CB773F56191BE3D000E36537 /* MapInfoView */,
 				CB13F08E19193DF70054E950 /* ForgotPasswordView */,
+				CB7928451939D8EC004B19DA /* AYBaseCloseDelegate.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -972,11 +978,13 @@
 				CBFE3AF7191D4AEF00A74C2D /* AYSearchView.h */,
 				CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */,
 				CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */,
+				CB7928411939CD35004B19DA /* AYSearchView~iPad.xib */,
 				CBF9B5D2191E0E6D005DC1A0 /* AYSearchSettings.h */,
 				CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */,
 				CBF13F8819226B3000E1C418 /* AYDeviceSearchView.h */,
 				CBF13F8919226B3000E1C418 /* AYDeviceSearchView.m */,
 				CBF13F8B19226B4300E1C418 /* AYDeviceSearchView.xib */,
+				CB7928431939D0C2004B19DA /* AYDeviceSearchView~iPad.xib */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -1026,7 +1034,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AY;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Delfino;
 				TargetAttributes = {
 					CBCD61721918044900846E8C = {
@@ -1080,6 +1088,7 @@
 				CB1248CD1918879D009DA54C /* mediawall.png in Resources */,
 				CB1248D51918879D009DA54C /* recuperar.png in Resources */,
 				CBF9B620191EAD6F005DC1A0 /* AYFavoritesView.xib in Resources */,
+				CB7928421939CD35004B19DA /* AYSearchView~iPad.xib in Resources */,
 				CB1248BB1918879D009DA54C /* favorito_on.png in Resources */,
 				CB1248B41918879D009DA54C /* cmi.png in Resources */,
 				CB1248DD1918879D009DA54C /* telon.png in Resources */,
@@ -1095,6 +1104,7 @@
 				CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */,
 				CBF13F8C19226B4300E1C418 /* AYDeviceSearchView.xib in Resources */,
 				CB12489C1918879D009DA54C /* bg_btn_telon.png in Resources */,
+				CB7928441939D0C2004B19DA /* AYDeviceSearchView~iPad.xib in Resources */,
 				CB12489B1918879D009DA54C /* bg_btn_monocolumna.png in Resources */,
 				CB1248D21918879D009DA54C /* monocolumnas_icon.png in Resources */,
 				CBF13F9F19227FA500E1C418 /* AYDevicesListView.xib in Resources */,
@@ -1271,7 +1281,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1310,7 +1319,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1380,7 +1388,6 @@
 		CBCD61881918044900846E8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DelfinoMagnus.app/DelfinoMagnus";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1403,7 +1410,6 @@
 		CBCD61891918044900846E8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DelfinoMagnus.app/DelfinoMagnus";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

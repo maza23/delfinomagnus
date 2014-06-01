@@ -15,7 +15,7 @@
 #import "AYDeviceDetailsView.h"
 #import "Tipo.h"
 
-@interface AYHomeViewController () <GMSMapViewDelegate>
+@interface AYHomeViewController () <GMSMapViewDelegate, AYBaseCloseDelegate>
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) AYMenuView *menuView;
 @property (strong, nonatomic) AYDeviceSearchView *searchView;
@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic) NSArray *devices;
 @property (strong, nonatomic) NSDictionary *tipos;
+@property (weak, nonatomic) IBOutlet UIButton *btnSearch;
+@property (weak, nonatomic) IBOutlet UIButton *btnMenu;
 @end
 
 @implementation AYHomeViewController
@@ -162,15 +164,26 @@
     [self.deviceDetailsView loadDeviceDetailsWithDeviceObject:deviceObject];
 }
 
+- (void)setActionButtonsHidden:(BOOL)setHidden
+{
+    [self.btnMenu setHidden:setHidden];
+    [self.btnSearch setHidden:setHidden];
+}
+
 #pragma mark - IBAction Methods
 - (IBAction)actionMenuButtonPressed:(id)sender {
     [self loadMenuView];
 }
 
 - (IBAction)actionSearchButtonPressed:(id)sender {
-    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYDeviceSearchView" owner:self options:nil] lastObject];
+
+    [self setActionButtonsHidden:YES];
+
+    NSString *nibName = kIsDeviceiPad ? @"AYDeviceSearchView~iPad": @"AYDeviceSearchView";
+    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:nibName owner:self options:nil] lastObject];
     [self.view addSubview:self.searchView];
-    [self.searchView setFrame:CGRectMake(10, 10, 300, self.view.bounds.size.height - 20)];
+    [self.searchView setDelegate:self];
+    [self.searchView setFrame:CGRectMake(10, 10, self.view.bounds.size.width - 20, self.view.bounds.size.height - 20)];
     [self.searchView layoutIfNeeded];
 }
 
@@ -219,6 +232,12 @@
             }
         });
     }];
+}
+
+#pragma mark - Base Close Delegate Methods
+- (void)didPressedCloseButtonOnView:(UIView *)view
+{
+    [self setActionButtonsHidden:NO];
 }
 
 @end

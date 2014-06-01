@@ -34,16 +34,40 @@
 }
 #pragma mark - IBAction Methods
 - (IBAction)actionMenuButtonPressed:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(didPressedCloseButtonOnView:)]) {
+        [self.delegate didPressedCloseButtonOnView:self];
+    }
     [self removeFromSuperview];
 }
 
 #pragma mark - Private Methods
 - (void)loadSearchView
 {
-    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYSearchView" owner:self options:nil] lastObject];
-    [self.scrollViewContainer addSubview:self.searchView];
+    NSString *nibName = kIsDeviceiPad ? @"AYSearchView~iPad": @"AYSearchView";
+    AYSearchView *searchSubView = [[[NSBundle mainBundle]  loadNibNamed:nibName owner:self options:nil] lastObject];
+    [self.scrollViewContainer addSubview:searchSubView];
+    
+//    
+//    searchSubView.translatesAutoresizingMaskIntoConstraints = NO;
+//    
+//    [self.scrollViewContainer addConstraints:[NSLayoutConstraint
+//                               constraintsWithVisualFormat:@"V:|-0-[searchSubView]-0-|"
+//                               options:NSLayoutFormatDirectionLeadingToTrailing
+//                               metrics:nil
+//                               views:NSDictionaryOfVariableBindings(searchSubView)]];
+//    [self.scrollViewContainer addConstraints:[NSLayoutConstraint
+//                               constraintsWithVisualFormat:@"H:|-0-[searchSubView]-0-|"
+//                               options:NSLayoutFormatDirectionLeadingToTrailing
+//                               metrics:nil
+//                               views:NSDictionaryOfVariableBindings(searchSubView)]];
+//
+    self.searchView = searchSubView;
     
     [self.scrollViewContainer setContentSize:self.searchView.bounds.size];
+    [self layoutIfNeeded];
+
+   // NSLog(@"Frame of scrollView is:%@ \nAnd content size of scrollView is:%@ \nAnd frame of search view is:%@", self.scrollViewContainer.frame, self.scrollViewContainer.contentSize, self.searchView.frame);
 }
 
 

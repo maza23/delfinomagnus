@@ -84,9 +84,10 @@ typedef enum
     
     self.devicesListView = [[[NSBundle mainBundle] loadNibNamed:@"AYDevicesListView" owner:self options:nil] lastObject];
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    [self.devicesListView setFrame:keyWindow.bounds];
-    [keyWindow addSubview:self.devicesListView];
+    CGRect frame = [keyWindow bounds];
+
+    [self.devicesListView setFrame:frame];
+    [[[keyWindow rootViewController] view] addSubview:self.devicesListView];
     
     [self.devicesListView loadDevicesListFromDevices:filteredDevices];
 }

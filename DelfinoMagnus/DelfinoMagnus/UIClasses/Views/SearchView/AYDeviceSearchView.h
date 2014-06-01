@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AYBaseCloseDelegate.h"
 
 @interface AYDeviceSearchView : UIView
-
+@property (weak, nonatomic) id <AYBaseCloseDelegate> delegate;
 @end

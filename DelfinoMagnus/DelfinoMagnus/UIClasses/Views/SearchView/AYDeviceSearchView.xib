@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,12 +11,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xl5-JU-HYx">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8w-WE-HjN">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8w-WE-HjN">
                     <rect key="frame" x="257" y="1" width="40" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="Fqu-yK-KX0"/>
+                        <constraint firstAttribute="width" constant="40" id="pMf-HZ-9C8"/>
+                    </constraints>
                     <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     <state key="normal" image="menu_vacio.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,8 +41,10 @@
                 <constraint firstItem="Xl5-JU-HYx" firstAttribute="top" secondItem="1" secondAttribute="top" id="8fS-NF-dr6"/>
                 <constraint firstItem="RVB-Yz-0S7" firstAttribute="top" secondItem="1" secondAttribute="top" constant="40" id="B6l-hm-2JB"/>
                 <constraint firstItem="Xl5-JU-HYx" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="HuI-YZ-o7O"/>
+                <constraint firstAttribute="trailing" secondItem="j8w-WE-HjN" secondAttribute="trailing" constant="3" id="Pbu-qd-P66"/>
                 <constraint firstAttribute="bottom" secondItem="Xl5-JU-HYx" secondAttribute="bottom" id="Qck-KG-JP3"/>
-                <constraint firstAttribute="trailing" secondItem="Xl5-JU-HYx" secondAttribute="trailing" constant="-20" id="lTw-9L-B3j"/>
+                <constraint firstItem="j8w-WE-HjN" firstAttribute="top" secondItem="1" secondAttribute="top" constant="1" id="g0G-CI-mRW"/>
+                <constraint firstAttribute="trailing" secondItem="Xl5-JU-HYx" secondAttribute="trailing" id="lTw-9L-B3j"/>
                 <constraint firstItem="RVB-Yz-0S7" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="wLb-1K-M0y"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back3.png" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-dP-EJN">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back3.png" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-dP-EJN">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -23,9 +23,13 @@
                         <outlet property="delegate" destination="1" id="rlh-GE-LZm"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSi-D8-HWz">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSi-D8-HWz">
                     <rect key="frame" x="277" y="0.0" width="41" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="Qhd-3r-Bxi"/>
+                        <constraint firstAttribute="width" constant="41" id="UTD-Pl-1Cz"/>
+                    </constraints>
                     <state key="normal" image="cerrar.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -36,10 +40,16 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="ekd-dP-EJN" firstAttribute="top" secondItem="1" secondAttribute="top" id="3qo-rx-lnw"/>
+                <constraint firstAttribute="trailing" secondItem="PSi-D8-HWz" secondAttribute="trailing" constant="2" id="6zY-Ro-uQp"/>
                 <constraint firstAttribute="bottom" secondItem="tVz-cY-au9" secondAttribute="bottom" id="dwq-pn-Vrc"/>
                 <constraint firstItem="tVz-cY-au9" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="eag-Us-ckj"/>
+                <constraint firstAttribute="bottom" secondItem="ekd-dP-EJN" secondAttribute="bottom" id="ey4-cc-dr6"/>
                 <constraint firstAttribute="trailing" secondItem="tVz-cY-au9" secondAttribute="trailing" id="igJ-uJ-fZg"/>
                 <constraint firstItem="tVz-cY-au9" firstAttribute="top" secondItem="1" secondAttribute="top" constant="30" id="l2P-nl-YwM"/>
+                <constraint firstItem="ekd-dP-EJN" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="nfn-7P-AGN"/>
+                <constraint firstAttribute="trailing" secondItem="ekd-dP-EJN" secondAttribute="trailing" id="r0Z-WL-Ihg"/>
+                <constraint firstItem="PSi-D8-HWz" firstAttribute="top" secondItem="1" secondAttribute="top" id="vFl-Ta-5Sf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

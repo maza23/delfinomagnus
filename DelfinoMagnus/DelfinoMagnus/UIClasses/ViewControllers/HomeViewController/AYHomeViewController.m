@@ -62,6 +62,13 @@
     return YES;
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceWillChangeOrientation object:nil userInfo:@{@"NewOrientation" :[NSNumber numberWithInt:toInterfaceOrientation]}];
+}
+
+
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {

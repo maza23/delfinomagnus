@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblImpressea;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) AYFavoritesView *favoritesView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintNameLabelTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintProfilePicTopSpace;
 
 @property (strong, nonatomic) User *userDetails;
 @end
@@ -44,9 +46,18 @@
     [self doInitialConfigurations];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
+    [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
+    
     self.userDetails = [[[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kUserEntityName] lastObject];
     
     if (self.userDetails) {
@@ -66,6 +77,27 @@
     [self.imgViewProfilePic.layer setBorderColor:[[UIColor redColor] CGColor]];
     [self.imgViewProfilePic.layer setBorderWidth:2.0f];
     [self.imgViewProfilePic.layer setCornerRadius:self.imgViewProfilePic.frame.size.width/2];
+}
+
+- (void)didChangedOrientation:(id)notifiObject
+{
+    NSInteger newOrientation = [[[notifiObject userInfo] objectForKey:@"NewOrientation"] integerValue];
+    
+    [self doAppearenceSettingsForOrientation:newOrientation];
+}
+
+- (void)doAppearenceSettingsForOrientation:(NSInteger)orientation
+{
+    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
+        self.constraintNameLabelTopSpace.constant = 50;
+        self.constraintProfilePicTopSpace.constant = 100;
+    }
+    else {
+        self.constraintNameLabelTopSpace.constant = 219;
+        self.constraintProfilePicTopSpace.constant = 71;
+    }
+    
+    [self layoutIfNeeded];
 }
 
 - (void)startDownloadingImage

@@ -25,6 +25,8 @@
 @property (strong, nonatomic) NSMutableArray *favoriteDevices;
 @property (strong, nonatomic) NSMutableArray *expandedTipoArray;
 @property (strong, nonatomic) NSArray *reservedDeviceIds;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTableViewTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCountLabelTopSpace;
 @end
 
 @implementation AYFavoritesView
@@ -44,9 +46,18 @@
     [self doInitialConfigurations];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
+    [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
+    
     [self.viewNumberOfFav.layer setCornerRadius:self.viewNumberOfFav.frame.size.width/2];
     [self.viewNumberOfFav.layer setBorderColor:[[UIColor colorWithRed:222.0/255.0 green:188.0/255.0 blue:86.0/255.0 alpha:1.0] CGColor]];
     [self.viewNumberOfFav.layer setBorderWidth:2.0f];
@@ -151,6 +162,28 @@
         return NO;
     }
 }
+
+- (void)didChangedOrientation:(id)notifiObject
+{
+    NSInteger newOrientation = [[[notifiObject userInfo] objectForKey:@"NewOrientation"] integerValue];
+    
+    [self doAppearenceSettingsForOrientation:newOrientation];
+}
+
+- (void)doAppearenceSettingsForOrientation:(NSInteger)orientation
+{
+    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
+        self.constraintTableViewTopSpace.constant = 50;
+        self.constraintCountLabelTopSpace.constant = 120;
+    }
+    else {
+        self.constraintTableViewTopSpace.constant = 164;
+        self.constraintCountLabelTopSpace.constant = 56;
+    }
+    
+    [self layoutIfNeeded];
+}
+
 
 #pragma mark - IBAction Methods
 - (IBAction)actionTopMenuButtonPressed:(id)sender {

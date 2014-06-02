@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,14 +14,21 @@
                     <rect key="frame" x="0.0" y="0.0" width="300" height="548"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-j0-IA0">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJh-j0-IA0">
                     <rect key="frame" x="20" y="39" width="260" height="2"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="hrt-is-kpG"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGU-Oq-NB9">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGU-Oq-NB9">
                     <rect key="frame" x="249" y="3" width="40" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="i5W-sC-PuV"/>
+                        <constraint firstAttribute="height" constant="33" id="yHj-60-dlz"/>
+                    </constraints>
                     <inset key="titleEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     <state key="normal" image="menu_vacio.png">
@@ -31,7 +38,7 @@
                         <action selector="actionTopMenuButtonPressed:" destination="1" eventType="touchUpInside" id="OGy-b5-97E"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2m-of-LPc">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2m-of-LPc">
                     <rect key="frame" x="103" y="56" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -44,10 +51,18 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="HBQ-SQ-wRE"/>
+                        <constraint firstAttribute="height" constant="100" id="zWk-If-C5r"/>
+                    </constraints>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FAVORITOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY7-zd-oZy">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAVORITOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY7-zd-oZy">
                     <rect key="frame" x="68" y="9" width="164" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="164" id="b60-HS-OVq"/>
+                        <constraint firstAttribute="height" constant="27" id="jCt-6X-IGr"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -63,17 +78,28 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="OJh-j0-IA0" firstAttribute="top" secondItem="1" secondAttribute="top" constant="39" id="1h1-o6-i9R"/>
+                <constraint firstAttribute="centerX" secondItem="AY7-zd-oZy" secondAttribute="centerX" id="3LI-PL-4T9"/>
                 <constraint firstItem="WF4-ae-DDF" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="5wJ-tN-I8h"/>
+                <constraint firstItem="AY7-zd-oZy" firstAttribute="top" secondItem="1" secondAttribute="top" constant="9" id="8rr-pv-Cz1"/>
+                <constraint firstAttribute="trailing" secondItem="fGU-Oq-NB9" secondAttribute="trailing" constant="11" id="Dvn-ox-Bi8"/>
+                <constraint firstAttribute="trailing" secondItem="d2m-of-LPc" secondAttribute="trailing" constant="97" id="EuG-A9-ux3"/>
                 <constraint firstAttribute="trailing" secondItem="b0C-RS-8WB" secondAttribute="trailing" id="MXt-64-YUr"/>
                 <constraint firstItem="b0C-RS-8WB" firstAttribute="top" secondItem="1" secondAttribute="top" constant="164" id="Qh5-71-ONR"/>
+                <constraint firstItem="OJh-j0-IA0" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="Re5-dq-hsK"/>
+                <constraint firstItem="fGU-Oq-NB9" firstAttribute="top" secondItem="1" secondAttribute="top" constant="3" id="RuH-kZ-jdM"/>
                 <constraint firstAttribute="bottom" secondItem="b0C-RS-8WB" secondAttribute="bottom" id="UFb-1X-xdI"/>
                 <constraint firstAttribute="trailing" secondItem="WF4-ae-DDF" secondAttribute="trailing" id="iWB-mI-3Zt"/>
+                <constraint firstAttribute="trailing" secondItem="OJh-j0-IA0" secondAttribute="trailing" constant="20" id="onQ-I5-Oaj"/>
                 <constraint firstItem="b0C-RS-8WB" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="rgJ-jI-swM"/>
+                <constraint firstItem="d2m-of-LPc" firstAttribute="top" secondItem="1" secondAttribute="top" constant="56" id="rnt-BR-mYE"/>
                 <constraint firstAttribute="bottom" secondItem="WF4-ae-DDF" secondAttribute="bottom" id="sGk-4j-ZVF"/>
                 <constraint firstItem="WF4-ae-DDF" firstAttribute="top" secondItem="1" secondAttribute="top" id="vL3-ml-GjX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="constraintCountLabelTopSpace" destination="rnt-BR-mYE" id="bte-NZ-8Rt"/>
+                <outlet property="constraintTableViewTopSpace" destination="Qh5-71-ONR" id="HBg-Yr-zsg"/>
                 <outlet property="lblNumberOfFavorites" destination="mxo-T5-qYQ" id="Mrm-Ra-fEU"/>
                 <outlet property="tbleViewFavoritesList" destination="b0C-RS-8WB" id="kCA-XJ-DiF"/>
                 <outlet property="viewNumberOfFav" destination="d2m-of-LPc" id="van-YA-k83"/>

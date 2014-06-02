@@ -26,6 +26,7 @@
 @property (strong, nonatomic) NSDictionary *tipos;
 @property (weak, nonatomic) IBOutlet UIButton *btnSearch;
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
+@property (assign, nonatomic) BOOL isInfoWindowLoadingInProgress;
 @end
 
 @implementation AYHomeViewController
@@ -72,6 +73,7 @@
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
+    self.isInfoWindowLoadingInProgress = NO;
     NSString *latidudeString = nil;
     NSString *longitudeString = nil;
     
@@ -204,11 +206,30 @@
 
 #pragma mark - GoogleMapView Delegate Methods
 - (UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker {
+    
+
+    if (self.isInfoWindowLoadingInProgress) {
+        self.isInfoWindowLoadingInProgress = NO;
+        return self.infoWindow;
+    }
+    
+    self.isInfoWindowLoadingInProgress = NO;
+
     AYMapInfoView *view =  [[[NSBundle mainBundle] loadNibNamed:@"AYMapInfoView" owner:self options:nil] objectAtIndex:0];
     [view configureViewWithDeviceObject:self.devices[[marker.title integerValue]]];
     
     self.infoWindow = view;
+    
+    [self performSelector:@selector(reloadMapInfoWindowWithMarker:) withObject:marker afterDelay:0.6f];
     return view;
+    
+    
+}
+
+- (void)reloadMapInfoWindowWithMarker:(GMSMarker *)marker
+{
+    self.isInfoWindowLoadingInProgress = YES;
+    [self.mapView setSelectedMarker:marker];
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {

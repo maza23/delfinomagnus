@@ -257,16 +257,7 @@ NSDate *todayDate;
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setYear:year];
     [components setDay:1];
-    
-    [components setMonth:month+1];
-    NSDate *monthLastDate = [calendar dateFromComponents:components];
-    
-    [components setMonth:month];
-    NSDate *monthStartDate = [calendar dateFromComponents:components];
-    
-    long startTimeInterval = [monthStartDate timeIntervalSince1970];
-    long lastTimeInterval = [monthLastDate timeIntervalSince1970] - kOneDayTimeInterval;
-    
+        
 	while(i <=day) {
         
         [components setDay:i];

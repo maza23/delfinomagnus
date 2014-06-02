@@ -51,22 +51,14 @@
     if (!description) {
         return;
     }
-    NSLog(@"Description is:%@", description);
     
-    NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title>AVAdesh</title></head><body>"];
+    NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title></title></head><body>"];
     
     NSCharacterSet *charecterSetToTrim = [NSCharacterSet characterSetWithCharactersInString:@"/"];
-   // [html appendString:@"Hello World How are you"];
+
     [html appendString:[description stringByTrimmingCharactersInSet:charecterSetToTrim]];
     [html appendString:@"</body></html>"];
     
-   // [self.webVIewDescription loadHTMLString:html  baseURL:nil];
-    
-//    
-//    UIWebView *webView = [[UIWebView alloc]  initWithFrame:CGRectMake(0, 0, 300, 300)];
-//    [webView loadHTMLString: html baseURL: nil];
-
-   // [[[UIApplication sharedApplication] keyWindow] addSubview:webView];
     [self.webVIewDescription loadHTMLString: html baseURL: nil];
 }
 

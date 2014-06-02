@@ -103,10 +103,8 @@
 - (void)loadSearchView
 {
     self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYDeviceSearchView" owner:self options:nil] lastObject];
-    
-   UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    [keyWindow addSubview:self.searchView];
-    [self.searchView setFrame:CGRectMake(10, 10, 300, keyWindow.bounds.size.height - 20)];
+    [self.searchView setFrame:self.bounds];
+    [self addSubview:self.searchView];
     [self.searchView layoutIfNeeded];
 }
 

@@ -29,6 +29,19 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIView *viewFotoContainer;
 @property (weak, nonatomic) IBOutlet UIView *viewCalendarContainer;
+@property (weak, nonatomic) IBOutlet UIView *viewTitleHeader;
+@property (weak, nonatomic) IBOutlet UIButton *btnClose;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTitleLabelTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCameraButtonBottomSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCalendarButtonLeftSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintFavotiesButtonRightSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintReserveButtonRightSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImageContainerTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImageContainerHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCalendarButtonBottomSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCalendarContainerTopSpace;
+
 
 @property (strong, nonatomic) CalenderViewController *calendarVC;
 @property (strong, nonatomic) NSMutableDictionary *activitiesDict;
@@ -52,13 +65,63 @@
     [self doInitialConfigurations];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
+    [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
+    [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor colorWithRed:225.0/255.0 green:164.0/255.0 blue:74.0/255.0 alpha:1.0]] forState:UIControlStateNormal];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
+    
     self.activitiesDict = [[NSMutableDictionary alloc] init];
 
     [self handleSwitchCalendarFotoButtonWithSender:self.btnPhoto];
     [self addCalendarView];
+}
+
+
+- (void)didChangedOrientation:(id)notifiObject
+{
+    NSInteger newOrientation = [[[notifiObject userInfo] objectForKey:@"NewOrientation"] integerValue];
+    
+    [self doAppearenceSettingsForOrientation:newOrientation];
+}
+
+- (void)doAppearenceSettingsForOrientation:(NSInteger)orientation
+{
+    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
+        [self.viewTitleHeader setHidden:YES];
+        self.constraintTitleLabelTopSpace.constant = 5;
+        self.constraintCameraButtonBottomSpace.constant = 180;
+        self.constraintCalendarButtonLeftSpace.constant = 0;
+        self.constraintReserveButtonRightSpace.constant = 10;
+        self.constraintFavotiesButtonRightSpace.constant = 10;
+        self.constraintImageContainerTopSpace.constant = 70;
+        self.constraintImageContainerHeight.constant = 240;
+        self.constraintCalendarButtonBottomSpace.constant = 50;
+        self.constraintCalendarContainerTopSpace.constant = 70;
+    }
+    else {
+        [self.viewTitleHeader setHidden:NO];
+        self.constraintTitleLabelTopSpace.constant = 39;
+
+        self.constraintCameraButtonBottomSpace.constant = 14;
+        self.constraintCalendarButtonLeftSpace.constant = 232;
+        self.constraintReserveButtonRightSpace.constant = 132;
+        self.constraintFavotiesButtonRightSpace.constant = 132;
+        self.constraintImageContainerTopSpace.constant = 158;
+        self.constraintImageContainerHeight.constant = 302;
+        self.constraintCalendarButtonBottomSpace.constant = 14;
+        self.constraintCalendarContainerTopSpace.constant = 158;
+
+    }
+    
+    [self layoutIfNeeded];
 }
 
 - (void)addCalendarView

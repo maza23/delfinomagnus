@@ -48,9 +48,9 @@
 {
     self.deviceDetailsView = [[[NSBundle mainBundle] loadNibNamed:@"AYDeviceDetailsView" owner:self options:nil] lastObject];
     
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    [self.deviceDetailsView setFrame:keyWindow.bounds];
-    [keyWindow addSubview:self.deviceDetailsView];
+    UIView *parentView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
+    [self.deviceDetailsView setFrame:parentView.bounds];
+    [parentView addSubview:self.deviceDetailsView];
     [self.deviceDetailsView loadDeviceDetailsWithDeviceObject:deviceObject];
 }
 

@@ -125,7 +125,6 @@
 		CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */; };
 		CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */; };
 		CB7928421939CD35004B19DA /* AYSearchView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB7928411939CD35004B19DA /* AYSearchView~iPad.xib */; };
-		CB7928441939D0C2004B19DA /* AYDeviceSearchView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB7928431939D0C2004B19DA /* AYDeviceSearchView~iPad.xib */; };
 		CBCD615C1918044900846E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615B1918044900846E8C /* Foundation.framework */; };
 		CBCD615E1918044900846E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615D1918044900846E8C /* CoreGraphics.framework */; };
 		CBCD61601918044900846E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615F1918044900846E8C /* UIKit.framework */; };
@@ -151,7 +150,6 @@
 		CBF9B5D4191E0E6D005DC1A0 /* AYSearchSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */; };
 		CBF9B5D8191E72E7005DC1A0 /* AYUserProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5D7191E72E7005DC1A0 /* AYUserProfileView.m */; };
 		CBF9B5DA191E72F9005DC1A0 /* AYUserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF9B5D9191E72F9005DC1A0 /* AYUserProfileView.xib */; };
-		CBF9B5DE191E748D005DC1A0 /* NZCircularImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5DD191E748D005DC1A0 /* NZCircularImageView.m */; };
 		CBF9B608191E9E27005DC1A0 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5E2191E9E27005DC1A0 /* AFHTTPRequestOperation.m */; };
 		CBF9B609191E9E27005DC1A0 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5E4191E9E27005DC1A0 /* AFHTTPRequestOperationManager.m */; };
 		CBF9B60A191E9E27005DC1A0 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5E6191E9E27005DC1A0 /* AFHTTPSessionManager.m */; };
@@ -181,6 +179,8 @@
 		CBFE3AF9191D4AEF00A74C2D /* AYSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */; };
 		CBFE3AFB191D4AFF00A74C2D /* AYSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */; };
 		DCBC66A8193C44E500D8221E /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBC66A7193C44E500D8221E /* GoogleMaps.framework */; };
+		DCC2D568193D9A2500B58A91 /* AYUserProfileView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC2D567193D9A2500B58A91 /* AYUserProfileView~iPad.xib */; };
+		DCC2D56C193DCD6200B58A91 /* AYFavoritesView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC2D56B193DCD6200B58A91 /* AYFavoritesView~iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -333,7 +333,6 @@
 		CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ISOverlayColor.m"; sourceTree = "<group>"; };
 		CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYForgotPasswordView~iPad.xib"; sourceTree = "<group>"; };
 		CB7928411939CD35004B19DA /* AYSearchView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYSearchView~iPad.xib"; sourceTree = "<group>"; };
-		CB7928431939D0C2004B19DA /* AYDeviceSearchView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYDeviceSearchView~iPad.xib"; sourceTree = "<group>"; };
 		CB7928451939D8EC004B19DA /* AYBaseCloseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AYBaseCloseDelegate.h; sourceTree = "<group>"; };
 		CBCD61581918044900846E8C /* DelfinoMagnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelfinoMagnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCD615B1918044900846E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -371,8 +370,6 @@
 		CBF9B5D6191E72E7005DC1A0 /* AYUserProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUserProfileView.h; sourceTree = "<group>"; };
 		CBF9B5D7191E72E7005DC1A0 /* AYUserProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYUserProfileView.m; sourceTree = "<group>"; };
 		CBF9B5D9191E72F9005DC1A0 /* AYUserProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYUserProfileView.xib; sourceTree = "<group>"; };
-		CBF9B5DC191E748D005DC1A0 /* NZCircularImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NZCircularImageView.h; sourceTree = "<group>"; };
-		CBF9B5DD191E748D005DC1A0 /* NZCircularImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NZCircularImageView.m; sourceTree = "<group>"; };
 		CBF9B5E1191E9E27005DC1A0 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		CBF9B5E2191E9E27005DC1A0 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		CBF9B5E3191E9E27005DC1A0 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -426,6 +423,8 @@
 		CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchView.m; sourceTree = "<group>"; };
 		CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYSearchView.xib; sourceTree = "<group>"; };
 		DCBC66A7193C44E500D8221E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		DCC2D567193D9A2500B58A91 /* AYUserProfileView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYUserProfileView~iPad.xib"; sourceTree = "<group>"; };
+		DCC2D56B193DCD6200B58A91 /* AYFavoritesView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYFavoritesView~iPad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,7 +479,6 @@
 			children = (
 				CB10D49A191FF20B00F987E6 /* CalendarView */,
 				CBF9B5DF191E9E27005DC1A0 /* AFNetworking */,
-				CBF9B5DB191E748D005DC1A0 /* CircularImageView */,
 				CB0C6CD9191A9BC300E02D9A /* MBProgressHUD */,
 			);
 			path = ThirdPartyClasses;
@@ -884,17 +882,9 @@
 				CBF9B5D6191E72E7005DC1A0 /* AYUserProfileView.h */,
 				CBF9B5D7191E72E7005DC1A0 /* AYUserProfileView.m */,
 				CBF9B5D9191E72F9005DC1A0 /* AYUserProfileView.xib */,
+				DCC2D567193D9A2500B58A91 /* AYUserProfileView~iPad.xib */,
 			);
 			path = UserProfileVIew;
-			sourceTree = "<group>";
-		};
-		CBF9B5DB191E748D005DC1A0 /* CircularImageView */ = {
-			isa = PBXGroup;
-			children = (
-				CBF9B5DC191E748D005DC1A0 /* NZCircularImageView.h */,
-				CBF9B5DD191E748D005DC1A0 /* NZCircularImageView.m */,
-			);
-			path = CircularImageView;
 			sourceTree = "<group>";
 		};
 		CBF9B5DF191E9E27005DC1A0 /* AFNetworking */ = {
@@ -964,6 +954,7 @@
 				CBF9B61C191EAD5F005DC1A0 /* AYFavoritesView.h */,
 				CBF9B61D191EAD5F005DC1A0 /* AYFavoritesView.m */,
 				CBF9B61F191EAD6F005DC1A0 /* AYFavoritesView.xib */,
+				DCC2D56B193DCD6200B58A91 /* AYFavoritesView~iPad.xib */,
 				CBF9B621191EB96E005DC1A0 /* AYFavoritesTipoCell.h */,
 				CBF9B622191EB96E005DC1A0 /* AYFavoritesTipoCell.m */,
 				CBF9B624191EB97B005DC1A0 /* AYFavoritesTipoCell.xib */,
@@ -986,7 +977,6 @@
 				CBF13F8819226B3000E1C418 /* AYDeviceSearchView.h */,
 				CBF13F8919226B3000E1C418 /* AYDeviceSearchView.m */,
 				CBF13F8B19226B4300E1C418 /* AYDeviceSearchView.xib */,
-				CB7928431939D0C2004B19DA /* AYDeviceSearchView~iPad.xib */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -1083,6 +1073,7 @@
 				CB1248AA1918879D009DA54C /* burbuja.png in Resources */,
 				CB1248DA1918879D009DA54C /* splash_logo.png in Resources */,
 				CB1248A11918879D009DA54C /* btn_buscar.png in Resources */,
+				DCC2D568193D9A2500B58A91 /* AYUserProfileView~iPad.xib in Resources */,
 				CB1248A41918879D009DA54C /* btn_mapa_inactivo.png in Resources */,
 				CBCD61661918044900846E8C /* InfoPlist.strings in Resources */,
 				CBF9B625191EB97B005DC1A0 /* AYFavoritesTipoCell.xib in Resources */,
@@ -1095,6 +1086,7 @@
 				CB1248B41918879D009DA54C /* cmi.png in Resources */,
 				CB1248DD1918879D009DA54C /* telon.png in Resources */,
 				CB1248C31918879D009DA54C /* help_4.png in Resources */,
+				DCC2D56C193DCD6200B58A91 /* AYFavoritesView~iPad.xib in Resources */,
 				CB1248B01918879D009DA54C /* cartel_black.png in Resources */,
 				CB1248CC1918879D009DA54C /* mediawall_icon.png in Resources */,
 				CB1248C91918879D009DA54C /* marker_un.png in Resources */,
@@ -1106,7 +1098,6 @@
 				CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */,
 				CBF13F8C19226B4300E1C418 /* AYDeviceSearchView.xib in Resources */,
 				CB12489C1918879D009DA54C /* bg_btn_telon.png in Resources */,
-				CB7928441939D0C2004B19DA /* AYDeviceSearchView~iPad.xib in Resources */,
 				CB12489B1918879D009DA54C /* bg_btn_monocolumna.png in Resources */,
 				CB1248D21918879D009DA54C /* monocolumnas_icon.png in Resources */,
 				CBF13F9F19227FA500E1C418 /* AYDevicesListView.xib in Resources */,
@@ -1197,7 +1188,6 @@
 				CBF9B608191E9E27005DC1A0 /* AFHTTPRequestOperation.m in Sources */,
 				CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */,
 				CB38F2F8192526EE00163094 /* DeviceDetails.m in Sources */,
-				CBF9B5DE191E748D005DC1A0 /* NZCircularImageView.m in Sources */,
 				CBCD619F1918090900846E8C /* AYLoginViewController.m in Sources */,
 				CB0C6CE6191AB0D800E02D9A /* LTCoreDataManager.m in Sources */,
 				CBF9B616191E9E27005DC1A0 /* UIButton+AFNetworking.m in Sources */,

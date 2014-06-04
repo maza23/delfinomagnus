@@ -7,7 +7,6 @@
 //
 
 #import "AYUserProfileView.h"
-#import "NZCircularImageView.h"
 #import "User.h"
 #import "UIImageView+AFNetworking.h"
 #import "AYFavoritesView.h"
@@ -24,6 +23,8 @@
 @property (strong, nonatomic) AYFavoritesView *favoritesView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintNameLabelTopSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintProfilePicTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintProfilePicLeftSapce;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintNameLabelRightSapce;
 
 @property (strong, nonatomic) User *userDetails;
 @end
@@ -89,12 +90,17 @@
 - (void)doAppearenceSettingsForOrientation:(NSInteger)orientation
 {
     if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
-        self.constraintNameLabelTopSpace.constant = 50;
-        self.constraintProfilePicTopSpace.constant = 100;
+        self.constraintNameLabelTopSpace.constant = kIsDeviceiPad ? 200 : 50;
+        self.constraintProfilePicTopSpace.constant = kIsDeviceiPad ? 240: 100;
+        self.constraintNameLabelRightSapce.constant = 40;
+        self.constraintProfilePicLeftSapce.constant = 150;
+
     }
     else {
-        self.constraintNameLabelTopSpace.constant = 219;
-        self.constraintProfilePicTopSpace.constant = 71;
+        self.constraintNameLabelTopSpace.constant = kIsDeviceiPad ? 447 : 219;
+        self.constraintProfilePicTopSpace.constant = kIsDeviceiPad ? 88 : 71;
+        self.constraintNameLabelRightSapce.constant = 140;
+        self.constraintProfilePicLeftSapce.constant = 234;
     }
     
     [self layoutIfNeeded];

@@ -88,14 +88,17 @@
 
 - (void)loadUserProfileView
 {
-    self.profileView = [[[NSBundle mainBundle] loadNibNamed:@"AYUserProfileView" owner:self options:nil] lastObject];
+    NSString *nibName = kIsDeviceiPad ? @"AYUserProfileView~iPad": @"AYUserProfileView";
+    self.profileView = [[[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil] lastObject];
     [self.profileView setFrame:self.bounds];
     [self addSubview:_profileView];
 }
 
 - (void)loadUserFavoritesView
 {
-    self.favoritesView = [[[NSBundle mainBundle] loadNibNamed:@"AYFavoritesView" owner:self options:nil] lastObject];
+    NSString *nibName = kIsDeviceiPad ? @"AYFavoritesView~iPad": @"AYFavoritesView";
+
+    self.favoritesView = [[[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil] lastObject];
     [self.favoritesView setFrame:self.bounds];
     [self addSubview:_favoritesView];
 }

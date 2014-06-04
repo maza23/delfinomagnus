@@ -220,10 +220,8 @@
     
     self.infoWindow = view;
     
-    [self performSelector:@selector(reloadMapInfoWindowWithMarker:) withObject:marker afterDelay:0.6f];
+    [self performSelector:@selector(reloadMapInfoWindowWithMarker:) withObject:marker afterDelay:1.0f];
     return view;
-    
-    
 }
 
 - (void)reloadMapInfoWindowWithMarker:(GMSMarker *)marker

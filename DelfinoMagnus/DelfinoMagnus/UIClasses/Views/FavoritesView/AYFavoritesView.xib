@@ -98,6 +98,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="constraintCountLabelRightSpace" destination="EuG-A9-ux3" id="MnW-vm-qP6"/>
                 <outlet property="constraintCountLabelTopSpace" destination="rnt-BR-mYE" id="bte-NZ-8Rt"/>
                 <outlet property="constraintTableViewTopSpace" destination="Qh5-71-ONR" id="HBg-Yr-zsg"/>
                 <outlet property="lblNumberOfFavorites" destination="mxo-T5-qYQ" id="Mrm-Ra-fEU"/>

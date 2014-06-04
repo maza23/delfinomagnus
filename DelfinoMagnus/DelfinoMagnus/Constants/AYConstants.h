@@ -25,5 +25,6 @@
 
 #define kIsDeviceiPad   UIUserInterfaceIdiomPad == UI_USER_INTERFACE_IDIOM()
 #define kIsOrientationLandscape UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)
+#define kIsDeviceScreen4Inches  ([[UIScreen mainScreen] bounds].size.height == 568)
 
 #define kDeviceWillChangeOrientation  @"DeviceWillChangeOrientation"

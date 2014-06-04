@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -10,16 +10,16 @@
             <rect key="frame" x="0.0" y="0.0" width="708" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWF-md-QzS">
-                    <rect key="frame" x="34" y="307" width="117" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="NO DISPONIBLE">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-V3-fKn">
+                    <rect key="frame" x="50" y="109" width="608" height="2"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="cET-aF-hsd"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3y-vI-2f9">
-                    <rect key="frame" x="34" y="20" width="300" height="103"/>
+                    <rect key="frame" x="9" y="139" width="300" height="103"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <inset key="titleEdgeInsets" minX="75" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="50" minY="15" maxX="0.0" maxY="15"/>
@@ -29,20 +29,12 @@
                     <state key="selected" title="CARTEL" image="cartel_black.png" backgroundImage="bg_btn_cartel.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                </button>
-                <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJU-Ca-irw">
-                    <rect key="frame" x="-48" y="99" width="51" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="NORTE">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" title="NORTE" backgroundImage="bg_btn_monocolumna.png">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <connections>
+                        <action selector="actionTipoButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="tp0-As-Clf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSk-rn-czM">
-                    <rect key="frame" x="380" y="156" width="300" height="103"/>
+                    <rect key="frame" x="371" y="267" width="300" height="103"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <inset key="titleEdgeInsets" minX="90" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="50" minY="15" maxX="90" maxY="15"/>
@@ -52,14 +44,12 @@
                     <state key="selected" title="TELON" image="telon_black.png" backgroundImage="bg_btn_telon.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="actionTipoButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gze-fN-5Gz"/>
+                    </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6J-ZS-eRW">
-                    <rect key="frame" x="2" y="489" width="708" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.18431372939999999" green="0.2941176593" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
-                </view>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-LZ-5OD">
-                    <rect key="frame" x="34" y="156" width="300" height="103"/>
+                    <rect key="frame" x="9" y="267" width="300" height="103"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <inset key="titleEdgeInsets" minX="75" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="50" minY="15" maxX="0.0" maxY="15"/>
@@ -69,9 +59,12 @@
                     <state key="selected" title="MEDIAWALL" image="mediawall_black.png" backgroundImage="bg_btn_mediawall.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="actionTipoButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="G2k-7a-nbC"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4d-Cr-g5t">
-                    <rect key="frame" x="380" y="20" width="300" height="103"/>
+                    <rect key="frame" x="371" y="139" width="300" height="103"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="50" minY="15" maxX="0.0" maxY="15"/>
@@ -81,67 +74,49 @@
                     <state key="selected" title="MONOCOLUMNA" image="monocolumna_black.png" backgroundImage="bg_btn_monocolumna.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="actionTipoButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="iHX-WC-26S"/>
+                    </connections>
                 </button>
-                <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-dX-02Q">
-                    <rect key="frame" x="0.0" y="267" width="22" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="btn_nodisponible.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" image="btn_disponible.png"/>
-                </button>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NeG-eQ-4zh">
-                    <rect key="frame" x="2" y="446" width="708" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-fG-rdC">
-                    <rect key="frame" x="-48" y="146" width="49" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="OESTE">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" title="OESTE" backgroundImage="bg_btn_monocolumna.png">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEc-4a-3nt">
-                    <rect key="frame" x="59" y="393" width="48" height="48"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEc-4a-3nt">
+                    <rect key="frame" x="330" y="740" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="btn_busqueda.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="actionSearchButtonpressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="4Bh-SQ-QAW"/>
+                    </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7l-Rs-Chy">
-                    <rect key="frame" x="2" y="405" width="708" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sq3-w3-7rf">
-                    <rect key="frame" x="2" y="400" width="708" height="1024"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7l-Rs-Chy">
+                    <rect key="frame" x="36" y="256" width="300" height="2"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.18431372939999999" green="0.2941176593" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZT-Nq-JFF">
-                    <rect key="frame" x="2" y="400" width="708" height="1024"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUt-8X-1T4">
+                    <rect key="frame" x="353" y="142" width="2" height="100"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.18431372939999999" green="0.2941176593" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdG-EH-wFU">
+                    <rect key="frame" x="353" y="273" width="2" height="100"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.18431372939999999" green="0.2941176593" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nM7-DO-Bdc">
+                    <rect key="frame" x="372" y="256" width="300" height="2"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.18431372939999999" green="0.2941176593" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
                 </view>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ZONA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZb-52-cqS">
-                    <rect key="frame" x="79" y="17" width="47" height="21"/>
+                    <rect key="frame" x="331" y="389" width="47" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lk5-sl-nlO">
-                    <rect key="frame" x="2" y="495" width="708" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.18431372939999999" green="0.2941176593" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
-                </view>
-                <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9L4-vO-ajL">
-                    <rect key="frame" x="-48" y="52" width="132" height="30"/>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9L4-vO-ajL">
+                    <rect key="frame" x="50" y="431" width="270" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="CAPITAL FEDERAL">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,22 +125,37 @@
                     <state key="selected" title="CAPITAL FEDERAL" backgroundImage="bg_btn_monocolumna.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="actionZonaButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="FQY-qD-n1m"/>
+                    </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBM-Qp-jlA">
-                    <rect key="frame" x="2" y="395" width="708" height="1024"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXQ-3h-rjq">
-                    <rect key="frame" x="34" y="267" width="90" height="30"/>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-fG-rdC">
+                    <rect key="frame" x="50" y="479" width="270" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="DISPONIBLE">
+                    <state key="normal" title="OESTE">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="selected" title="OESTE" backgroundImage="bg_btn_monocolumna.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionZonaButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="yHJ-gw-dKk"/>
+                    </connections>
                 </button>
-                <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-pO-vKz">
-                    <rect key="frame" x="-48" y="193" width="32" height="30"/>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJU-Ca-irw">
+                    <rect key="frame" x="402" y="431" width="270" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="NORTE">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="NORTE" backgroundImage="bg_btn_monocolumna.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-pO-vKz">
+                    <rect key="frame" x="506" y="484" width="270" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="SUR">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,21 +164,133 @@
                     <state key="selected" title="SUR" backgroundImage="bg_btn_monocolumna.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="actionZonaButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Nb-yz-6h2"/>
+                    </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMa-Gm-hwY">
-                    <rect key="frame" x="0.0" y="400" width="708" height="1024"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_input.png" translatesAutoresizingMaskIntoConstraints="NO" id="iI0-ko-Vsx">
+                    <rect key="frame" x="6" y="11" width="622" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="PyN-dr-bxJ"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ingrese una dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4U-kU-3Hq">
+                    <rect key="frame" x="16" y="11" width="612" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Em3-KU-fdJ"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aY6-Ob-hqr">
+                    <rect key="frame" x="627" y="11" width="48" height="48"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="033-ca-XEc"/>
+                        <constraint firstAttribute="height" constant="48" id="WHb-KI-sRc"/>
+                    </constraints>
+                    <state key="normal" image="btn_buscar.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionSearchButtonpressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="tvS-YI-3p5"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TIPO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-eR-x9Z">
+                    <rect key="frame" x="255" y="74" width="198" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="198" id="2g4-Xi-s3L"/>
+                        <constraint firstAttribute="height" constant="32" id="Ysk-Pj-1CX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6OI-hN-oZz">
+                    <rect key="frame" x="50" y="416" width="608" height="2"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.18431372939999999" green="0.2941176593" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="JGX-ES-KMY"/>
+                        <constraint firstAttribute="width" constant="608" id="yyb-zB-rbA"/>
+                    </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnO-JR-l18">
-                    <rect key="frame" x="2" y="236" width="708" height="1024"/>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-py-S4S">
+                    <rect key="frame" x="50" y="517" width="608" height="2"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.10596073559999999" green="0.1525340178" blue="0.285042882" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="608" id="J3c-bm-i2Z"/>
+                        <constraint firstAttribute="height" constant="2" id="tde-yF-UWu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ah7-u1-mqK">
+                    <rect key="frame" x="218" y="552" width="272" height="154"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgR-ok-7Xo">
+                            <rect key="frame" x="40" y="32" width="191" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="DISPONIBLE">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="actionDisponibleButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="BzT-yh-hEV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVs-6g-444">
+                            <rect key="frame" x="2" y="37" width="45" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="btn_nodisponible.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="btn_disponible.png"/>
+                            <connections>
+                                <action selector="actionDisponibleButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="5PB-7b-ScU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cR-g2-ByU">
+                            <rect key="frame" x="40" y="80" width="191" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="NO DISPONIBLE">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="actionDisponibleButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="8r4-hm-Bqt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="154" id="9Ib-5a-7Ql"/>
+                        <constraint firstAttribute="width" constant="272" id="Ff2-ak-fQc"/>
+                    </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="iI0-ko-Vsx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="2Dq-zM-6MJ"/>
+                <constraint firstItem="aY6-Ob-hqr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="8lO-t8-38I"/>
+                <constraint firstItem="u4U-kU-3Hq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="I44-CJ-CgI"/>
+                <constraint firstItem="iI0-ko-Vsx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="KWd-6l-Ra1"/>
+                <constraint firstAttribute="trailing" secondItem="iI0-ko-Vsx" secondAttribute="trailing" constant="80" id="QkI-6F-JY6"/>
+                <constraint firstItem="9RR-V3-fKn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="Tkz-TL-WmB"/>
+                <constraint firstItem="u4U-kU-3Hq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="Wno-gf-rub"/>
+                <constraint firstAttribute="trailing" secondItem="u4U-kU-3Hq" secondAttribute="trailing" constant="80" id="mdb-4r-JA0"/>
+                <constraint firstAttribute="trailing" secondItem="aY6-Ob-hqr" secondAttribute="trailing" constant="33" id="vtg-5s-GYu"/>
+                <constraint firstAttribute="trailing" secondItem="9RR-V3-fKn" secondAttribute="trailing" constant="50" id="w6m-BB-j3W"/>
+                <constraint firstItem="9RR-V3-fKn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="109" id="ysC-zQ-Wgu"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="txtFieldSearch" destination="u4U-kU-3Hq" id="NzC-DO-v5r"/>
+            </connections>
         </view>
     </objects>
     <resources>
@@ -196,6 +298,8 @@
         <image name="bg_btn_mediawall.png" width="480" height="191"/>
         <image name="bg_btn_monocolumna.png" width="480" height="191"/>
         <image name="bg_btn_telon.png" width="480" height="191"/>
+        <image name="bg_input.png" width="85" height="86"/>
+        <image name="btn_buscar.png" width="47" height="48"/>
         <image name="btn_busqueda.png" width="48" height="48"/>
         <image name="btn_disponible.png" width="22" height="80"/>
         <image name="btn_nodisponible.png" width="22" height="80"/>

@@ -27,6 +27,7 @@
 @property (strong, nonatomic) NSArray *reservedDeviceIds;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTableViewTopSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCountLabelTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCountLabelRightSpace;
 @end
 
 @implementation AYFavoritesView
@@ -172,13 +173,19 @@
 
 - (void)doAppearenceSettingsForOrientation:(NSInteger)orientation
 {
+    if (kIsDeviceiPad) {
+        return;
+    }
+    
     if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
         self.constraintTableViewTopSpace.constant = 50;
         self.constraintCountLabelTopSpace.constant = 120;
+        self.constraintCountLabelRightSpace.constant = kIsDeviceScreen4Inches ? 75 : 35;
     }
     else {
         self.constraintTableViewTopSpace.constant = 164;
         self.constraintCountLabelTopSpace.constant = 56;
+        self.constraintCountLabelRightSpace.constant = 97;
     }
     
     [self layoutIfNeeded];

@@ -46,7 +46,8 @@
 
 - (void)loadDeviceDetailsViewWithDeviceObject:(id)deviceObject
 {
-    self.deviceDetailsView = [[[NSBundle mainBundle] loadNibNamed:@"AYDeviceDetailsView" owner:self options:nil] lastObject];
+    NSString *nibName = kIsDeviceiPad ? @"AYDeviceDetailsView~iPad": @"AYDeviceDetailsView";
+    self.deviceDetailsView = [[[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil] lastObject];
     
     UIView *parentView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
     [self.deviceDetailsView setFrame:parentView.bounds];

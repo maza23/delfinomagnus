@@ -169,7 +169,8 @@
 
 - (void)loadDeviceDetailsViewWithDeviceObject:(id)deviceObject
 {
-    self.deviceDetailsView = [[[NSBundle mainBundle] loadNibNamed:@"AYDeviceDetailsView" owner:self options:nil] lastObject];
+    NSString *nibName = kIsDeviceiPad ? @"AYDeviceDetailsView~iPad": @"AYDeviceDetailsView";
+    self.deviceDetailsView = [[[NSBundle mainBundle] loadNibNamed:nibName owner:self options:nil] lastObject];
     [self.deviceDetailsView setFrame:self.view.bounds];
     [self.view addSubview:self.deviceDetailsView];
     [self.deviceDetailsView loadDeviceDetailsWithDeviceObject:deviceObject];

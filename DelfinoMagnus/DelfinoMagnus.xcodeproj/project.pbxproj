@@ -178,6 +178,7 @@
 		CBF9B62D191ECB0E005DC1A0 /* FavoriteDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B62C191ECB0E005DC1A0 /* FavoriteDevice.m */; };
 		CBFE3AF9191D4AEF00A74C2D /* AYSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */; };
 		CBFE3AFB191D4AFF00A74C2D /* AYSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */; };
+		DC0D3B8E193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC0D3B8D193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib */; };
 		DCBC66A8193C44E500D8221E /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBC66A7193C44E500D8221E /* GoogleMaps.framework */; };
 		DCC2D568193D9A2500B58A91 /* AYUserProfileView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC2D567193D9A2500B58A91 /* AYUserProfileView~iPad.xib */; };
 		DCC2D56C193DCD6200B58A91 /* AYFavoritesView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC2D56B193DCD6200B58A91 /* AYFavoritesView~iPad.xib */; };
@@ -422,6 +423,7 @@
 		CBFE3AF7191D4AEF00A74C2D /* AYSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchView.h; sourceTree = "<group>"; };
 		CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchView.m; sourceTree = "<group>"; };
 		CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYSearchView.xib; sourceTree = "<group>"; };
+		DC0D3B8D193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYDeviceDetailsView~iPad.xib"; sourceTree = "<group>"; };
 		DCBC66A7193C44E500D8221E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		DCC2D567193D9A2500B58A91 /* AYUserProfileView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYUserProfileView~iPad.xib"; sourceTree = "<group>"; };
 		DCC2D56B193DCD6200B58A91 /* AYFavoritesView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYFavoritesView~iPad.xib"; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				CB07C05D191F418100A43BF5 /* AYDeviceDetailsView.h */,
 				CB07C05E191F418100A43BF5 /* AYDeviceDetailsView.m */,
 				CB07C060191F419200A43BF5 /* AYDeviceDetailsView.xib */,
+				DC0D3B8D193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib */,
 			);
 			path = DeviceDetailsView;
 			sourceTree = "<group>";
@@ -1061,6 +1064,7 @@
 				CBCD61A01918090900846E8C /* AYLoginViewController.xib in Resources */,
 				CB1248AC1918879D009DA54C /* busqueda.png in Resources */,
 				CB1248C01918879D009DA54C /* help_1.png in Resources */,
+				DC0D3B8E193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib in Resources */,
 				CB1248A71918879D009DA54C /* burbuja_bottom_land.png in Resources */,
 				CB1248AF1918879D009DA54C /* calendario.png in Resources */,
 				CB1248A51918879D009DA54C /* btn_mapa.png in Resources */,

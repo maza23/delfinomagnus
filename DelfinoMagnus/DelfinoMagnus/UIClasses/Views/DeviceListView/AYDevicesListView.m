@@ -77,7 +77,7 @@
 {
     AYSearchedDeviceCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AYSearchedDeviceCell"];
     [cell configureCellWithObject:self.searchedDevices[[indexPath row]]];
-    
+    [cell setBackgroundColor :[UIColor clearColor]];
     return cell;
 }
 

@@ -71,8 +71,6 @@ typedef enum
 - (void)doInitialConfigurations
 {
     self.searchSettings = [[AYSearchSettings alloc] init];
-    
-    NSLog(@"Frame size is:%@", NSStringFromCGRect(self.frame));
 }
 
 - (void)searchDeviceIntoDataBaseWithTitleText:(NSString *)text

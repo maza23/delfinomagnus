@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -17,14 +17,14 @@
                         <rect key="frame" x="30" y="22" width="65" height="65"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94r-D8-vca">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94r-D8-vca">
                         <rect key="frame" x="124" y="44" width="45" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZG-KC-4Hf">
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mZG-KC-4Hf">
                         <rect key="frame" x="173" y="36" width="20" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -42,15 +42,23 @@
                             <constraint firstAttribute="width" constant="20" id="jvm-F4-BvS"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FvI-KP-Fll">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvI-KP-Fll">
                         <rect key="frame" x="30" y="108" width="260" height="2"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.41960787770000002" blue="0.5647059083" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="zyf-s1-3VT"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="FvI-KP-Fll" secondAttribute="bottom" constant="-1" id="2kA-9a-Yfq"/>
                     <constraint firstItem="mZG-KC-4Hf" firstAttribute="leading" secondItem="94r-D8-vca" secondAttribute="trailing" constant="4" id="DSa-Sj-Cw3"/>
+                    <constraint firstItem="FvI-KP-Fll" firstAttribute="leading" secondItem="Ewi-aT-Hao" secondAttribute="leading" constant="30" id="Kt3-W5-4fE"/>
+                    <constraint firstItem="94r-D8-vca" firstAttribute="leading" secondItem="Ewi-aT-Hao" secondAttribute="leading" constant="124" id="Qcj-8H-u6s"/>
                     <constraint firstItem="mZG-KC-4Hf" firstAttribute="top" secondItem="Ewi-aT-Hao" secondAttribute="top" constant="36" id="irZ-vK-PqT"/>
+                    <constraint firstItem="94r-D8-vca" firstAttribute="top" secondItem="Ewi-aT-Hao" secondAttribute="top" constant="44" id="p3q-uS-eNG"/>
+                    <constraint firstAttribute="trailing" secondItem="FvI-KP-Fll" secondAttribute="trailing" constant="30" id="zuZ-CN-9ua"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

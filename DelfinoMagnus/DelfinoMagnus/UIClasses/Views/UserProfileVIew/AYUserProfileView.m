@@ -100,7 +100,7 @@
         self.constraintNameLabelTopSpace.constant = kIsDeviceiPad ? 447 : 219;
         self.constraintProfilePicTopSpace.constant = kIsDeviceiPad ? 88 : 71;
         self.constraintNameLabelRightSapce.constant = 140;
-        self.constraintProfilePicLeftSapce.constant = 234;
+        self.constraintProfilePicLeftSapce.constant = 219;
     }
     
     [self layoutIfNeeded];

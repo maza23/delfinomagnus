@@ -197,7 +197,9 @@
                 <constraint firstItem="DbR-UT-Nwn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zZv-xB-rw8"/>
             </constraints>
             <connections>
+                <outlet property="btnCalendar" destination="ANn-Ny-OLn" id="UT9-ih-YOT"/>
                 <outlet property="btnClose" destination="YOg-aV-GuM" id="V4m-TL-tD0"/>
+                <outlet property="btnPhoto" destination="NKc-H3-die" id="6g7-dX-hED"/>
                 <outlet property="lblSubTitle" destination="CuY-4K-WTb" id="plg-YJ-HiP"/>
                 <outlet property="lblTitle" destination="5od-Ry-ghN" id="UOc-4l-Uua"/>
                 <outlet property="pageControl" destination="BVP-Lb-2wA" id="Hr1-Up-7L2"/>

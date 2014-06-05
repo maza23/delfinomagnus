@@ -218,7 +218,8 @@
         
         [(AYDevicesListCell *)cell configureCellWithObject:object isDeviceReserved:[self isDeviceReserved:object]];
     }
-    
+    [cell setBackgroundColor :[UIColor clearColor]];
+
     return cell;
 }
 

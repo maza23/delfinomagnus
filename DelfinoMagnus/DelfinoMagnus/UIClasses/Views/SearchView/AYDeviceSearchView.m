@@ -40,15 +40,13 @@
     }
     [self removeFromSuperview];
 }
-
+ 
 #pragma mark - Private Methods
 - (void)loadSearchView
 {
     NSString *nibName = kIsDeviceiPad ? @"AYSearchView~iPad": @"AYSearchView";
     AYSearchView *searchSubView = [[[NSBundle mainBundle]  loadNibNamed:nibName owner:self options:nil] lastObject];
     [self.scrollViewContainer addSubview:searchSubView];
-    
-    [searchSubView setFrame:self.bounds];
     
 //    searchSubView.translatesAutoresizingMaskIntoConstraints = NO;
 //    
@@ -63,14 +61,16 @@
 //                               metrics:nil
 //                               views:NSDictionaryOfVariableBindings(searchSubView)]];
 
-    self.searchView = searchSubView;
     if (!kIsDeviceiPad) {
         [self.scrollViewContainer setContentSize:self.searchView.bounds.size];
     }
+    else {
+        [searchSubView setFrame:self.bounds];
+    }
     
-    [self layoutIfNeeded];
+    self.searchView = searchSubView;
 
-    NSLog(@"Frame of scrollView is:%@ \nAnd content size of scrollView is:%@ \nAnd frame of search view is:%@", NSStringFromCGRect(self.scrollViewContainer.frame), NSStringFromCGSize(self.scrollViewContainer.contentSize), NSStringFromCGRect(self.searchView.frame));
+    [self layoutIfNeeded];
 }
 
 

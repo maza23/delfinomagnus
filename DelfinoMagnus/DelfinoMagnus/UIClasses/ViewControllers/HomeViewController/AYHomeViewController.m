@@ -191,8 +191,7 @@
 
     [self setActionButtonsHidden:YES];
 
-    NSString *nibName = kIsDeviceiPad ? @"AYDeviceSearchView~iPad": @"AYDeviceSearchView";
-    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:nibName owner:self options:nil] lastObject];
+    self.searchView = [[[NSBundle mainBundle]  loadNibNamed:@"AYDeviceSearchView" owner:self options:nil] lastObject];
     [self.view addSubview:self.searchView];
     [self.searchView setDelegate:self];
     [self.searchView setFrame:CGRectMake(10, 10, self.view.bounds.size.width - 20, self.view.bounds.size.height - 20)];

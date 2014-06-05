@@ -48,7 +48,8 @@
     AYSearchView *searchSubView = [[[NSBundle mainBundle]  loadNibNamed:nibName owner:self options:nil] lastObject];
     [self.scrollViewContainer addSubview:searchSubView];
     
-//    
+    [searchSubView setFrame:self.bounds];
+    
 //    searchSubView.translatesAutoresizingMaskIntoConstraints = NO;
 //    
 //    [self.scrollViewContainer addConstraints:[NSLayoutConstraint
@@ -61,13 +62,15 @@
 //                               options:NSLayoutFormatDirectionLeadingToTrailing
 //                               metrics:nil
 //                               views:NSDictionaryOfVariableBindings(searchSubView)]];
-//
+
     self.searchView = searchSubView;
+    if (!kIsDeviceiPad) {
+        [self.scrollViewContainer setContentSize:self.searchView.bounds.size];
+    }
     
-    [self.scrollViewContainer setContentSize:self.searchView.bounds.size];
     [self layoutIfNeeded];
 
-   // NSLog(@"Frame of scrollView is:%@ \nAnd content size of scrollView is:%@ \nAnd frame of search view is:%@", self.scrollViewContainer.frame, self.scrollViewContainer.contentSize, self.searchView.frame);
+    NSLog(@"Frame of scrollView is:%@ \nAnd content size of scrollView is:%@ \nAnd frame of search view is:%@", NSStringFromCGRect(self.scrollViewContainer.frame), NSStringFromCGSize(self.scrollViewContainer.contentSize), NSStringFromCGRect(self.searchView.frame));
 }
 
 

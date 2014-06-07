@@ -29,7 +29,7 @@
                         <action selector="actionMenuButtonPressed:" destination="1" eventType="touchUpInside" id="ruG-rD-DVG"/>
                     </connections>
                 </button>
-                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVB-Yz-0S7">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVB-Yz-0S7">
                     <rect key="frame" x="0.0" y="40" width="300" height="528"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </scrollView>

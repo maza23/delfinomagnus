@@ -31,17 +31,55 @@
 {
     [super awakeFromNib];
     [self loadSearchView];
+    [self doInitialConfigurations];
 }
+
 #pragma mark - IBAction Methods
 - (IBAction)actionMenuButtonPressed:(id)sender {
     
     if ([self.delegate respondsToSelector:@selector(didPressedCloseButtonOnView:)]) {
         [self.delegate didPressedCloseButtonOnView:self];
     }
+    
     [self removeFromSuperview];
 }
- 
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - Private Methods
+- (void)doInitialConfigurations
+{
+    [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
+}
+
+- (void)didChangedOrientation:(id)notifiObject
+{
+    NSInteger newOrientation = [[[notifiObject userInfo] objectForKey:@"NewOrientation"] integerValue];
+    
+    [self doAppearenceSettingsForOrientation:newOrientation];
+}
+
+- (void)doAppearenceSettingsForOrientation:(NSInteger)orientation
+{
+    if (kIsDeviceiPad) {
+        return;
+    }
+    
+    if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
+        CGRect frame = self.searchView.frame;
+        frame.size.height = 1400;
+        [self.searchView setFrame:frame];
+    }
+    
+    NSLog(@"The frame of the search vieiiw is:%@", NSStringFromCGRect(self.searchView.frame));
+    [self layoutIfNeeded];
+}
+
 - (void)loadSearchView
 {
     NSString *nibName = kIsDeviceiPad ? @"AYSearchView~iPad": @"AYSearchView";
@@ -61,6 +99,8 @@
 //                               metrics:nil
 //                               views:NSDictionaryOfVariableBindings(searchSubView)]];
 
+    self.searchView = searchSubView;
+
     if (!kIsDeviceiPad) {
         [self.scrollViewContainer setContentSize:self.searchView.bounds.size];
     }
@@ -68,7 +108,6 @@
         [searchSubView setFrame:self.bounds];
     }
     
-    self.searchView = searchSubView;
 
     [self layoutIfNeeded];
 }

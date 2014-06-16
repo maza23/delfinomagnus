@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6J-6b-whn">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6J-6b-whn">
                     <rect key="frame" x="272" y="0.0" width="48" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="menu.png">
@@ -47,12 +47,24 @@
                         <action selector="actionSearchButtonPressed:" destination="-1" eventType="touchUpInside" id="N0n-dc-QzR"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOj-3j-QxW">
+                    <rect key="frame" x="10" y="8" width="22" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="actionInfoButtonPressed:" destination="-1" eventType="touchUpInside" id="pm6-6W-GIc"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="EaS-Ww-N28" secondAttribute="bottom" constant="8" id="5ic-hf-u6F"/>
                 <constraint firstItem="Y6J-6b-whn" firstAttribute="top" secondItem="1" secondAttribute="top" id="CgH-EF-bl5"/>
                 <constraint firstAttribute="trailing" secondItem="Y6J-6b-whn" secondAttribute="trailing" id="KLS-Ge-WdW"/>
+                <constraint firstItem="oOj-3j-QxW" firstAttribute="top" secondItem="1" secondAttribute="top" constant="8" id="Kp7-pW-bFB"/>
+                <constraint firstItem="oOj-3j-QxW" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="10" id="V5U-5b-FTk"/>
                 <constraint firstItem="EaS-Ww-N28" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="9" id="hC7-CG-EaX"/>
                 <constraint firstAttribute="centerY" secondItem="ozz-AQ-xDp" secondAttribute="centerY" constant="-4.5" id="sjG-vh-7GL"/>
                 <constraint firstItem="ozz-AQ-xDp" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="vSX-6H-KAx"/>

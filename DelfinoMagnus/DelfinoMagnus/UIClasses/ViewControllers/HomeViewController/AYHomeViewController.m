@@ -13,6 +13,7 @@
 #import "AYMenuView.h"
 #import "AYDeviceSearchView.h"
 #import "AYDeviceDetailsView.h"
+#import "AYInstructionsView.h"
 #import "Tipo.h"
 
 @interface AYHomeViewController () <GMSMapViewDelegate, AYBaseCloseDelegate>
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) AYDeviceSearchView *searchView;
 @property (strong, nonatomic) AYDeviceDetailsView *deviceDetailsView;
 @property (strong, nonatomic) UIView *infoWindow;
+@property (strong, nonatomic) AYInstructionsView *instructionsView;
 
 @property (strong, nonatomic) NSArray *devices;
 @property (strong, nonatomic) NSDictionary *tipos;
@@ -43,6 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showHelpScreenIfRequired];
     [self doInitialConfigurations];
     [self getAndLoadDevicesFromServer];
     
@@ -69,6 +72,10 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceWillChangeOrientation object:nil userInfo:@{@"NewOrientation" :[NSNumber numberWithInt:toInterfaceOrientation]}];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+      [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceDidChangeOrientation object:nil userInfo:@{@"OldOrientation" :[NSNumber numberWithInt:fromInterfaceOrientation]}];
+}
 
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
@@ -158,6 +165,23 @@
     }
 }
 
+- (void)showHelpScreenIfRequired
+{
+    NSString *showHelp = [[NSUserDefaults standardUserDefaults] objectForKey:@"shouldShowHelp"];
+    if ([showHelp isEqualToString:@"No"])
+        return;
+   
+    [self loadInfoScreen];
+}
+
+- (void)loadInfoScreen
+{
+    NSString *nibName = kIsDeviceiPad ? @"AYInstructionsView~iPad" : @"AYInstructionsView";
+    self.instructionsView = [[[NSBundle mainBundle]  loadNibNamed:nibName owner:self options:nil] lastObject];
+    [self.instructionsView setFrame:self.view.bounds];
+    [self.view addSubview:self.instructionsView];
+}
+
 - (void)loadMenuView
 {
     [self setActionButtonsHidden:YES];
@@ -202,6 +226,10 @@
     [sender setSelected:![sender isSelected]];
     
     [self showMapWithMarkerDevices:self.devices withToDo:[sender isSelected]];
+}
+
+- (IBAction)actionInfoButtonPressed:(id)sender {
+    [self loadInfoScreen];
 }
 
 #pragma mark - GoogleMapView Delegate Methods

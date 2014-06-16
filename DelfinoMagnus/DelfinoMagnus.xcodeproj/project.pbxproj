@@ -18,12 +18,10 @@
 		CB0437CE194610F3000145F4 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437BE194610F3000145F4 /* 80.png */; };
 		CB0437E0194611EA000145F4 /* 640-1136.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437D8194611EA000145F4 /* 640-1136.png */; };
 		CB0437E1194611EA000145F4 /* 640-960.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437D9194611EA000145F4 /* 640-960.png */; };
-		CB0437E2194611EA000145F4 /* horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DA194611EA000145F4 /* horizontal.png */; };
 		CB0437E3194611EA000145F4 /* iPadLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DB194611EA000145F4 /* iPadLandscape.png */; };
 		CB0437E4194611EA000145F4 /* iPadLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DC194611EA000145F4 /* iPadLandscape@2x.png */; };
 		CB0437E5194611EA000145F4 /* iPadPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DD194611EA000145F4 /* iPadPortrait.png */; };
 		CB0437E6194611EA000145F4 /* iPadPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DE194611EA000145F4 /* iPadPortrait@2x.png */; };
-		CB0437E7194611EA000145F4 /* vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DF194611EA000145F4 /* vertical.png */; };
 		CB07C05F191F418100A43BF5 /* AYDeviceDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C05E191F418100A43BF5 /* AYDeviceDetailsView.m */; };
 		CB07C061191F419200A43BF5 /* AYDeviceDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB07C060191F419200A43BF5 /* AYDeviceDetailsView.xib */; };
 		CB07C06A191F5D9F00A43BF5 /* Images.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07C069191F5D9F00A43BF5 /* Images.m */; };
@@ -58,7 +56,6 @@
 		CB1248A61918879D009DA54C /* btn_nodisponible.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12485C1918879D009DA54C /* btn_nodisponible.png */; };
 		CB1248A71918879D009DA54C /* burbuja_bottom_land.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12485D1918879D009DA54C /* burbuja_bottom_land.png */; };
 		CB1248A81918879D009DA54C /* burbuja_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12485E1918879D009DA54C /* burbuja_bottom.png */; };
-		CB1248A91918879D009DA54C /* burbuja_land.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12485F1918879D009DA54C /* burbuja_land.png */; };
 		CB1248AA1918879D009DA54C /* burbuja.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248601918879D009DA54C /* burbuja.png */; };
 		CB1248AB1918879D009DA54C /* buscar.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248611918879D009DA54C /* buscar.png */; };
 		CB1248AC1918879D009DA54C /* busqueda.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248621918879D009DA54C /* busqueda.png */; };
@@ -81,10 +78,6 @@
 		CB1248BD1918879D009DA54C /* foto_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248731918879D009DA54C /* foto_normal.png */; };
 		CB1248BE1918879D009DA54C /* foto_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248741918879D009DA54C /* foto_pressed.png */; };
 		CB1248BF1918879D009DA54C /* foto.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248751918879D009DA54C /* foto.png */; };
-		CB1248C01918879D009DA54C /* help_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248761918879D009DA54C /* help_1.png */; };
-		CB1248C11918879D009DA54C /* help_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248771918879D009DA54C /* help_2.png */; };
-		CB1248C21918879D009DA54C /* help_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248781918879D009DA54C /* help_3.png */; };
-		CB1248C31918879D009DA54C /* help_4.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248791918879D009DA54C /* help_4.png */; };
 		CB1248C41918879D009DA54C /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12487A1918879D009DA54C /* ic_launcher.png */; };
 		CB1248C51918879D009DA54C /* icon_help.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12487B1918879D009DA54C /* icon_help.png */; };
 		CB1248C61918879D009DA54C /* info_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12487C1918879D009DA54C /* info_normal.png */; };
@@ -106,13 +99,9 @@
 		CB1248D61918879D009DA54C /* reservar_off.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12488C1918879D009DA54C /* reservar_off.png */; };
 		CB1248D71918879D009DA54C /* reservar_on.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12488D1918879D009DA54C /* reservar_on.png */; };
 		CB1248D81918879D009DA54C /* sombra_abajo.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12488E1918879D009DA54C /* sombra_abajo.png */; };
-		CB1248D91918879D009DA54C /* splash_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB12488F1918879D009DA54C /* splash_2.png */; };
-		CB1248DA1918879D009DA54C /* splash_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248901918879D009DA54C /* splash_logo.png */; };
-		CB1248DB1918879D009DA54C /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248911918879D009DA54C /* splash.png */; };
 		CB1248DC1918879D009DA54C /* telon_black.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248921918879D009DA54C /* telon_black.png */; };
 		CB1248DD1918879D009DA54C /* telon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248931918879D009DA54C /* telon.png */; };
 		CB1248DE1918879D009DA54C /* telones_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248941918879D009DA54C /* telones_icon.png */; };
-		CB1248DF1918879D009DA54C /* web_hi_res_512.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248951918879D009DA54C /* web_hi_res_512.png */; };
 		CB13F09119193E120054E950 /* AYForgotPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB13F09019193E120054E950 /* AYForgotPasswordView.m */; };
 		CB13F09319193E250054E950 /* AYForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB13F09219193E250054E950 /* AYForgotPasswordView.xib */; };
 		CB198FD31921420C00F7EC46 /* AYUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = CB198FD21921420C00F7EC46 /* AYUtilites.m */; };
@@ -162,6 +151,14 @@
 		CBF13F9F19227FA500E1C418 /* AYDevicesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF13F9A19227FA500E1C418 /* AYDevicesListView.xib */; };
 		CBF13FA019227FA500E1C418 /* AYSearchedDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF13F9C19227FA500E1C418 /* AYSearchedDeviceCell.m */; };
 		CBF13FA119227FA500E1C418 /* AYSearchedDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */; };
+		CBF8506B194D7B9A00B2AADE /* AYInstructionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF8506A194D7B9A00B2AADE /* AYInstructionsView.m */; };
+		CBF8506D194D7BA600B2AADE /* AYInstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF8506C194D7BA600B2AADE /* AYInstructionsView.xib */; };
+		CBF8506E194D7DDB00B2AADE /* help_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248761918879D009DA54C /* help_1.png */; };
+		CBF8506F194D7DE000B2AADE /* help_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248771918879D009DA54C /* help_2.png */; };
+		CBF85070194D7DE700B2AADE /* help_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248781918879D009DA54C /* help_3.png */; };
+		CBF85071194D7DED00B2AADE /* help_4.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248791918879D009DA54C /* help_4.png */; };
+		CBF85074194D8D5400B2AADE /* checkedSquare.png in Resources */ = {isa = PBXBuildFile; fileRef = CBF85072194D8D5400B2AADE /* checkedSquare.png */; };
+		CBF85075194D8D5400B2AADE /* squareCheckBoxUnselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBF85073194D8D5400B2AADE /* squareCheckBoxUnselected@2x.png */; };
 		CBF9B5D4191E0E6D005DC1A0 /* AYSearchSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */; };
 		CBF9B5D8191E72E7005DC1A0 /* AYUserProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B5D7191E72E7005DC1A0 /* AYUserProfileView.m */; };
 		CBF9B5DA191E72F9005DC1A0 /* AYUserProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF9B5D9191E72F9005DC1A0 /* AYUserProfileView.xib */; };
@@ -191,6 +188,7 @@
 		CBF9B628191EBC54005DC1A0 /* AYDevicesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B627191EBC54005DC1A0 /* AYDevicesListCell.m */; };
 		CBF9B62A191EBC66005DC1A0 /* AYDevicesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF9B629191EBC66005DC1A0 /* AYDevicesListCell.xib */; };
 		CBF9B62D191ECB0E005DC1A0 /* FavoriteDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B62C191ECB0E005DC1A0 /* FavoriteDevice.m */; };
+		CBFC05E5194E1B5A000599FE /* AYInstructionsView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFC05E4194E1B5A000599FE /* AYInstructionsView~iPad.xib */; };
 		CBFE3AF9191D4AEF00A74C2D /* AYSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */; };
 		CBFE3AFB191D4AFF00A74C2D /* AYSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */; };
 		DC0D3B8E193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC0D3B8D193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib */; };
@@ -396,6 +394,11 @@
 		CBF13F9B19227FA500E1C418 /* AYSearchedDeviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchedDeviceCell.h; sourceTree = "<group>"; };
 		CBF13F9C19227FA500E1C418 /* AYSearchedDeviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchedDeviceCell.m; sourceTree = "<group>"; };
 		CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYSearchedDeviceCell.xib; sourceTree = "<group>"; };
+		CBF85069194D7B9A00B2AADE /* AYInstructionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYInstructionsView.h; sourceTree = "<group>"; };
+		CBF8506A194D7B9A00B2AADE /* AYInstructionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYInstructionsView.m; sourceTree = "<group>"; };
+		CBF8506C194D7BA600B2AADE /* AYInstructionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYInstructionsView.xib; sourceTree = "<group>"; };
+		CBF85072194D8D5400B2AADE /* checkedSquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkedSquare.png; sourceTree = "<group>"; };
+		CBF85073194D8D5400B2AADE /* squareCheckBoxUnselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "squareCheckBoxUnselected@2x.png"; sourceTree = "<group>"; };
 		CBF9B5D2191E0E6D005DC1A0 /* AYSearchSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchSettings.h; sourceTree = "<group>"; };
 		CBF9B5D3191E0E6D005DC1A0 /* AYSearchSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchSettings.m; sourceTree = "<group>"; };
 		CBF9B5D6191E72E7005DC1A0 /* AYUserProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUserProfileView.h; sourceTree = "<group>"; };
@@ -450,6 +453,7 @@
 		CBF9B629191EBC66005DC1A0 /* AYDevicesListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYDevicesListCell.xib; sourceTree = "<group>"; };
 		CBF9B62B191ECB0E005DC1A0 /* FavoriteDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteDevice.h; sourceTree = "<group>"; };
 		CBF9B62C191ECB0E005DC1A0 /* FavoriteDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteDevice.m; sourceTree = "<group>"; };
+		CBFC05E4194E1B5A000599FE /* AYInstructionsView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYInstructionsView~iPad.xib"; sourceTree = "<group>"; };
 		CBFE3AF7191D4AEF00A74C2D /* AYSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchView.h; sourceTree = "<group>"; };
 		CBFE3AF8191D4AEF00A74C2D /* AYSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchView.m; sourceTree = "<group>"; };
 		CBFE3AFA191D4AFF00A74C2D /* AYSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYSearchView.xib; sourceTree = "<group>"; };
@@ -779,6 +783,7 @@
 		CBCD61901918085E00846E8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CBF85068194D7B8300B2AADE /* InstructionsView */,
 				CB07C05C191F416500A43BF5 /* DeviceDetailsView */,
 				CBF9B61B191EAD48005DC1A0 /* FavoritesView */,
 				CBF9B5D5191E728E005DC1A0 /* UserProfileVIew */,
@@ -816,6 +821,8 @@
 				CB0437D7194611EA000145F4 /* splash */,
 				CB0437B7194610F3000145F4 /* logos */,
 				CB10D4A0191FFBD700F987E6 /* leftArrow@2x.png */,
+				CBF85072194D8D5400B2AADE /* checkedSquare.png */,
+				CBF85073194D8D5400B2AADE /* squareCheckBoxUnselected@2x.png */,
 				CB10D4A1191FFBD700F987E6 /* leftArrow.png */,
 				CB10D4A2191FFBD700F987E6 /* rightArrow.png */,
 				CB10D4A3191FFBD700F987E6 /* rightArrow@2x.png */,
@@ -938,6 +945,17 @@
 				CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */,
 			);
 			path = DeviceListView;
+			sourceTree = "<group>";
+		};
+		CBF85068194D7B8300B2AADE /* InstructionsView */ = {
+			isa = PBXGroup;
+			children = (
+				CBF85069194D7B9A00B2AADE /* AYInstructionsView.h */,
+				CBF8506A194D7B9A00B2AADE /* AYInstructionsView.m */,
+				CBF8506C194D7BA600B2AADE /* AYInstructionsView.xib */,
+				CBFC05E4194E1B5A000599FE /* AYInstructionsView~iPad.xib */,
+			);
+			path = InstructionsView;
 			sourceTree = "<group>";
 		};
 		CBF9B5D5191E728E005DC1A0 /* UserProfileVIew */ = {
@@ -1124,7 +1142,6 @@
 				CB1248D81918879D009DA54C /* sombra_abajo.png in Resources */,
 				CBCD61A01918090900846E8C /* AYLoginViewController.xib in Resources */,
 				CB1248AC1918879D009DA54C /* busqueda.png in Resources */,
-				CB1248C01918879D009DA54C /* help_1.png in Resources */,
 				DC0D3B8E193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib in Resources */,
 				CB1248A71918879D009DA54C /* burbuja_bottom_land.png in Resources */,
 				CB1248AF1918879D009DA54C /* calendario.png in Resources */,
@@ -1136,7 +1153,6 @@
 				CB1248B61918879D009DA54C /* ejemplo.jpg in Resources */,
 				CB1248991918879D009DA54C /* bg_btn_cartel.png in Resources */,
 				CB1248AA1918879D009DA54C /* burbuja.png in Resources */,
-				CB1248DA1918879D009DA54C /* splash_logo.png in Resources */,
 				CB1248A11918879D009DA54C /* btn_buscar.png in Resources */,
 				CB0437CB194610F3000145F4 /* 40.png in Resources */,
 				DCC2D568193D9A2500B58A91 /* AYUserProfileView~iPad.xib in Resources */,
@@ -1149,22 +1165,22 @@
 				CBF9B620191EAD6F005DC1A0 /* AYFavoritesView.xib in Resources */,
 				CB7928421939CD35004B19DA /* AYSearchView~iPad.xib in Resources */,
 				CB0437C9194610F3000145F4 /* 152.png in Resources */,
+				CBFC05E5194E1B5A000599FE /* AYInstructionsView~iPad.xib in Resources */,
 				CB1248BB1918879D009DA54C /* favorito_on.png in Resources */,
 				CB1248B41918879D009DA54C /* cmi.png in Resources */,
 				CB1248DD1918879D009DA54C /* telon.png in Resources */,
-				CB1248C31918879D009DA54C /* help_4.png in Resources */,
 				DCC2D56C193DCD6200B58A91 /* AYFavoritesView~iPad.xib in Resources */,
+				CBF8506F194D7DE000B2AADE /* help_2.png in Resources */,
 				CB0437E0194611EA000145F4 /* 640-1136.png in Resources */,
 				CB1248B01918879D009DA54C /* cartel_black.png in Resources */,
 				CB1248CC1918879D009DA54C /* mediawall_icon.png in Resources */,
 				CB1248C91918879D009DA54C /* marker_un.png in Resources */,
-				CB1248DB1918879D009DA54C /* splash.png in Resources */,
 				CBF9B62A191EBC66005DC1A0 /* AYDevicesListCell.xib in Resources */,
 				CB1248AE1918879D009DA54C /* calendario_pressed.png in Resources */,
 				CB0437E3194611EA000145F4 /* iPadLandscape.png in Resources */,
 				CB1248CF1918879D009DA54C /* menu.png in Resources */,
-				CB1248D91918879D009DA54C /* splash_2.png in Resources */,
 				CB0437CC194610F3000145F4 /* 58.png in Resources */,
+				CBF85070194D7DE700B2AADE /* help_3.png in Resources */,
 				CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */,
 				CBF13F8C19226B4300E1C418 /* AYDeviceSearchView.xib in Resources */,
 				CB12489C1918879D009DA54C /* bg_btn_telon.png in Resources */,
@@ -1172,9 +1188,12 @@
 				CB1248D21918879D009DA54C /* monocolumnas_icon.png in Resources */,
 				CBF13F9F19227FA500E1C418 /* AYDevicesListView.xib in Resources */,
 				CB1248971918879D009DA54C /* back2.png in Resources */,
+				CBF85074194D8D5400B2AADE /* checkedSquare.png in Resources */,
 				CB1248D01918879D009DA54C /* monocolumna_black.png in Resources */,
 				CB10D49F191FF20B00F987E6 /* CalenderViewController.xib in Resources */,
 				CB07C061191F419200A43BF5 /* AYDeviceDetailsView.xib in Resources */,
+				CBF8506D194D7BA600B2AADE /* AYInstructionsView.xib in Resources */,
+				CBF85075194D8D5400B2AADE /* squareCheckBoxUnselected@2x.png in Resources */,
 				CB1248AD1918879D009DA54C /* calendario_normal.png in Resources */,
 				CB1248C61918879D009DA54C /* info_normal.png in Resources */,
 				CB1248DE1918879D009DA54C /* telones_icon.png in Resources */,
@@ -1185,9 +1204,9 @@
 				CB2318CB1937AFAB00816DC7 /* AYLoginViewController~iPad.xib in Resources */,
 				CB12489D1918879D009DA54C /* bg_input.png in Resources */,
 				CB1248B21918879D009DA54C /* carteles_icon.png in Resources */,
-				CB1248DF1918879D009DA54C /* web_hi_res_512.png in Resources */,
 				CBCD616E1918044900846E8C /* Images.xcassets in Resources */,
 				CB1248C41918879D009DA54C /* ic_launcher.png in Resources */,
+				CBF8506E194D7DDB00B2AADE /* help_1.png in Resources */,
 				CB0437E5194611EA000145F4 /* iPadPortrait.png in Resources */,
 				CB1248BD1918879D009DA54C /* foto_normal.png in Resources */,
 				CBFE3AFB191D4AFF00A74C2D /* AYSearchView.xib in Resources */,
@@ -1203,8 +1222,6 @@
 				CB773F61191BFF7D00E36537 /* AYMenuView.xib in Resources */,
 				CBF9B611191E9E27005DC1A0 /* LICENSE in Resources */,
 				CBF9B5DA191E72F9005DC1A0 /* AYUserProfileView.xib in Resources */,
-				CB0437E7194611EA000145F4 /* vertical.png in Resources */,
-				CB1248C21918879D009DA54C /* help_3.png in Resources */,
 				CB10D4A4191FFBD700F987E6 /* leftArrow@2x.png in Resources */,
 				CB10D4A5191FFBD700F987E6 /* leftArrow.png in Resources */,
 				CB1248BC1918879D009DA54C /* favoritos.png in Resources */,
@@ -1216,17 +1233,14 @@
 				CB0437E6194611EA000145F4 /* iPadPortrait@2x.png in Resources */,
 				CBF9B612191E9E27005DC1A0 /* README.md in Resources */,
 				CB1248981918879D009DA54C /* back3.png in Resources */,
-				CB0437E2194611EA000145F4 /* horizontal.png in Resources */,
 				CB1248C81918879D009DA54C /* logo_full.png in Resources */,
 				CB1248B71918879D009DA54C /* encendido.png in Resources */,
 				CB1248D31918879D009DA54C /* no_disponible.png in Resources */,
 				CB1248D71918879D009DA54C /* reservar_on.png in Resources */,
 				CBCD61A61918092F00846E8C /* AYHomeViewController.xib in Resources */,
-				CB1248C11918879D009DA54C /* help_2.png in Resources */,
 				CB1248A61918879D009DA54C /* btn_nodisponible.png in Resources */,
 				CB1248CB1918879D009DA54C /* mediawall_black.png in Resources */,
 				CB1248BF1918879D009DA54C /* foto.png in Resources */,
-				CB1248A91918879D009DA54C /* burbuja_land.png in Resources */,
 				CB1248CE1918879D009DA54C /* menu_vacio.png in Resources */,
 				CB0437CD194610F3000145F4 /* 76.png in Resources */,
 				CB10D4A7191FFBD700F987E6 /* rightArrow@2x.png in Resources */,
@@ -1236,6 +1250,7 @@
 				CB1248A01918879D009DA54C /* blank_pressed.png in Resources */,
 				CB1248D61918879D009DA54C /* reservar_off.png in Resources */,
 				CB1248BE1918879D009DA54C /* foto_pressed.png in Resources */,
+				CBF85071194D7DED00B2AADE /* help_4.png in Resources */,
 				CB0437E1194611EA000145F4 /* 640-960.png in Resources */,
 				CB0437C8194610F3000145F4 /* 120.png in Resources */,
 				CB12489A1918879D009DA54C /* bg_btn_mediawall.png in Resources */,
@@ -1262,6 +1277,7 @@
 				CBFE3AF9191D4AEF00A74C2D /* AYSearchView.m in Sources */,
 				CBF9B60C191E9E27005DC1A0 /* AFSecurityPolicy.m in Sources */,
 				CBF9B62D191ECB0E005DC1A0 /* FavoriteDevice.m in Sources */,
+				CBF8506B194D7B9A00B2AADE /* AYInstructionsView.m in Sources */,
 				CBF9B609191E9E27005DC1A0 /* AFHTTPRequestOperationManager.m in Sources */,
 				CBF13F9E19227FA500E1C418 /* AYDevicesListView.m in Sources */,
 				CBF13FA019227FA500E1C418 /* AYSearchedDeviceCell.m in Sources */,

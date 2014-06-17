@@ -29,15 +29,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnSearch;
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
 @property (assign, nonatomic) BOOL isInfoWindowLoadingInProgress;
+@property (assign, nonatomic) BOOL isShowingHomeScreen;
 @end
 
 @implementation AYHomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil isHomeScreen:(BOOL)isHome
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.isShowingHomeScreen = isHome;
     }
     return self;
 }
@@ -45,15 +46,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self showHelpScreenIfRequired];
     [self doInitialConfigurations];
-    [self getAndLoadDevicesFromServer];
-    
-    double delayInSeconds = 2.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self startSyncingData];
-    });
+
+    if (self.isShowingHomeScreen) {
+        [self showHelpScreenIfRequired];
+        [self getAndLoadDevicesFromServer];
+        
+        double delayInSeconds = 2.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self startSyncingData];
+        });
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,13 +72,18 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+    if (!self.isShowingHomeScreen)
+        return;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceWillChangeOrientation object:nil userInfo:@{@"NewOrientation" :[NSNumber numberWithInt:toInterfaceOrientation]}];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-      [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceDidChangeOrientation object:nil userInfo:@{@"OldOrientation" :[NSNumber numberWithInt:fromInterfaceOrientation]}];
+    if (!self.isShowingHomeScreen)
+        return;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceDidChangeOrientation object:nil userInfo:@{@"OldOrientation" :[NSNumber numberWithInt:fromInterfaceOrientation]}];
 }
 
 #pragma mark - Private Methods

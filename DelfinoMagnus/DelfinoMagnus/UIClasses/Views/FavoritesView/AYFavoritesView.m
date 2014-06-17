@@ -111,6 +111,7 @@
     NSMutableArray *monocolumnaDevices = [[NSMutableArray alloc]  initWithCapacity:0];
     NSMutableArray *mediawallDevices = [[NSMutableArray alloc]  initWithCapacity:0];
     NSMutableArray *telonDevices = [[NSMutableArray alloc]  initWithCapacity:0];
+    NSDictionary *tipoIdAndNames = [AYUtilites getTiposIdAsObjectAndNameAsDictKeys];
 
     for (FavoriteDevice *favoriteDevice in devices) {
         
@@ -118,14 +119,25 @@
         
         if (!device)
             continue;
-        
-        if ([device.tipo isEqualToString:@"1"]) {
+        /*if ([tipo.name isEqualToString:@"Cartel"]) {
+         tipoName = @"Cartel";
+         }
+         else if ([tipo.name isEqualToString:@"Mediawall"]) {
+         tipoName = @"Mediawall";
+         }
+         else if ([tipo.name isEqualToString:@"Monocolumna"]) {
+         tipoName = @"Monocolumna";
+         }
+         else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
+         tipoName = @"Telanas";
+*/
+        if ([device.tipo isEqualToString:tipoIdAndNames[@"Cartel"]]) {
             [cartelDevices addObject:device];
         }
-        else if ([device.tipo isEqualToString:@"2"]) {
+        else if ([device.tipo isEqualToString:tipoIdAndNames[@"Monocolumna"]]) {
             [monocolumnaDevices addObject:device];
         }
-        else if ([device.tipo isEqualToString:@"3"]) {
+        else if ([device.tipo isEqualToString:tipoIdAndNames[@"Mediawall"]]) {
             [mediawallDevices addObject:device];
         }
         else {

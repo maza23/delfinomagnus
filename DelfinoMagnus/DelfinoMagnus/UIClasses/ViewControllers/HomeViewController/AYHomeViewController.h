@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AYHomeViewController : UIViewController
-
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil isHomeScreen:(BOOL)isHome;
+- (void)showMapWithMarkerDevices:(NSArray *)devicesList withToDo:(BOOL)showToDo;
 @end

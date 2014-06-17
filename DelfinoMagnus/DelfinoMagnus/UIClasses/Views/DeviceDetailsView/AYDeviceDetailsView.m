@@ -14,6 +14,7 @@
 #import "Tipo.h"
 #import "ReservedDevice.h"
 #import "CalenderViewController.h"
+#import "BZDownloadAlertView.h"
 
 @interface AYDeviceDetailsView ()
 @property (strong, nonatomic) Device *device;
@@ -41,6 +42,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImageContainerHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCalendarButtonBottomSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCalendarContainerTopSpace;
+@property (nonatomic, strong) BZDownloadAlertView *downloadAlertView;
 
 
 @property (strong, nonatomic) CalenderViewController *calendarVC;
@@ -89,7 +91,6 @@
     [self handleSwitchCalendarFotoButtonWithSender:self.btnPhoto];
     [self addCalendarView];
 }
-
 
 - (void)didChangedOrientation:(id)notifiObject
 {
@@ -278,13 +279,20 @@
 
 - (void)showAlertWithMessage:(NSString *)message andTitle:(NSString *)title
 {
-    return;
-    
     dispatch_async(dispatch_get_main_queue(), ^{
        
-        UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc]  initWithTitle:title message:message delegate:nil cancelButtonTitle:@"despedir" otherButtonTitles:nil];
         [alertView show];
     });
+}
+
+- (void)showToastWithMessage:(NSString *)message
+{
+    if (!self.downloadAlertView) {
+        self.downloadAlertView = [[BZDownloadAlertView alloc] init];
+    }
+    
+    [self.downloadAlertView displayAlertViewWithMessage:message andAlertStyle:BZDownloadAlertViewAlertStyleCompleted];
 }
 
 #pragma mark - Public Methods
@@ -317,9 +325,14 @@
                 
                 if ([[[result objectForKey:@"msgerr"] uppercaseString] isEqualToString:@"SUCCESS"]) {
                     [[LTCoreDataManager sharedInstance] insertReservedListIntoDBFromRawArray:[result objectForKey:@"devices"]];
+                    [weakSelf showAlertWithMessage:@"En la brevedad un representante se pondrá en contacto." andTitle:@"LA LOCACIÓN SE HA RESERVADO CON ÉXITO"];                }
+                else {
+                    [weakSelf showAlertWithMessage:@"Algunos error ha ocurrido. Por favor, inténtelo de nuevo más tarde." andTitle:@"triste"];
                 }
             }
-            [weakSelf showAlertWithMessage:@"" andTitle:@""];
+            else {
+               // [weakSelf showAlertWithMessage:@"Some error has occured. Please try again later" andTitle:@"Sorry"];
+            }
         }];
     }
     else {
@@ -329,17 +342,15 @@
                 
                 if ([[[result objectForKey:@"msgerr"] uppercaseString] isEqualToString:@"SUCCESS"]) {
                     [[LTCoreDataManager sharedInstance] insertReservedListIntoDBFromRawArray:[result objectForKey:@"devices"]];
-                    [weakSelf showAlertWithMessage:@"" andTitle:@""];
+                    [self showToastWithMessage:@"Reserva cancelada"];
 
                 }
                 else {
-                    [weakSelf showAlertWithMessage:@"" andTitle:@""];
-
+                    [weakSelf showAlertWithMessage:@"Algunos error ha ocurrido. Por favor, inténtelo de nuevo más tarde." andTitle:@"triste"];
                 }
             }
             else {
-                [weakSelf showAlertWithMessage:@"" andTitle:@""];
-
+                //[weakSelf showAlertWithMessage:@"Some error has occured. Please try again later" andTitle:@"Sorry"];
             }
         }];
     }
@@ -363,10 +374,14 @@
                     
                     if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"])
                         [[LTCoreDataManager sharedInstance] insertFavoritesListIntoDBFromRawResponse:[result objectForKey:@"devices"]];
+                    [weakSelf showToastWithMessage:@"Agregado a favoritos"];
+                }
+                else {
+                    [weakSelf showAlertWithMessage:@"Algunos error ha ocurrido. Por favor, inténtelo de nuevo más tarde." andTitle:@"triste"];
                 }
             });
             
-            [weakSelf showAlertWithMessage:@"" andTitle:@""];
+          //  [weakSelf showAlertWithMessage:@"Some error has occured. Please try again later" andTitle:@"Sorry"];
         }];
     }
     else {
@@ -376,8 +391,13 @@
                 
                 if (result && [result isKindOfClass:[NSDictionary class]]) {
                     
-                    if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"])
+                    if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"]) {
                         [[LTCoreDataManager sharedInstance] insertFavoritesListIntoDBFromRawResponse:[result objectForKey:@"devices"]];
+                    [weakSelf showToastWithMessage:@"Removido de favoritos"];
+                    }
+                    else {
+                        [weakSelf showAlertWithMessage:@"Algunos error ha ocurrido. Por favor, inténtelo de nuevo más tarde." andTitle:@"triste"];
+                    }
                 }
             });
 

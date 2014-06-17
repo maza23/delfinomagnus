@@ -42,7 +42,7 @@
 
 - (void)loadHomeViewController
 {
-    AYHomeViewController *homeVC = [[AYHomeViewController alloc] initWithNibName:@"AYHomeViewController" bundle:nil];
+    AYHomeViewController *homeVC = [[AYHomeViewController alloc] initWithNibName:@"AYHomeViewController" bundle:nil isHomeScreen:YES];
     [self.window setRootViewController:homeVC];
 }
 

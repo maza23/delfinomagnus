@@ -76,7 +76,25 @@ typedef enum
 - (void)searchDeviceIntoDataBaseWithTitleText:(NSString *)text
 {
     NSArray *searchedDevices = [[LTCoreDataManager sharedInstance] getMatchedRecordFromEntity:kDevicesEntityName forColumnName:@"titulo" withValueToMatch:text];
-    NSArray *filteredDevices = [self getFilteredSearchDevicesFromArray:searchedDevices];
+    NSArray *filteredDevices = nil;
+    
+    if ([self isAnySettingsButtonSelected]) {
+        filteredDevices =  [self getFilteredSearchDevicesFromArray:searchedDevices];
+    }
+    else {
+        NSMutableArray *finalDevices = [[NSMutableArray alloc]  initWithCapacity:0];
+        
+        for (Device *device in searchedDevices) {
+            if (_searchSettings.disponible && [[device.disponible uppercaseString] isEqualToString:@"SI"]) {
+                [finalDevices addObject:device];
+            }
+            else if ((!_searchSettings.disponible) && (![[device.disponible uppercaseString] isEqualToString:@"SI"])) {
+                [finalDevices addObject:device];
+            }
+        }
+        
+        filteredDevices = finalDevices;
+    }
     
     if (![filteredDevices count]) {
         return;
@@ -91,6 +109,20 @@ typedef enum
     [parentView addSubview:self.devicesListView];
     
     [self.devicesListView loadDevicesListFromDevices:filteredDevices];
+}
+
+- (BOOL)isAnySettingsButtonSelected
+{
+    if (_searchSettings.tipoCartel) { return YES;}
+    else if (_searchSettings.tipoMediawall) { return YES;}
+    else if (_searchSettings.tipoMonocolumna) { return YES;}
+    else if (_searchSettings.tipoTelon) { return YES;}
+    else if (_searchSettings.zonaCapitalFederal) { return YES;}
+    else if (_searchSettings.zonaNorte) { return YES;}
+    else if (_searchSettings.zonaOeste) { return YES;}
+    else if (_searchSettings.zonaSur ) { return YES;}
+   
+    return NO;
 }
 
 - (NSArray *)getFilteredSearchDevicesFromArray:(NSArray *)searchedDevices

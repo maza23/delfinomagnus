@@ -68,8 +68,37 @@
     
     self.expandedTipoArray = [[NSMutableArray alloc]  initWithCapacity:0];
     
+    UITapGestureRecognizer *singleTapOnNumberOfDevices = [[UITapGestureRecognizer alloc]  init];
+    [singleTapOnNumberOfDevices addTarget:self action:@selector(singleTappedOnNumberOfFavoritesDevices:)];
+    [self.viewNumberOfFav addGestureRecognizer:singleTapOnNumberOfDevices];
+    
     [self fetchAndLoadFavoriteDevicesFromDB];
     [self getFavoritesListFromServer];
+}
+
+- (void)singleTappedOnNumberOfFavoritesDevices:(UIGestureRecognizer *)recognizer
+{
+    NSMutableArray *allDevices = [[NSMutableArray alloc]  initWithCapacity:0];
+    NSArray *devices = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kFavortiesEntityName];
+    for (FavoriteDevice *favoriteDevice in devices) {
+        
+        Device *device = [[[LTCoreDataManager sharedInstance] getRecordsFromEntity:kDevicesEntityName forAttribute:@"deviceId" withKey:favoriteDevice.deviceId] lastObject];
+        
+        if (!device)
+            continue;
+        
+        [allDevices addObject:device];
+    }
+    
+    if ([allDevices count]) {
+        [self postNotificationToShowDevicesOnMapWithDevices:allDevices andSelectedDeviceIndex:0];
+    }
+}
+
+- (void)postNotificationToShowDevicesOnMapWithDevices:(NSArray *)devices andSelectedDeviceIndex:(NSInteger )index
+{
+    [[NSNotificationCenter defaultCenter]  postNotificationName:kShowHomeScreenWithDevices object:nil userInfo:@{@"Devices": [devices copy], @"SelectedIndex" : [NSNumber numberWithInteger:index]}];
+
 }
 
 - (void)getFavoritesListFromServer
@@ -119,18 +148,7 @@
         
         if (!device)
             continue;
-        /*if ([tipo.name isEqualToString:@"Cartel"]) {
-         tipoName = @"Cartel";
-         }
-         else if ([tipo.name isEqualToString:@"Mediawall"]) {
-         tipoName = @"Mediawall";
-         }
-         else if ([tipo.name isEqualToString:@"Monocolumna"]) {
-         tipoName = @"Monocolumna";
-         }
-         else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
-         tipoName = @"Telanas";
-*/
+
         if ([device.tipo isEqualToString:tipoIdAndNames[@"Cartel"]]) {
             [cartelDevices addObject:device];
         }
@@ -283,11 +301,20 @@
             
             [self.tbleViewFavoritesList insertRowsAtIndexPaths:indexPathsToRemove withRowAnimation:UITableViewRowAnimationTop];
         }
-        
-        //[tableView reloadData];
     }
     else {
-        [self loadDeviceDetailsViewWithDeviceObject:self.favoriteDevices[[indexPath row]]];
+        
+        [self removeFromSuperview];
+        NSArray *devices = nil;
+        
+        for (int index = [indexPath row]; index >= 0; index--) {// Because we had kept headings in NSDictionary, and devices were grouped there.
+            if ([self.favoriteDevices[index] isKindOfClass:[NSDictionary class]]) {
+                devices = [self.favoriteDevices[index] objectForKey:@"Devices"];
+                [self postNotificationToShowDevicesOnMapWithDevices:devices andSelectedDeviceIndex:[indexPath row] - index - 1];
+
+                break;
+            }
+        }
     }
 }
 

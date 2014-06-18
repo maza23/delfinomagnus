@@ -89,8 +89,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSLog(@"Number of Sent devices are:%d", [self.searchedDevices count]);
+
+    [self removeFromSuperview];
+
+    [[NSNotificationCenter defaultCenter]  postNotificationName:kShowHomeScreenWithDevices object:nil userInfo:@{@"Devices": [self.searchedDevices copy], @"SelectedIndex" : [NSNumber numberWithInteger:[indexPath row]]}];
     
-    [self loadDeviceDetailsViewWithDeviceObject:self.searchedDevices[[indexPath row]]];
+    //[self loadDeviceDetailsViewWithDeviceObject:self.searchedDevices[[indexPath row]]];
 }
 
 @end

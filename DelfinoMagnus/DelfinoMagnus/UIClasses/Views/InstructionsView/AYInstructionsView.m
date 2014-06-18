@@ -91,7 +91,7 @@
     [checkButton setImage:[UIImage imageNamed:@"checkedSquare.png"] forState:UIControlStateSelected];
     [checkButton addTarget:self action:@selector(actionCheckBoxButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     float xCOrdinate = (([self.images count] -1) * self.scrollViewImagesContainer.frame.size.width) + (self.scrollViewImagesContainer.frame.size.width/2 - 120);
-    CGRect frame = CGRectMake(xCOrdinate, self.scrollViewImagesContainer.frame.size.height - 40, 30, 30);
+    CGRect frame = CGRectMake(xCOrdinate, self.scrollViewImagesContainer.frame.size.height - 40, 30, 25);
     [checkButton setFrame:frame];
     
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"shouldShowHelp"] isEqualToString:@"No"]) {

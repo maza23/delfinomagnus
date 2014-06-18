@@ -28,4 +28,5 @@
 #define kIsDeviceScreen4Inches  ([[UIScreen mainScreen] bounds].size.height == 568)
 
 #define kDeviceWillChangeOrientation  @"DeviceWillChangeOrientation"
-#define kDeviceDidChangeOrientation  @"DeviceDidChangeOrientation"
+#define kDeviceDidChangeOrientation   @"DeviceDidChangeOrientation"
+#define kShowHomeScreenWithDevices    @"ShowHomeScreenWithDevices"

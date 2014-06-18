@@ -25,6 +25,7 @@
 @property (strong, nonatomic) AYInstructionsView *instructionsView;
 
 @property (strong, nonatomic) NSArray *devices;
+@property (strong, nonatomic) NSMutableArray *markers;
 @property (strong, nonatomic) NSDictionary *tipos;
 @property (weak, nonatomic) IBOutlet UIButton *btnSearch;
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
@@ -34,11 +35,12 @@
 
 @implementation AYHomeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil isHomeScreen:(BOOL)isHome
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.isShowingHomeScreen = isHome;
+        
+        self.isShowingHomeScreen = YES;
     }
     return self;
 }
@@ -47,17 +49,16 @@
 {
     [super viewDidLoad];
     [self doInitialConfigurations];
-
-    if (self.isShowingHomeScreen) {
-        [self showHelpScreenIfRequired];
-        [self getAndLoadDevicesFromServer];
-        
-        double delayInSeconds = 2.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self startSyncingData];
-        });
-    }
+    [self showHelpScreenIfRequired];
+    [self getAndLoadDevicesFromServer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showSelectedDevicesFromNotification:) name:kShowHomeScreenWithDevices object:nil];
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self startSyncingData];
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,17 +73,11 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    if (!self.isShowingHomeScreen)
-        return;
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceWillChangeOrientation object:nil userInfo:@{@"NewOrientation" :[NSNumber numberWithInt:toInterfaceOrientation]}];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    if (!self.isShowingHomeScreen)
-        return;
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:kDeviceDidChangeOrientation object:nil userInfo:@{@"OldOrientation" :[NSNumber numberWithInt:fromInterfaceOrientation]}];
 }
 
@@ -102,6 +97,8 @@
     GMSMapView *googleMapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     [googleMapView setDelegate:self];
     googleMapView.myLocationEnabled = YES;
+   // [googleMapView animateToLocation:googleMapView.myLocation.coordinate];
+    
     [self.view insertSubview:googleMapView atIndex:0];
     
     googleMapView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -121,9 +118,26 @@
     self.mapView = googleMapView;
 }
 
+- (void)removeAllOpenedViews
+{
+    if(self.searchView)
+        [self.searchView removeFromSuperview];
+    
+    if (self.instructionsView)
+        [self.instructionsView removeFromSuperview];
+    
+    if(self.menuView)
+        [self.menuView removeFromSuperview];
+    
+    if (self.deviceDetailsView)
+        [self.deviceDetailsView removeFromSuperview];
+}
+
 - (void)showMapWithMarkerDevices:(NSArray *)devicesList withToDo:(BOOL)showToDo
 {
     [self.mapView clear];
+    [self.markers removeAllObjects];
+    self.markers = [[NSMutableArray alloc]  initWithCapacity:0];
     
     for (Device *device in devicesList) {
         
@@ -144,7 +158,22 @@
         marker.icon = [UIImage imageNamed:[self.tipos objectForKey:device.tipo]];
 
         marker.map = self.mapView;
+        [self.markers addObject:marker];
     }
+}
+
+- (void)showSelectedDevicesFromNotification:(NSNotification *)notification
+{
+    [self removeAllOpenedViews];
+    [self setActionButtonsHidden:NO];
+    self.isShowingHomeScreen = NO;
+
+    NSDictionary *userInfo  = [notification userInfo];
+    self.devices = userInfo[@"Devices"];
+    [self showMapWithMarkerDevices:self.devices withToDo:YES];
+    NSInteger index = [userInfo[@"SelectedIndex"] integerValue];
+    
+    [self.mapView setSelectedMarker:self.markers[index]];
 }
 
 - (void)getAndLoadDevicesFromServer
@@ -232,6 +261,13 @@
 }
 
 - (IBAction)actionToDoButtonPressed:(UIButton *)sender {
+    
+    if (!self.isShowingHomeScreen) {
+        self.isShowingHomeScreen = YES;
+        [self fetchAndLoadMarkersFromDataBase];
+        return;
+    }
+    
     [sender setSelected:![sender isSelected]];
     
     [self showMapWithMarkerDevices:self.devices withToDo:[sender isSelected]];
@@ -257,7 +293,7 @@
     
     self.infoWindow = view;
     
-    [self performSelector:@selector(reloadMapInfoWindowWithMarker:) withObject:marker afterDelay:1.0f];
+    [self performSelector:@selector(reloadMapInfoWindowWithMarker:) withObject:marker afterDelay:2.0f];
     return view;
 }
 

@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewDeviceType;
 @property (weak, nonatomic) IBOutlet UILabel *lblDeviceName;
+@property (strong, nonatomic) NSString *cellType;
 @end
 
 
@@ -40,6 +41,8 @@
     NSString *imageName = isReserved ? @"marker.png" : @"marker_un.png";
     [self.lblDeviceName setText:object.titulo];
     [self.imgViewDeviceType setImage:[UIImage imageNamed:imageName]];
+    self.cellType = object.tipo;
+    
     [self layoutIfNeeded];
 }
 

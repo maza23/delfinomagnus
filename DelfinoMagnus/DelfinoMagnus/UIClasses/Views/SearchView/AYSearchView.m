@@ -75,7 +75,15 @@ typedef enum
 
 - (void)searchDeviceIntoDataBaseWithTitleText:(NSString *)text
 {
-    NSArray *searchedDevices = [[LTCoreDataManager sharedInstance] getMatchedRecordFromEntity:kDevicesEntityName forColumnName:@"titulo" withValueToMatch:text];
+    NSArray *searchedDevices = nil;
+    
+    if ([text length]) {
+        searchedDevices = [[LTCoreDataManager sharedInstance] getMatchedRecordFromEntity:kDevicesEntityName forColumnName:@"titulo" withValueToMatch:text];
+    }
+    else {
+        searchedDevices = [[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kDevicesEntityName];
+    }
+    
     NSArray *filteredDevices = nil;
     
     if ([self isAnySettingsButtonSelected]) {
@@ -100,15 +108,23 @@ typedef enum
         return;
     }
     
+    [self loadDevicesListViewWithDevices:filteredDevices];
+}
+
+- (void)loadDevicesListViewWithDevices:(NSArray *)devices
+{
+    NSLog(@"Searched Devices are:%d", [devices count]);
+    
     self.devicesListView = [[[NSBundle mainBundle] loadNibNamed:@"AYDevicesListView" owner:self options:nil] lastObject];
     
     UIView *parentView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];
     CGRect frame = [parentView bounds];
-
+    
     [self.devicesListView setFrame:frame];
     [parentView addSubview:self.devicesListView];
     
-    [self.devicesListView loadDevicesListFromDevices:filteredDevices];
+    [self.devicesListView loadDevicesListFromDevices:devices];
+
 }
 
 - (BOOL)isAnySettingsButtonSelected
@@ -185,10 +201,23 @@ typedef enum
 
 
 #pragma mark - IBAction Methods
-- (IBAction)actionSearchButtonpressed:(UIButton *)sender {
-   
+- (IBAction)actionBottomSearchButtonPressed:(id)sender {
+    
     [self.txtFieldSearch resignFirstResponder];
     [self searchDeviceIntoDataBaseWithTitleText:self.txtFieldSearch.text];
+}
+
+- (IBAction)actionTopSearchButtonPressed:(id)sender {
+   
+    [self.txtFieldSearch resignFirstResponder];
+
+    NSArray *searchedDevices = [[LTCoreDataManager sharedInstance] getMatchedRecordFromEntity:kDevicesEntityName forColumnName:@"titulo" withValueToMatch:self.txtFieldSearch.text];
+    
+    if (![searchedDevices count]) {
+        return;
+    }
+    
+    [self loadDevicesListViewWithDevices:searchedDevices];
 }
 
 - (IBAction)actionDisponibleButtonPressed:(UIButton *)sender {

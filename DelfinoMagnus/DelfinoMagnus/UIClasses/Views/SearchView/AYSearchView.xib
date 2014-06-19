@@ -42,7 +42,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="actionSearchButtonpressed:" destination="1" eventType="touchUpInside" id="sCT-W0-uet"/>
+                        <action selector="actionTopSearchButtonPressed:" destination="1" eventType="touchUpInside" id="1Qx-4Q-hSP"/>
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIPO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d24-hJ-aPV">
@@ -337,7 +337,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="actionSearchButtonpressed:" destination="1" eventType="touchUpInside" id="Ytg-zx-xj7"/>
+                        <action selector="actionBottomSearchButtonPressed:" destination="1" eventType="touchUpInside" id="U8d-St-15g"/>
                     </connections>
                 </button>
             </subviews>

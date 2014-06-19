@@ -24,7 +24,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaN-Yz-T2T">
                     <rect key="frame" x="204" y="225" width="361" height="574"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" red="0.0" green="0.32549020649999999" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.088920090820000006" green="0.14956496720000001" blue="0.24762834819999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="361" id="Hma-SN-boS"/>
                         <constraint firstAttribute="height" constant="574" id="SfN-mA-XkQ"/>
@@ -54,7 +54,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.32549020649999999" blue="0.45882356169999999" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" red="0.10311519182247435" green="0.17857846815297518" blue="0.28910235969387754" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="NaN-Yz-T2T" secondAttribute="centerY" id="2Gm-mz-TfB"/>
                 <constraint firstItem="NaN-Yz-T2T" firstAttribute="top" secondItem="nas-K1-EOA" secondAttribute="bottom" constant="48" id="PIj-1X-i0H"/>

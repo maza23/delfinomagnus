@@ -30,3 +30,5 @@
 #define kDeviceWillChangeOrientation  @"DeviceWillChangeOrientation"
 #define kDeviceDidChangeOrientation   @"DeviceDidChangeOrientation"
 #define kShowHomeScreenWithDevices    @"ShowHomeScreenWithDevices"
+
+#define kMapZoomLevel 13

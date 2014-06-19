@@ -112,9 +112,7 @@ typedef enum
 }
 
 - (void)loadDevicesListViewWithDevices:(NSArray *)devices
-{
-    NSLog(@"Searched Devices are:%d", [devices count]);
-    
+{    
     self.devicesListView = [[[NSBundle mainBundle] loadNibNamed:@"AYDevicesListView" owner:self options:nil] lastObject];
     
     UIView *parentView = [[[[UIApplication sharedApplication] keyWindow] rootViewController] view];

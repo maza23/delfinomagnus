@@ -51,14 +51,18 @@
     [self doInitialConfigurations];
     [self showHelpScreenIfRequired];
     [self getAndLoadDevicesFromServer];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showSelectedDevicesFromNotification:) name:kShowHomeScreenWithDevices object:nil];
+    [self addObservers];
     
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self startSyncingData];
     });
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]  removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,11 +97,10 @@
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-34.62445030861076//[latidudeString floatValue]
                                                             longitude:-58.43372583389282//[longitudeString floatValue]
-                                                                 zoom:12.0];
+                                                                 zoom:kMapZoomLevel];
     GMSMapView *googleMapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     [googleMapView setDelegate:self];
     googleMapView.myLocationEnabled = YES;
-   // [googleMapView animateToLocation:googleMapView.myLocation.coordinate];
     
     [self.view insertSubview:googleMapView atIndex:0];
     
@@ -117,6 +120,13 @@
     
     self.mapView = googleMapView;
 }
+
+- (void)addObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showSelectedDevicesFromNotification:) name:kShowHomeScreenWithDevices object:nil];
+    [self.mapView addObserver:self forKeyPath:@"myLocation" options:0 context:nil];
+}
+
 
 - (void)removeAllOpenedViews
 {
@@ -242,6 +252,22 @@
 {
     [self.btnMenu setHidden:setHidden];
     [self.btnSearch setHidden:setHidden];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"myLocation"]) {
+        CLLocation *location = [object myLocation];
+        //...
+        NSLog(@"Location, %@,", location);
+        
+        CLLocationCoordinate2D target =
+        CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+        
+        [self.mapView animateToLocation:target];
+        [self.mapView animateToZoom:kMapZoomLevel];
+        
+        [self.mapView removeObserver:self forKeyPath:@"myLocation"];
+    }
 }
 
 #pragma mark - IBAction Methods

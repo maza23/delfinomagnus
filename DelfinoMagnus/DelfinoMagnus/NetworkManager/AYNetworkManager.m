@@ -10,6 +10,7 @@
 #define kMaxRequestTimeOutinterval 30 //In sceonds
 
 #import "AYNetworkManager.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface AYNetworkManager () <NSURLSessionDelegate> {
 }
@@ -139,6 +140,30 @@ static AYNetworkManager *sharedManager = nil;
         NSURLRequest *request = [self getURLRequestForGeneratePasswordWithMailId:mailId];
         [self getDataForURLRequest:request withCompletionBlock:completionBlock];
     }];
+}
+
+- (void)uploadProfilePictureWithFilePath:(NSData *)imageData andCompletionBlock:(IDCompletionBlock)completionBlock
+{
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://delfinomagnus.com"]];
+    
+    NSDictionary *parameters = @{@"action": @"setuserdata",
+                                 @"username": @"pablom",
+                                 @"password" : @"pablom"};
+    
+    AFHTTPRequestOperation *op = [manager POST:@"/api/" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+
+        [formData appendPartWithFileData:imageData name:@"imagen" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject);
+        
+        completionBlock(operation.responseString);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@ ***** %@", operation.responseString, error);
+        completionBlock(operation.responseString);
+    }];
+    
+    [op start];
 }
 
 #pragma mark - Private Methods

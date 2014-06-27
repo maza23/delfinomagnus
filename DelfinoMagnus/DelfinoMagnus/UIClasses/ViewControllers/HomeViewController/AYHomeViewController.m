@@ -124,6 +124,8 @@
 - (void)addObservers
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showSelectedDevicesFromNotification:) name:kShowHomeScreenWithDevices object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUserDetails) name:kImageUpdatedUpdateProfile object:nil];
+    
     [self.mapView addObserver:self forKeyPath:@"myLocation" options:0 context:nil];
 }
 
@@ -268,6 +270,28 @@
         
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
     }
+}
+
+- (void)updateUserDetails
+{
+    NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    
+    [[AYNetworkManager sharedInstance]  loginWithUsername:userName password:password withCompletionHandler:^(id result) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (result && [result isKindOfClass:[NSDictionary class]]) {
+                
+                if ([[result objectForKey:@"msgerr"] isEqualToString:@"Success"]) {
+                    
+                    if ([result objectForKey:@"profile"]) {
+                        [[LTCoreDataManager sharedInstance] insertUserDetailsIntoDBFromRawResponse:[result objectForKey:@"profile"]];
+                    }
+                }
+            }
+        });
+        
+    }];
 }
 
 #pragma mark - IBAction Methods

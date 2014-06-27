@@ -30,4 +30,5 @@ typedef void (^IDCompletionBlock) (id result);
 - (void)removeResDeviceWithId:(NSString *)deviceId andCompletionBlock:(IDCompletionBlock)completionBlock;
 
 - (void)generateasswordForMailId:(NSString *)mailId andCompletionBlock:(IDCompletionBlock)completionBlock;
+- (void)uploadProfilePictureWithFilePath:(NSData *)imagepath andCompletionBlock:(IDCompletionBlock)completionBlock;
 @end

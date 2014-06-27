@@ -11,7 +11,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "AYFavoritesView.h"
 
-@interface AYUserProfileView ()
+@interface AYUserProfileView () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewProfilePic;
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
@@ -21,10 +21,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblImpressea;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) AYFavoritesView *favoritesView;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintNameLabelTopSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintProfilePicTopSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintProfilePicLeftSapce;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintNameLabelRightSapce;
+
+@property (strong, nonatomic) UIImagePickerController *imagePicker;
 
 @property (strong, nonatomic) User *userDetails;
 @end
@@ -64,6 +67,17 @@
     if (self.userDetails) {
         [self loadUIFromUserDetails];
     }
+    
+    UITapGestureRecognizer *singleTapOnImage = [[UITapGestureRecognizer alloc]  initWithTarget:self action:@selector(didSingleTappedonProfiePic:)];
+    [self.imgViewProfilePic setUserInteractionEnabled:YES];
+    [self.imgViewProfilePic addGestureRecognizer:singleTapOnImage];
+}
+
+- (void)didSingleTappedonProfiePic:(UIGestureRecognizer *)recognizer
+{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]  initWithTitle:@"Seleccione entre" delegate:self cancelButtonTitle:@"cancelar" destructiveButtonTitle:@"cámara" otherButtonTitles:@"galería", nil];
+    [actionSheet showInView:self];
 }
 
 - (void)loadUIFromUserDetails
@@ -135,6 +149,53 @@
 
 - (IBAction)actionFavoritesButtonPressed:(id)sender {
     [self loadUserFavoritesView];
+}
+
+#pragma mark - UIImagePicker Delegate methods
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSLog(@"Image info is:%@", info);
+    UIImage *pickedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if (pickedImage) {
+        [self.imgViewProfilePic setImage:pickedImage];
+        NSData *imageData = UIImageJPEGRepresentation(pickedImage, 0.8);
+        
+        [[AYNetworkManager sharedInstance] uploadProfilePictureWithFilePath:imageData andCompletionBlock:^(id result) {
+            
+            if (result) {
+                [[NSNotificationCenter defaultCenter]  postNotificationName:kImageUpdatedUpdateProfile object:nil];
+            }
+        }];
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIAction sheet Delegate Methods
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 2) {
+        return;
+    }
+    self.imagePicker = [[UIImagePickerController alloc]  init];
+    [self.imagePicker setDelegate:self];
+    
+    UIImagePickerControllerSourceType sourceType;
+    if (buttonIndex == 0) {
+        sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self.imagePicker setMediaTypes:@[@"public.image"]];
+    }
+    else {
+        sourceType  = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    [self.imagePicker setSourceType:sourceType];
+    
+    UIViewController *rootVC = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    
+    [rootVC presentViewController:_imagePicker animated:YES completion:^{
+        
+    }];
+    
 }
 
 @end

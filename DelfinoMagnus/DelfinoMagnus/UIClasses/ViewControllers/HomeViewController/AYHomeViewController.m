@@ -362,10 +362,7 @@
 	CGPoint point = [mapView.projection pointForCoordinate:marker.position];
 	//240*400 MapInfowindow size
     point.x =  fabs(point.x + mapView.center.x) - (mapView.frame.size.width / 2);
-    point.y = fabs(point.y + mapView.center.y) - (mapView.frame.size.height / 2 + 200);
-    NSLog(@"Tap point is:%@\nAnd Map center is:%@", NSStringFromCGPoint(point), NSStringFromCGPoint(mapView.center));
-
-    //point = mapView.center;
+    point.y = fabs(point.y + mapView.center.y) - (mapView.frame.size.height / 2 + 200);//200 is infowindow height/2
     
 	GMSCameraUpdate *camera = [GMSCameraUpdate setTarget:[mapView.projection coordinateForPoint:point]];
 	[mapView animateWithCameraUpdate:camera];

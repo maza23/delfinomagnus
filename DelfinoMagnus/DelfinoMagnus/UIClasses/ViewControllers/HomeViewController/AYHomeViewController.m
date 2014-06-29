@@ -360,7 +360,13 @@
 - (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
 {
 	CGPoint point = [mapView.projection pointForCoordinate:marker.position];
-	point.y = 200;
+	//240*400 MapInfowindow size
+    point.x =  fabs(point.x + mapView.center.x) - (mapView.frame.size.width / 2);
+    point.y = fabs(point.y + mapView.center.y) - (mapView.frame.size.height / 2 + 200);
+    NSLog(@"Tap point is:%@\nAnd Map center is:%@", NSStringFromCGPoint(point), NSStringFromCGPoint(mapView.center));
+
+    //point = mapView.center;
+    
 	GMSCameraUpdate *camera = [GMSCameraUpdate setTarget:[mapView.projection coordinateForPoint:point]];
 	[mapView animateWithCameraUpdate:camera];
 	

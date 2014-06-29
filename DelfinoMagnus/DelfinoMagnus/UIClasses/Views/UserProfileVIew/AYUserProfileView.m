@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintNameLabelRightSapce;
 
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
+@property (strong, nonatomic) UIViewController *rootViewController;
 
 @property (strong, nonatomic) User *userDetails;
 @end
@@ -75,6 +76,8 @@
 
 - (void)didSingleTappedonProfiePic:(UIGestureRecognizer *)recognizer
 {
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    self.rootViewController = [keyWindow rootViewController];
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc]  initWithTitle:@"Seleccione entre" delegate:self cancelButtonTitle:@"cancelar" destructiveButtonTitle:@"cámara" otherButtonTitles:@"galería", nil];
     [actionSheet showInView:self];
@@ -190,9 +193,7 @@
     }
     [self.imagePicker setSourceType:sourceType];
     
-    UIViewController *rootVC = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-    
-    [rootVC presentViewController:_imagePicker animated:YES completion:^{
+    [self.rootViewController presentViewController:_imagePicker animated:YES completion:^{
         
     }];
     

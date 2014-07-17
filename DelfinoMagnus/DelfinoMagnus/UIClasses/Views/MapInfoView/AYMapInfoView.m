@@ -52,6 +52,10 @@
         return;
     }
     
+    description = [description stringByReplacingOccurrencesOfString:@"A9A9A9" withString:@"000000"];
+    description = [description stringByReplacingOccurrencesOfString:@"FFFFFF" withString:@"000000"];
+    description = [description stringByReplacingOccurrencesOfString:@"D3D3D3" withString:@"444444"];
+
     NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title></title></head><body>"];
     
     NSCharacterSet *charecterSetToTrim = [NSCharacterSet characterSetWithCharactersInString:@"/"];

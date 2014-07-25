@@ -186,6 +186,7 @@
     NSInteger index = [userInfo[@"SelectedIndex"] integerValue];
     
     [self.mapView setSelectedMarker:self.markers[index]];
+    [self mapView:self.mapView didTapMarker:self.markers[index]];
 }
 
 - (void)getAndLoadDevicesFromServer

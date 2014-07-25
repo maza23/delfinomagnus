@@ -59,7 +59,7 @@
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
-    [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
+    [self performSelector:@selector(configureOrientationDependency) withObject:nil afterDelay:0.1f];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
     
@@ -72,6 +72,16 @@
     UITapGestureRecognizer *singleTapOnImage = [[UITapGestureRecognizer alloc]  initWithTarget:self action:@selector(didSingleTappedonProfiePic:)];
     [self.imgViewProfilePic setUserInteractionEnabled:YES];
     [self.imgViewProfilePic addGestureRecognizer:singleTapOnImage];
+}
+
+- (void)configureOrientationDependency
+{
+    if (![[NSThread currentThread] isMainThread]) {
+        [self performSelectorOnMainThread:@selector(configureOrientationDependency) withObject:nil waitUntilDone:NO];
+        return;
+    }
+
+    [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
 }
 
 - (void)didSingleTappedonProfiePic:(UIGestureRecognizer *)recognizer

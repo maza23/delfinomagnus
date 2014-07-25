@@ -18,10 +18,6 @@
 		CB0437CE194610F3000145F4 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437BE194610F3000145F4 /* 80.png */; };
 		CB0437E0194611EA000145F4 /* 640-1136.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437D8194611EA000145F4 /* 640-1136.png */; };
 		CB0437E1194611EA000145F4 /* 640-960.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437D9194611EA000145F4 /* 640-960.png */; };
-		CB0437E3194611EA000145F4 /* iPadLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DB194611EA000145F4 /* iPadLandscape.png */; };
-		CB0437E4194611EA000145F4 /* iPadLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DC194611EA000145F4 /* iPadLandscape@2x.png */; };
-		CB0437E5194611EA000145F4 /* iPadPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DD194611EA000145F4 /* iPadPortrait.png */; };
-		CB0437E6194611EA000145F4 /* iPadPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0437DE194611EA000145F4 /* iPadPortrait@2x.png */; };
 		CB06BC9A1950A8F900965ED1 /* BZDownloadAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB06BC961950A8F900965ED1 /* BZDownloadAlertView.m */; };
 		CB06BC9B1950A8F900965ED1 /* BZDownloadView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB06BC981950A8F900965ED1 /* BZDownloadView.m */; };
 		CB06BC9C1950A8F900965ED1 /* BZDownloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB06BC991950A8F900965ED1 /* BZDownloadView.xib */; };
@@ -110,6 +106,11 @@
 		CB198FD31921420C00F7EC46 /* AYUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = CB198FD21921420C00F7EC46 /* AYUtilites.m */; };
 		CB2318CB1937AFAB00816DC7 /* AYLoginViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2318CA1937AFAB00816DC7 /* AYLoginViewController~iPad.xib */; };
 		CB275B6C191B37C100EC9964 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB275B6B191B37C100EC9964 /* Device.m */; };
+		CB3567941982D941006401BF /* CalenderViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3567931982D941006401BF /* CalenderViewController~iPad.xib */; };
+		CB3567A11982F27A006401BF /* iPadLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = CB35679D1982F27A006401BF /* iPadLandscape.png */; };
+		CB3567A21982F27A006401BF /* iPadLandscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB35679E1982F27A006401BF /* iPadLandscape@2x.png */; };
+		CB3567A31982F27A006401BF /* iPadPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = CB35679F1982F27A006401BF /* iPadPortrait.png */; };
+		CB3567A41982F27A006401BF /* iPadPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3567A01982F27A006401BF /* iPadPortrait@2x.png */; };
 		CB38F2F5192526CE00163094 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F4192526CE00163094 /* Calendar.m */; };
 		CB38F2F8192526EE00163094 /* DeviceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F7192526EE00163094 /* DeviceDetails.m */; };
 		CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6340991919470500CA2915 /* GoogleMaps.bundle */; };
@@ -224,12 +225,6 @@
 		CB0437BE194610F3000145F4 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
 		CB0437D8194611EA000145F4 /* 640-1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "640-1136.png"; sourceTree = "<group>"; };
 		CB0437D9194611EA000145F4 /* 640-960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "640-960.png"; sourceTree = "<group>"; };
-		CB0437DA194611EA000145F4 /* horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontal.png; sourceTree = "<group>"; };
-		CB0437DB194611EA000145F4 /* iPadLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadLandscape.png; sourceTree = "<group>"; };
-		CB0437DC194611EA000145F4 /* iPadLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPadLandscape@2x.png"; sourceTree = "<group>"; };
-		CB0437DD194611EA000145F4 /* iPadPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadPortrait.png; sourceTree = "<group>"; };
-		CB0437DE194611EA000145F4 /* iPadPortrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPadPortrait@2x.png"; sourceTree = "<group>"; };
-		CB0437DF194611EA000145F4 /* vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertical.png; sourceTree = "<group>"; };
 		CB06BC951950A8F900965ED1 /* BZDownloadAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZDownloadAlertView.h; sourceTree = "<group>"; };
 		CB06BC961950A8F900965ED1 /* BZDownloadAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZDownloadAlertView.m; sourceTree = "<group>"; };
 		CB06BC971950A8F900965ED1 /* BZDownloadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZDownloadView.h; sourceTree = "<group>"; };
@@ -341,6 +336,11 @@
 		CB2318CA1937AFAB00816DC7 /* AYLoginViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYLoginViewController~iPad.xib"; sourceTree = "<group>"; };
 		CB275B6A191B37C100EC9964 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		CB275B6B191B37C100EC9964 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		CB3567931982D941006401BF /* CalenderViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CalenderViewController~iPad.xib"; sourceTree = "<group>"; };
+		CB35679D1982F27A006401BF /* iPadLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadLandscape.png; sourceTree = "<group>"; };
+		CB35679E1982F27A006401BF /* iPadLandscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPadLandscape@2x.png"; sourceTree = "<group>"; };
+		CB35679F1982F27A006401BF /* iPadPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadPortrait.png; sourceTree = "<group>"; };
+		CB3567A01982F27A006401BF /* iPadPortrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPadPortrait@2x.png"; sourceTree = "<group>"; };
 		CB38F2F3192526CE00163094 /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
 		CB38F2F4192526CE00163094 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
 		CB38F2F6192526EE00163094 /* DeviceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetails.h; sourceTree = "<group>"; };
@@ -525,14 +525,12 @@
 		CB0437D7194611EA000145F4 /* splash */ = {
 			isa = PBXGroup;
 			children = (
+				CB35679D1982F27A006401BF /* iPadLandscape.png */,
+				CB35679E1982F27A006401BF /* iPadLandscape@2x.png */,
+				CB35679F1982F27A006401BF /* iPadPortrait.png */,
+				CB3567A01982F27A006401BF /* iPadPortrait@2x.png */,
 				CB0437D8194611EA000145F4 /* 640-1136.png */,
 				CB0437D9194611EA000145F4 /* 640-960.png */,
-				CB0437DA194611EA000145F4 /* horizontal.png */,
-				CB0437DB194611EA000145F4 /* iPadLandscape.png */,
-				CB0437DC194611EA000145F4 /* iPadLandscape@2x.png */,
-				CB0437DD194611EA000145F4 /* iPadPortrait.png */,
-				CB0437DE194611EA000145F4 /* iPadPortrait@2x.png */,
-				CB0437DF194611EA000145F4 /* vertical.png */,
 			);
 			path = splash;
 			sourceTree = "<group>";
@@ -629,6 +627,7 @@
 				CB10D49B191FF20B00F987E6 /* CalenderViewController.h */,
 				CB10D49C191FF20B00F987E6 /* CalenderViewController.m */,
 				CB10D49D191FF20B00F987E6 /* CalenderViewController.xib */,
+				CB3567931982D941006401BF /* CalenderViewController~iPad.xib */,
 			);
 			path = CalendarView;
 			sourceTree = "<group>";
@@ -1194,11 +1193,11 @@
 				CBF8506F194D7DE000B2AADE /* help_2.png in Resources */,
 				CB0437E0194611EA000145F4 /* 640-1136.png in Resources */,
 				CB1248B01918879D009DA54C /* cartel_black.png in Resources */,
+				CB3567A21982F27A006401BF /* iPadLandscape@2x.png in Resources */,
 				CB1248CC1918879D009DA54C /* mediawall_icon.png in Resources */,
 				CB1248C91918879D009DA54C /* marker_un.png in Resources */,
 				CBF9B62A191EBC66005DC1A0 /* AYDevicesListCell.xib in Resources */,
 				CB1248AE1918879D009DA54C /* calendario_pressed.png in Resources */,
-				CB0437E3194611EA000145F4 /* iPadLandscape.png in Resources */,
 				CB1248CF1918879D009DA54C /* menu.png in Resources */,
 				CB0437CC194610F3000145F4 /* 58.png in Resources */,
 				CBF85070194D7DE700B2AADE /* help_3.png in Resources */,
@@ -1211,12 +1210,14 @@
 				CB1248971918879D009DA54C /* back2.png in Resources */,
 				CBF85074194D8D5400B2AADE /* checkedSquare.png in Resources */,
 				CB1248D01918879D009DA54C /* monocolumna_black.png in Resources */,
+				CB3567941982D941006401BF /* CalenderViewController~iPad.xib in Resources */,
 				CB10D49F191FF20B00F987E6 /* CalenderViewController.xib in Resources */,
 				CB07C061191F419200A43BF5 /* AYDeviceDetailsView.xib in Resources */,
 				CBF8506D194D7BA600B2AADE /* AYInstructionsView.xib in Resources */,
 				CBF85075194D8D5400B2AADE /* squareCheckBoxUnselected@2x.png in Resources */,
 				CB1248AD1918879D009DA54C /* calendario_normal.png in Resources */,
 				CB1248C61918879D009DA54C /* info_normal.png in Resources */,
+				CB3567A41982F27A006401BF /* iPadPortrait@2x.png in Resources */,
 				CB1248DE1918879D009DA54C /* telones_icon.png in Resources */,
 				CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */,
 				CB1248BA1918879D009DA54C /* favorito_off.png in Resources */,
@@ -1228,7 +1229,6 @@
 				CBCD616E1918044900846E8C /* Images.xcassets in Resources */,
 				CB1248C41918879D009DA54C /* ic_launcher.png in Resources */,
 				CBF8506E194D7DDB00B2AADE /* help_1.png in Resources */,
-				CB0437E5194611EA000145F4 /* iPadPortrait.png in Resources */,
 				CB1248BD1918879D009DA54C /* foto_normal.png in Resources */,
 				CBFE3AFB191D4AFF00A74C2D /* AYSearchView.xib in Resources */,
 				CB1248B51918879D009DA54C /* disponible.png in Resources */,
@@ -1244,14 +1244,15 @@
 				CBF9B611191E9E27005DC1A0 /* LICENSE in Resources */,
 				CBF9B5DA191E72F9005DC1A0 /* AYUserProfileView.xib in Resources */,
 				CB10D4A4191FFBD700F987E6 /* leftArrow@2x.png in Resources */,
+				CB3567A31982F27A006401BF /* iPadPortrait.png in Resources */,
 				CB10D4A5191FFBD700F987E6 /* leftArrow.png in Resources */,
 				CB1248BC1918879D009DA54C /* favoritos.png in Resources */,
 				CB0437CA194610F3000145F4 /* 29.png in Resources */,
 				CB10D4A6191FFBD700F987E6 /* rightArrow.png in Resources */,
+				CB3567A11982F27A006401BF /* iPadLandscape.png in Resources */,
 				CB1248CA1918879D009DA54C /* marker.png in Resources */,
 				CB1248A81918879D009DA54C /* burbuja_bottom.png in Resources */,
 				CB1248B11918879D009DA54C /* cartel.png in Resources */,
-				CB0437E6194611EA000145F4 /* iPadPortrait@2x.png in Resources */,
 				CBF9B612191E9E27005DC1A0 /* README.md in Resources */,
 				CB1248981918879D009DA54C /* back3.png in Resources */,
 				CB1248C81918879D009DA54C /* logo_full.png in Resources */,
@@ -1266,7 +1267,6 @@
 				CB1248CE1918879D009DA54C /* menu_vacio.png in Resources */,
 				CB0437CD194610F3000145F4 /* 76.png in Resources */,
 				CB10D4A7191FFBD700F987E6 /* rightArrow@2x.png in Resources */,
-				CB0437E4194611EA000145F4 /* iPadLandscape@2x.png in Resources */,
 				CB1248A31918879D009DA54C /* btn_disponible.png in Resources */,
 				CB773F5B191BE3FB00E36537 /* AYMapInfoView.xib in Resources */,
 				CB1248A01918879D009DA54C /* blank_pressed.png in Resources */,

@@ -155,6 +155,36 @@ NSDate *todayDate;
 // set the x and y coordinate and width and height of buttons in Portrait and LandScape
 -(void)setPosition
 {
+    if (kIsDeviceiPad) {
+        if (viewMode)
+        {
+            if(x==490)
+            {
+                y+=height;
+                x=0;
+            }
+            else
+            {
+                x+=width;
+            }
+        }
+        else
+        {
+            if(x==426)
+            {
+                y+=height +1;
+                x=0;
+            }
+            else
+            {
+                x+=width +1;
+            }
+        }
+    
+        return;
+    }
+    
+    
 	if (viewMode)
 	{
 		if(x==411)
@@ -224,14 +254,14 @@ NSDate *todayDate;
 	year = [yearString intValue];
 	if (viewMode) {
 		[self removeView];
-		x=(44.0*(weekDay-1)),y=0;
-		width=44.0,height=35;
+		x=((kIsDeviceiPad ? 70.0 : 44.0)*(weekDay-1)),y=0;
+		width=(kIsDeviceiPad ? 70.0 : 44.0),height=(kIsDeviceiPad ? 50.0 :35);
 	}
     else
     {
 		[self removeView];
-		x=44*(weekDay -1) ,y=0;
-		width=43,height=35;
+		x=(kIsDeviceiPad ? 71.0 : 44.0)*(weekDay -1) ,y=0;
+		width= (kIsDeviceiPad ? 70.0 :43.0),height=(kIsDeviceiPad ? 50.0 :35);
 	}
 	if(month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12)
 	{
@@ -349,14 +379,17 @@ NSDate *todayDate;
         [btnDay.layer setBorderColor:[[UIColor colorWithRed:227.0/255.0 green:207.0/255.0 blue:230.0/255.0 alpha:1.0] CGColor]];
     }
     
-    if(y == 235){
-        [backView setFrame:CGRectMake(backView.frame.origin.x,backView.frame.origin.y,backView.frame.size.width,369)];
-        [MainView setFrame:CGRectMake(MainView.frame.origin.x,88, MainView.frame.size.width, 280)];
+    if (kIsDeviceiPad) {
+        if(y == 235){
+            [backView setFrame:CGRectMake(backView.frame.origin.x,backView.frame.origin.y,backView.frame.size.width,369)];
+            [MainView setFrame:CGRectMake(MainView.frame.origin.x,88, MainView.frame.size.width, 280)];
+        }
+        else if(y ==188){
+            [backView setFrame:CGRectMake(backView.frame.origin.x,backView.frame.origin.y,backView.frame.size.width,322)];
+            [MainView setFrame:CGRectMake(MainView.frame.origin.x,88,MainView.frame.size.width, 234)];
+        }
     }
-    else if(y ==188){
-        [backView setFrame:CGRectMake(backView.frame.origin.x,backView.frame.origin.y,backView.frame.size.width,322)];
-        [MainView setFrame:CGRectMake(MainView.frame.origin.x,88,MainView.frame.size.width, 234)];
-    }
+    
     // [self.view setUserInteractionEnabled:YES];
    // [MBProgressHUD hideHUDForView:self.view animated:YES];
     

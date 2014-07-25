@@ -68,8 +68,8 @@
 @property(nonatomic, strong) NSDate *selectedDate;
 
 - (BOOL )eventsForDate:(NSDate *)startDate ;
--(void)nextMonth:(id)sender;
--(void)preMonth:(id)sender;
+-(IBAction)nextMonth:(id)sender;
+-(IBAction)preMonth:(id)sender;
 -(void)DrawMonthInPortraitView;
 -(void)BtnDayClicked:(id)sender;
 -(BOOL)isCurrentDate;

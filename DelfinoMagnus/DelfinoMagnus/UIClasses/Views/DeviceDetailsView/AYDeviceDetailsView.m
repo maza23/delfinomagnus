@@ -102,6 +102,9 @@
 - (void)doAppearenceSettingsForOrientation:(NSInteger)orientation
 {
     if (kIsDeviceiPad) {
+        [self layoutIfNeeded];
+
+        [self performSelector:@selector(loadScrollViewWithImages) withObject:nil afterDelay:0.1f];
         return;
     }
     
@@ -137,9 +140,31 @@
 
 - (void)addCalendarView
 {
-    self.calendarVC = [[CalenderViewController alloc]  initWithNibName:@"CalenderViewController" bundle:nil];
-    
+    NSString *nibName = kIsDeviceiPad ? @"CalenderViewController~iPad" : @"CalenderViewController";
+    self.calendarVC = [[CalenderViewController alloc]  initWithNibName:nibName bundle:nil];
+    [self layoutIfNeeded];
     [self.viewCalendarContainer addSubview:self.calendarVC.view];
+    self.calendarVC.view.center = CGPointMake(self.viewCalendarContainer.frame.size.width/2, self.viewCalendarContainer.frame.size.height/2);
+//    
+//    UIView *parentView = self.viewCalendarContainer;
+//    UIView *childView = self.calendarVC.view;
+//    
+//    [childView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    
+//    NSDictionary *views = NSDictionaryOfVariableBindings(childView);
+//    
+//    [parentView addConstraints:
+//     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[childView(==500)]"
+//                                             options:0
+//                                             metrics:nil
+//                                               views:views]];
+//    
+//    [parentView addConstraints:
+//     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[childView(==500)]-|"
+//                                             options:0
+//                                             metrics:nil
+//                                               views:views]];
+
 }
 
 - (void)fetchAndLoadDeviceDetailsFromDataBase

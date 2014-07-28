@@ -264,13 +264,13 @@ typedef enum
         case ZonaTypeCapitalFederal:
             self.searchSettings.zonaCapitalFederal = !self.searchSettings.zonaCapitalFederal;
             break;
-        case TipoTypeMediawall:
+        case ZonaTypeNorte:
             self.searchSettings.zonaNorte = !self.searchSettings.zonaNorte;
             break;
-        case TipoTypeMonocolumna:
+        case ZonaTypeOeste:
             self.searchSettings.zonaOeste = !self.searchSettings.zonaOeste;
             break;
-        case TipoTypeTelon:
+        case ZonaTypeSur:
             self.searchSettings.zonaSur = !self.searchSettings.zonaSur;
             break;
     }

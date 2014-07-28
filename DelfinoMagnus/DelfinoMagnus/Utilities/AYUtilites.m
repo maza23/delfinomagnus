@@ -140,7 +140,7 @@
                 tipoName = @"Monocolumna";
             }
             else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
-                tipoName = @"Telanas";
+                tipoName = @"Telon";
             }
             
             [tipoDetails setObject:tipo.tipoId forKey:tipoName];
@@ -190,7 +190,7 @@
         
         for (Zona *zona in zonaArray) {
             
-            NSString *zonaName = @"CapitalFederal";
+            NSString *zonaName = @"";
             
             if ([zona.name isEqualToString:@"Ciudad Aut\u00f3noma de Buenos Aires"]) {
                 zonaName = @"CapitalFederal";

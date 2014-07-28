@@ -142,52 +142,55 @@ typedef enum
 - (NSArray *)getFilteredSearchDevicesFromArray:(NSArray *)searchedDevices
 {
     NSMutableArray *finalDevices = [[NSMutableArray alloc] initWithCapacity:0];
+    NSMutableArray *prefinalDevices = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *filteredDevices = [[NSMutableArray alloc]  initWithCapacity:0];
     NSDictionary *tipoNames = [AYUtilites getTiposIdAsObjectAndNameAsDictKeys];
     NSDictionary *zonaNames = [AYUtilites getZonaIdAsObjectAndNameAsDictKeys];
-    
-    for (Device *device in searchedDevices) {
-
-        if (_searchSettings.tipoCartel && [device.tipo isEqualToString:[tipoNames objectForKey:@"Cartel"]]) {
-            [filteredDevices addObject:device];
-        }
-        else if (_searchSettings.tipoMediawall && [device.tipo isEqualToString:[tipoNames objectForKey:@"Mediawall"]]) {
-            [filteredDevices addObject:device];
-        }
-        else if (_searchSettings.tipoMonocolumna && [device.tipo isEqualToString:[tipoNames objectForKey:@"Monocolumna"]]) {
-            [filteredDevices addObject:device];
-        }
-        else if (_searchSettings.tipoTelon && [device.tipo isEqualToString:[tipoNames objectForKey:@"Telanas"]]) {
-            [filteredDevices addObject:device];
-        }
-    }
-    
     if(!_searchSettings.tipoCartel && !_searchSettings.tipoMediawall && !_searchSettings.tipoMonocolumna && !_searchSettings.tipoTelon){
         [filteredDevices addObjectsFromArray:searchedDevices];
     }
-    for (Device *device in filteredDevices) {
-        
-        if (_searchSettings.zonaCapitalFederal && [device.zona isEqualToString:[zonaNames objectForKey:@"CapitalFederal"]]) {
-            if (![filteredDevices containsObject:device]) {
+    else{
+        for (Device *device in searchedDevices) {
+
+            if (_searchSettings.tipoCartel && [device.tipo isEqualToString:[tipoNames objectForKey:@"Cartel"]]) {
                 [filteredDevices addObject:device];
             }
-        }
-        else if (_searchSettings.zonaNorte && [device.zona isEqualToString:[zonaNames objectForKey:@"Norte"]]) {
-            if (![filteredDevices containsObject:device]) {
+            else if (_searchSettings.tipoMediawall && [device.tipo isEqualToString:[tipoNames objectForKey:@"Mediawall"]]) {
                 [filteredDevices addObject:device];
-            }        }
-        else if (_searchSettings.zonaOeste && [device.zona isEqualToString:[zonaNames objectForKey:@"Oeste"]]) {
-            if (![filteredDevices containsObject:device]) {
+            }
+            else if (_searchSettings.tipoMonocolumna && [device.tipo isEqualToString:[tipoNames objectForKey:@"Monocolumna"]]) {
                 [filteredDevices addObject:device];
-            }        }
-        else if (_searchSettings.zonaSur && [device.zona isEqualToString:[zonaNames objectForKey:@"Sur"]]) {
-            if (![filteredDevices containsObject:device]) {
+            }
+            else if (_searchSettings.tipoTelon && [device.tipo isEqualToString:[tipoNames objectForKey:@"Telon"]]) {
                 [filteredDevices addObject:device];
             }
         }
     }
-    
-    for (Device *device in filteredDevices) {
+    if (!_searchSettings.zonaCapitalFederal && !_searchSettings.zonaNorte && !_searchSettings.zonaOeste && !_searchSettings.zonaSur) {
+        [prefinalDevices addObjectsFromArray:filteredDevices];
+    }
+    else{
+        for (Device *device in filteredDevices) {
+            
+            if (_searchSettings.zonaCapitalFederal && [device.zona isEqualToString:[zonaNames objectForKey:@"CapitalFederal"]]) {
+                [prefinalDevices addObject:device];
+                
+            }
+            else if (_searchSettings.zonaNorte && [device.zona isEqualToString:[zonaNames objectForKey:@"Norte"]]) {
+                    [prefinalDevices addObject:device];
+                }
+            else if (_searchSettings.zonaOeste && [device.zona isEqualToString:[zonaNames objectForKey:@"Oeste"]]) {
+                
+                    [prefinalDevices addObject:device];
+                        }
+            else if (_searchSettings.zonaSur && [device.zona isEqualToString:[zonaNames objectForKey:@"Sur"]]) {
+                
+                    [prefinalDevices addObject:device];
+                
+            }
+        }
+    }
+    for (Device *device in prefinalDevices) {
         if (_searchSettings.disponible && [[device.disponible uppercaseString] isEqualToString:@"SI"]) {
             [finalDevices addObject:device];
         }

@@ -44,6 +44,11 @@
 - (void)doInitialConfigurations
 {
     [self.viewInfoContainer.layer setCornerRadius:15.0];
+    
+    float fontSize = kIsDeviceiPad ? 15.0f : 11.0f;
+    [self.lblTitle setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [self.lblSubtitle setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [self.lblDisponibleStatus setFont:[UIFont fontWithName:@"century" size:fontSize]];
 }
 
 - (void)loadWebViewWithDescriptionString:(NSString *)description

@@ -48,7 +48,13 @@
 - (void)doInitialConfigurations
 {
     [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor colorWithRed:225.0/255.0 green:164.0/255.0 blue:74.0/255.0 alpha:1.0]] forState:UIControlStateNormal];
-    
+
+    float fontSize = kIsDeviceiPad ? 15.0f : 11.0f;
+    [(UILabel *)[self viewWithTag:11] setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [(UILabel *)[self viewWithTag:12] setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [(UILabel *)[self viewWithTag:13] setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [(UILabel *)[self viewWithTag:14] setFont:[UIFont fontWithName:@"century" size:fontSize]];
+
     UITapGestureRecognizer *singleTapProfile = [[UITapGestureRecognizer alloc] init];
     [singleTapProfile addTarget:self action:@selector(didTappedOnMenu:)];
     [self.viewProfileContainer addGestureRecognizer:singleTapProfile];

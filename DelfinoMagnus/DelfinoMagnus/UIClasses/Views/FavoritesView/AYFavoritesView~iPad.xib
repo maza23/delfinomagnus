@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -97,6 +97,7 @@
                 <constraint firstAttribute="centerX" secondItem="rtg-E4-S6d" secondAttribute="centerX" id="y0J-bR-f0C"/>
             </constraints>
             <connections>
+                <outlet property="lblFavoritesHeader" destination="rtg-E4-S6d" id="YyS-2d-foE"/>
                 <outlet property="lblNumberOfFavorites" destination="iFQ-qq-N9q" id="YxV-3e-d2E"/>
                 <outlet property="tbleViewFavoritesList" destination="jem-iw-dKh" id="nxX-1q-9ZT"/>
                 <outlet property="viewNumberOfFav" destination="ayo-Fn-toL" id="zwh-1B-Ri9"/>

@@ -101,10 +101,10 @@
     frame.origin.x += 40;
     frame.size.width = 240;
     UILabel *label = [[UILabel alloc]  initWithFrame:frame];
-    [label setFont:[UIFont systemFontOfSize:10.0f]];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setText:@"NO VOLVER A MOSTRAR LAS INSTRUCCIONES"];
     [label setTextColor:[UIColor lightGrayColor]];
+    [label setFont:[UIFont fontWithName:@"century" size:10.0f]];
     
     [self.scrollViewImagesContainer addSubview:checkButton];
     [self.scrollViewImagesContainer addSubview:label];

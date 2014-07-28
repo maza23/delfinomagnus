@@ -63,6 +63,13 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
     
+    float fontSize = kIsDeviceiPad ? 17.0f : 14.0f;
+    [_lblName setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblDesignation setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblEmailId setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblAddress setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblImpressea setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    
     self.userDetails = [[[LTCoreDataManager sharedInstance] getAllRecordsFromEntity:kUserEntityName] lastObject];
     
     if (self.userDetails) {

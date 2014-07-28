@@ -11,8 +11,12 @@
 
 @interface AYLoginViewController () <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UILabel *lblPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldUserName;
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldPassword;
+@property (weak, nonatomic) IBOutlet UIButton *btnForgetPassword;
+@property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 @property (strong, nonatomic) AYForgotPasswordView *forgotPasswordView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintInputContainerTop;
 @end
@@ -49,6 +53,14 @@
 - (void)doInitialConfigurations
 {
     [self.navigationController setNavigationBarHidden:YES];
+    
+    float fontSize = kIsDeviceiPad ? 15.0f : 11.0f;
+    [_lblUsername setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblPassword setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_txtFieldUserName setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_txtFieldPassword setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnForgetPassword.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnLogin.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
     
 //    [self.txtFieldUserName setText:@"pablom"];
 //    [self.txtFieldPassword setText:@"pablom"];

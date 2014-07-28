@@ -28,8 +28,9 @@
 #pragma mark - Private Methods
 - (void)doInitialAppearenceSettings
 {
-    [self.messageLabel setFont:[UIFont systemFontOfSize:15.0]];
-    
+    float fontSize = kIsDeviceiPad ? 16.0f : 15.0f;
+    [_messageLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+
     [self.layer setCornerRadius:5.0];
     
     [self.layer setShadowColor:[[UIColor blackColor] CGColor]];

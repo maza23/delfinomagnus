@@ -75,6 +75,12 @@
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
+    [_lblTopHeaderTitle setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 16.0f : 14.0f)]];
+    [_lblTitle setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 22.0f : 17.0f)]];
+    [_lblSubTitle setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 20.0f : 15.0f)]];
+    [(UILabel *)[self viewWithTag:21] setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 15.0f : 10.0f)]];
+    [(UILabel *)[self viewWithTag:22] setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 15.0f : 10.0f)]];
+
     [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
 
     if (kIsDeviceiPad) {
@@ -145,26 +151,6 @@
     [self layoutIfNeeded];
     [self.viewCalendarContainer addSubview:self.calendarVC.view];
     self.calendarVC.view.center = CGPointMake(self.viewCalendarContainer.frame.size.width/2, self.viewCalendarContainer.frame.size.height/2);
-//    
-//    UIView *parentView = self.viewCalendarContainer;
-//    UIView *childView = self.calendarVC.view;
-//    
-//    [childView setTranslatesAutoresizingMaskIntoConstraints:NO];
-//    
-//    NSDictionary *views = NSDictionaryOfVariableBindings(childView);
-//    
-//    [parentView addConstraints:
-//     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[childView(==500)]"
-//                                             options:0
-//                                             metrics:nil
-//                                               views:views]];
-//    
-//    [parentView addConstraints:
-//     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[childView(==500)]-|"
-//                                             options:0
-//                                             metrics:nil
-//                                               views:views]];
-
 }
 
 - (void)fetchAndLoadDeviceDetailsFromDataBase

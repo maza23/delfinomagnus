@@ -29,14 +29,24 @@ typedef enum
 
 @interface AYSearchView ()
 @property (weak, nonatomic) IBOutlet UITextField *txtFieldSearch;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewMainContainer;
+@property (weak, nonatomic) IBOutlet UILabel *lblTipoHeader;
+@property (weak, nonatomic) IBOutlet UIButton *btnCartel;
+@property (weak, nonatomic) IBOutlet UIButton *btnMonocolumna;
+@property (weak, nonatomic) IBOutlet UIButton *btnMediawall;
+@property (weak, nonatomic) IBOutlet UIButton *btnTelon;
+@property (weak, nonatomic) IBOutlet UILabel *lblZonaHeader;
+@property (weak, nonatomic) IBOutlet UIButton *btnCapitalFederal;
+@property (weak, nonatomic) IBOutlet UIButton *btnNorte;
+@property (weak, nonatomic) IBOutlet UIButton *btnOeste;
+@property (weak, nonatomic) IBOutlet UIButton *btnSur;
+@property (weak, nonatomic) IBOutlet UIButton *btnDisponible;
+@property (weak, nonatomic) IBOutlet UIButton *btnNoDisponible;
 @property (strong, nonatomic) AYSearchSettings *searchSettings;
 @property (strong, nonatomic) AYDevicesListView *devicesListView;
 @property (weak, nonatomic) IBOutlet UIButton *btnDisponibleSwitch;
 
 - (IBAction)actionTipoButtonPressed:(id)sender;
 - (IBAction)actionZonaButtonPressed:(id)sender;
-- (IBAction)actionSearchButtonpressed:(id)sender;
 - (IBAction)actionDisponibleButtonPressed:(id)sender;
 @end
 
@@ -60,17 +70,27 @@ typedef enum
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
-//    CGRect scrollViewFrame = frame;
-//    scrollViewFrame.origin.y = 40;
-//    scrollViewFrame.size.height -= 40;
-//    [self.scrollViewMainContainer setFrame:scrollViewFrame];
-
 }
 
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
     self.searchSettings = [[AYSearchSettings alloc] init];
+    float fontSize = kIsDeviceiPad ? 15.0f : 11.0f;
+
+    [_txtFieldSearch setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblTipoHeader setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblZonaHeader setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnCartel.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnMonocolumna.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnMediawall.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnTelon.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnCapitalFederal.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnNorte.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnOeste.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnSur.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnDisponible.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_btnNoDisponible.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
 }
 
 - (void)searchDeviceIntoDataBaseWithTitleText:(NSString *)text

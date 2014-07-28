@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewNumberOfFav;
 @property (weak, nonatomic) IBOutlet UILabel *lblNumberOfFavorites;
+@property (weak, nonatomic) IBOutlet UILabel *lblFavoritesHeader;
 @property (weak, nonatomic) IBOutlet UITableView *tbleViewFavoritesList;
 @property (strong, nonatomic) AYDeviceDetailsView *deviceDetailsView;
 
@@ -59,6 +60,10 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
     
+    float fontSize = kIsDeviceiPad ? 17.0f : 14.0f;
+    [_lblNumberOfFavorites setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblFavoritesHeader setFont:[UIFont fontWithName:@"century" size:fontSize]];
+
     [self.viewNumberOfFav.layer setCornerRadius:self.viewNumberOfFav.frame.size.width/2];
     [self.viewNumberOfFav.layer setBorderColor:[[UIColor colorWithRed:222.0/255.0 green:188.0/255.0 blue:86.0/255.0 alpha:1.0] CGColor]];
     [self.viewNumberOfFav.layer setBorderWidth:2.0f];

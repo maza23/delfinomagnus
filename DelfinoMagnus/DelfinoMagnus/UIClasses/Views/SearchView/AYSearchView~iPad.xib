@@ -223,17 +223,17 @@
                         <action selector="actionZonaButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="1Nb-yz-6h2"/>
                     </connections>
                 </button>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_input.png" translatesAutoresizingMaskIntoConstraints="NO" id="iI0-ko-Vsx">
-                    <rect key="frame" x="9" y="0.0" width="622" height="48"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNq-pt-GsT">
+                    <rect key="frame" x="23" y="0.0" width="606" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0068475863860000003" green="0.074122907730000007" blue="0.15292171560000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="PyN-dr-bxJ"/>
+                        <constraint firstAttribute="height" constant="50" id="Pwx-7s-vMs"/>
                     </constraints>
-                </imageView>
+                </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   ingrese una dirección" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4U-kU-3Hq">
                     <rect key="frame" x="40" y="0.0" width="591" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.036982289524138061" green="0.072678759567142551" blue="0.24762834819999999" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="Em3-KU-fdJ"/>
@@ -338,7 +338,6 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="iI0-ko-Vsx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Dq-zM-6MJ"/>
                 <constraint firstItem="fdG-EH-wFU" firstAttribute="leading" secondItem="qFA-LZ-5OD" secondAttribute="trailing" constant="16" id="2Ep-cp-nd3"/>
                 <constraint firstItem="xUt-8X-1T4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="94" id="3PT-EO-xH0"/>
                 <constraint firstItem="i4d-Cr-g5t" firstAttribute="leading" secondItem="xUt-8X-1T4" secondAttribute="trailing" constant="17" id="3Wj-HA-FfC"/>
@@ -351,24 +350,25 @@
                 <constraint firstItem="q7l-Rs-Chy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="204" id="CNn-x0-3Og"/>
                 <constraint firstItem="u4U-kU-3Hq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="I44-CJ-CgI"/>
                 <constraint firstItem="v3y-vI-2f9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="93" id="ITn-hj-D2A"/>
-                <constraint firstItem="iI0-ko-Vsx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="9" id="KWd-6l-Ra1"/>
                 <constraint firstItem="JN0-py-S4S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="O2S-4t-m8P"/>
                 <constraint firstItem="xUt-8X-1T4" firstAttribute="leading" secondItem="q7l-Rs-Chy" secondAttribute="trailing" constant="13" id="Od7-9z-zUg"/>
-                <constraint firstAttribute="trailing" secondItem="iI0-ko-Vsx" secondAttribute="trailing" constant="77" id="QkI-6F-JY6"/>
                 <constraint firstItem="HV0-XZ-fLu" firstAttribute="leading" secondItem="9L4-vO-ajL" secondAttribute="trailing" constant="34" id="Ro1-Mm-dYB"/>
                 <constraint firstItem="9RR-V3-fKn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="Tkz-TL-WmB"/>
                 <constraint firstItem="JZb-52-cqS" firstAttribute="centerX" secondItem="HV0-XZ-fLu" secondAttribute="centerX" constant="-0.5" id="UUw-iQ-LcH"/>
                 <constraint firstAttribute="trailing" secondItem="JN0-py-S4S" secondAttribute="trailing" constant="50" id="Uaj-MT-2q8"/>
                 <constraint firstItem="a4h-pO-vKz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="413" id="VHN-yj-ctJ"/>
                 <constraint firstItem="u4U-kU-3Hq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wno-gf-rub"/>
+                <constraint firstItem="HNq-pt-GsT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="23" id="Wqh-KX-IwV"/>
                 <constraint firstItem="fdG-EH-wFU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="218" id="Wqw-2u-3rI"/>
                 <constraint firstItem="HV0-XZ-fLu" firstAttribute="leading" secondItem="0NW-fG-rdC" secondAttribute="trailing" constant="34" id="Xg3-se-hvi"/>
                 <constraint firstItem="JN0-py-S4S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="453" id="XwC-9y-bij"/>
+                <constraint firstAttribute="trailing" secondItem="HNq-pt-GsT" secondAttribute="trailing" constant="79" id="Xyo-Rb-unb"/>
                 <constraint firstItem="eSk-rn-czM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="216" id="Za9-aU-hJX"/>
                 <constraint firstItem="qFA-LZ-5OD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="216" id="aFv-7w-Rh1"/>
                 <constraint firstItem="xUt-8X-1T4" firstAttribute="leading" secondItem="v3y-vI-2f9" secondAttribute="trailing" constant="16" id="aMh-BX-9TV"/>
                 <constraint firstItem="HV0-XZ-fLu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="369" id="czm-F5-x8c"/>
                 <constraint firstItem="HEc-4a-3nt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="638" id="dYY-Y5-rOc"/>
+                <constraint firstItem="HNq-pt-GsT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="duX-WL-Gbp"/>
                 <constraint firstAttribute="trailing" secondItem="6OI-hN-oZz" secondAttribute="trailing" constant="50" id="eCr-md-zyK"/>
                 <constraint firstItem="9L4-vO-ajL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="373" id="ebG-oo-J51"/>
                 <constraint firstAttribute="centerX" secondItem="HEc-4a-3nt" secondAttribute="centerX" id="gZc-ea-xsg"/>
@@ -392,7 +392,19 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="btnCapitalFederal" destination="9L4-vO-ajL" id="cKE-dW-cnG"/>
+                <outlet property="btnCartel" destination="v3y-vI-2f9" id="eU4-uv-mYO"/>
+                <outlet property="btnDisponible" destination="UgR-ok-7Xo" id="ApD-jE-2oZ"/>
                 <outlet property="btnDisponibleSwitch" destination="RVs-6g-444" id="f0G-ho-hjq"/>
+                <outlet property="btnMediawall" destination="qFA-LZ-5OD" id="YOC-zn-yt4"/>
+                <outlet property="btnMonocolumna" destination="i4d-Cr-g5t" id="LHc-jd-uhq"/>
+                <outlet property="btnNoDisponible" destination="7cR-g2-ByU" id="ZFI-2X-CjT"/>
+                <outlet property="btnNorte" destination="JJU-Ca-irw" id="UBx-hd-xxs"/>
+                <outlet property="btnOeste" destination="0NW-fG-rdC" id="4B1-Xe-orb"/>
+                <outlet property="btnSur" destination="a4h-pO-vKz" id="AKO-aF-gKd"/>
+                <outlet property="btnTelon" destination="eSk-rn-czM" id="WMC-yw-A4P"/>
+                <outlet property="lblTipoHeader" destination="RNU-eR-x9Z" id="1Vl-ii-TuB"/>
+                <outlet property="lblZonaHeader" destination="JZb-52-cqS" id="KSn-vs-QAk"/>
                 <outlet property="txtFieldSearch" destination="u4U-kU-3Hq" id="NzC-DO-v5r"/>
             </connections>
         </view>
@@ -402,7 +414,6 @@
         <image name="bg_btn_mediawall.png" width="480" height="191"/>
         <image name="bg_btn_monocolumna.png" width="480" height="191"/>
         <image name="bg_btn_telon.png" width="480" height="191"/>
-        <image name="bg_input.png" width="85" height="86"/>
         <image name="btn_buscar.png" width="47" height="48"/>
         <image name="btn_busqueda.png" width="48" height="48"/>
         <image name="btn_disponible.png" width="22" height="80"/>

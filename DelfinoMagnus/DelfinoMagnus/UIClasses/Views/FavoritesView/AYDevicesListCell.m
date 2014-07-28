@@ -35,6 +35,13 @@
     // Configure the view for the selected state
 }
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    float fontSize = kIsDeviceiPad ? 17.0f : 14.0f;
+    [_lblDeviceName setFont:[UIFont fontWithName:@"century" size:fontSize]];
+}
+
 #pragma mark - Public Methods
 - (void)configureCellWithObject:(Device *)object  isDeviceReserved:(BOOL)isReserved
 {

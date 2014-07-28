@@ -7,6 +7,7 @@
 //
 
 #import "AYHomeViewController.h"
+#import "AYLoginViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "Device.h"
 #import "AYMapInfoView.h"
@@ -196,6 +197,16 @@
         dispatch_async(dispatch_get_main_queue(), ^{
           
             if (result && [result isKindOfClass:[NSDictionary class]]) {
+                
+                if ([result[@"result"] isEqualToString:@"ERR"]) {
+                    NSString *message = result[@"msgerr"];
+                    if ([message isEqualToString:@"Invalid user login data."]) {
+                        
+                        [self logOutAndRedirectToLoginView];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lo sentimos" message:@"Problema al iniciar la sesión, por favor, vuelva a iniciar sesión" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+                        [alert show];
+                    }
+                }
                 [[LTCoreDataManager sharedInstance] insertDevicesResultIntoDBFromRawResponse:result];
             }
             
@@ -204,6 +215,17 @@
         });
 
     }];
+}
+
+- (void)logOutAndRedirectToLoginView
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userName"];
+    [[NSUserDefaults standardUserDefaults]  removeObjectForKey:@"password"];
+    [[NSUserDefaults standardUserDefaults]  synchronize];
+    
+    AYLoginViewController *loginVC = [[AYLoginViewController alloc] initWithNibName:@"AYLoginViewController" bundle:nil];
+    [loginVC setDelegate:[[UIApplication sharedApplication] delegate]];
+    [self.view.window setRootViewController:loginVC];
 }
 
 - (void)fetchAndLoadMarkersFromDataBase

@@ -104,7 +104,7 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setText:@"NO VOLVER A MOSTRAR LAS INSTRUCCIONES"];
     [label setTextColor:[UIColor lightGrayColor]];
-    [label setFont:[UIFont fontWithName:@"century" size:10.0f]];
+    [label setFont:[UIFont fontWithName:@"Century Gothic" size:10.0f]];
     
     [self.scrollViewImagesContainer addSubview:checkButton];
     [self.scrollViewImagesContainer addSubview:label];

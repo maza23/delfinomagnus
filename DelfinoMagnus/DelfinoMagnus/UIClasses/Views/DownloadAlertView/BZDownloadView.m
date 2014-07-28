@@ -29,7 +29,7 @@
 - (void)doInitialAppearenceSettings
 {
     float fontSize = kIsDeviceiPad ? 16.0f : 15.0f;
-    [_messageLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_messageLabel setFont:[UIFont fontWithName:@"Century Gothic" size:fontSize]];
 
     [self.layer setCornerRadius:5.0];
     

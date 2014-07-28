@@ -15,4 +15,5 @@
 + (NSDictionary *)getTiposNameDictionary;
 + (NSDictionary *)getTiposIdAsObjectAndNameAsDictKeys;
 + (NSDictionary *)getZonaIdAsObjectAndNameAsDictKeys;
++ (UIFont *)fontWithSize:(float)iPhoneFontSize andiPadSize:(float)iPadFontSize;
 @end

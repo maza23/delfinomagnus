@@ -60,9 +60,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangedOrientation:) name:kDeviceWillChangeOrientation object:nil];
     
-    float fontSize = kIsDeviceiPad ? 17.0f : 14.0f;
-    [_lblNumberOfFavorites setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_lblFavoritesHeader setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblNumberOfFavorites setFont:[AYUtilites fontWithSize:48.0 andiPadSize:111.0]];
+    [_lblFavoritesHeader setFont:[AYUtilites fontWithSize:15.0 andiPadSize:17.0]];
 
     [self.viewNumberOfFav.layer setCornerRadius:self.viewNumberOfFav.frame.size.width/2];
     [self.viewNumberOfFav.layer setBorderColor:[[UIColor colorWithRed:222.0/255.0 green:188.0/255.0 blue:86.0/255.0 alpha:1.0] CGColor]];

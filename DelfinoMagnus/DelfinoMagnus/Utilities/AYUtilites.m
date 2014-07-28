@@ -253,4 +253,9 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
++ (UIFont *)fontWithSize:(float)iPhoneFontSize andiPadSize:(float)iPadFontSize
+{
+    return [UIFont fontWithName:@"Century Gothic" size:(kIsDeviceiPad ? iPadFontSize: iPhoneFontSize)];
+}
+
 @end

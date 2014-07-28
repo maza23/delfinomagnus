@@ -32,7 +32,7 @@
     [self.btnClose setImage:[[UIImage imageNamed:@"cerrar.png"] imageWithOverlayColor:[UIColor yellowColor]] forState:UIControlStateNormal];
     
     float fontSize = kIsDeviceiPad ? 17.0f : 14.0f;
-    [self.txtFieldEmailId setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [self.txtFieldEmailId setFont:[UIFont fontWithName:@"Century Gothic" size:fontSize]];
     
     UITapGestureRecognizer *singleTapOnBGView = [[UITapGestureRecognizer alloc] init];
     [singleTapOnBGView addTarget:self action:@selector(singleTappedOnBGView:)];

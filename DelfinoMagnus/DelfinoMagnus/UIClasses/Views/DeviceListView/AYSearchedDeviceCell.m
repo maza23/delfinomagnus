@@ -38,7 +38,7 @@
     [super awakeFromNib];
 
     float fontSize = kIsDeviceiPad ? 17.0f : 14.0f;
-    [_lblDeviceTitle setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblDeviceTitle setFont:[UIFont fontWithName:@"Century Gothic" size:fontSize]];
 }
 
 #pragma mark - Public Methods

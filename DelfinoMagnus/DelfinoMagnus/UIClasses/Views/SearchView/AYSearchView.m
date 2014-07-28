@@ -76,21 +76,21 @@ typedef enum
 - (void)doInitialConfigurations
 {
     self.searchSettings = [[AYSearchSettings alloc] init];
-    float fontSize = kIsDeviceiPad ? 15.0f : 11.0f;
 
-    [_txtFieldSearch setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_lblTipoHeader setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_lblZonaHeader setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnCartel.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnMonocolumna.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnMediawall.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnTelon.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnCapitalFederal.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnNorte.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnOeste.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnSur.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnDisponible.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnNoDisponible.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    UIFont *font = [AYUtilites fontWithSize:11.0 andiPadSize:15.0];
+    [_txtFieldSearch setFont:font];
+    [_lblTipoHeader setFont:[AYUtilites fontWithSize:15.0 andiPadSize:18.0f]];
+    [_lblZonaHeader setFont:[AYUtilites fontWithSize:15.0 andiPadSize:18.0f]];
+    [_btnCartel.titleLabel setFont:font];
+    [_btnMonocolumna.titleLabel setFont:font];
+    [_btnMediawall.titleLabel setFont:font];
+    [_btnTelon.titleLabel setFont:font];
+    [_btnCapitalFederal.titleLabel setFont:font];
+    [_btnNorte.titleLabel setFont:font];
+    [_btnOeste.titleLabel setFont:font];
+    [_btnSur.titleLabel setFont:font];
+    [_btnDisponible.titleLabel setFont:font];
+    [_btnNoDisponible.titleLabel setFont:font];
 }
 
 - (void)searchDeviceIntoDataBaseWithTitleText:(NSString *)text

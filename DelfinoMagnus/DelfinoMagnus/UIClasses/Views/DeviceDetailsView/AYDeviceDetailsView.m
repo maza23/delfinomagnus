@@ -75,11 +75,11 @@
 #pragma mark - Private Methods
 - (void)doInitialConfigurations
 {
-    [_lblTopHeaderTitle setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 16.0f : 14.0f)]];
-    [_lblTitle setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 22.0f : 17.0f)]];
-    [_lblSubTitle setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 20.0f : 15.0f)]];
-    [(UILabel *)[self viewWithTag:21] setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 15.0f : 10.0f)]];
-    [(UILabel *)[self viewWithTag:22] setFont:[UIFont fontWithName:@"century" size:(kIsDeviceiPad ? 15.0f : 10.0f)]];
+    [_lblTopHeaderTitle setFont:[UIFont fontWithName:@"Century Gothic" size:(kIsDeviceiPad ? 16.0f : 14.0f)]];
+    [_lblTitle setFont:[UIFont fontWithName:@"Century Gothic" size:(kIsDeviceiPad ? 22.0f : 17.0f)]];
+    [_lblSubTitle setFont:[UIFont fontWithName:@"Century Gothic" size:(kIsDeviceiPad ? 20.0f : 15.0f)]];
+    [(UILabel *)[self viewWithTag:21] setFont:[UIFont fontWithName:@"Century Gothic" size:(kIsDeviceiPad ? 15.0f : 10.0f)]];
+    [(UILabel *)[self viewWithTag:22] setFont:[UIFont fontWithName:@"Century Gothic" size:(kIsDeviceiPad ? 15.0f : 10.0f)]];
 
     [self doAppearenceSettingsForOrientation:[[UIDevice currentDevice] orientation]];
 

@@ -59,9 +59,8 @@
 {
     [self.viewNumberOfDevices.layer setCornerRadius:self.viewNumberOfDevices.frame.size.width/2];
     
-    float fontSize = kIsDeviceiPad ? 17.0f : 14.0f;
-    [_lblTipoName setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_lblNumerOfDevices setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [_lblTipoName setFont:[AYUtilites fontWithSize:15.0 andiPadSize:20.0]];
+    [_lblNumerOfDevices setFont:[AYUtilites fontWithSize:10.0 andiPadSize:12.0]];
 }
 
 @end

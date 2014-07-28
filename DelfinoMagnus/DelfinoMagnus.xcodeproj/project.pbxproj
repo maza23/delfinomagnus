@@ -155,6 +155,8 @@
 		CBF13F9F19227FA500E1C418 /* AYDevicesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF13F9A19227FA500E1C418 /* AYDevicesListView.xib */; };
 		CBF13FA019227FA500E1C418 /* AYSearchedDeviceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF13F9C19227FA500E1C418 /* AYSearchedDeviceCell.m */; };
 		CBF13FA119227FA500E1C418 /* AYSearchedDeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */; };
+		CBF44A8D1986AF6B00B5166B /* century.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBF44A8C1986AF6B00B5166B /* century.ttf */; };
+		CBF44A8E1986AFB400B5166B /* DelfinoMagnus-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBCD61631918044900846E8C /* DelfinoMagnus-Info.plist */; };
 		CBF8506B194D7B9A00B2AADE /* AYInstructionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF8506A194D7B9A00B2AADE /* AYInstructionsView.m */; };
 		CBF8506D194D7BA600B2AADE /* AYInstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBF8506C194D7BA600B2AADE /* AYInstructionsView.xib */; };
 		CBF8506E194D7DDB00B2AADE /* help_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1248761918879D009DA54C /* help_1.png */; };
@@ -402,6 +404,7 @@
 		CBF13F9B19227FA500E1C418 /* AYSearchedDeviceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSearchedDeviceCell.h; sourceTree = "<group>"; };
 		CBF13F9C19227FA500E1C418 /* AYSearchedDeviceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSearchedDeviceCell.m; sourceTree = "<group>"; };
 		CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYSearchedDeviceCell.xib; sourceTree = "<group>"; };
+		CBF44A8C1986AF6B00B5166B /* century.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = century.ttf; sourceTree = "<group>"; };
 		CBF85069194D7B9A00B2AADE /* AYInstructionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYInstructionsView.h; sourceTree = "<group>"; };
 		CBF8506A194D7B9A00B2AADE /* AYInstructionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYInstructionsView.m; sourceTree = "<group>"; };
 		CBF8506C194D7BA600B2AADE /* AYInstructionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYInstructionsView.xib; sourceTree = "<group>"; };
@@ -830,6 +833,7 @@
 		CBCD61931918087A00846E8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CBF44A8B1986AF6B00B5166B /* Font */,
 				CBCD61941918089400846E8C /* Images */,
 			);
 			path = Resources;
@@ -965,6 +969,14 @@
 				CBF13F9D19227FA500E1C418 /* AYSearchedDeviceCell.xib */,
 			);
 			path = DeviceListView;
+			sourceTree = "<group>";
+		};
+		CBF44A8B1986AF6B00B5166B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CBF44A8C1986AF6B00B5166B /* century.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		CBF85068194D7B8300B2AADE /* InstructionsView */ = {
@@ -1164,6 +1176,7 @@
 				CB1248AC1918879D009DA54C /* busqueda.png in Resources */,
 				DC0D3B8E193EF4B90056CA76 /* AYDeviceDetailsView~iPad.xib in Resources */,
 				CB1248A71918879D009DA54C /* burbuja_bottom_land.png in Resources */,
+				CBF44A8D1986AF6B00B5166B /* century.ttf in Resources */,
 				CB1248AF1918879D009DA54C /* calendario.png in Resources */,
 				CB1248A51918879D009DA54C /* btn_mapa.png in Resources */,
 				CB12489F1918879D009DA54C /* blank_normal.png in Resources */,
@@ -1173,6 +1186,7 @@
 				CB1248B61918879D009DA54C /* ejemplo.jpg in Resources */,
 				CB1248991918879D009DA54C /* bg_btn_cartel.png in Resources */,
 				CB1248AA1918879D009DA54C /* burbuja.png in Resources */,
+				CBF44A8E1986AFB400B5166B /* DelfinoMagnus-Info.plist in Resources */,
 				CB1248A11918879D009DA54C /* btn_buscar.png in Resources */,
 				CB0437CB194610F3000145F4 /* 40.png in Resources */,
 				DCC2D568193D9A2500B58A91 /* AYUserProfileView~iPad.xib in Resources */,

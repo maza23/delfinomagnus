@@ -54,13 +54,12 @@
 {
     [self.navigationController setNavigationBarHidden:YES];
     
-    float fontSize = kIsDeviceiPad ? 15.0f : 11.0f;
-    [_lblUsername setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_lblPassword setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_txtFieldUserName setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_txtFieldPassword setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnForgetPassword.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [_btnLogin.titleLabel setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [self.lblUsername setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
+    [self.lblPassword setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
+    [_txtFieldUserName setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
+    [_txtFieldPassword setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
+    [_btnForgetPassword.titleLabel setFont:[AYUtilites fontWithSize:11.0 andiPadSize:15.0f]];
+    [_btnLogin.titleLabel setFont:[AYUtilites fontWithSize:15.0 andiPadSize:18.0f]];
     
 //    [self.txtFieldUserName setText:@"pablom"];
 //    [self.txtFieldPassword setText:@"pablom"];

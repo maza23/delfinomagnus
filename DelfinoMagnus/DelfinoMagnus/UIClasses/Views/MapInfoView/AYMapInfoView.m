@@ -45,10 +45,9 @@
 {
     [self.viewInfoContainer.layer setCornerRadius:15.0];
     
-    float fontSize = kIsDeviceiPad ? 15.0f : 11.0f;
-    [self.lblTitle setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [self.lblSubtitle setFont:[UIFont fontWithName:@"century" size:fontSize]];
-    [self.lblDisponibleStatus setFont:[UIFont fontWithName:@"century" size:fontSize]];
+    [self.lblTitle setFont:[AYUtilites fontWithSize:15.0 andiPadSize:17.0]];
+    [self.lblSubtitle setFont:[AYUtilites fontWithSize:12.0 andiPadSize:15.0]];
+    [self.lblDisponibleStatus setFont:[AYUtilites fontWithSize:12.0 andiPadSize:15.0]];
 }
 
 - (void)loadWebViewWithDescriptionString:(NSString *)description
@@ -64,7 +63,7 @@
     NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title></title></head><body>"];
     
     NSCharacterSet *charecterSetToTrim = [NSCharacterSet characterSetWithCharactersInString:@"/"];
-
+    [html appendString:@"<font face='Century Gothic' size='3'>"];
     [html appendString:[description stringByTrimmingCharactersInSet:charecterSetToTrim]];
     [html appendString:@"</body></html>"];
     

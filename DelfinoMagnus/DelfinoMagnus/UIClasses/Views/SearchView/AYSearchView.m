@@ -162,8 +162,10 @@ typedef enum
         }
     }
     
-    
-    for (Device *device in searchedDevices) {
+    if(!_searchSettings.tipoCartel && !_searchSettings.tipoMediawall && !_searchSettings.tipoMonocolumna && !_searchSettings.tipoTelon){
+        [filteredDevices addObjectsFromArray:searchedDevices];
+    }
+    for (Device *device in filteredDevices) {
         
         if (_searchSettings.zonaCapitalFederal && [device.zona isEqualToString:[zonaNames objectForKey:@"CapitalFederal"]]) {
             if (![filteredDevices containsObject:device]) {

@@ -13,7 +13,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-V3-fKn">
                     <rect key="frame" x="50" y="85" width="608" height="2"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0068475863860000003" green="0.074122907730000007" blue="0.15292171560000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="cET-aF-hsd"/>
                     </constraints>
@@ -269,7 +269,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OI-hN-oZz">
                     <rect key="frame" x="50" y="362" width="608" height="2"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0068475863860000003" green="0.074122907730000007" blue="0.15292171560000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="JGX-ES-KMY"/>
                     </constraints>
@@ -277,7 +277,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-py-S4S">
                     <rect key="frame" x="50" y="453" width="608" height="2"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0068475863860000003" green="0.074122907730000007" blue="0.15292171560000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="tde-yF-UWu"/>
                     </constraints>

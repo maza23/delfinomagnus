@@ -68,8 +68,10 @@
        
         [[AYNetworkManager sharedInstance] generateasswordForMailId:self.txtFieldEmailId.text andCompletionBlock:^(id result) {
             
-            if (result && [result isKindOfClass:[NSDictionary class]] && [[result objectForKey:@"msgerr"] isEqualToString:@"Success"]) {
-#warning Avadesh what should be success message to display
+            if (result && [result isKindOfClass:[NSDictionary class]] && [[result objectForKey:@"msgerr"] isEqualToString:@"Message sent."]) {
+        
+                [self showAlertWithMessage:@"Mensaje enviado" andTitle:@"éxito"];
+
             }
             else {
                 [self showAlertWithMessage:@"Por favor, introduzca email válida Id." andTitle:@"Atención"];

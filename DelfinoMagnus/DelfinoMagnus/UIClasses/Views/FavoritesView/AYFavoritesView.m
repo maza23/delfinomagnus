@@ -95,7 +95,7 @@
     }
     
     if ([allDevices count]) {
-        [self postNotificationToShowDevicesOnMapWithDevices:allDevices andSelectedDeviceIndex:0];
+        [self postNotificationToShowDevicesOnMapWithDevices:allDevices andSelectedDeviceIndex:-1];
     }
 }
 

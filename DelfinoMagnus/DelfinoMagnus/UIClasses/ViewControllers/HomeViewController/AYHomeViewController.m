@@ -186,8 +186,10 @@
     [self showMapWithMarkerDevices:self.devices withToDo:YES];
     NSInteger index = [userInfo[@"SelectedIndex"] integerValue];
     
-    [self.mapView setSelectedMarker:self.markers[index]];
-    [self mapView:self.mapView didTapMarker:self.markers[index]];
+    if (index != -1) {
+        [self.mapView setSelectedMarker:self.markers[index]];
+        [self mapView:self.mapView didTapMarker:self.markers[index]];
+    }
 }
 
 - (void)getAndLoadDevicesFromServer

@@ -45,9 +45,11 @@
 {
     [self.viewInfoContainer.layer setCornerRadius:15.0];
     
-    [self.lblTitle setFont:[AYUtilites fontWithSize:15.0 andiPadSize:17.0]];
+    [self.lblTitle setFont:[AYUtilites fontWithSize:14.0 andiPadSize:15.0]];
     [self.lblSubtitle setFont:[AYUtilites fontWithSize:12.0 andiPadSize:15.0]];
     [self.lblDisponibleStatus setFont:[AYUtilites fontWithSize:12.0 andiPadSize:15.0]];
+    [(UILabel *)[self viewWithTag:21] setFont:[AYUtilites fontWithSize:12.0 andiPadSize:15.0]];
+
 }
 
 - (void)loadWebViewWithDescriptionString:(NSString *)description
@@ -61,13 +63,15 @@
     description = [description stringByReplacingOccurrencesOfString:@"D3D3D3" withString:@"444444"];
 
     NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title></title></head><body>"];
-    
+    UIFont *font = [AYUtilites fontWithSize:10.0f andiPadSize:10.0f];
     NSCharacterSet *charecterSetToTrim = [NSCharacterSet characterSetWithCharactersInString:@"/"];
-    [html appendString:@"<font face='Century Gothic' size='3'>"];
-    [html appendString:[description stringByTrimmingCharactersInSet:charecterSetToTrim]];
+    
+    NSString *contentBody = [description stringByTrimmingCharactersInSet:charecterSetToTrim];
+   // [html appendFormat:@"<div style=\"font-family: %@; font-size: %i\">%@</div>", font.fontName, (int) font.pointSize, contentBody];
+    [html appendString:contentBody];
     [html appendString:@"</body></html>"];
     
-    [self.webVIewDescription loadHTMLString: html baseURL: nil];
+    [self.webVIewDescription loadHTMLString:html baseURL: nil];
 }
 
 #pragma mark - Public Methods
@@ -75,11 +79,16 @@
 {
     [self.lblTitle setText:device.titulo];
     [self.lblSubtitle setText:[[AYUtilites getTiposNameDictionary] objectForKey:device.tipo]];
-    
+
     NSDictionary *colorsDict = [[AYUtilites getTiposBackgroundColors] objectForKey:device.tipo];
     
     [self.viewTitleContainer setBackgroundColor:[colorsDict objectForKey:@"titleBGColor"]];
     [self.viewTipotpyeContainer setBackgroundColor:[colorsDict objectForKey:@"tipoBGColor"]];
+    
+    if ([self.lblSubtitle.text isEqualToString:@"Monocolumna"]) {
+        [self.lblTitle setTextColor:[colorsDict objectForKey:@"tipoBGColor"]];
+    }
+    
     [self loadWebViewWithDescriptionString:device.htmldescripcion];
     
     if ([device.disponible isEqualToString:@"SI"]) {

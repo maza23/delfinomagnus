@@ -54,8 +54,8 @@
 {
     [self.navigationController setNavigationBarHidden:YES];
     
-    [self.lblUsername setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
-    [self.lblPassword setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
+    [self.lblUsername setFont:[AYUtilites fontWithSize:11.0 andiPadSize:17.0f]];
+    [self.lblPassword setFont:[AYUtilites fontWithSize:11.0 andiPadSize:17.0f]];
     [_txtFieldUserName setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
     [_txtFieldPassword setFont:[AYUtilites fontWithSize:11.0 andiPadSize:18.0f]];
     [_btnForgetPassword.titleLabel setFont:[AYUtilites fontWithSize:11.0 andiPadSize:15.0f]];

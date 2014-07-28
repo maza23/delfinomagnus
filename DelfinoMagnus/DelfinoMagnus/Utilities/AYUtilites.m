@@ -128,7 +128,7 @@
         
         for (Tipo *tipo in tipoArray) {
             
-            NSString *tipoName = @"Cartel";
+            NSString *tipoName = @"";
             
             if ([tipo.name isEqualToString:@"Cartel"]) {
                 tipoName = @"Cartel";

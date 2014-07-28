@@ -62,14 +62,16 @@
     description = [description stringByReplacingOccurrencesOfString:@"FFFFFF" withString:@"000000"];
     description = [description stringByReplacingOccurrencesOfString:@"D3D3D3" withString:@"444444"];
 
-    NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title></title></head><body>"];
+    NSMutableString *html = [NSMutableString stringWithString: @"<html><head><title></title><style>body{-webkit-transform: scale(0.85);}</style></head><body>"];
     UIFont *font = [AYUtilites fontWithSize:10.0f andiPadSize:10.0f];
     NSCharacterSet *charecterSetToTrim = [NSCharacterSet characterSetWithCharactersInString:@"/"];
     
-    NSString *contentBody = [description stringByTrimmingCharactersInSet:charecterSetToTrim];
-   // [html appendFormat:@"<div style=\"font-family: %@; font-size: %i\">%@</div>", font.fontName, (int) font.pointSize, contentBody];
-    [html appendString:contentBody];
+    description= [description stringByTrimmingCharactersInSet:charecterSetToTrim];
+    description=[NSString stringWithFormat:@"<div style=\"font-family: %@;\">%@</div>", font.fontName, description];
+    [html appendString:description];
     [html appendString:@"</body></html>"];
+    
+    //NSString* html=[NSString stringWithFormat:@"<html><head><title></title></head><body><div style=\"font-family: %@; font-size: %i\">%@</div></body></html>",font.fontName, (int)font.pointSize, description];
     
     [self.webVIewDescription loadHTMLString:html baseURL: nil];
 }

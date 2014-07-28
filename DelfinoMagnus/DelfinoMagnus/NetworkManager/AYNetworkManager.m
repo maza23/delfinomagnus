@@ -147,8 +147,8 @@ static AYNetworkManager *sharedManager = nil;
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://delfinomagnus.com"]];
     
     NSDictionary *parameters = @{@"action": @"setuserdata",
-                                 @"username": @"pablom",
-                                 @"password" : @"pablom"};
+                                 @"username": [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"],
+                                 @"password" : [[NSUserDefaults standardUserDefaults] objectForKey:@"password"]};
     
     AFHTTPRequestOperation *op = [manager POST:@"/api/" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
 

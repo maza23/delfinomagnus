@@ -298,9 +298,9 @@ NSDate *todayDate;
         
         BOOL isRepeatedDate = NO;
         
-        if ([self.eventsDates count]) {
-            NSLog(@"date string is:%@", dateString);
-        }
+//        if ([self.eventsDates count]) {
+//            NSLog(@"date string is:%@", dateString);
+//        }
         
         if ([self.eventsDates containsObject:dateString]) {
             isRepeatedDate = YES;
@@ -557,19 +557,23 @@ NSDate *todayDate;
                 }
                 else if ((index - 1) >= 0) {
                     endDate = [sortedArray[index - 1] date];
+                    endDate = [endDate dateByAddingTimeInterval:86400];
                 }
                 
                 if ([endDate compare:[NSDate date]] == NSOrderedAscending) {
                     endDate = [NSDate date];
                 }
                 
-                while ([startDate compare:endDate] != NSOrderedDescending) {
-                    
-                    [calendars addObject:[dateFormatter stringFromDate:startDate]];
-                    
-                    startDate = [startDate dateByAddingTimeInterval:86400];
-                }
+                NSString *endDateString = [dateFormatter stringFromDate:endDate];
+                endDate = [dateFormatter dateFromString:endDateString];
                 
+                while ([endDate compare:startDate] != NSOrderedDescending) {
+                    
+                    [calendars addObject:[dateFormatter stringFromDate:endDate]];
+                    
+                    endDate = [endDate dateByAddingTimeInterval:86400];
+                }
+             
             }
         }
     }
@@ -578,7 +582,6 @@ NSDate *todayDate;
     }
     
     self.eventsDates = calendars;
-   // NSLog(@"Event Dates are:%@", calendars);
     
     if ([self.eventsDates count]) {
         [self DrawMonthInPortraitView];

@@ -32,6 +32,7 @@ NSDate *todayDate;
 #import "CalenderViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Calendar.h"
+#import "AYCalendarObject.h"
 
 @interface CalenderViewController ()
 @property (strong, nonatomic) NSArray *eventsDates;
@@ -286,6 +287,7 @@ NSDate *todayDate;
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setYear:year];
+    [components setMonth:month];
     [components setDay:1];
         
 	while(i <=day) {
@@ -295,6 +297,11 @@ NSDate *todayDate;
         NSString *dateString = [dateFormatter stringFromDate:calCurDate];
         
         BOOL isRepeatedDate = NO;
+        
+        if ([self.eventsDates count]) {
+            NSLog(@"date string is:%@", dateString);
+        }
+        
         if ([self.eventsDates containsObject:dateString]) {
             isRepeatedDate = YES;
         }
@@ -522,15 +529,39 @@ NSDate *todayDate;
 - (void)reloadCalendarWithCalendarObjects:(NSArray *)objects
 {
   //  NSArray *objects = @[@{@"fecha":@"2014-05-21",@"disponible":@"NO"},@{@"fecha":@"2014-06-07",@"disponible":@"SI"},@{@"fecha":@"2014-07-18",@"disponible":@"NO"},@{@"fecha":@"2014-12-30",@"disponible":@"SI"}];
+    NSMutableArray *calendarDates = [[NSMutableArray alloc]  init];
+    
+    for (int index = 0; index < [objects count]; index++) {
+       
+        AYCalendarObject *calendarObj = [[AYCalendarObject alloc]  init];
+        [calendarObj setDisponible:[objects[index] disponible]];
+        [calendarObj setDate:[dateFormatter dateFromString:[objects[index] fecha]]];
+        [calendarDates addObject:calendarObj];
+    }
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]  initWithKey:@"date" ascending:YES];
+    NSArray *sortedArray = [calendarDates sortedArrayUsingDescriptors:@[sortDescriptor]];
     
     NSMutableArray *calendars  = [[NSMutableArray alloc]  initWithCapacity:0];
 
     @try {
-        for (int index = 0; index < [objects count]; index++) {
+        for (int index = 0; index < [sortedArray count]; index++) {
             
-            if ([[objects[index] disponible] isEqualToString:@"NO"]) {
-                NSDate *startDate = [dateFormatter dateFromString:[objects[index] fecha]];
-                NSDate *endDate = [dateFormatter dateFromString:[objects[++index] fecha]];
+            if ([[sortedArray[index] disponible] isEqualToString:@"NO"]) {
+                
+                NSDate *startDate = [sortedArray[index] date];
+                NSDate *endDate = nil;
+                
+                if (index == 0) {
+                    endDate = [NSDate date];
+                }
+                else if ((index - 1) >= 0) {
+                    endDate = [sortedArray[index - 1] date];
+                }
+                
+                if ([endDate compare:[NSDate date]] == NSOrderedAscending) {
+                    endDate = [NSDate date];
+                }
                 
                 while ([startDate compare:endDate] != NSOrderedDescending) {
                     
@@ -541,13 +572,13 @@ NSDate *todayDate;
                 
             }
         }
-
     }
     @catch (NSException *exception) {
         NSLog(@"Exception occured while getting dates");
     }
     
     self.eventsDates = calendars;
+   // NSLog(@"Event Dates are:%@", calendars);
     
     if ([self.eventsDates count]) {
         [self DrawMonthInPortraitView];

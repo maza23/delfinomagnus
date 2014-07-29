@@ -113,6 +113,7 @@
 		CB3567A41982F27A006401BF /* iPadPortrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB3567A01982F27A006401BF /* iPadPortrait@2x.png */; };
 		CB38F2F5192526CE00163094 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F4192526CE00163094 /* Calendar.m */; };
 		CB38F2F8192526EE00163094 /* DeviceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F7192526EE00163094 /* DeviceDetails.m */; };
+		CB3F133E19882A8A00A9B033 /* AYCalendarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3F133D19882A8A00A9B033 /* AYCalendarObject.m */; };
 		CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6340991919470500CA2915 /* GoogleMaps.bundle */; };
 		CB63409C1919476B00CA2915 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63409B1919476B00CA2915 /* AVFoundation.framework */; };
 		CB6340A01919478C00CA2915 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63409D1919478C00CA2915 /* CoreData.framework */; };
@@ -347,6 +348,8 @@
 		CB38F2F4192526CE00163094 /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
 		CB38F2F6192526EE00163094 /* DeviceDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceDetails.h; sourceTree = "<group>"; };
 		CB38F2F7192526EE00163094 /* DeviceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetails.m; sourceTree = "<group>"; };
+		CB3F133C19882A8A00A9B033 /* AYCalendarObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYCalendarObject.h; sourceTree = "<group>"; };
+		CB3F133D19882A8A00A9B033 /* AYCalendarObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYCalendarObject.m; sourceTree = "<group>"; };
 		CB634097191946CC00CA2915 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		CB6340991919470500CA2915 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		CB63409B1919476B00CA2915 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -631,6 +634,8 @@
 				CB10D49C191FF20B00F987E6 /* CalenderViewController.m */,
 				CB10D49D191FF20B00F987E6 /* CalenderViewController.xib */,
 				CB3567931982D941006401BF /* CalenderViewController~iPad.xib */,
+				CB3F133C19882A8A00A9B033 /* AYCalendarObject.h */,
+				CB3F133D19882A8A00A9B033 /* AYCalendarObject.m */,
 			);
 			path = CalendarView;
 			sourceTree = "<group>";
@@ -1313,6 +1318,7 @@
 				CBFE3AF9191D4AEF00A74C2D /* AYSearchView.m in Sources */,
 				CBF9B60C191E9E27005DC1A0 /* AFSecurityPolicy.m in Sources */,
 				CBF9B62D191ECB0E005DC1A0 /* FavoriteDevice.m in Sources */,
+				CB3F133E19882A8A00A9B033 /* AYCalendarObject.m in Sources */,
 				CBF8506B194D7B9A00B2AADE /* AYInstructionsView.m in Sources */,
 				CBF9B609191E9E27005DC1A0 /* AFHTTPRequestOperationManager.m in Sources */,
 				CBF13F9E19227FA500E1C418 /* AYDevicesListView.m in Sources */,

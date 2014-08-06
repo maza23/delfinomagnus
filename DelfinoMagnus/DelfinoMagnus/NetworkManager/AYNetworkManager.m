@@ -170,8 +170,9 @@ static AYNetworkManager *sharedManager = nil;
 - (NSURLRequest *)getURLRequestUserLoginWithUserName:(NSString *)userName andPassword:(NSString *)password
 {
     NSString * urlString = [NSString stringWithFormat:@"%@", kBaseServerURL];
+    NSString *deviceID = [[NSUserDefaults standardUserDefaults] objectForKey:@"DeviceToken"];
 
-    NSString *postString = [NSString stringWithFormat:@"action=userlogin&username=%@&password=%@&regid=%@", userName, password, kGoogleId];
+    NSString *postString = [NSString stringWithFormat:@"action=userlogin&username=%@&password=%@&regid_ios=%@", userName, password, deviceID];
     
   //  NSString *urlString = @"http://localhost/userDetails.json";
 

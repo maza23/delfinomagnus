@@ -21,7 +21,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [GMSServices provideAPIKey:kGoogleMapAPIKey];
-    
+      
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
 //    [[NSUserDefaults standardUserDefaults] setObject:@"pablom" forKey:@"userName"];
 //    [[NSUserDefaults standardUserDefaults] setObject:@"pablom" forKey:@"password"];
 
@@ -62,6 +63,8 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
@@ -85,6 +88,36 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Notifications related methods
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *deviceTokenString  = [[[deviceToken description]
+                                     stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]]
+                                    stringByReplacingOccurrencesOfString:@" "
+                                    withString:@""];
+    NSLog(@"Registered for Push Notification:%@", deviceTokenString);
+    [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"DeviceToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Failed to register for push Notifications with error:%@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+//    if(application.applicationState==UIApplicationStateInactive) {
+//    }
+//    else {
+    
+        NSDictionary *apsDict=  [userInfo objectForKey:@"aps"];
+        NSDictionary *alertDict=  [apsDict objectForKey:@"alert"];
+        UIAlertView *_alert=[[UIAlertView alloc]initWithTitle:@"Delphino" message:[alertDict objectForKey:@"loc-key"] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        [_alert show];
+ //   }
 }
 
 @end

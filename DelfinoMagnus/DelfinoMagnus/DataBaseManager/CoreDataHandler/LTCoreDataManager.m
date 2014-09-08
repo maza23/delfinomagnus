@@ -364,6 +364,10 @@ static LTCoreDataManager *sharedSingletonObject = nil;
         NSString * htmldescripcion = nil;
         NSString * deviceDescription = nil;
         
+        if ([disponible isKindOfClass:[NSNull class]]) {
+            disponible = @"NO";
+        }
+        
         NSDictionary *data = [deviceDetails valueForKeyPath:@"data"];
         
         if (data) {

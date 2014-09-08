@@ -10,6 +10,7 @@
 #import "AYHomeViewController.h"
 #import "AYLoginViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <Parse/Parse.h>
 
 @interface AYAppDelegate () <AYLoginViewControllerDelegate>
 
@@ -21,7 +22,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [GMSServices provideAPIKey:kGoogleMapAPIKey];
-      
+    [Parse setApplicationId:@"ec9LcU46uOfdLo3SkXDVZOpIcDmBaKdjuPKkM4uJ"
+                  clientKey:@"32FyZmRZnmEWRj6gIKuRk4dlu49pAW5fiMyyJzxD"];
+    
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert];
 //    [[NSUserDefaults standardUserDefaults] setObject:@"pablom" forKey:@"userName"];
 //    [[NSUserDefaults standardUserDefaults] setObject:@"pablom" forKey:@"password"];
@@ -100,6 +103,10 @@
     NSLog(@"Registered for Push Notification:%@", deviceTokenString);
     [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:@"DeviceToken"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
@@ -112,11 +119,12 @@
 //    if(application.applicationState==UIApplicationStateInactive) {
 //    }
 //    else {
-    
-        NSDictionary *apsDict=  [userInfo objectForKey:@"aps"];
-        NSDictionary *alertDict=  [apsDict objectForKey:@"alert"];
-        UIAlertView *_alert=[[UIAlertView alloc]initWithTitle:@"Delphino" message:[alertDict objectForKey:@"loc-key"] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-        [_alert show];
+    [PFPush handlePush:userInfo];
+
+//        NSDictionary *apsDict=  [userInfo objectForKey:@"aps"];
+//        NSDictionary *alertDict=  [apsDict objectForKey:@"alert"];
+//        UIAlertView *_alert=[[UIAlertView alloc]initWithTitle:@"Delphino" message:[alertDict objectForKey:@"loc-key"] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+//        [_alert show];
  //   }
 }
 

@@ -105,6 +105,8 @@
 		CB13F09319193E250054E950 /* AYForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB13F09219193E250054E950 /* AYForgotPasswordView.xib */; };
 		CB198FD31921420C00F7EC46 /* AYUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = CB198FD21921420C00F7EC46 /* AYUtilites.m */; };
 		CB2318CB1937AFAB00816DC7 /* AYLoginViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2318CA1937AFAB00816DC7 /* AYLoginViewController~iPad.xib */; };
+		CB238CD519B768EA00C9554D /* ico_pantalla_led_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CB238CD319B768EA00C9554D /* ico_pantalla_led_1.png */; };
+		CB238CD619B768EA00C9554D /* ico_pantalla_led_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB238CD419B768EA00C9554D /* ico_pantalla_led_2.png */; };
 		CB275B6C191B37C100EC9964 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CB275B6B191B37C100EC9964 /* Device.m */; };
 		CB3567941982D941006401BF /* CalenderViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3567931982D941006401BF /* CalenderViewController~iPad.xib */; };
 		CB3567A11982F27A006401BF /* iPadLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = CB35679D1982F27A006401BF /* iPadLandscape.png */; };
@@ -114,6 +116,8 @@
 		CB38F2F5192526CE00163094 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F4192526CE00163094 /* Calendar.m */; };
 		CB38F2F8192526EE00163094 /* DeviceDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = CB38F2F7192526EE00163094 /* DeviceDetails.m */; };
 		CB3F133E19882A8A00A9B033 /* AYCalendarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3F133D19882A8A00A9B033 /* AYCalendarObject.m */; };
+		CB5823711993F20400A6138C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5823701993F20400A6138C /* libsqlite3.dylib */; };
+		CB5823731993F63900A6138C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5823721993F63900A6138C /* AdSupport.framework */; };
 		CB63409A1919470500CA2915 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB6340991919470500CA2915 /* GoogleMaps.bundle */; };
 		CB63409C1919476B00CA2915 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63409B1919476B00CA2915 /* AVFoundation.framework */; };
 		CB6340A01919478C00CA2915 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB63409D1919478C00CA2915 /* CoreData.framework */; };
@@ -127,6 +131,14 @@
 		CB6340AE191947D400CA2915 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6340AD191947D400CA2915 /* OpenGLES.framework */; };
 		CB6340B0191947DC00CA2915 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6340AF191947DC00CA2915 /* QuartzCore.framework */; };
 		CB6340B2191947E900CA2915 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6340B1191947E900CA2915 /* SystemConfiguration.framework */; };
+		CB7426791992B4B300501321 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7426781992B4B300501321 /* AudioToolbox.framework */; };
+		CB74267B1992B4E600501321 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB74267A1992B4E600501321 /* CFNetwork.framework */; };
+		CB74267D1992B50000501321 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB74267C1992B4FF00501321 /* MobileCoreServices.framework */; };
+		CB74267F1992B52600501321 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB74267E1992B52600501321 /* Security.framework */; };
+		CB7426811992B53500501321 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7426801992B53500501321 /* StoreKit.framework */; };
+		CB7426831992B5A500501321 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7426821992B5A500501321 /* Parse.framework */; };
+		CB7426851992BC2900501321 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7426841992BC2900501321 /* Social.framework */; };
+		CB7426871992BD9200501321 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7426861992BD9200501321 /* Accounts.framework */; };
 		CB773F59191BE3E800E36537 /* AYMapInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F58191BE3E800E36537 /* AYMapInfoView.m */; };
 		CB773F5B191BE3FB00E36537 /* AYMapInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB773F5A191BE3FB00E36537 /* AYMapInfoView.xib */; };
 		CB773F5F191BFF6100E36537 /* AYMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F5E191BFF6100E36537 /* AYMenuView.m */; };
@@ -134,6 +146,7 @@
 		CB773F66191C076B00E36537 /* UIImage+ISOverlayColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CB773F65191C076B00E36537 /* UIImage+ISOverlayColor.m */; };
 		CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */; };
 		CB7928421939CD35004B19DA /* AYSearchView~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB7928411939CD35004B19DA /* AYSearchView~iPad.xib */; };
+		CBA3FA1C199404D50086CC50 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA3FA1B199404D50086CC50 /* FacebookSDK.framework */; };
 		CBCD615C1918044900846E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615B1918044900846E8C /* Foundation.framework */; };
 		CBCD615E1918044900846E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615D1918044900846E8C /* CoreGraphics.framework */; };
 		CBCD61601918044900846E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCD615F1918044900846E8C /* UIKit.framework */; };
@@ -337,6 +350,8 @@
 		CB198FD11921420C00F7EC46 /* AYUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYUtilites.h; sourceTree = "<group>"; };
 		CB198FD21921420C00F7EC46 /* AYUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYUtilites.m; sourceTree = "<group>"; };
 		CB2318CA1937AFAB00816DC7 /* AYLoginViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYLoginViewController~iPad.xib"; sourceTree = "<group>"; };
+		CB238CD319B768EA00C9554D /* ico_pantalla_led_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_pantalla_led_1.png; sourceTree = "<group>"; };
+		CB238CD419B768EA00C9554D /* ico_pantalla_led_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_pantalla_led_2.png; sourceTree = "<group>"; };
 		CB275B6A191B37C100EC9964 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		CB275B6B191B37C100EC9964 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		CB3567931982D941006401BF /* CalenderViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CalenderViewController~iPad.xib"; sourceTree = "<group>"; };
@@ -350,6 +365,9 @@
 		CB38F2F7192526EE00163094 /* DeviceDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceDetails.m; sourceTree = "<group>"; };
 		CB3F133C19882A8A00A9B033 /* AYCalendarObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYCalendarObject.h; sourceTree = "<group>"; };
 		CB3F133D19882A8A00A9B033 /* AYCalendarObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYCalendarObject.m; sourceTree = "<group>"; };
+		CB5823701993F20400A6138C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CB5823721993F63900A6138C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		CB5823741993F8E800A6138C /* FBMissingSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBMissingSymbols.h; sourceTree = "<group>"; };
 		CB634097191946CC00CA2915 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		CB6340991919470500CA2915 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		CB63409B1919476B00CA2915 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -365,6 +383,14 @@
 		CB6340AF191947DC00CA2915 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB6340B1191947E900CA2915 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CB6340B3191949A400CA2915 /* AYConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYConstants.h; sourceTree = "<group>"; };
+		CB7426781992B4B300501321 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CB74267A1992B4E600501321 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CB74267C1992B4FF00501321 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CB74267E1992B52600501321 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CB7426801992B53500501321 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CB7426821992B5A500501321 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		CB7426841992BC2900501321 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CB7426861992BD9200501321 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		CB773F57191BE3E800E36537 /* AYMapInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYMapInfoView.h; sourceTree = "<group>"; };
 		CB773F58191BE3E800E36537 /* AYMapInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYMapInfoView.m; sourceTree = "<group>"; };
 		CB773F5A191BE3FB00E36537 /* AYMapInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AYMapInfoView.xib; sourceTree = "<group>"; };
@@ -376,6 +402,7 @@
 		CB79283F1939B51D004B19DA /* AYForgotPasswordView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYForgotPasswordView~iPad.xib"; sourceTree = "<group>"; };
 		CB7928411939CD35004B19DA /* AYSearchView~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AYSearchView~iPad.xib"; sourceTree = "<group>"; };
 		CB7928451939D8EC004B19DA /* AYBaseCloseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AYBaseCloseDelegate.h; sourceTree = "<group>"; };
+		CBA3FA1B199404D50086CC50 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CBCD61581918044900846E8C /* DelfinoMagnus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelfinoMagnus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCD615B1918044900846E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CBCD615D1918044900846E8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -482,7 +509,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA3FA1C199404D50086CC50 /* FacebookSDK.framework in Frameworks */,
+				CB5823731993F63900A6138C /* AdSupport.framework in Frameworks */,
+				CB5823711993F20400A6138C /* libsqlite3.dylib in Frameworks */,
+				CB7426871992BD9200501321 /* Accounts.framework in Frameworks */,
+				CB7426851992BC2900501321 /* Social.framework in Frameworks */,
+				CB7426811992B53500501321 /* StoreKit.framework in Frameworks */,
+				CB74267F1992B52600501321 /* Security.framework in Frameworks */,
+				CB74267D1992B50000501321 /* MobileCoreServices.framework in Frameworks */,
+				CB74267B1992B4E600501321 /* CFNetwork.framework in Frameworks */,
+				CB7426791992B4B300501321 /* AudioToolbox.framework in Frameworks */,
 				CB6340B2191947E900CA2915 /* SystemConfiguration.framework in Frameworks */,
+				CB7426831992B5A500501321 /* Parse.framework in Frameworks */,
 				CB6340B0191947DC00CA2915 /* QuartzCore.framework in Frameworks */,
 				CB6340AE191947D400CA2915 /* OpenGLES.framework in Frameworks */,
 				CB6340AC191947CC00CA2915 /* libz.dylib in Frameworks */,
@@ -702,6 +740,17 @@
 		CBCD615A1918044900846E8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBA3FA1B199404D50086CC50 /* FacebookSDK.framework */,
+				CB5823721993F63900A6138C /* AdSupport.framework */,
+				CB5823701993F20400A6138C /* libsqlite3.dylib */,
+				CB7426861992BD9200501321 /* Accounts.framework */,
+				CB7426841992BC2900501321 /* Social.framework */,
+				CB7426821992B5A500501321 /* Parse.framework */,
+				CB7426801992B53500501321 /* StoreKit.framework */,
+				CB74267E1992B52600501321 /* Security.framework */,
+				CB74267C1992B4FF00501321 /* MobileCoreServices.framework */,
+				CB74267A1992B4E600501321 /* CFNetwork.framework */,
+				CB7426781992B4B300501321 /* AudioToolbox.framework */,
 				DCBC66A7193C44E500D8221E /* GoogleMaps.framework */,
 				CB6340B1191947E900CA2915 /* SystemConfiguration.framework */,
 				CB6340AF191947DC00CA2915 /* QuartzCore.framework */,
@@ -785,6 +834,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6340B3191949A400CA2915 /* AYConstants.h */,
+				CB5823741993F8E800A6138C /* FBMissingSymbols.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -878,6 +928,8 @@
 				CB1248601918879D009DA54C /* burbuja.png */,
 				CB1248611918879D009DA54C /* buscar.png */,
 				CB1248621918879D009DA54C /* busqueda.png */,
+				CB238CD319B768EA00C9554D /* ico_pantalla_led_1.png */,
+				CB238CD419B768EA00C9554D /* ico_pantalla_led_2.png */,
 				CB1248631918879D009DA54C /* calendario_normal.png */,
 				CB1248641918879D009DA54C /* calendario_pressed.png */,
 				CB1248651918879D009DA54C /* calendario.png */,
@@ -1221,6 +1273,7 @@
 				CB0437CC194610F3000145F4 /* 58.png in Resources */,
 				CBF85070194D7DE700B2AADE /* help_3.png in Resources */,
 				CB7928401939B51D004B19DA /* AYForgotPasswordView~iPad.xib in Resources */,
+				CB238CD519B768EA00C9554D /* ico_pantalla_led_1.png in Resources */,
 				CBF13F8C19226B4300E1C418 /* AYDeviceSearchView.xib in Resources */,
 				CB12489C1918879D009DA54C /* bg_btn_telon.png in Resources */,
 				CB12489B1918879D009DA54C /* bg_btn_monocolumna.png in Resources */,
@@ -1282,6 +1335,7 @@
 				CB1248A61918879D009DA54C /* btn_nodisponible.png in Resources */,
 				CB1248CB1918879D009DA54C /* mediawall_black.png in Resources */,
 				CB06BC9C1950A8F900965ED1 /* BZDownloadView.xib in Resources */,
+				CB238CD619B768EA00C9554D /* ico_pantalla_led_2.png in Resources */,
 				CB1248BF1918879D009DA54C /* foto.png in Resources */,
 				CB1248CE1918879D009DA54C /* menu_vacio.png in Resources */,
 				CB0437CD194610F3000145F4 /* 76.png in Resources */,
@@ -1486,11 +1540,13 @@
 		CBCD61851918044900846E8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pablo Mazaeda (6XJBL49A8V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Pablo Mazaeda (6XJBL49A8V)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/avadeshkumar/delfinomagnus/DelfinoMagnus,
 					"$(PROJECT_DIR)",
+					/Users/avadeshkumar/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DelfinoMagnus/DelfinoMagnus-Prefix.pch";
@@ -1498,7 +1554,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F06CF976-E089-4F11-BF4E-961761A595CE";
+				PROVISIONING_PROFILE = "7AB51E13-EB95-4A67-9244-5E9618B31C01";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1507,11 +1563,13 @@
 		CBCD61861918044900846E8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Pablo Mazaeda (6XJBL49A8V)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Pablo Mazaeda (6XJBL49A8V)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/avadeshkumar/delfinomagnus/DelfinoMagnus,
 					"$(PROJECT_DIR)",
+					/Users/avadeshkumar/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DelfinoMagnus/DelfinoMagnus-Prefix.pch";
@@ -1519,7 +1577,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "F06CF976-E089-4F11-BF4E-961761A595CE";
+				PROVISIONING_PROFILE = "7AB51E13-EB95-4A67-9244-5E9618B31C01";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

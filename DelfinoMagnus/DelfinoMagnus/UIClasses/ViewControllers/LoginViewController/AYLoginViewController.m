@@ -8,6 +8,7 @@
 
 #import "AYLoginViewController.h"
 #import "AYForgotPasswordView.h"
+#import <Parse/Parse.h>
 
 @interface AYLoginViewController () <UITextFieldDelegate>
 
@@ -126,7 +127,12 @@
                     if ([result objectForKey:@"profile"]) {
                          [[LTCoreDataManager sharedInstance] insertUserDetailsIntoDBFromRawResponse:[result objectForKey:@"profile"]];
                     }
-                   
+                                       
+                    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                    //[currentInstallation setDeviceTokenFromData:deviceToken];
+                    currentInstallation[@"UserName"] = self.txtFieldUserName.text;
+                    [currentInstallation saveInBackground];
+                    
                     if ([self.delegate respondsToSelector:@selector(didUserLoggedInSuccessfully)]) {
                         [self.delegate didUserLoggedInSuccessfully];
                     }

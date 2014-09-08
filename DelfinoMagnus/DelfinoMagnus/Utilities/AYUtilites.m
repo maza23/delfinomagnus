@@ -57,7 +57,7 @@
         
         for (Tipo *tipo in tipoArray) {
             
-            NSString *imageName = @"telones.png";
+            NSString *imageName = @"ico_pantalla_led_2.png";
             
             if ([tipo.name isEqualToString:@"Cartel"]) {
                 imageName = @"cartel.png";
@@ -68,8 +68,11 @@
             else if ([tipo.name isEqualToString:@"Monocolumna"]) {
                 imageName = @"monocolumna.png";
             }
-            else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
-                imageName = @"telon.png";
+//            else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
+//                imageName = @"telon.png";
+//            }
+            else if ([tipo.name isEqualToString:@"Pantalla LED"]) {
+                imageName = @"ico_pantalla_led_2.png";
             }
             
             [tipoDetails setObject:imageName forKey:tipo.tipoId];
@@ -109,6 +112,10 @@
                 titleBGColor = [self colorFromHexString:@"#206C9B"];
                 tipoBGColor = [self colorFromHexString:@"#A1252A"];
             }
+            else if ([tipo.name isEqualToString:@"Pantalla LED"]) {
+                titleBGColor = [self colorFromHexString:@"#206C9B"];
+                tipoBGColor = [self colorFromHexString:@"#A1252A"];
+            }
             
             [tipoDetails setObject:@{@"titleBGColor" : titleBGColor, @"tipoBGColor": tipoBGColor} forKey:tipo.tipoId];
         }
@@ -141,6 +148,9 @@
             }
             else if ([tipo.name isEqualToString:@"Tel\u00f3n"]) {
                 tipoName = @"Telon";
+            }
+            else if ([tipo.name isEqualToString:@"Pantalla LED"]) {
+                tipoName = @"Pantalla LED";
             }
             
             [tipoDetails setObject:tipo.tipoId forKey:tipoName];

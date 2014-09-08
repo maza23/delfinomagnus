@@ -170,7 +170,7 @@
     self.favoriteDevices = [[NSMutableArray alloc] initWithArray:@[@{@"Title" : @"CARTEL" , @"ImageName" : @"cartel.png", @"Devices" : cartelDevices},
                              @{@"Title" : @"MONOCOLUMNA" , @"ImageName" : @"monocolumna.png", @"Devices" : monocolumnaDevices},
                              @{@"Title" : @"MEDIAWALL" , @"ImageName" : @"mediawall.png", @"Devices" : mediawallDevices},
-                             @{@"Title" : @"TELÓN" , @"ImageName" : @"telon.png", @"Devices" : telonDevices}
+                             @{@"Title" : @"Pantalla LED" , @"ImageName" : @"ico_pantalla_led_2.png", @"Devices" : telonDevices}
                              ]];
     
     [self.lblNumberOfFavorites setText:[NSString stringWithFormat:@"%d", [devices count]]];

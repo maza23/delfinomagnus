@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -147,12 +147,12 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="Fph-ZL-ZHr"/>
                     </constraints>
-                    <inset key="titleEdgeInsets" minX="90" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="50" minY="15" maxX="90" maxY="15"/>
-                    <state key="normal" title="TELON" image="telon.png">
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="50" minY="15" maxX="180" maxY="15"/>
+                    <state key="normal" title="PANTALLA LED" image="ico_pantalla_led_2.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" title="TELON" image="telon_black.png" backgroundImage="bg_btn_telon.png">
+                    <state key="selected" title="PANTALLA LED" image="ico_pantalla_led_1.png" backgroundImage="bg_btn_telon.png">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -445,11 +445,11 @@
         <image name="btn_nodisponible.png" width="22" height="80"/>
         <image name="cartel.png" width="77" height="71"/>
         <image name="cartel_black.png" width="77" height="71"/>
+        <image name="ico_pantalla_led_1.png" width="121" height="125"/>
+        <image name="ico_pantalla_led_2.png" width="121" height="125"/>
         <image name="mediawall.png" width="52" height="71"/>
         <image name="mediawall_black.png" width="52" height="71"/>
         <image name="monocolumna.png" width="72" height="71"/>
         <image name="monocolumna_black.png" width="72" height="71"/>
-        <image name="telon.png" width="52" height="71"/>
-        <image name="telon_black.png" width="51" height="71"/>
     </resources>
 </document>
